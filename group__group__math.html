@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Math module | CS
+87/287 Rendering Algorithms</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><script src="jquery.event.move.js"></script><script src="jquery.twentytwenty.js"></script><link href="twentytwenty.css" rel="stylesheet" type="text/css" /><script>$(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5, move_slider_on_hover: true });});</script>
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="https://cs87-dartmouth.github.io/fall2021"><img src="darts-logo.svg" alt="" />CS
+87/287</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Rendering Algorithms</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li>
+              <a href="assignments.html">Assignments</a>
+              <ol>
+                <li><a href="assignment0.html">A0: Darts preliminaries</a></li>
+                <li><a href="assignment1.html">A1: Ray tracing</a></li>
+                <li><a href="assignment2.html">A2: Ray tracing faster</a></li>
+                <li><a href="assignment3.html">A3: Textures</a></li>
+                <li><a href="assignment4.html">A4: Sampling materials</a></li>
+                <li><a href="assignment5.html">A5: Sampling lights</a></li>
+                <li><a href="assignment6.html">A6: Final project</a></li>
+              </ol>
+            </li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="2">
+            <li>
+              <a href="darts-overview.html">Code</a>
+              <ol>
+                <li><a href="darts-overview.html">Code</a></li>
+                <li><a href="getting-started.html">Getting started</a></li>
+                <li><a href="modules.html">Modules</a></li>
+                <li><a href="annotated.html">Classes</a></li>
+                <li><a href="files.html">Files</a></li>
+              </ol>
+            </li>
+            <li><a href="credits.html">Credits</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Math <span class="m-thin">module</span></h1>
+        <p>Fixed-size vectors/colors, matrices, transforms, rays, orthonormal bases.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
+                <li><a href="#func-members">Functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;size_t N, typename T&gt;</div>
+              struct <a href="structRay.html" class="m-doc">Ray</a>
+            </dt>
+            <dd>Simple ray segment data structure.</dd>
+          </dl>
+        </section>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="#gad2529c5ccdccc09e978964d3ddd58e91" class="m-doc">Ray2</a> = <a href="structRay.html" class="m-doc">Ray</a>&lt;2, T&gt;
+            </dt>
+            <dd>2D ray</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="#ga1ba884c9e8c53fe96c5ed6d4fc259756" class="m-doc">Ray3</a> = <a href="structRay.html" class="m-doc">Ray</a>&lt;3, T&gt;
+            </dt>
+            <dd>3D ray</dd>
+            <dt>
+              using <a href="#gaaad1a8ff05e0959280c023d1027e1029" class="m-doc">Ray2f</a> = <a href="group__group__math.html#gad2529c5ccdccc09e978964d3ddd58e91" class="m-doc">Ray2</a>&lt;float&gt;
+            </dt>
+            <dd>2D floating-point ray</dd>
+            <dt>
+              using <a href="#ga88267a6cf4b97cb9923941ee33cf5f29" class="m-doc">Ray2d</a> = <a href="group__group__math.html#gad2529c5ccdccc09e978964d3ddd58e91" class="m-doc">Ray2</a>&lt;double&gt;
+            </dt>
+            <dd>2D double-precision ray</dd>
+            <dt>
+              using <a href="#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a> = <a href="group__group__math.html#ga1ba884c9e8c53fe96c5ed6d4fc259756" class="m-doc">Ray3</a>&lt;float&gt;
+            </dt>
+            <dd>3D floating-point ray</dd>
+            <dt>
+              using <a href="#ga533b142a00a43db9f3d321270e833916" class="m-doc">Ray3d</a> = <a href="group__group__math.html#ga1ba884c9e8c53fe96c5ed6d4fc259756" class="m-doc">Ray3</a>&lt;double&gt;
+            </dt>
+            <dd>3D double-precision ray</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;int N, class T&gt;</div>
+              using <a href="#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a> = linalg::vec&lt;T, N&gt;
+            </dt>
+            <dd>Generic <code>N</code> dimensional vector.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T, int M, int N&gt;</div>
+              using <a href="#ga019ad38297b59808885adc7cc8dde7b6" class="m-doc">Mat</a> = linalg::mat&lt;T, M, N&gt;
+            </dt>
+            <dd>Generic <code>M</code> x <code>N</code> matrix.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              using <a href="#ga907c40815bac946d508ed3d7d5fbc424" class="m-doc">Vec2</a> = <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;2, T&gt;
+            </dt>
+            <dd>2D vector of type T</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              using <a href="#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a> = <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;3, T&gt;
+            </dt>
+            <dd>3D vector of type T</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              using <a href="#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a> = <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;4, T&gt;
+            </dt>
+            <dd>4D vector of type T</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              using <a href="#gafe73cf9b6f24cd901e6f302c6390b131" class="m-doc">Color3</a> = <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;3, T&gt;
+            </dt>
+            <dd>RGB color of type T.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              using <a href="#gaf72b1c752b0a17cf0d390624503a315d" class="m-doc">Color4</a> = <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;4, T&gt;
+            </dt>
+            <dd>RGBA color of type T.</dd>
+            <dt>
+              using <a href="#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a> = <a href="group__group__math.html#ga907c40815bac946d508ed3d7d5fbc424" class="m-doc">Vec2</a>&lt;float&gt;
+            </dt>
+            <dd>2D float vector</dd>
+            <dt>
+              using <a href="#ga25e23c9a50a99216371233aca149066b" class="m-doc">Vec2d</a> = <a href="group__group__math.html#ga907c40815bac946d508ed3d7d5fbc424" class="m-doc">Vec2</a>&lt;double&gt;
+            </dt>
+            <dd>2D double vector</dd>
+            <dt>
+              using <a href="#ga8aaf4d6cd52607d9d6599fb37ed8fc59" class="m-doc">Vec2i</a> = <a href="group__group__math.html#ga907c40815bac946d508ed3d7d5fbc424" class="m-doc">Vec2</a>&lt;std::int32_t&gt;
+            </dt>
+            <dd>2D integer vector (32-bit)</dd>
+            <dt>
+              using <a href="#ga737a8be61e082949e236788b6e84ca0b" class="m-doc">Vec2u</a> = <a href="group__group__math.html#ga907c40815bac946d508ed3d7d5fbc424" class="m-doc">Vec2</a>&lt;std::uint32_t&gt;
+            </dt>
+            <dd>2D unsigned vector (32-bit)</dd>
+            <dt>
+              using <a href="#ga3e92dae783444b8405166c541ef03b0c" class="m-doc">Vec2c</a> = <a href="group__group__math.html#ga907c40815bac946d508ed3d7d5fbc424" class="m-doc">Vec2</a>&lt;std::uint8_t&gt;
+            </dt>
+            <dd>2D character vector (8-bit unsigned integers)</dd>
+            <dt>
+              using <a href="#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;float&gt;
+            </dt>
+            <dd>3D float vector</dd>
+            <dt>
+              using <a href="#ga98d94999010cb92dfb5f652c353d1d82" class="m-doc">Vec3d</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;double&gt;
+            </dt>
+            <dd>3D double vector</dd>
+            <dt>
+              using <a href="#gac62cf90e69881b42c116aa93a17dbd23" class="m-doc">Vec3i</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;std::int32_t&gt;
+            </dt>
+            <dd>3D integer vector (32-bit)</dd>
+            <dt>
+              using <a href="#ga8f688ce2b27d41843be405ab0ad236dd" class="m-doc">Vec3u</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;std::uint32_t&gt;
+            </dt>
+            <dd>3D unsigned vector (32-bit)</dd>
+            <dt>
+              using <a href="#gad5e5169d85a3e44ae9da8b9911b90155" class="m-doc">Vec3c</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;std::uint8_t&gt;
+            </dt>
+            <dd>3D character vector (8-bit unsigned integers)</dd>
+            <dt>
+              using <a href="#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;float&gt;
+            </dt>
+            <dd>RGB float color.</dd>
+            <dt>
+              using <a href="#ga232c394745ba6999c6aeed2861e5cd68" class="m-doc">Color3d</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;double&gt;
+            </dt>
+            <dd>RGB double color.</dd>
+            <dt>
+              using <a href="#ga66615c3ec31a0bd7f81dfbbf4fe5264a" class="m-doc">Color3u</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;std::uint32_t&gt;
+            </dt>
+            <dd>RGB 32-bit unsigned integer color.</dd>
+            <dt>
+              using <a href="#gaccee2e32d6b81ec05db1fc3e800e7346" class="m-doc">Color3c</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;std::uint8_t&gt;
+            </dt>
+            <dd>RGB 8-bit unsigned integer.</dd>
+            <dt>
+              using <a href="#ga474381d68d07288e4f13d37bc3b32c7e" class="m-doc">Vec4f</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;float&gt;
+            </dt>
+            <dd>4D float vector</dd>
+            <dt>
+              using <a href="#gae1623b1310537d33661857dd0cfffe3f" class="m-doc">Vec4d</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;double&gt;
+            </dt>
+            <dd>4D double vector</dd>
+            <dt>
+              using <a href="#gaf32f83514ce0a48613be997c7220eb96" class="m-doc">Vec4i</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;std::int32_t&gt;
+            </dt>
+            <dd>4D integer vector (32-bit)</dd>
+            <dt>
+              using <a href="#gaad4711df8ce65429898103030858c6bc" class="m-doc">Vec4u</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;std::uint32_t&gt;
+            </dt>
+            <dd>4D unsigned vector (32-bit)</dd>
+            <dt>
+              using <a href="#gab5e834d8d3d34689598c8127b9ab07f0" class="m-doc">Vec4c</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;std::uint8_t&gt;
+            </dt>
+            <dd>4D character vector (8-bit unsigned integers)</dd>
+            <dt>
+              using <a href="#gae00a93e8870e9b73cb1590df0da60609" class="m-doc">Color4f</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;float&gt;
+            </dt>
+            <dd>RGBA float color.</dd>
+            <dt>
+              using <a href="#gae9891e1cf6bd34d9a013be787f915257" class="m-doc">Color4d</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;double&gt;
+            </dt>
+            <dd>RGBA double color.</dd>
+            <dt>
+              using <a href="#ga826e2d0e803273bb9cf6f0494cb9f576" class="m-doc">Color4u</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;std::uint32_t&gt;
+            </dt>
+            <dd>RGBA 32-bit unsigned integer color.</dd>
+            <dt>
+              using <a href="#gab7d6bbbd0dc7dac351303e6c2932cb65" class="m-doc">Color4c</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;std::uint8_t&gt;
+            </dt>
+            <dd>RGBA 8-bit unsigned integer.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              using <a href="#gad2c1cba09d4b16f6b8e9cff9684255e6" class="m-doc">Mat22</a> = linalg::mat&lt;T, 2, 2&gt;
+            </dt>
+            <dd>A generic 2x2 matrix.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              using <a href="#gab1481427d564211d039652c0330bd361" class="m-doc">Mat33</a> = linalg::mat&lt;T, 3, 3&gt;
+            </dt>
+            <dd>A generic 3x3 matrix.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              using <a href="#ga64fa067071fbdbb313b0e1bb08baedae" class="m-doc">Mat44</a> = linalg::mat&lt;T, 4, 4&gt;
+            </dt>
+            <dd>A generic 4x4 matrix.</dd>
+            <dt>
+              using <a href="#ga2ad781c1b868d81f5bb15752a9b2ba93" class="m-doc">Mat22f</a> = <a href="group__group__math.html#gad2c1cba09d4b16f6b8e9cff9684255e6" class="m-doc">Mat22</a>&lt;float&gt;
+            </dt>
+            <dd>2x2 float matrix</dd>
+            <dt>
+              using <a href="#gac95f7db07f362113cc5164ac44dacd21" class="m-doc">Mat22d</a> = <a href="group__group__math.html#gad2c1cba09d4b16f6b8e9cff9684255e6" class="m-doc">Mat22</a>&lt;double&gt;
+            </dt>
+            <dd>2x2 double matrix</dd>
+            <dt>
+              using <a href="#ga6a64fb94ce46dfa440d388a43d611320" class="m-doc">Mat33f</a> = <a href="group__group__math.html#gab1481427d564211d039652c0330bd361" class="m-doc">Mat33</a>&lt;float&gt;
+            </dt>
+            <dd>3x3 float matrix</dd>
+            <dt>
+              using <a href="#ga6a24eafc9ecf4dbafb0394b49f2d3c68" class="m-doc">Mat33d</a> = <a href="group__group__math.html#gab1481427d564211d039652c0330bd361" class="m-doc">Mat33</a>&lt;double&gt;
+            </dt>
+            <dd>3x3 double matrix</dd>
+            <dt>
+              using <a href="#gad5a13c478c7dcf28d114edc5610a0599" class="m-doc">Mat44f</a> = <a href="group__group__math.html#ga64fa067071fbdbb313b0e1bb08baedae" class="m-doc">Mat44</a>&lt;float&gt;
+            </dt>
+            <dd>4x4 float matrix</dd>
+            <dt>
+              using <a href="#gab4f2c8273e10c76f86ac24ed7670d897" class="m-doc">Mat44d</a> = <a href="group__group__math.html#ga64fa067071fbdbb313b0e1bb08baedae" class="m-doc">Mat44</a>&lt;double&gt;
+            </dt>
+            <dd>4x4 double matrix</dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">void <a href="#ga58ceae298478946aa6161350bc4e1bec" class="m-doc">coordinate_system</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;T&gt;&amp; a,
+              <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;T&gt;&amp; b,
+              <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;T&gt;&amp; c)</span>
+            </dt>
+            <dd>Construct an orthonormal coordinate system given one vector <code>a</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gacb1f134c27a9a951fe709cc312598d2b" class="m-doc">to_sRGB</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a>&amp; c) -&gt; <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a></span>
+            </dt>
+            <dd>Convert from linear RGB to sRGB.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga503706626427c03e0da2bdcb229e0770" class="m-doc">to_linear_RGB</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a>&amp; c) -&gt; <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a></span>
+            </dt>
+            <dd>Convert from sRGB to linear RGB.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gafa52defa0cde055afe39ab86dccbf4af" class="m-doc">is_valid_color</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a>&amp; c) -&gt; bool</span>
+            </dt>
+            <dd>Check if the color vector contains a NaN/Inf/negative value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gade8d7f28c384dd15c84b8081f846e79c" class="m-doc">luminance</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a>&amp; c) -&gt; float</span>
+            </dt>
+            <dd>Return the associated luminance.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="gad2529c5ccdccc09e978964d3ddd58e91"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="ray_8h.html">&lt;darts/ray.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              using <a href="#gad2529c5ccdccc09e978964d3ddd58e91" class="m-doc-self">Ray2</a> = <a href="structRay.html" class="m-doc">Ray</a>&lt;2, T&gt;
+            </h3>
+            <p>2D ray</p>
+          </div></section>
+          <section class="m-doc-details" id="ga1ba884c9e8c53fe96c5ed6d4fc259756"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="ray_8h.html">&lt;darts/ray.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              using <a href="#ga1ba884c9e8c53fe96c5ed6d4fc259756" class="m-doc-self">Ray3</a> = <a href="structRay.html" class="m-doc">Ray</a>&lt;3, T&gt;
+            </h3>
+            <p>3D ray</p>
+          </div></section>
+          <section class="m-doc-details" id="gaaad1a8ff05e0959280c023d1027e1029"><div>
+            <h3>
+              using <a href="#gaaad1a8ff05e0959280c023d1027e1029" class="m-doc-self">Ray2f</a> = <a href="group__group__math.html#gad2529c5ccdccc09e978964d3ddd58e91" class="m-doc">Ray2</a>&lt;float&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="ray_8h.html">&lt;darts/ray.h&gt;</a></div>
+            </h3>
+            <p>2D floating-point ray</p>
+          </div></section>
+          <section class="m-doc-details" id="ga88267a6cf4b97cb9923941ee33cf5f29"><div>
+            <h3>
+              using <a href="#ga88267a6cf4b97cb9923941ee33cf5f29" class="m-doc-self">Ray2d</a> = <a href="group__group__math.html#gad2529c5ccdccc09e978964d3ddd58e91" class="m-doc">Ray2</a>&lt;double&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="ray_8h.html">&lt;darts/ray.h&gt;</a></div>
+            </h3>
+            <p>2D double-precision ray</p>
+          </div></section>
+          <section class="m-doc-details" id="gaf690027ac9e847d77a4ec123404cf0b3"><div>
+            <h3>
+              using <a href="#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc-self">Ray3f</a> = <a href="group__group__math.html#ga1ba884c9e8c53fe96c5ed6d4fc259756" class="m-doc">Ray3</a>&lt;float&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="ray_8h.html">&lt;darts/ray.h&gt;</a></div>
+            </h3>
+            <p>3D floating-point ray</p>
+          </div></section>
+          <section class="m-doc-details" id="ga533b142a00a43db9f3d321270e833916"><div>
+            <h3>
+              using <a href="#ga533b142a00a43db9f3d321270e833916" class="m-doc-self">Ray3d</a> = <a href="group__group__math.html#ga1ba884c9e8c53fe96c5ed6d4fc259756" class="m-doc">Ray3</a>&lt;double&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="ray_8h.html">&lt;darts/ray.h&gt;</a></div>
+            </h3>
+            <p>3D double-precision ray</p>
+          </div></section>
+          <section class="m-doc-details" id="ga35db21e7e34c8dac6a6b2a8ac2d75977"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;int N, class T&gt;
+              </div>
+              using <a href="#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc-self">Vec</a> = linalg::vec&lt;T, N&gt;
+            </h3>
+            <p>Generic <code>N</code> dimensional vector.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga019ad38297b59808885adc7cc8dde7b6"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T, int M, int N&gt;
+              </div>
+              using <a href="#ga019ad38297b59808885adc7cc8dde7b6" class="m-doc-self">Mat</a> = linalg::mat&lt;T, M, N&gt;
+            </h3>
+            <p>Generic <code>M</code> x <code>N</code> matrix.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga907c40815bac946d508ed3d7d5fbc424"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              using <a href="#ga907c40815bac946d508ed3d7d5fbc424" class="m-doc-self">Vec2</a> = <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;2, T&gt;
+            </h3>
+            <p>2D vector of type T</p>
+          </div></section>
+          <section class="m-doc-details" id="gaddfeffcf897846df213e52eb694b39d0"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              using <a href="#gaddfeffcf897846df213e52eb694b39d0" class="m-doc-self">Vec3</a> = <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;3, T&gt;
+            </h3>
+            <p>3D vector of type T</p>
+          </div></section>
+          <section class="m-doc-details" id="gae6d9671d0556124554c2a5d7cb6d2374"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              using <a href="#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc-self">Vec4</a> = <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;4, T&gt;
+            </h3>
+            <p>4D vector of type T</p>
+          </div></section>
+          <section class="m-doc-details" id="gafe73cf9b6f24cd901e6f302c6390b131"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              using <a href="#gafe73cf9b6f24cd901e6f302c6390b131" class="m-doc-self">Color3</a> = <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;3, T&gt;
+            </h3>
+            <p>RGB color of type T.</p>
+          </div></section>
+          <section class="m-doc-details" id="gaf72b1c752b0a17cf0d390624503a315d"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              using <a href="#gaf72b1c752b0a17cf0d390624503a315d" class="m-doc-self">Color4</a> = <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;4, T&gt;
+            </h3>
+            <p>RGBA color of type T.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga0a204091a6626c84fd980a6c492469f6"><div>
+            <h3>
+              using <a href="#ga0a204091a6626c84fd980a6c492469f6" class="m-doc-self">Vec2f</a> = <a href="group__group__math.html#ga907c40815bac946d508ed3d7d5fbc424" class="m-doc">Vec2</a>&lt;float&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>2D float vector</p>
+          </div></section>
+          <section class="m-doc-details" id="ga25e23c9a50a99216371233aca149066b"><div>
+            <h3>
+              using <a href="#ga25e23c9a50a99216371233aca149066b" class="m-doc-self">Vec2d</a> = <a href="group__group__math.html#ga907c40815bac946d508ed3d7d5fbc424" class="m-doc">Vec2</a>&lt;double&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>2D double vector</p>
+          </div></section>
+          <section class="m-doc-details" id="ga8aaf4d6cd52607d9d6599fb37ed8fc59"><div>
+            <h3>
+              using <a href="#ga8aaf4d6cd52607d9d6599fb37ed8fc59" class="m-doc-self">Vec2i</a> = <a href="group__group__math.html#ga907c40815bac946d508ed3d7d5fbc424" class="m-doc">Vec2</a>&lt;std::int32_t&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>2D integer vector (32-bit)</p>
+          </div></section>
+          <section class="m-doc-details" id="ga737a8be61e082949e236788b6e84ca0b"><div>
+            <h3>
+              using <a href="#ga737a8be61e082949e236788b6e84ca0b" class="m-doc-self">Vec2u</a> = <a href="group__group__math.html#ga907c40815bac946d508ed3d7d5fbc424" class="m-doc">Vec2</a>&lt;std::uint32_t&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>2D unsigned vector (32-bit)</p>
+          </div></section>
+          <section class="m-doc-details" id="ga3e92dae783444b8405166c541ef03b0c"><div>
+            <h3>
+              using <a href="#ga3e92dae783444b8405166c541ef03b0c" class="m-doc-self">Vec2c</a> = <a href="group__group__math.html#ga907c40815bac946d508ed3d7d5fbc424" class="m-doc">Vec2</a>&lt;std::uint8_t&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>2D character vector (8-bit unsigned integers)</p>
+          </div></section>
+          <section class="m-doc-details" id="ga40b8356e33151c22cb4d1adaf2b762a8"><div>
+            <h3>
+              using <a href="#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc-self">Vec3f</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;float&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>3D float vector</p>
+          </div></section>
+          <section class="m-doc-details" id="ga98d94999010cb92dfb5f652c353d1d82"><div>
+            <h3>
+              using <a href="#ga98d94999010cb92dfb5f652c353d1d82" class="m-doc-self">Vec3d</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;double&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>3D double vector</p>
+          </div></section>
+          <section class="m-doc-details" id="gac62cf90e69881b42c116aa93a17dbd23"><div>
+            <h3>
+              using <a href="#gac62cf90e69881b42c116aa93a17dbd23" class="m-doc-self">Vec3i</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;std::int32_t&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>3D integer vector (32-bit)</p>
+          </div></section>
+          <section class="m-doc-details" id="ga8f688ce2b27d41843be405ab0ad236dd"><div>
+            <h3>
+              using <a href="#ga8f688ce2b27d41843be405ab0ad236dd" class="m-doc-self">Vec3u</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;std::uint32_t&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>3D unsigned vector (32-bit)</p>
+          </div></section>
+          <section class="m-doc-details" id="gad5e5169d85a3e44ae9da8b9911b90155"><div>
+            <h3>
+              using <a href="#gad5e5169d85a3e44ae9da8b9911b90155" class="m-doc-self">Vec3c</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;std::uint8_t&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>3D character vector (8-bit unsigned integers)</p>
+          </div></section>
+          <section class="m-doc-details" id="gac142ddc4a553fd9e2cc58c50d71c9a02"><div>
+            <h3>
+              using <a href="#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc-self">Color3f</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;float&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>RGB float color.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga232c394745ba6999c6aeed2861e5cd68"><div>
+            <h3>
+              using <a href="#ga232c394745ba6999c6aeed2861e5cd68" class="m-doc-self">Color3d</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;double&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>RGB double color.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga66615c3ec31a0bd7f81dfbbf4fe5264a"><div>
+            <h3>
+              using <a href="#ga66615c3ec31a0bd7f81dfbbf4fe5264a" class="m-doc-self">Color3u</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;std::uint32_t&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>RGB 32-bit unsigned integer color.</p>
+          </div></section>
+          <section class="m-doc-details" id="gaccee2e32d6b81ec05db1fc3e800e7346"><div>
+            <h3>
+              using <a href="#gaccee2e32d6b81ec05db1fc3e800e7346" class="m-doc-self">Color3c</a> = <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;std::uint8_t&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>RGB 8-bit unsigned integer.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga474381d68d07288e4f13d37bc3b32c7e"><div>
+            <h3>
+              using <a href="#ga474381d68d07288e4f13d37bc3b32c7e" class="m-doc-self">Vec4f</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;float&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>4D float vector</p>
+          </div></section>
+          <section class="m-doc-details" id="gae1623b1310537d33661857dd0cfffe3f"><div>
+            <h3>
+              using <a href="#gae1623b1310537d33661857dd0cfffe3f" class="m-doc-self">Vec4d</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;double&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>4D double vector</p>
+          </div></section>
+          <section class="m-doc-details" id="gaf32f83514ce0a48613be997c7220eb96"><div>
+            <h3>
+              using <a href="#gaf32f83514ce0a48613be997c7220eb96" class="m-doc-self">Vec4i</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;std::int32_t&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>4D integer vector (32-bit)</p>
+          </div></section>
+          <section class="m-doc-details" id="gaad4711df8ce65429898103030858c6bc"><div>
+            <h3>
+              using <a href="#gaad4711df8ce65429898103030858c6bc" class="m-doc-self">Vec4u</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;std::uint32_t&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>4D unsigned vector (32-bit)</p>
+          </div></section>
+          <section class="m-doc-details" id="gab5e834d8d3d34689598c8127b9ab07f0"><div>
+            <h3>
+              using <a href="#gab5e834d8d3d34689598c8127b9ab07f0" class="m-doc-self">Vec4c</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;std::uint8_t&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>4D character vector (8-bit unsigned integers)</p>
+          </div></section>
+          <section class="m-doc-details" id="gae00a93e8870e9b73cb1590df0da60609"><div>
+            <h3>
+              using <a href="#gae00a93e8870e9b73cb1590df0da60609" class="m-doc-self">Color4f</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;float&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>RGBA float color.</p>
+          </div></section>
+          <section class="m-doc-details" id="gae9891e1cf6bd34d9a013be787f915257"><div>
+            <h3>
+              using <a href="#gae9891e1cf6bd34d9a013be787f915257" class="m-doc-self">Color4d</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;double&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>RGBA double color.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga826e2d0e803273bb9cf6f0494cb9f576"><div>
+            <h3>
+              using <a href="#ga826e2d0e803273bb9cf6f0494cb9f576" class="m-doc-self">Color4u</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;std::uint32_t&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>RGBA 32-bit unsigned integer color.</p>
+          </div></section>
+          <section class="m-doc-details" id="gab7d6bbbd0dc7dac351303e6c2932cb65"><div>
+            <h3>
+              using <a href="#gab7d6bbbd0dc7dac351303e6c2932cb65" class="m-doc-self">Color4c</a> = <a href="group__group__math.html#gae6d9671d0556124554c2a5d7cb6d2374" class="m-doc">Vec4</a>&lt;std::uint8_t&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>RGBA 8-bit unsigned integer.</p>
+          </div></section>
+          <section class="m-doc-details" id="gad2c1cba09d4b16f6b8e9cff9684255e6"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              using <a href="#gad2c1cba09d4b16f6b8e9cff9684255e6" class="m-doc-self">Mat22</a> = linalg::mat&lt;T, 2, 2&gt;
+            </h3>
+            <p>A generic 2x2 matrix.</p>
+          </div></section>
+          <section class="m-doc-details" id="gab1481427d564211d039652c0330bd361"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              using <a href="#gab1481427d564211d039652c0330bd361" class="m-doc-self">Mat33</a> = linalg::mat&lt;T, 3, 3&gt;
+            </h3>
+            <p>A generic 3x3 matrix.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga64fa067071fbdbb313b0e1bb08baedae"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              using <a href="#ga64fa067071fbdbb313b0e1bb08baedae" class="m-doc-self">Mat44</a> = linalg::mat&lt;T, 4, 4&gt;
+            </h3>
+            <p>A generic 4x4 matrix.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga2ad781c1b868d81f5bb15752a9b2ba93"><div>
+            <h3>
+              using <a href="#ga2ad781c1b868d81f5bb15752a9b2ba93" class="m-doc-self">Mat22f</a> = <a href="group__group__math.html#gad2c1cba09d4b16f6b8e9cff9684255e6" class="m-doc">Mat22</a>&lt;float&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>2x2 float matrix</p>
+          </div></section>
+          <section class="m-doc-details" id="gac95f7db07f362113cc5164ac44dacd21"><div>
+            <h3>
+              using <a href="#gac95f7db07f362113cc5164ac44dacd21" class="m-doc-self">Mat22d</a> = <a href="group__group__math.html#gad2c1cba09d4b16f6b8e9cff9684255e6" class="m-doc">Mat22</a>&lt;double&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>2x2 double matrix</p>
+          </div></section>
+          <section class="m-doc-details" id="ga6a64fb94ce46dfa440d388a43d611320"><div>
+            <h3>
+              using <a href="#ga6a64fb94ce46dfa440d388a43d611320" class="m-doc-self">Mat33f</a> = <a href="group__group__math.html#gab1481427d564211d039652c0330bd361" class="m-doc">Mat33</a>&lt;float&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>3x3 float matrix</p>
+          </div></section>
+          <section class="m-doc-details" id="ga6a24eafc9ecf4dbafb0394b49f2d3c68"><div>
+            <h3>
+              using <a href="#ga6a24eafc9ecf4dbafb0394b49f2d3c68" class="m-doc-self">Mat33d</a> = <a href="group__group__math.html#gab1481427d564211d039652c0330bd361" class="m-doc">Mat33</a>&lt;double&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>3x3 double matrix</p>
+          </div></section>
+          <section class="m-doc-details" id="gad5a13c478c7dcf28d114edc5610a0599"><div>
+            <h3>
+              using <a href="#gad5a13c478c7dcf28d114edc5610a0599" class="m-doc-self">Mat44f</a> = <a href="group__group__math.html#ga64fa067071fbdbb313b0e1bb08baedae" class="m-doc">Mat44</a>&lt;float&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>4x4 float matrix</p>
+          </div></section>
+          <section class="m-doc-details" id="gab4f2c8273e10c76f86ac24ed7670d897"><div>
+            <h3>
+              using <a href="#gab4f2c8273e10c76f86ac24ed7670d897" class="m-doc-self">Mat44d</a> = <a href="group__group__math.html#ga64fa067071fbdbb313b0e1bb08baedae" class="m-doc">Mat44</a>&lt;double&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>4x4 double matrix</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ga58ceae298478946aa6161350bc4e1bec"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga58ceae298478946aa6161350bc4e1bec" class="m-doc-self">coordinate_system</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;T&gt;&amp; a,
+              <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;T&gt;&amp; b,
+              <a href="group__group__math.html#gaddfeffcf897846df213e52eb694b39d0" class="m-doc">Vec3</a>&lt;T&gt;&amp; c)</span></span>
+            </h3>
+            <p>Construct an orthonormal coordinate system given one vector <code>a</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">a</td>
+                  <td>[in] The coordinate system&#x27;s local z axis direction.</td>
+                </tr>
+                <tr>
+                  <td>b</td>
+                  <td>[out] A local x-axis orthogonal to a.</td>
+                </tr>
+                <tr>
+                  <td>c</td>
+                  <td>[out] A local y-axis orthogonal to both a and b.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="gacb1f134c27a9a951fe709cc312598d2b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gacb1f134c27a9a951fe709cc312598d2b" class="m-doc-self">to_sRGB</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a>&amp; c)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>Convert from linear RGB to sRGB.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga503706626427c03e0da2bdcb229e0770"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga503706626427c03e0da2bdcb229e0770" class="m-doc-self">to_linear_RGB</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a>&amp; c)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>Convert from sRGB to linear RGB.</p>
+          </div></section>
+          <section class="m-doc-details" id="gafa52defa0cde055afe39ab86dccbf4af"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gafa52defa0cde055afe39ab86dccbf4af" class="m-doc-self">is_valid_color</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a>&amp; c)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>Check if the color vector contains a NaN/Inf/negative value.</p>
+          </div></section>
+          <section class="m-doc-details" id="gade8d7f28c384dd15c84b8081f846e79c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gade8d7f28c384dd15c84b8081f846e79c" class="m-doc-self">luminance</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a>&amp; c)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="vec_8h.html">&lt;darts/vec.h&gt;</a></div>
+            </h3>
+            <p>Return the associated luminance.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>CS
+87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

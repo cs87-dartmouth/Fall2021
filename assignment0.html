@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Assignments &raquo; A0: Darts preliminaries | CS
+87/287 Rendering Algorithms</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <link rel="next" href="assignment1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><script src="jquery.event.move.js"></script><script src="jquery.twentytwenty.js"></script><link href="twentytwenty.css" rel="stylesheet" type="text/css" /><script>$(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5, move_slider_on_hover: true });});</script>
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="https://cs87-dartmouth.github.io/fall2021"><img src="darts-logo.svg" alt="" />CS
+87/287</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Rendering Algorithms</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li>
+              <a href="assignments.html">Assignments</a>
+              <ol>
+                <li><a href="assignment0.html" id="m-navbar-current">A0: Darts preliminaries</a></li>
+                <li><a href="assignment1.html">A1: Ray tracing</a></li>
+                <li><a href="assignment2.html">A2: Ray tracing faster</a></li>
+                <li><a href="assignment3.html">A3: Textures</a></li>
+                <li><a href="assignment4.html">A4: Sampling materials</a></li>
+                <li><a href="assignment5.html">A5: Sampling lights</a></li>
+                <li><a href="assignment6.html">A6: Final project</a></li>
+              </ol>
+            </li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="2">
+            <li>
+              <a href="darts-overview.html">Code</a>
+              <ol>
+                <li><a href="darts-overview.html">Code</a></li>
+                <li><a href="getting-started.html">Getting started</a></li>
+                <li><a href="modules.html">Modules</a></li>
+                <li><a href="annotated.html">Classes</a></li>
+                <li><a href="files.html">Files</a></li>
+              </ol>
+            </li>
+            <li><a href="credits.html">Credits</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="assignments.html">Assignments</a> &raquo;</span>
+          A0: Darts preliminaries
+        </h1>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li><a href="#autotoc_md40">Getting started with the code</a></li>
+            <li>
+              <a href="#autotoc_md41">Programming Assignment</a>
+              <ul>
+                <li><a href="#autotoc_md42">Part 1: Vectors</a></li>
+                <li><a href="#autotoc_md43">Part 2: Colors and Images</a></li>
+              </ul>
+            </li>
+            <li><a href="#autotoc_md44">What to submit</a></li>
+          </ul>
+        </div>
+<p>In this assignment, you will learn the basics of how to setup your programming environment, how to get the <a href="darts-overview.html" class="m-doc">darts</a> base code, and how to submit your solutions. The deadline for this assignment is <strong>FIXME</strong>. This assignment is not difficult to do (there is however a bit of reading), and its only intention is to make sure you have a working development environment.</p><p>By the end of this assignment, you will have</p><ul><li>Cloned the base code git repository</li><li>Setup your programming environment and successfully compiled the basecode</li><li>Completed both parts of the programming assignment, explained below</li></ul><section id="autotoc_md40"><h2><a href="#autotoc_md40">Getting started with the code</a></h2><p>Please go read the <a href="darts-overview.html" class="m-doc">brief overview</a> of our darts codebase.</p><p>Then, read the <a href="getting-started.html" class="m-doc">getting-started guide</a>. If you&#x27;ve already comfortable with C++, CMake, and git, then here is the TLDR:</p><ol><li>Clone the base code from our <a href="https://www.github.com/cs87-dartmouth/darts-basecode">GitHub repository</a></li><li>You then have two options:<ul><li><strong>Recommended</strong>: Get <a href="https://code.visualstudio.com/">VS Code</a>, install the C++ and CMake Tools extensions, then configure and build the project; or</li><li>In a terminal, configure and build as follows:</li></ul></li></ol><pre class="m-code">cmake -B build
+cmake --build build --parallel</pre></section><section id="autotoc_md41"><h2><a href="#autotoc_md41">Programming Assignment</a></h2><p>For the programming part of this assignment, you will need to familiarize yourself with the basecode that we provide and implement a few tiny changes to make things work.</p><p>Go ahead and open up&nbsp;<code><a href="darts__tutorial0_8cpp.html" class="m-doc">src/darts_<wbr />tutorial0.cpp</a></code>. This is the file you will be editing for this assignment.</p><p>Don&#x27;t be overwhelmed by the size of this file - the majority of it is comments and functionality provided by us to test your code.</p><section id="autotoc_md42"><h3><a href="#autotoc_md42">Part 1: Vectors</a></h3><p>For the first part of the programming assignment you need to learn how to use vectors and matrices in darts. Head over to <code>void <a href="darts__tutorial0_8cpp.html#a6ba8ef939505b281658a26cebf8fe90c" class="m-doc">test_<wbr />vectors_<wbr />and_<wbr />matrices()</a></code> and read the comments to get started. Everything that you need to change has been marked with a&nbsp;<code>TODO</code> comment.</p></section><section id="autotoc_md43"><h3><a href="#autotoc_md43">Part 2: Colors and Images</a></h3><p>Head on over to <code>void <a href="darts__tutorial0_8cpp.html#ab9c1063a0b25922e288be02da70297cd" class="m-doc">test_<wbr />color_<wbr />and_<wbr />image()</a></code> and read through the instructions. Everything that you need to change has been marked with a&nbsp;<em>TODO</em> comment.</p><div class="m-clearfix-s"></div><div class="m-clearfix-m"></div><div class="m-clearfix-l"></div><div class="m-col-t-8 m-col-s-5 m-col-m-4 m-right-s"><img class="m-image" src="gradient-ref.png" alt="Image" /></div><p>You will generate and write a&nbsp;<code>gradient.png</code> image, that should look like the one shown here.</p><p>To complete the last part of the function, you should load the image in <code>scenes/assignment0/cornellbox.png</code> that comes with the base code, convert it to grayscale (as described in the code) and save it under <code>scenes/assignment0/cornell_grayscale.png</code>. The input image is shown below on the left; the expected output is shown on the right.</p><div class="twentytwenty-container"><img class="m-image" src="cornellbox.png" alt="Image" />
+ <img class="m-image" src="cornell_grayscale-ref.png" alt="Image" /></div><p>This handy way of showing off the differences between images will also be available for you to use in your assignment project reports (which you&#x27;ll write starting with the next assignment).</p></section></section><section id="autotoc_md44"><h2><a href="#autotoc_md44">What to submit</a></h2><p>Submit according to the instructions in the <a href="getting-started.html#submitting-on-canvas" class="m-doc">Submitting on Canvas</a> section of <a href="getting-started.html" class="m-doc">Getting started</a> guide.</p></section>
+        <div class="m-note m-dim m-thin m-text-center"><a href="assignments.html" class="m-doc">Assignments</a> | <a href="assignment1.html" class="m-doc">A1: Ray tracing &raquo;</a></div>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>CS
+87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
