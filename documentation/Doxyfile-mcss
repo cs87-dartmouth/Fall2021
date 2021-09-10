@@ -1,0 +1,80 @@
+# Configuration for Doxygen for use with CMake
+# Only options that deviate from the default are included
+# To create a new Doxyfile containing all available options, call `doxygen -g`
+
+# Get Project name and version from CMake
+PROJECT_NAME    = CS 87/287
+PROJECT_NUMBER  = Fall 2021
+PROJECT_BRIEF   = "Rendering Algorithms"
+PROJECT_LOGO    = @CMAKE_CURRENT_LIST_DIR@/images/darts-logo.svg
+
+# Add sources
+INPUT = @DOXYGEN_PROJECT_ROOT@/include \
+        @DOXYGEN_PROJECT_ROOT@/src \
+        @CMAKE_CURRENT_LIST_DIR@/syllabus.md \
+        @CMAKE_CURRENT_LIST_DIR@/schedule.md \
+        @CMAKE_CURRENT_LIST_DIR@/darts-overview.md \
+        @CMAKE_CURRENT_LIST_DIR@/getting-started.md \
+        @CMAKE_CURRENT_LIST_DIR@/modules.md \
+        @CMAKE_CURRENT_LIST_DIR@/assignments.md \
+        @CMAKE_CURRENT_LIST_DIR@/assignment0.md \
+        @CMAKE_CURRENT_LIST_DIR@/assignment1.md \
+        @CMAKE_CURRENT_LIST_DIR@/assignment2.md \
+        @CMAKE_CURRENT_LIST_DIR@/assignment3.md \
+        @CMAKE_CURRENT_LIST_DIR@/assignment4.md \
+        @CMAKE_CURRENT_LIST_DIR@/assignment5.md \
+        @CMAKE_CURRENT_LIST_DIR@/assignment6.md \
+        @CMAKE_CURRENT_LIST_DIR@/credits.md
+
+EXTRACT_ALL = YES
+RECURSIVE = YES
+OUTPUT_DIRECTORY = @DOXYGEN_MCSS_OUTPUT_DIRECTORY@
+
+# HTML_EXTRA_FILES = @CMAKE_CURRENT_LIST_DIR@/images/cornellbox.png @CMAKE_CURRENT_LIST_DIR@/images/cornell_grayscale.png
+
+PREDEFINED = DOXYGEN_SHOULD_SKIP_THIS
+
+QT_AUTOBRIEF = YES
+JAVADOC_AUTOBRIEF = YES
+
+SHOW_INCLUDE_FILES = YES
+
+# Use the README as a main page
+USE_MDFILE_AS_MAINPAGE = @CMAKE_CURRENT_LIST_DIR@/syllabus.md
+
+# set relative include paths
+FULL_PATH_NAMES = YES
+STRIP_FROM_PATH = @DOXYGEN_PROJECT_ROOT@/include @DOXYGEN_PROJECT_ROOT@
+STRIP_FROM_INC_PATH = @DOXYGEN_PROJECT_ROOT@/include @DOXYGEN_PROJECT_ROOT@
+
+GENERATE_XML = YES
+GENERATE_HTML = NO      # We use m.css to generate the html documentation, so we only need XML output
+GENERATE_LATEX = NO
+XML_PROGRAMLISTING = NO
+CREATE_SUBDIRS = NO
+
+HAVE_DOT                = YES
+DOT_IMAGE_FORMAT        = svg
+DOT_TRANSPARENT         = YES
+USE_MATHJAX             = YES
+CLASS_DIAGRAMS          = NO
+CLASS_GRAPH             = NO
+COLLABORATION_GRAPH     = NO
+INCLUDE_GRAPH           = NO
+TOC_INCLUDE_HEADINGS    = 3
+XML_NS_MEMB_FILE_SCOPE  = YES
+
+IMAGE_PATH     = @CMAKE_CURRENT_LIST_DIR@
+
+# m.css specific settings
+ALIASES += \
+        "m_div{1}=@xmlonly<mcss:div xmlns:mcss=\"http://mcss.mosra.cz/doxygen/\" mcss:class=\"\1\">@endxmlonly" \
+        "m_enddiv=@xmlonly</mcss:div>@endxmlonly" \
+        "m_span{1}=@xmlonly<mcss:span xmlns:mcss=\"http://mcss.mosra.cz/doxygen/\" mcss:class=\"\1\">@endxmlonly" \
+        "m_endspan=@xmlonly</mcss:span>@endxmlonly" \
+        "m_class{1}=@xmlonly<mcss:class xmlns:mcss=\"http://mcss.mosra.cz/doxygen/\" mcss:class=\"\1\" />@endxmlonly" \
+        "m_footernavigation=@xmlonly<mcss:footernavigation xmlns:mcss=\"http://mcss.mosra.cz/doxygen/\" />@endxmlonly" \
+        "m_examplenavigation{2}=@xmlonly<mcss:examplenavigation xmlns:mcss=\"http://mcss.mosra.cz/doxygen/\" mcss:page=\"\1\" mcss:prefix=\"\2\" />@endxmlonly" \
+        "m_keywords{1}=@xmlonly<mcss:search xmlns:mcss=\"http://mcss.mosra.cz/doxygen/\" mcss:keywords=\"\1\" />@endxmlonly" \
+        "m_keyword{3}=@xmlonly<mcss:search xmlns:mcss=\"http://mcss.mosra.cz/doxygen/\" mcss:keyword=\"\1\" mcss:title=\"\2\" mcss:suffix-length=\"\3\" />@endxmlonly" \
+        "m_enum_values_as_keywords=@xmlonly<mcss:search xmlns:mcss=\"http://mcss.mosra.cz/doxygen/\" mcss:enum-values-as-keywords=\"true\" />@endxmlonly"
