@@ -166,7 +166,11 @@
             <dt id="a4bded62d9e4570f2feb3e1f365e6288a">
               <span class="m-doc-wrap-bumper">auto <a href="#a4bded62d9e4570f2feb3e1f365e6288a" class="m-doc-self">direction_to_spherical_uv</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; p) -&gt; <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a></span>
             </dt>
-            <dd>FIXME: spherical coordinate mapping changed, re-render earth.json and other scenes that use spherical texture mapping.</dd>
+            <dd>Converts a unit direction to a UV coordinate using <a href="common_8h.html#a314743931dfdc3cdf70dcae8c79fd8ce" class="m-doc">direction_<wbr />to_<wbr />spherical_<wbr />coordinates</a>.</dd>
+            <dt id="acc3732f226e2125f7646cd849b7e37e5">
+              <span class="m-doc-wrap-bumper">auto <a href="#acc3732f226e2125f7646cd849b7e37e5" class="m-doc-self">spherical_uv_to_direction</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; uv) -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd>Converts a spherical UV coordinate to a unit direction using <a href="common_8h.html#a1a0147a84431db9c3caf7e815108abd1" class="m-doc">spherical_<wbr />coordinates_<wbr />to_<wbr />direction</a>.</dd>
             <dt id="aad479cbaf9edfe92bf62c390dd6047af">
               <span class="m-doc-wrap-bumper">auto <a href="#aad479cbaf9edfe92bf62c390dd6047af" class="m-doc-self">time_string</a>(</span><span class="m-doc-wrap">double time,
               int precision = 2) -&gt; std::string</span>
@@ -265,7 +269,7 @@
               <span class="m-doc-wrap-bumper">std::pair&lt;T, T&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a162ba89fd7601db25038c49cdf41ed93" class="m-doc-self">sincos</a>(</span><span class="m-doc-wrap">T arg)</span></span>
             </h3>
             <p>Return the sine and cosine in a single function call.</p>
-<p>In C++17 you can unpack the result using <code>auto [s,c] = sincos(theta)</code></p>
+<p>In C++17 you can unpack the result using <code>auto [s,c] = sincos(theta)</code>.</p>
           </div></section>
           <section class="m-doc-details" id="a1a0147a84431db9c3caf7e815108abd1"><div>
             <h3>
