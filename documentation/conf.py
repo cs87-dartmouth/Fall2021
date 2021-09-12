@@ -10,6 +10,45 @@ STYLESHEETS = [
 
 FAVICON = '@CMAKE_CURRENT_LIST_DIR@/images/favicon.png'
 
+HTML_HEADER = "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>" \
+              "<script src=\"jquery.event.move.js\"></script>" \
+              "<script src=\"jquery.twentytwenty.js\"></script>" \
+              "<link href=\"twentytwenty.css\" rel=\"stylesheet\" type=\"text/css\" />" \
+              "<script>" \
+              "$(window).load(function(){$(\".twentytwenty-container\").twentytwenty({default_offset_pct: 0.5, move_slider_on_hover: true });});" \
+              "</script>"
+
+
+LINKS_NAVBAR1 = [
+    ('Schedule', 'schedule', []),
+    (None, 'assignments', [
+        (None, 'assignment0'),
+        (None, 'assignment1'),
+        (None, 'assignment2'),
+        (None, 'assignment3'),
+        (None, 'assignment4'),
+        (None, 'assignment5'),
+        (None, 'assignment6')
+    ])
+]
+
+LINKS_NAVBAR2 = [
+    ("Darts", 'darts-overview', [
+        ("<a href=\"darts-overview.html\">Darts</a>", ),
+        (None, 'getting-started'),
+        ("<a href=\"https://github.com/cs87-dartmouth/Fall2021\">GitHub</a>", ),
+        (None, 'modules'),
+        (None, 'annotated'),
+        (None, 'files')
+    ]),
+    (None, 'credits', []),
+]
+
+FINE_PRINT = '<p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> {doxygen_version} and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>'
+
+# CLASS_INDEX_EXPAND_INNER = True
+
+
 EXTRA_FILES = [
     '@CMAKE_CURRENT_LIST_DIR@/m-theme-dark.css',
     '../css/m-grid.css',
@@ -125,38 +164,3 @@ EXTRA_FILES = [
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/jensen_box_nee-ref.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/jensen_box_mis-ref.png',
 ]
-
-HTML_HEADER = "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>" \
-              "<script src=\"jquery.event.move.js\"></script>" \
-              "<script src=\"jquery.twentytwenty.js\"></script>" \
-              "<link href=\"twentytwenty.css\" rel=\"stylesheet\" type=\"text/css\" />" \
-              "<script>" \
-              "$(window).load(function(){$(\".twentytwenty-container\").twentytwenty({default_offset_pct: 0.5, move_slider_on_hover: true });});" \
-              "</script>"
-
-
-LINKS_NAVBAR1 = [
-    (None, 'assignments', [
-        (None, 'assignment0'),
-        (None, 'assignment1'),
-        (None, 'assignment2'),
-        (None, 'assignment3'),
-        (None, 'assignment4'),
-        (None, 'assignment5'),
-        (None, 'assignment6')
-    ])
-]
-
-LINKS_NAVBAR2 = [
-    ('Schedule', 'schedule', []),
-    ('Darts', 'darts-overview', [
-        ('darts', 'darts-overview'),
-        (None, 'getting-started'),
-        (None, 'modules'),
-        (None, 'annotated'),
-        (None, 'files')
-    ]),
-    (None, 'credits', [])
-]
-
-CLASS_INDEX_EXPAND_INNER = True
