@@ -72,8 +72,8 @@ Cloning the repository to your local machine
 
 This will clone an empty repository. To get the base code for the assignments, you will need to do the following on the commandline (within your local repository directory)
 1. **Only once**: add the base repository as a new "remote":  
-`git remote add upstream https://github.com/cs87-dartmouth/Fall2021.git`.
-2. **Pull the code from the base repository**: `git pull upstream master`
+`git remote add upstream https://github.com/cs87-dartmouth/Fall2021.git`
+2. **Pull the code from the base repository**: `git pull upstream main`
 
 We will remind you to run the second command periodically to pull updates/changes to the base code (e.g. for bug fixes, or to start on the next assignment.
 
@@ -87,7 +87,7 @@ We will remind you to run the second command periodically to pull updates/change
 @m_class{m-block m-primary m-dim}
 
 @par Not enrolled, but want to follow along?
-    You can simply clone the base repository: `git clone https://github.com/cs87-dartmouth/Fall2021.git`.
+    You can simply clone the base repository: `git clone https://github.com/cs87-dartmouth/Fall2021.git`
 
 
 Working on the assignments
