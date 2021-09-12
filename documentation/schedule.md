@@ -1,90 +1,717 @@
 @page schedule Schedule
 
-The schedule below lists the reading material, recommended start dates for assignments, due dates for assignments, and topics covered. Due dates for assignment also appear on Canvas. All dates/times are in Eastern time (Hanover, NH).
+The schedule below lists the reading material, due dates for assignments, and topics covered. Due dates for assignment also appear on Canvas. All dates/times are in Eastern time (Hanover, NH).
 
 
 <table class="m-table">
     <tr class="header">
         <th>Date</th>
         <th>Read</th>
-        <th>Out</th>
         <th>Due</th>
         <th>Topic</th>
+        <th>Slides</th>
     </tr>
     <tr>
-        <th class="week" colspan="5">
+        <th colspan="5">
             Week 1: Introduction
         </th>
     </tr>
     <tr>
-        <td class="date">
-            Mar 29
+        <td>
+            Sep 13
         </td>
-        <td class="chapters">
-            [Syllabus](../syllabus/)
+        <td>
+            [Syllabus](index.html); [Ch. 1](https://raytracing.github.io/books/RayTracingInOneWeekend.html#overview)–[3](https://raytracing.github.io/books/RayTracingInOneWeekend.html#thevec3class); [PBR Ch. 2](http://www.pbr-book.org/3ed-2018/Geometry_and_Transformations.html)
         </td>
-        <td class="out">
-            [SA 0](../sa00/)
+        <td></td>
+        <td>
+            Introduction; linear algebra review
         </td>
-        <td class="due"></td>
-        <td class="topics">
-            Introduction
+        <td>
+            &nbsp;
         </td>
     </tr>
     <tr>
         <td class="date">
-            Mar 31
-        </td>
-        <td class="chapters">
-            [Ch. 1](http://projectpython.net/chapter01/index.html), [2](http://projectpython.net/chapter02/index.html)
-        </td>
-        <td class="out">
-            [SA 1](../sa01/)
-        </td>
-        <td class="due">
-            [SA 0](../sa00/)
+            Sep 15
         </td>
         <td>
-            Program counter, functions definitions, variables
+            [RTIOW, all chapters](https://raytracing.github.io/books/RayTracingInOneWeekend.html)
+        </td>
+        <td>
+            [A0](assignment0.html)
+        </td>
+        <td>
+            %Ray tracing
+        </td>
+        <td>
+            &nbsp;
         </td>
     </tr>
     <tr>
         <td>
-            Apr 2
+            Sep 16
         </td>
         <td>
-            [Ch. 2](http://projectpython.net/chapter02/index.html), [3](http://projectpython.net/chapter03/index.html)
+            &nbsp;
         </td>
         <td>
-            [SA 2](../sa02/)
+            &nbsp;
         </td>
         <td>
-            [SA 1](../sa01/)
+            Darts base code introduction
         </td>
         <td>
-            Booleans, conditions, if-elif-else statements, and loops
+            &nbsp;
         </td>
     </tr>
     <tr>
-        <th class="week" colspan="5">
-            Week 2: Functions
+        <td>
+            Sep 17
+        </td>
+        <td>
+            [RTIOW, all chapters](https://raytracing.github.io/books/RayTracingInOneWeekend.html)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            %Ray tracing – Shading
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5">
+            Week 2: Meshes & Textures
         </th>
     </tr>
     <tr>
         <td>
-            Apr 2
+            Sep 20
         </td>
         <td>
-            [Ch. 2](http://projectpython.net/chapter02/index.html), [3](http://projectpython.net/chapter03/index.html)
+            [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 1](https://raytracing.github.io/books/RayTracingTheNextWeek.html#overview), [3](https://raytracing.github.io/books/RayTracingTheNextWeek.html#boundingvolumehierarchies); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 3.6](https://www.pbr-book.org/3ed-2018/Shapes/Triangle_Meshes#)–[3.6.1](https://www.pbr-book.org/3ed-2018/Shapes/Triangle_Meshes#Triangle)
         </td>
         <td>
-            [SA 2](../sa02/)
+            &nbsp;
         </td>
         <td>
-            [SA 1](../sa01/)
+            Shapes, meshes & acceleration structures
         </td>
         <td>
-            Booleans, conditions, if-elif-else statements, and loops
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Sep 22
+        </td>
+        <td>
+            [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 4](https://raytracing.github.io/books/RayTracingTheNextWeek.html#solidtextures)–[8](https://raytracing.github.io/books/RayTracingTheNextWeek.html#instances)
+        </td>
+        <td>
+            [A1](assignment1.html)
+        </td>
+        <td>
+            Texturing
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Sep 23
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            X-hour
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Sep 24
+        </td>
+        <td>
+            [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 4](https://raytracing.github.io/books/RayTracingTheNextWeek.html#solidtextures)–[8](https://raytracing.github.io/books/RayTracingTheNextWeek.html#instances)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Texturing
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5">
+            Week 3: Radiometry & Monte Carlo
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Sep 27
+        </td>
+        <td>
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 5](https://www.pbr-book.org/3ed-2018/Color_and_Radiometry)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Radiometry
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Sep 29
+        </td>
+        <td>
+            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Reflection Equation; Monte Carlo I
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Sep 30
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            X-hour
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 1
+        </td>
+        <td>
+            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration)
+        </td>
+        <td>
+            [A2](assignment2.html)
+        </td>
+        <td>
+            Monte Carlo II
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5">
+            Week 4: Monte Carlo & Direct Illumination
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Oct 4
+        </td>
+        <td>
+            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Monte Carlo III: Importance sampling
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 6
+        </td>
+        <td>
+            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 8](https://www.pbr-book.org/3ed-2018/Reflection_Models)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Reflection Equation; Monte Carlo I
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 7
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            X-hour
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 8
+        </td>
+        <td>
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration), [7.3](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Stratified_Sampling.html)–[7.7](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Sobol_Sampler)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Monte Carlo II
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5">
+            Week 5: Rendering Equation, Path Tracing, & Microfacet Models
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Oct 11
+        </td>
+        <td>
+            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 14.4](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/The_Light_Transport_Equation.html)–[14.5](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/Path_Tracing.html)
+        </td>
+        <td>
+            [A3](assignment3.html)
+        </td>
+        <td>
+            The Rendering Equation & Path Tracing
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 13
+        </td>
+        <td>
+            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 8.4](https://www.pbr-book.org/3ed-2018/Reflection_Models/Microfacet_Models.html), [Ch. 14.1](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/Sampling_Reflection_Functions.html)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Microfacet Models
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 14
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            X-hour
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 15
+        </td>
+        <td>
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration), [7.3](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Stratified_Sampling.html)–[7.7](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Sobol_Sampler)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Quiz review
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5">
+            Week 6: Bidirectional Methods
+        </th>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 18
+        </td>
+        <td>
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 16](https://www.pbr-book.org/3ed-2018/Light_Transport_III_Bidirectional_Methods.html)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Light Tracing & Bidirectional Path Tracing
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 20
+        </td>
+        <td>
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 16](https://www.pbr-book.org/3ed-2018/Light_Transport_III_Bidirectional_Methods.html)
+        </td>
+        <td>
+            [A4](assignment4.html)
+        </td>
+        <td>
+            Photon Mapping
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 21
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            X-hour
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 22
+        </td>
+        <td>
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 16](https://www.pbr-book.org/3ed-2018/Light_Transport_III_Bidirectional_Methods.html)
+        </td>
+        <td>
+            [Proposal](assignment6.html)
+        </td>
+        <td>
+            Photon Mapping
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5">
+            Week 7: Participating Media
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Oct 25
+        </td>
+        <td>
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 16](https://www.pbr-book.org/3ed-2018/Light_Transport_III_Bidirectional_Methods.html)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Photon Mapping
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 27
+        </td>
+        <td>
+            [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 9](https://raytracing.github.io/books/RayTracingTheNextWeek.html#volumes); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 15](https://www.pbr-book.org/3ed-2018/Light_Transport_II_Volume_Rendering.html)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Participating Media
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 28
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            X-hour
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 29
+        </td>
+        <td>
+            [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 9](https://raytracing.github.io/books/RayTracingTheNextWeek.html#volumes); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 15](https://www.pbr-book.org/3ed-2018/Light_Transport_II_Volume_Rendering.html)
+        </td>
+        <td>
+            [A5](assignment5.html)
+        </td>
+        <td>
+            Participating Media
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5">
+            Week 8: Participating Media
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Nov 1
+        </td>
+        <td>
+            [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 9](https://raytracing.github.io/books/RayTracingTheNextWeek.html#volumes); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 15](https://www.pbr-book.org/3ed-2018/Light_Transport_II_Volume_Rendering.html)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Photon Mapping
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Nov 3
+        </td>
+        <td>
+            [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 9](https://raytracing.github.io/books/RayTracingTheNextWeek.html#volumes); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 15](https://www.pbr-book.org/3ed-2018/Light_Transport_II_Volume_Rendering.html)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Participating Media
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Nov 4
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            X-hour
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Nov 5
+        </td>
+        <td>
+            [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 9](https://raytracing.github.io/books/RayTracingTheNextWeek.html#volumes); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 15](https://www.pbr-book.org/3ed-2018/Light_Transport_II_Volume_Rendering.html)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Photon Beams & Surfaces
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5">
+            Week 9: Stratification & Misc.
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Nov 8
+        </td>
+        <td>
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 7](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction.html)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Photon Mapping
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Nov 10
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Misc
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Nov 11
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            X-hour
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Nov 12
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Misc.
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5">
+            Week 10: Misc.
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Nov 15
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            Misc.
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Nov XX
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            [A6](assignment6.html)
+        </td>
+        <td>
+            "Final Exam" (Rendering Competition)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
         </td>
     </tr>
 </table>

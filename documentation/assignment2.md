@@ -139,7 +139,7 @@ Task 6: Evaluation scene and leaderboard
 ========================================
 @m_span{m-label m-primary m-flat} 1 pt @m_endspan
 
-We've designed some scene for you to evaluate the performance of all your %BBH improvements. <!-- **FIXME: complete this section** -->
+We've designed some scene for you to evaluate the performance of all your %BBH improvements. TBA <!-- **FIXME: complete this section** -->
 
 What to submit
 ==============

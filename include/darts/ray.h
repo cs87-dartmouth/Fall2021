@@ -8,17 +8,16 @@
 #include <darts/vec.h>
 #include <limits>
 
-/** \addtogroup group_math
- *  @{
- */
+/*! \addtogroup group_math
+    @{
+*/
 
-/**
+/*!
     Simple ray segment data structure.
 
-    Along with the ray origin and direction, this data structure additionally
-    stores the segment interval [\ref mint, \ref maxt], which may include
-    positive/negative infinity.
- */
+    Along with the ray origin and direction, this data structure additionally stores the segment interval [\ref mint,
+    \ref maxt], which may include positive/negative infinity.
+*/
 template <size_t N, typename T>
 struct Ray
 {
@@ -70,9 +69,9 @@ using Ray2d = Ray2<double>; ///< 2D double-precision ray
 using Ray3f = Ray3<float>;  ///< 3D floating-point ray
 using Ray3d = Ray3<double>; ///< 3D double-precision ray
 
-/** @}*/
+/*! @}*/
 
-/**
+/*!
     \file
     \brief Contains the definition of a generic, N-dimension #Ray class.
 */

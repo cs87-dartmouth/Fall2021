@@ -8,9 +8,9 @@
 #include "linalg.h"
 #include <fmt/format.h>
 
-/** \addtogroup group_math
- *  @{
- */
+/*! \addtogroup group_math
+    @{
+*/
 
 template <int N, class T>
 using Vec = linalg::vec<T, N>; ///< Generic \p N dimensional vector
@@ -70,13 +70,13 @@ using Mat33d = Mat33<double>; ///< 3x3 double matrix
 using Mat44f = Mat44<float>;  ///< 4x4 float matrix
 using Mat44d = Mat44<double>; ///< 4x4 double matrix
 
-/**
- * @brief  Construct an orthonormal coordinate system given one vector \p a.
- *
- * @param a [in]     The coordinate system's local z axis direction.
- * @param b [out]    A local x-axis orthogonal to a.
- * @param c [out]    A local y-axis orthogonal to both a and b.
- */
+/*!
+    Construct an orthonormal coordinate system given one vector \p a.
+
+    \param a [in]   The coordinate system's local z axis direction.
+    \param b [out]  A local x-axis orthogonal to a.
+    \param c [out]  A local y-axis orthogonal to both a and b.
+*/
 template <typename T>
 void coordinate_system(const Vec3<T> &a, Vec3<T> &b, Vec3<T> &c)
 {
@@ -228,9 +228,9 @@ std::basic_ostream<C> &operator<<(std::basic_ostream<C> &s, const Mat44<T> &m)
 
 #endif
 
-/** @}*/
+/*! @}*/
 
-/**
+/*!
     \file
     \brief Contains various classes for linear algebra: vectors, matrices, rays, axis-aligned bounding boxes.
 */

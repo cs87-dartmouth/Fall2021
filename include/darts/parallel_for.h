@@ -71,7 +71,7 @@ inline void parallel_for(int begin, int end, std::function<void(int)> body, size
     parallel_for(begin, end, 1, body, num_threads);
 }
 
-/**
+/*!
     \file
     \brief #parallel_for constructs
 */

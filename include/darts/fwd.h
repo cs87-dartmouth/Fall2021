@@ -3,7 +3,7 @@
 
     Copyright (c) 2017-2021 by Wojciech Jarosz
 */
-/**
+/*!
     \dir
     \brief main darts include directory
 

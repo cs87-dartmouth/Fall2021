@@ -23,7 +23,7 @@
         "type": "bbh"
     },
     "integrator": {
-        "type": "path_tracer_mis",
+        "type": "path_tracer_mats",
         "max_bounces": 64,
         "recursive": false,
         "russian roulette": true,
@@ -31,31 +31,38 @@
     },
     "materials": [
         {
-            "type": "lambertian",
+            "type": "phong",
             "name": "white",
-            "albedo": 0.8
+            "albedo": 0.8,
+            "exponent": 2
         },
         {
-            "type": "lambertian",
+            "type": "phong",
             "name": "left wall",
-            "albedo": [0.8, 0.28, 0.28]
+            "albedo": [
+                0.8, 0.28, 0.28
+            ],
+            "exponent": 2
         },
         {
-            "type": "lambertian",
+            "type": "phong",
             "name": "right wall",
-            "albedo": [0.28, 0.28, 0.8]
+            "albedo": [
+                0.28, 0.28, 0.8
+            ],
+            "exponent": 2
         },
         {
             "type": "diffuse_light",
             "name": "light",
             "emit": 7.5
         }, {
-            "type": "metal",
+            "type": "phong",
             "name": "chrome",
             "albedo": [
                 0.9, 0.9, 0.9
             ],
-            "roughness": 0.0
+            "exponent": 500
         }, {
             "type": "dielectric",
             "name": "glass",

@@ -58,7 +58,7 @@
             }
         }, {
             "type": "sample_surface",
-            "name": "aggregate",
+            "name": "group",
             "surfaces": {
                 "type": "group",
                 "children": [

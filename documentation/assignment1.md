@@ -144,13 +144,49 @@ We provide you with a standalone renderer, `darts`, and a few test scenes that 
 
 \image html images/run-darts.png
 
-Run your renderer on each of the JSON scene files we provide and compare the output to the reference images. If you've implemented all the tasks correctly, the images should match.
+There are also a few example scenes built into darts, you can render those by running
+
+@code{.bash}
+darts example_sceneN
+@endcode
+
+where `N` should be replaced with a number from 0 to 3.
+
+Run your renderer on each of these built-in scenes and the JSON scene files and compare the output to the reference images. If you've implemented all the tasks correctly, the images should match.
 
 Be aware that depending on how you implemented your code, you might get differences in the noise patterns between your image and the reference. This is normal. However, if you "squint your eyes", the images should match.
 
 @m_class{m-row m-container-inflate}
 
 @parblock
+
+@m_div{m-col-t-12 m-col-s-6 m-col-m-4}
+<a href="example_scene0-ref.png"><img src="example_scene0-ref.png"/></a>
+@m_enddiv
+
+@m_div{m-col-t-12 m-col-s-6 m-col-m-4}
+<a href="example_scene1-ref.png"><img src="example_scene1-ref.png"/></a>
+@m_enddiv
+
+@m_div{m-col-t-12 m-col-s-6 m-col-m-4}
+<a href="example_scene1-1spp.png"><img src="example_scene1-1spp.png"/></a>
+@m_enddiv
+
+@m_div{m-col-t-12 m-col-s-6 m-col-m-4}
+<a href="example_scene2-ref.png"><img src="example_scene2-ref.png"/></a>
+@m_enddiv
+
+@m_div{m-col-t-12 m-col-s-6 m-col-m-4}
+<a href="example_scene2-1spp.png"><img src="example_scene2-1spp.png"/></a>
+@m_enddiv
+
+@m_div{m-col-t-12 m-col-s-6 m-col-m-4}
+<a href="example_scene3-ref.png"><img src="example_scene3-ref.png"/></a>
+@m_enddiv
+
+@m_div{m-col-t-12 m-col-s-6 m-col-m-4}
+<a href="example_scene3-1spp.png"><img src="example_scene3-1spp.png"/></a>
+@m_enddiv
 
 @m_div{m-col-t-12 m-col-s-6 m-col-m-4}
 <a href="01_plane-ref.png"><img src="01_plane-ref.png"/></a>

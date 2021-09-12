@@ -189,7 +189,7 @@ inline void Array2d<T>::operator=(const T &value)
     reset(value);
 }
 
-/**
+/*!
     \file
     \brief Class #Array2d
 */

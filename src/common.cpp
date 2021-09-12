@@ -42,13 +42,14 @@ Vec2f direction_to_spherical_coordinates(const Vec3f &v)
 Vec2f direction_to_spherical_uv(const Vec3f &p)
 {
     auto sph = direction_to_spherical_coordinates(p);
-    return {mod(0.5f - sph.x * INV_TWOPI, 1.f), 1.f - sph.y * INV_PI};
+    return {mod(sph.x * INV_TWOPI - 0.5f, 1.f), 1.f - sph.y * INV_PI};
 }
 
 Vec3f spherical_uv_to_direction(const Vec2f &uv)
 {
-    return spherical_coordinates_to_direction(Vec2f{(0.5f - uv.x) * 2.0f * M_PI, (1.f - uv.y) * M_PI});
+    return spherical_coordinates_to_direction(Vec2f{(uv.x - 0.5f) * 2.0f * M_PI, (1.f - uv.y) * M_PI});
 }
+
 
 std::string time_string(double time, int precision)
 {

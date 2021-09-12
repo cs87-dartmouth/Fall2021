@@ -74,7 +74,7 @@ inline void success(const char *msg, const Args &...args)
     fflush(stdout);
 }
 
-/**
+/*!
     Python-style range: iterates from min to max in range-based for loops
 
     To use:
@@ -158,7 +158,7 @@ Range<T> range(T start, T end, T step = T(1))
     return Range<T>(start, end, step);
 }
 
-/**
+/*!
     Linear interpolation.
 
     Linearly interpolates between \a a and \a b, using parameter \a t.
@@ -170,7 +170,7 @@ Range<T> range(T start, T end, T step = T(1))
     \param t     A blending factor of \a a and \a b.
     \return      Linear interpolation of \a a and \a b -
                  a value between \a a and \a b if \a t is between 0 and 1.
- */
+*/
 template <typename T, typename S>
 inline T lerp(T a, T b, S t)
 {
@@ -200,39 +200,41 @@ inline float deg2rad(float value)
     return value * (M_PI / 180.0f);
 }
 
-/// Return the sine and cosine in a single function call
-/**
- * In C++17 you can unpack the result using `auto [s,c] = sincos(theta)`
- */
+/*!
+    Return the sine and cosine in a single function call.
+
+    In C++17 you can unpack the result using `auto [s,c] = sincos(theta)`.
+*/
 template <typename T>
 std::pair<T, T> sincos(T arg)
 {
     return {std::sin(arg), std::cos(arg)};
 }
 
-/**
- * @brief Convert spherical (phi,theta) coordinates to a unit direction in Cartesian coordinates
- *
- * @param phi_theta The spherical angles with \f$\phi \in [0,2\pi)\f$ and \f$\theta \in [0, \pi]\f$.
- *                  \f$\theta = 0 \mapsto (0,0,1)\f$ and \f$\theta = 0 \mapsto (0,0,-1)\f$.
- * @return          The corresponding unit-length direction vector in Cartesian coordinates.
+/*!
+    Convert spherical (phi,theta) coordinates to a unit direction in Cartesian coordinates
+
+    \param phi_theta    The spherical angles with \f$\phi \in [0,2\pi)\f$ and \f$\theta \in [0, \pi]\f$.
+                        \f$\theta = 0 \mapsto (0,0,1)\f$ and \f$\theta = 0 \mapsto (0,0,-1)\f$.
+    \return             The corresponding unit-length direction vector in Cartesian coordinates.
  */
 Vec3f spherical_coordinates_to_direction(const Vec2f &phi_theta);
 
-/**
- * @brief Convert a unit direction from Cartesian coordinates to spherical (phi,theta) coordinates
- *
- * @param dir  The direction vector in Cartesian coordinates (assumed to be unit length)
- * @return     The spherical angles with \f$\phi \in [0,2\pi)\f$ and \f$\theta \in [0, \pi]\f$.
- *             \f$\theta = 0 \mapsto (0,0,1)\f$ and \f$\theta = 0 \mapsto (0,0,-1)\f$.
- */
+/*!
+    Convert a unit direction from Cartesian coordinates to spherical (phi,theta) coordinates
+
+    \param dir  The direction vector in Cartesian coordinates (assumed to be unit length)
+    \return     The spherical angles with \f$\phi \in [0,2\pi)\f$ and \f$\theta \in [0, \pi]\f$.
+                \f$\theta = 0 \mapsto (0,0,1)\f$ and \f$\theta = 0 \mapsto (0,0,-1)\f$.
+*/
 Vec2f direction_to_spherical_coordinates(const Vec3f &dir);
 
-/// FIXME: spherical coordinate mapping changed, re-render earth.json and other scenes that use spherical texture
-/// mapping
+/// Converts a unit direction to a UV coordinate using #direction_to_spherical_coordinates
 Vec2f direction_to_spherical_uv(const Vec3f &p);
 
+/// Converts a spherical UV coordinate to a unit direction using #spherical_coordinates_to_direction
 Vec3f spherical_uv_to_direction(const Vec2f &uv);
+
 
 /// Convert a time value in milliseconds into a human-readable string
 std::string time_string(double time, int precision = 2);
@@ -251,11 +253,11 @@ public:
     }
 };
 
-/**
+/*!
     Return the global file resolver instance.
 
     This class is used to locate resource files (e.g. mesh or texture files) referenced by a scene being loaded.
- */
+*/
 filesystem::resolver &get_file_resolver();
 
 // Ray tracing statistics
@@ -271,7 +273,7 @@ Color3f inferno(float t);
 Color3f magma(float t);
 Color3f plasma(float t);
 
-/**
+/*!
     \file
     \brief Common include files and various utility functions.
 */

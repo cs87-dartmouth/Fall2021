@@ -7,6 +7,9 @@ STYLESHEETS = [
     '../css/m-dark.css',
     '../css/m-documentation.css'
 ]
+
+FAVICON = '@CMAKE_CURRENT_LIST_DIR@/images/favicon.png'
+
 EXTRA_FILES = [
     '@CMAKE_CURRENT_LIST_DIR@/m-theme-dark.css',
     '../css/m-grid.css',
@@ -26,24 +29,6 @@ EXTRA_FILES = [
     '@CMAKE_CURRENT_LIST_DIR@/images/RTNextWeek.jpg',
     '@CMAKE_CURRENT_LIST_DIR@/images/RTRestOfYourLife.jpg',
     '@CMAKE_CURRENT_LIST_DIR@/images/pbrt-bookcover.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/lambertian-pdf.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/lambertian-sampled.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/rotated-lambertian-pdf.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/rotated-lambertian-sampled.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/phong-pdf.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/phong-sampled.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/rotated-phong-pdf.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/rotated-phong-sampled.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/blinn_phong-pdf.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/blinn_phong-sampled.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/rotated-blinn_phong-pdf.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/rotated-blinn_phong-sampled.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/sphere-pdf.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/sphere-sampled.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/quad-pdf.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/quad-sampled.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/triangle-pdf.png',
-    '@CMAKE_CURRENT_LIST_DIR@/images/triangle-sampled.png',
 
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment0/cornellbox.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment0/cornell_grayscale-ref.png',
@@ -54,6 +39,13 @@ EXTRA_FILES = [
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment1/01_xformed_camera_ray_image-ref.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment1/01_recursive_raytracing-ref.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment1/01_xformed_camera_sphere_image-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment1/example_scene0-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment1/example_scene1-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment1/example_scene2-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment1/example_scene3-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment1/example_scene1-1spp.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment1/example_scene2-1spp.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment1/example_scene3-1spp.png',
 
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment1/01_plane-ref.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment1/02_balls-ref.png',
@@ -78,6 +70,10 @@ EXTRA_FILES = [
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment3/textured-box-ref.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment3/teapot-ref.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment3/blend-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment3/fresnel_blend-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment3/ajax-textured-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment3/nefertiti-textured-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment3/loewenfeld-textured-ref.png',
 
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/ajax-normals-ref.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/blinn_phong-ref.png',
@@ -85,14 +81,49 @@ EXTRA_FILES = [
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/ajax-ao-ref.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/odyssey_mats-ref.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/veach_mats-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/lambertian-pdf-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/lambertian-sampled-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/lambertian-rotated-pdf-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/lambertian-rotated-sampled-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/phong-pdf-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/phong-sampled-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/phong-rotated-pdf-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/phong-rotated-sampled-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/blinn_phong-pdf-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/blinn_phong-sampled-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/blinn_phong-rotated-pdf-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment4/blinn_phong-rotated-sampled-ref.png',
 
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/odyssey_nee-ref.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/odyssey_mis-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/odyssey_triangle_mats-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/odyssey_triangle_nee-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/odyssey_triangle_mis-ref.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/veach_nee-ref.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/veach_mis-ref.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere_light_small-ref.png',
     '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere_light_medium-ref.png',
-    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere_light_large-ref.png'
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere_light_large-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere_light_small_mats-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere_light_small_nee-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere_light_small_mis-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere_light_medium_mats-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere_light_medium_nee-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere_light_medium_mis-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere_light_large_mats-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere_light_large_nee-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere_light_large_mis-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere-pdf-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/sphere-sampled-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/quad-pdf-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/quad-sampled-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/triangle-pdf-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/triangle-sampled-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/group-pdf-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/group-sampled-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/jensen_box_mats-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/jensen_box_nee-ref.png',
+    '@DOXYGEN_PROJECT_ROOT@/scenes/assignment5/jensen_box_mis-ref.png',
 ]
 
 HTML_HEADER = "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>" \
@@ -117,6 +148,7 @@ LINKS_NAVBAR1 = [
 ]
 
 LINKS_NAVBAR2 = [
+    ('Schedule', 'schedule', []),
     ('Darts', 'darts-overview', [
         ('darts', 'darts-overview'),
         (None, 'getting-started'),

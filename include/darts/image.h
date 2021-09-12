@@ -20,7 +20,7 @@ public:
     Image3f() : Base()
     {
     }
-    /**
+    /*!
         Size Constructor (sets width and height)
 
         \param w     The width of the image
@@ -30,7 +30,7 @@ public:
     {
     }
 
-    /**
+    /*!
         Construct an image of a fixed size and initialize all pixels
 
         \param w     The width of the image
@@ -42,7 +42,7 @@ public:
         reset(v);
     }
 
-    /**
+    /*!
         Load an image from file
 
         \param filename	The filename
@@ -50,7 +50,7 @@ public:
      */
     bool load(const std::string &filename);
 
-    /**
+    /*!
         Save an image to the specified filename
         \param filename The filename to save to
         \param gain 	The multiplicative gain to apply to pixel values before saving
@@ -82,7 +82,7 @@ public:
     }
 };
 
-/**
+/*!
     \file
     \brief Class #Image3f
 */

@@ -1,0 +1,102 @@
+{
+    "camera": {
+        "transform": {
+            "from": [
+                24, 10, 0
+            ],
+            "at": [
+                0, 3.5, 0
+            ],
+            "up": [0, 1, 0]
+        },
+        "vfov": 20,
+        "fdist": 800,
+        "resolution": [720, 1280]
+    },
+    "sampler": {
+        "type": "independent",
+        "samples": 16
+    },
+    "background": 1,
+    "accelerator": {
+        "type": "bbh"
+    },
+    "materials": [
+        {
+            "type": "lambertian",
+            "name": "aem_aem21300_3dsl01_mo08-03_p_img ",
+            "albedo": {
+                "type": "image",
+                "filename": "../meshes/nefertiti/aem_aem21300_3dsl01_mo08-03_p_img.png"
+            }
+        }, {
+            "type": "lambertian",
+            "name": "Floor",
+            "albedo": {
+                "type": "checker",
+                "even": [
+                    0.725, 0.71, 0.68
+                ],
+                "odd": [
+                    0.325, 0.31, 0.25
+                ],
+                "scale": 1.75,
+                "transform": [
+                    {
+                        "axis": [
+                            0, 1, 0
+                        ],
+                        "angle": 45
+                    }, {
+                        "translate": [0, -0.001, 0]
+                    }
+                ]
+            }
+        }
+    ],
+    "surfaces": [
+        {
+            "type": "quad",
+            "name": "floor",
+            "transform": [
+                {
+                    "axis": [
+                        1, 0, 0
+                    ],
+                    "angle": -90
+                }, {
+                    "axis": [
+                        0, 1, 0
+                    ],
+                    "angle": 45
+                }
+            ],
+            "size": [
+                150, 150
+            ],
+            "material": "Floor"
+        }, {
+            "type": "mesh",
+            "name": "ajax",
+            "filename": "../meshes/nefertiti/aem_aem21300_3dsl01_mo08-03_p.obj",
+            "transform": [
+                {
+                    "axis": [
+                        1, 0, 0
+                    ],
+                    "angle": -90
+                }, {
+                    "translate": [413.7063, 226.50739, 86.24023]
+                }, {
+                    "scale": 0.015
+                }, {
+                    "axis": [
+                        0, 1, 0
+                    ],
+                    "angle": 115
+                }
+            ],
+            "material": "aem_aem21300_3dsl01_mo08-03_p_img "
+        }
+    ]
+}

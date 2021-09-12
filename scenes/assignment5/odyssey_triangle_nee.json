@@ -22,9 +22,8 @@
         "type": "bbh"
     },
     "integrator": {
-        "type": "path_tracer_mixture",
-        "max_bounces": 1,
-        "recursive": false
+        "type": "path_tracer_nee",
+        "max_bounces": 1
     },
     "surfaces": [
         {
@@ -61,25 +60,36 @@
                 "albedo": 0.95
             }
         }, {
-            "type": "quad",
-            "name": "glowing wall",
-            "transform": [
-                {
-                    "translate": [0, 5, 0]
-                }, {
-                    "x": [
-                        0, 0, 1
-                    ],
-                    "y": [
-                        0, 1, 0
-                    ],
-                    "z": [1, 0, 0]
-                }, {
-                    "translate": [-12, 0, 0]
-                }
+            "type": "triangle",
+            "name": "glowing wall1",
+            "positions": [
+                [
+                    -12, 0, 9
+                ],
+                [
+                    -12, 0, -9
+                ],
+                [
+                    -12, 10, -9
+                ]
             ],
-            "size": [
-                18, 10
+            "material": {
+                "type": "diffuse_light",
+                "emit": 1
+            }
+        }, {
+            "type": "triangle",
+            "name": "glowing wall2",
+            "positions": [
+                [
+                    -12, 0, 9
+                ],
+                [
+                    -12, 10, -9
+                ],
+                [
+                    -12, 10, 9
+                ]
             ],
             "material": {
                 "type": "diffuse_light",

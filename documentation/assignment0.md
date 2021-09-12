@@ -4,7 +4,7 @@
 @m_footernavigation
 @tableofcontents
 
-In this assignment, you will learn the basics of how to setup your programming environment, how to get the [darts](\ref darts-overview) base code, and how to submit your solutions. The deadline for this assignment is **FIXME**. This assignment is not difficult to do (there is however a bit of reading), and its only intention is to make sure you have a working development environment.
+In this assignment, you will learn the basics of how to setup your programming environment, how to get the [darts](\ref darts-overview) base code, and how to submit your solutions. This assignment is not difficult to do – and its only intention is to make sure you have a working development environment – but there is however quite a bit to read.
 
 By the end of this assignment, you will have
 
@@ -17,17 +17,16 @@ Getting started with the code
 
 Please go read the [brief overview](\ref darts-overview) of our darts codebase.
 
-Then, read the [getting-started guide](\ref getting-started). If you've already comfortable with C++, CMake, and git, then here is the TLDR:
+Then, walk through the [getting-started guide](\ref getting-started).
 
-1. Clone the base code from our [GitHub repository](https://www.github.com/cs87-dartmouth/darts-basecode) <!-- **FIXME**. -->
-2. You then have two options:
-   * **Recommended**: Get [VS Code](https://code.visualstudio.com/), install the C++ and CMake Tools extensions, then configure and build the project; or
-   * In a terminal, configure and build as follows:
+Once you've accepted the assignment, and added the base code repo, here's the TLDR for how to compile the code:
+* **Recommended**: Get [VS Code](https://code.visualstudio.com/), install the C++ and CMake Tools extensions, then configure and build the project; or
+* In a terminal, configure and build as follows:
 
-        @code{.sh}
-        cmake -B build
-        cmake --build build --parallel
-        @endcode
+    @code{.sh}
+    cmake -B build
+    cmake --build build --parallel
+    @endcode
 
 
 Programming Assignment

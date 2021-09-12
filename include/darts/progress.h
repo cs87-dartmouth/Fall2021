@@ -9,11 +9,11 @@
 #include <string>
 #include <thread>
 
-/** \addtogroup group_cmdln
- *  @{
- */
+/*! \addtogroup group_cmdln
+    @{
+*/
 
-/**
+/*!
     A thread-safe helper object to display and update a progress bar in the terminal.
 
     Example usage:
@@ -31,16 +31,16 @@
 class Progress
 {
 public:
-    /**
-     * Create a progress bar with a \p title and \p total_steps number of steps.
-     *
-     * @param title         A descriptive title for the task being performed.
-     *
-     * @param total_steps   When this is positive, it indicates the number of steps for the calculation. When it is
-     *                      non-positive, an indeterminate progress bar is created instead (for a task with an unknown
-     *                      number of steps), and \p total_steps is used as the period, in milliseconds, of the
-     *                      progress bar's spinning animation. If 0 is specified, a default number of milliseconds is
-     *                      used.
+    /*!
+        Create a progress bar with a \p title and \p total_steps number of steps.
+
+        \param title        A descriptive title for the task being performed.
+
+        \param total_steps  When this is positive, it indicates the number of steps for the calculation. When it is
+                            non-positive, an indeterminate progress bar is created instead (for a task with an unknown
+                            number of steps), and \p total_steps is used as the period, in milliseconds, of the
+                            progress bar's spinning animation. If 0 is specified, a default number of milliseconds is
+                            used.
      */
     Progress(const std::string &title, int64_t total_steps = 0);
     ~Progress();
@@ -82,9 +82,9 @@ private:
     std::thread          m_update_thread;
 };
 
-/**
+/*!
     \file
     \brief Class #Progress
 */
 
-/** @}*/
+/*! @}*/

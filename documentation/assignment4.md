@@ -277,8 +277,8 @@ Integral of PDF (should be close to 1): 1.00003
 Second, the code will call `Material::sample()` many times and build a histogram of the sampled directions. This histogram should exactly match the PDF. The tester will output two images, `lambertian-pdf.png` (the PDF) and `lambertian-sampled.png` (the histogram). These should match with each other and look similar to this:
 
 @m_div{twentytwenty-container}
-    <img src="lambertian-pdf.png" alt="Analytic distribution">
-    <img src="lambertian-sampled.png" alt="Observed distribution">
+    <img src="lambertian-pdf-ref.png" alt="Analytic distribution">
+    <img src="lambertian-sampled-ref.png" alt="Observed distribution">
 @m_enddiv
 
 Additionally, your sample method should return successfully and not generate invalid directions; the code will test for that and output a statement like
@@ -299,8 +299,8 @@ To fix this, read [Chapter 8](https://raytracing.github.io/books/RayTracingTheRe
 You can test your code using the `"rotated-lambertian"` test in the sample test scene. You should get images like these:
 
 @m_div{twentytwenty-container}
-    <img src="rotated-lambertian-pdf.png" alt="Analytic distribution">
-    <img src="rotated-lambertian-sampled.png" alt="Observed distribution">
+    <img src="lambertian-rotated-pdf.png" alt="Analytic distribution">
+    <img src="lambertian-rotated-sampled-ref.png" alt="Observed distribution">
 @m_enddiv
 
 
@@ -336,10 +336,10 @@ First, you need to generate directions from a distribution proportional to a cos
 You can test your code using the `"phong"` and `"rotated-phong"` tests in the sample test tool. You should get images like these:
 
 @m_div{twentytwenty-container}
-    <img src="phong-pdf.png" alt="Analytic distribution">
-    <img src="phong-sampled.png" alt="Observed distribution">
-    <img src="rotated-phong-pdf.png" alt="Analytic rotated distribution">
-    <img src="rotated-phong-sampled.png" alt="Observed rotated distribution">
+    <img src="phong-pdf-ref.png" alt="Analytic distribution">
+    <img src="phong-sampled-ref.png" alt="Observed distribution">
+    <img src="phong-rotated-pdf-ref.png" alt="Analytic rotated distribution">
+    <img src="phong-rotated-sampled-ref.png" alt="Observed rotated distribution">
 @m_enddiv
 
 Grad students only: Blinn-Phong
@@ -373,10 +373,10 @@ The `BlinnPhong::eval()` method is simply the PDF method times the albedo.
 You can test your implementation using the sample tester tool. You should get images like these:
 
 @m_div{twentytwenty-container}
-    <img src="blinn_phong-pdf.png" alt="Analytic distribution">
-    <img src="blinn_phong-sampled.png" alt="Observed distribution">
-    <img src="rotated-blinn_phong-pdf.png" alt="Analytic rotated distribution">
-    <img src="rotated-blinn_phong-sampled.png" alt="Observed rotated distribution">
+    <img src="blinn_phong-pdf-ref.png" alt="Analytic distribution">
+    <img src="blinn_phong-sampled-ref.png" alt="Observed distribution">
+    <img src="blinn_phong-rotated-pdf-ref.png" alt="Analytic rotated distribution">
+    <img src="blinn_phong-rotated-sampled-ref.png" alt="Observed rotated distribution">
 @m_enddiv
 
 
@@ -513,6 +513,8 @@ In this task, you will reimplement this flavor of path tracing as its own integr
 Begin by making a new `PathTracerMats` integrator. We put ours in `src/integrators/path_tracer_mats.cpp`. This integrator will start from a camera ray and recursively trace new rays by sampling materials. Write your `Li` method based on the `Scene::recursive_color` method you wrote in previous assignments. Instead of calling `Material::scatter()` and multiplying recursive calls by `attenuation`, call your new `Material::sample()` method, and multiply recursive calls by `Material::eval()` and divide by `Material::pdf()`. Implicitly, that is what Peter Shirley's algorithm was already doing: `attenuation` was `eval/pdf` in disguise, with factors appearing in both terms already cancelled out.
 
 The only wrinkle in this is that some materials might not support the PDF interface (such as mirrors/glass or Peter Shirley's metal material). You can detect this by checking the `is_specular` flag; if that is set, multiply by `attenuation` instead of `eval/pdf`.
+
+Make sure to also read in the `"max_bounces"` JSON field and limit your recursion to that depth. `"max_bounces": 1"` should result in direct illumination.
 
 You can test your implementation by rendering the remaining scenes in `scenes/assignment4`. We show the results from our implementation below. You can further test your code by re-rendering some of the scenes from previous assignments using your new integrator-based implementation.
 

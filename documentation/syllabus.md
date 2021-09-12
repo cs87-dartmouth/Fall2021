@@ -89,7 +89,7 @@ Our hope is that this combination will get you started making images quickly, bu
 @par 
     If you prefer to get a physical book, you can purchase the PBR book from [Amazon](https://smile.amazon.com/Physically-Based-Rendering-Third-Implementation/dp/0128006455), or ask the [local bookstore](https://www.stillnorthbooks.com) to order it for you. You can also download individual chapters as PDFs through [Science Direct](http://www.sciencedirect.com/science/book/9780128006450) (you need to be connected via a Dartmouth IP address).
 
-There will be reading from these book each week to supplement the material discussed in lecture. I'll list the relevant reading in the description of the corresponding lecture event in the Calendar.
+There will be reading from these book each week to supplement the material discussed in lecture. I list the relevant reading in the description of the corresponding lecture event in the Canvas calendar, as well as in our class \ref schedule.
 
 Learning Outcomes
 =================
@@ -123,20 +123,20 @@ I will be following an absolute grading policy for assigning a letter grade in t
 Grade |  Percentage
 ------|------------------------------
 A     | final score &ge; 97%
-A-    | 97% &gt; final score &ge; 91%
-B+    | 91% &gt; final score &ge; 86%
-B     | 86% &gt; final score &ge; 81%
-B-    | 81% &gt; final score &ge; 76%
-C+    | 76% &gt; final score &ge; 71%
-C     | 71% &gt; final score &ge; 66%
-C-    | 66% &gt; final score &ge; 60%
-D     | 60% &gt; final score &ge; 55%
-E     | 55% &gt; final score
+A-    | 97% &gt; final score &ge; 90%
+B+    | 90% &gt; final score &ge; 87%
+B     | 87% &gt; final score &ge; 84%
+B-    | 84% &gt; final score &ge; 80%
+C+    | 80% &gt; final score &ge; 77%
+C     | 77% &gt; final score &ge; 74%
+C-    | 74% &gt; final score &ge; 70%
+D     | 70% &gt; final score &ge; 60%
+E     | 61% &gt; final score
 
 Graduate & Extra Credit
 -----------------------
 
-The undergraduate (87) and graduate (287) sections of this class will be graded separately and we will generally grade graduate students more strictly. For graduates enrolled in 287, I will convert an A- or above to High Pass (HP), and B- or above to Pass (P). Low Pass (LP) starts at C+ and below.
+The undergraduate (87) and graduate (287) sections of this class will be graded separately and we will generally grade graduate students more strictly. For graduates enrolled in 287, I will convert an A to High Pass (HP) and B- or above to Pass (P). Low Pass (LP) starts at C+, and anything D or below receives No Credit (NC).
 
 Some of the assignments will denote work that is required only for graduates, and often, these portions may count as extra credit for undergraduates enrolled in 87. Occasionally we will include the possibility to earn “Hacker Points”: these are “underpriced” extra credit points for the daring few (available to both undergraduates and graduates). Sometimes this might require implementing something that was not taught in class or something that requires some additional research and creative thinking. Hacker Points are either fully awarded or not awarded at all.
 
@@ -158,7 +158,7 @@ The class culminates with a final project and rendering competition. The purpose
 @m_class{m-block m-danger}
 
 @par Warning!
-    Participation in the final project presentations is mandatory. This is scheduled during our final exam period, which is **FIXME**. Put this in your calendar.
+    Participation in the final project presentations is mandatory. This is scheduled during our final exam period, which is **TBA**. Put this in your calendar.
 
 For inspiration, take a look at the rendering competition results from prior iterations of this course, or similar courses at other universities:
 
