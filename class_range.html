@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DartsException class | CS
+  <title>Range class | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -71,30 +71,49 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          DartsException <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="common_8h.html">&lt;darts/common.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="common_8h.html">&lt;darts/common.h&gt;</a></div>
+          <div class="m-doc-template">template&lt;typename T&gt;</div>
+          Range <span class="m-thin">class</span>
         </h1>
-        <p>Simple exception class, which stores a human-readable error description.</p>
+        <p>Python-style range: iterates from min to max in range-based for loops.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
+                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
               </ul>
             </li>
           </ul>
         </div>
+<p>To use:</p><pre class="m-code"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>             <span class="c1">// old way</span>
+<span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>     <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>             <span class="c1">// new way</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">2</span><span class="p">)</span>  <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>          <span class="c1">// old way</span>
+<span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>          <span class="c1">// new way</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">float</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">3.5f</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mf">1.5f</span><span class="p">;</span> <span class="n">i</span><span class="o">-=</span><span class="mf">0.01f</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="c1">// old way</span>
+<span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">range</span><span class="p">(</span><span class="mf">3.5f</span><span class="p">,</span> <span class="mf">1.5f</span><span class="p">,</span> <span class="mf">-0.01f</span><span class="p">))</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="c1">// new way</span></pre>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_range_1_1_iterator.html" class="m-doc">Iterator</a>
+            </dt>
+            <dd>Standard iterator support for <a href="class_range.html" class="m-doc">Range</a>.</dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="ac5dad5d3b0e75407cee3ecb4b1f907a9">
-              <div class="m-doc-template">template&lt;typename... Args&gt;</div>
-              <span class="m-doc-wrap-bumper"><a href="#ac5dad5d3b0e75407cee3ecb4b1f907a9" class="m-doc-self">DartsException</a>(</span><span class="m-doc-wrap">const char* fmt,
-              const Args&amp;... args)</span>
+            <dt id="a60fbc084ba0ac67eff8d3dc5e7d46dc5">
+              <span class="m-doc-wrap-bumper"><a href="#a60fbc084ba0ac67eff8d3dc5e7d46dc5" class="m-doc-self">Range</a>(</span><span class="m-doc-wrap">T start,
+              T end,
+              T step = T(1))</span>
             </dt>
-            <dd>Variadic template constructor to support fmt::format-style arguments.</dd>
+            <dd>Construct an iterable range from <code>start</code> to <code>end</code> in increments of <code>step</code>.</dd>
           </dl>
         </section>
       </div>
@@ -141,7 +160,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
+        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
       </div>
     </div>
   </div>

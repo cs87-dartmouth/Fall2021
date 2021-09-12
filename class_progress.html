@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ray struct | CS
+  <title>Progress class | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -71,95 +71,102 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="ray_8h.html">&lt;darts/ray.h&gt;</a></div>
-          <div class="m-doc-template">template&lt;size_t N, typename T&gt;</div>
-          Ray <span class="m-thin">struct</span>
+          Progress <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="progress_8h.html">&lt;darts/progress.h&gt;</a></div>
         </h1>
-        <p>Simple ray segment data structure.</p>
+        <p>A thread-safe helper object to display and update a progress bar in the terminal.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#pub-static-attribs">Public static variables</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>Along with the ray origin and direction, this data structure additionally stores the segment interval [<a href="structRay.html#a07e31e74c81a3b2a285adf1c03a14fa7" class="m-doc">mint</a>, <a href="structRay.html#ad2ed75719e389307ec604027083574b9" class="m-doc">maxt</a>], which may include positive/negative infinity.</p>
-        <section id="pub-static-attribs">
-          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a418a8c921967bc36ebef6a36104e94f7">
-              static float <a href="#a418a8c921967bc36ebef6a36104e94f7" class="m-doc-self">epsilon</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd>&quot;Ray epsilon&quot;: relative error threshold for ray intersection computations</dd>
-            <dt id="a61ac1f005437a928101b71d8e23bfea6">
-              static float <a href="#a61ac1f005437a928101b71d8e23bfea6" class="m-doc-self">infinity</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd>infinity for type</dd>
-          </dl>
-        </section>
+<p>Example usage:</p><pre class="m-code"><span class="p">{</span>
+    <span class="n">Progress</span> <span class="nf">p1</span><span class="p">(</span><span class="s">&quot;Solving&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">,</span> <span class="o">++</span><span class="n">p1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// do something</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="c1">// end progress p1</span></pre>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a7557b74ad0c16944af3544db777127ac">
-              <span class="m-doc-wrap-bumper"><a href="#a7557b74ad0c16944af3544db777127ac" class="m-doc-self">Ray</a>(</span><span class="m-doc-wrap">)</span>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a08e4e5c6ab04aaac3505ee31010fd885" class="m-doc">Progress</a>(</span><span class="m-doc-wrap">const std::string&amp; title,
+              int64_t total_steps = 0)</span>
             </dt>
-            <dd>Construct a new ray.</dd>
-            <dt id="adbd4fb97cd14b2de6fadfbbe0dad2763">
-              <span class="m-doc-wrap-bumper"><a href="#adbd4fb97cd14b2de6fadfbbe0dad2763" class="m-doc-self">Ray</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;N, T&gt;&amp; o,
-              const <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;N, T&gt;&amp; d)</span>
-            </dt>
-            <dd>Construct a new ray.</dd>
-            <dt id="a6ea0a51ffd5ec0b515b4474e15903ee0">
-              <span class="m-doc-wrap-bumper"><a href="#a6ea0a51ffd5ec0b515b4474e15903ee0" class="m-doc-self">Ray</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;N, T&gt;&amp; o,
-              const <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;N, T&gt;&amp; d,
-              T mint,
-              T maxt)</span>
-            </dt>
-            <dd>Construct a new ray.</dd>
-            <dt id="ab1e22eed4812dfb37262baf4a8c49f6a">
-              <span class="m-doc-wrap-bumper"><a href="#ab1e22eed4812dfb37262baf4a8c49f6a" class="m-doc-self">Ray</a>(</span><span class="m-doc-wrap">const <a href="structRay.html" class="m-doc">Ray</a>&amp; ray,
-              T mint,
-              T maxt)</span>
-            </dt>
-            <dd>Copy a ray, but change the covered segment of the copy.</dd>
+            <dd>Create a progress bar with a <code>title</code> and <code>total_steps</code> number of steps.</dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a5efc2b86e657c9a45c821809906a0431">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5efc2b86e657c9a45c821809906a0431" class="m-doc-self">operator()</a>(</span><span class="m-doc-wrap">T t) const -&gt; <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;N, T&gt;</span>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a576f55b4b7f7173732da03a4b6eadd0a" class="m-doc">step</a>(</span><span class="m-doc-wrap">int64_t steps = 1)</span>
             </dt>
-            <dd>Return the position of a point along the ray.</dd>
+            <dd>increment the progress by <code>steps</code>.</dd>
+            <dt id="acf626fe82bd2950743ab570b0a910862">
+              <span class="m-doc-wrap-bumper">void <a href="#acf626fe82bd2950743ab570b0a910862" class="m-doc-self">set_done</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>mark the progress as complete</dd>
+            <dt id="abad88961ef442a968cd2a6bb21f952a3">
+              <span class="m-doc-wrap-bumper">auto <a href="#abad88961ef442a968cd2a6bb21f952a3" class="m-doc-self">progress</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
+            </dt>
+            <dd>the current progress</dd>
+            <dt id="aab7dc402ac3419102af14437685f90ff">
+              <span class="m-doc-wrap-bumper">auto <a href="#aab7dc402ac3419102af14437685f90ff" class="m-doc-self">operator++</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_progress.html" class="m-doc">Progress</a>&amp;</span>
+            </dt>
+            <dd>increment the progress by 1 step</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af5127beac6918e1e2d147c3cf6e19644" class="m-doc">operator+=</a>(</span><span class="m-doc-wrap">int64_t steps) -&gt; <a href="class_progress.html" class="m-doc">Progress</a>&amp;</span>
+            </dt>
+            <dd>increment the progress by <code>steps</code>.</dd>
           </dl>
         </section>
-        <section id="pub-attribs">
-          <h2><a href="#pub-attribs">Public variables</a></h2>
-          <dl class="m-doc">
-            <dt id="af6261ba97c69d7ec95870116f62a2577">
-              <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;N, T&gt; <a href="#af6261ba97c69d7ec95870116f62a2577" class="m-doc-self">o</a>
-            </dt>
-            <dd>The origin of the ray.</dd>
-            <dt id="a0615c7b628efd44e05a8c7514901e109">
-              <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;N, T&gt; <a href="#a0615c7b628efd44e05a8c7514901e109" class="m-doc-self">d</a>
-            </dt>
-            <dd>The direction of the ray.</dd>
-            <dt id="a07e31e74c81a3b2a285adf1c03a14fa7">
-              T <a href="#a07e31e74c81a3b2a285adf1c03a14fa7" class="m-doc-self">mint</a>
-            </dt>
-            <dd>Minimum distance along the ray segment.</dd>
-            <dt id="ad2ed75719e389307ec604027083574b9">
-              T <a href="#ad2ed75719e389307ec604027083574b9" class="m-doc-self">maxt</a>
-            </dt>
-            <dd>Maximum distance along the ray segment.</dd>
-          </dl>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a08e4e5c6ab04aaac3505ee31010fd885"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Progress::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a08e4e5c6ab04aaac3505ee31010fd885" class="m-doc-self">Progress</a>(</span><span class="m-doc-wrap">const std::string&amp; title,
+              int64_t total_steps = 0)</span></span>
+            </h3>
+            <p>Create a progress bar with a <code>title</code> and <code>total_steps</code> number of steps.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">title</td>
+                  <td>A descriptive title for the task being performed.</td>
+                </tr>
+                <tr>
+                  <td>total_steps</td>
+                  <td>When this is positive, it indicates the number of steps for the calculation. When it is non-positive, an indeterminate progress bar is created instead (for a task with an unknown number of steps), and <code>total_steps</code> is used as the period, in milliseconds, of the progress bar&#x27;s spinning animation. If 0 is specified, a default number of milliseconds is used.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a576f55b4b7f7173732da03a4b6eadd0a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Progress::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a576f55b4b7f7173732da03a4b6eadd0a" class="m-doc-self">step</a>(</span><span class="m-doc-wrap">int64_t steps = 1)</span></span>
+            </h3>
+            <p>increment the progress by <code>steps</code>.</p>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="class_progress.html#af5127beac6918e1e2d147c3cf6e19644" class="m-doc">operator+=()</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="af5127beac6918e1e2d147c3cf6e19644"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_progress.html" class="m-doc">Progress</a>&amp; Progress::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af5127beac6918e1e2d147c3cf6e19644" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap">int64_t steps)</span></span>
+            </h3>
+            <p>increment the progress by <code>steps</code>.</p>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="class_progress.html#a576f55b4b7f7173732da03a4b6eadd0a" class="m-doc">step()</a></p></aside>
+          </div></section>
         </section>
       </div>
     </div>
@@ -205,7 +212,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
+        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
       </div>
     </div>
   </div>
