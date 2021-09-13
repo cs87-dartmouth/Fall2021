@@ -252,7 +252,11 @@ A continuous integration servers will pull your code and attempt to build it eve
 
 To check the latest build status, visit the "Actions" tab in your repository. 
 
-\image html images/github-actions.png
+\image html images/github-actions1.png
+
+\image html images/github-actions2.png
+
+\image html images/github-actions3.png
 
 Build badge
 -----------

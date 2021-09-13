@@ -299,7 +299,7 @@ To fix this, read [Chapter 8](https://raytracing.github.io/books/RayTracingTheRe
 You can test your code using the `"rotated-lambertian"` test in the sample test scene. You should get images like these:
 
 @m_div{twentytwenty-container}
-    <img src="lambertian-rotated-pdf.png" alt="Analytic distribution">
+    <img src="lambertian-rotated-pdf-ref.png" alt="Analytic distribution">
     <img src="lambertian-rotated-sampled-ref.png" alt="Observed distribution">
 @m_enddiv
 
