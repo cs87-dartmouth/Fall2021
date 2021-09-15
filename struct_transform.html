@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Assignments &raquo; A0: Darts preliminaries | CS
+  <title>Transform struct | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
   <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="next" href="assignment1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#22272e" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><script src="jquery.event.move.js"></script><script src="jquery.twentytwenty.js"></script><link href="twentytwenty.css" rel="stylesheet" type="text/css" /><script>$(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5, move_slider_on_hover: true });});</script>
@@ -35,7 +34,7 @@
             <li>
               <a href="assignments.html">Assignments</a>
               <ol>
-                <li><a href="assignment0.html" id="m-navbar-current">A0: Darts preliminaries</a></li>
+                <li><a href="assignment0.html">A0: Darts preliminaries</a></li>
                 <li><a href="assignment1.html">A1: Ray tracing</a></li>
                 <li><a href="assignment2.html">A2: Ray tracing faster</a></li>
                 <li><a href="assignment3.html">A3: Textures</a></li>
@@ -72,27 +71,70 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="assignments.html">Assignments</a> &raquo;</span>
-          A0: Darts preliminaries
+          Transform <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="transform_8h.html">&lt;darts/transform.h&gt;</a></div>
         </h1>
+        <p>Homogeneous coordinate transformation.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
-            <li><a href="#autotoc_md43">Getting started with the code</a></li>
             <li>
-              <a href="#autotoc_md44">Programming Assignment</a>
+              Reference
               <ul>
-                <li><a href="#autotoc_md45">Part 1: Vectors</a></li>
-                <li><a href="#autotoc_md46">Part 2: Colors and Images</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
-            <li><a href="#autotoc_md47">What to submit</a></li>
           </ul>
         </div>
-<p>In this assignment, you will learn the basics of how to setup your programming environment, how to get the <a href="darts-overview.html" class="m-doc">darts</a> base code, and how to submit your solutions. This assignment is not difficult to do – and its only intention is to make sure you have a working development environment – but there is however quite a bit to read.</p><p>By the end of this assignment, you will have</p><ul><li>Cloned the base code git repository</li><li>Setup your programming environment and successfully compiled the basecode</li><li>Completed both parts of the programming assignment, explained below</li></ul><section id="autotoc_md43"><h2><a href="#autotoc_md43">Getting started with the code</a></h2><p>Please go read the <a href="darts-overview.html" class="m-doc">brief overview</a> of our darts codebase.</p><p>Then, walk through the <a href="getting-started.html" class="m-doc">getting-started guide</a>.</p><p>Once you&#x27;ve accepted the assignment, and added the base code repo, here&#x27;s the TLDR for how to compile the code:</p><ul><li><strong>Recommended</strong>: Get <a href="https://code.visualstudio.com/">VS Code</a>, install the C++ and CMake Tools extensions, then configure and build the project; or</li><li>In a terminal, configure and build as follows:</li></ul><pre class="m-code">cmake -B build
-cmake --build build --parallel</pre></section><section id="autotoc_md44"><h2><a href="#autotoc_md44">Programming Assignment</a></h2><p>For the programming part of this assignment, you will need to familiarize yourself with the basecode that we provide and implement a few tiny changes to make things work.</p><p>Go ahead and open up&nbsp;<code>src/darts_tutorial0.cpp</code>. This is the file you will be editing for this assignment.</p><p>Don&#x27;t be overwhelmed by the size of this file - the majority of it is comments and functionality provided by us to test your code.</p><section id="autotoc_md45"><h3><a href="#autotoc_md45">Part 1: Vectors</a></h3><p>For the first part of the programming assignment you need to learn how to use vectors and matrices in darts. Head over to <code>void test_vectors_and_matrices()</code> and read the comments to get started. Everything that you need to change has been marked with a&nbsp;<code>TODO</code> comment.</p></section><section id="autotoc_md46"><h3><a href="#autotoc_md46">Part 2: Colors and Images</a></h3><p>Head on over to <code>void test_color_and_image()</code> and read through the instructions. Everything that you need to change has been marked with a&nbsp;<em>TODO</em> comment.</p><div class="m-clearfix-s"></div><div class="m-clearfix-m"></div><div class="m-clearfix-l"></div><div class="m-col-t-8 m-col-s-5 m-col-m-4 m-right-s"><img class="m-image" src="gradient-ref.png" alt="Image" /></div><p>You will generate and write a&nbsp;<code>gradient.png</code> image, that should look like the one shown here.</p><p>To complete the last part of the function, you should load the image in <code>scenes/assignment0/cornellbox.png</code> that comes with the base code, convert it to grayscale (as described in the code) and save it under <code>scenes/assignment0/cornell_grayscale.png</code>. The input image is shown below on the left; the expected output is shown on the right.</p><div class="twentytwenty-container"><img class="m-image" src="cornellbox.png" alt="Original" />
- <img class="m-image" src="cornell_grayscale-ref.png" alt="Grayscale" /></div><p>This handy way of showing off the differences between images is also available for you to use in your assignment project reports.</p></section></section><section id="autotoc_md47"><h2><a href="#autotoc_md47">What to submit</a></h2><p>Submit according to the instructions in the <a href="getting-started.html#submitting-on-canvas" class="m-doc">Submitting on Canvas</a> section of <a href="getting-started.html" class="m-doc">Getting started</a> guide.</p></section>
-        <div class="m-note m-dim m-thin m-text-center"><a href="assignments.html" class="m-doc">Assignments</a> | <a href="assignment1.html" class="m-doc">A1: Ray tracing &raquo;</a></div>
+<p>This class stores a general homogeneous coordinate transformation, such as rotation, translation, uniform or non-uniform scaling, and perspective transformations. The inverse of this transformation is also recorded here, since it is required when transforming normal vectors.</p>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="aa08ca4266efabc768973cdeea51945ab">
+              <span class="m-doc-wrap-bumper"><a href="#aa08ca4266efabc768973cdeea51945ab" class="m-doc-self">Transform</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Create the identity transform.</dd>
+            <dt id="a038ccbd3f9e3d24d9e18fc939bb181c4">
+              <span class="m-doc-wrap-bumper"><a href="#a038ccbd3f9e3d24d9e18fc939bb181c4" class="m-doc-self">Transform</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gad5a13c478c7dcf28d114edc5610a0599" class="m-doc">Mat44f</a>&amp; m)</span>
+            </dt>
+            <dd>Create a new transform instance for the given matrix.</dd>
+            <dt id="a3390643a41194859a7eb551a9c71d03a">
+              <span class="m-doc-wrap-bumper"><a href="#a3390643a41194859a7eb551a9c71d03a" class="m-doc-self">Transform</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gad5a13c478c7dcf28d114edc5610a0599" class="m-doc">Mat44f</a>&amp; trafo,
+              const <a href="group__group__math.html#gad5a13c478c7dcf28d114edc5610a0599" class="m-doc">Mat44f</a>&amp; inv)</span>
+            </dt>
+            <dd>Create a new transform instance for the given matrix and its inverse.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ab910e8eeacb3e3cdb495c19e57823382">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab910e8eeacb3e3cdb495c19e57823382" class="m-doc-self">inverse</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_transform.html" class="m-doc">Transform</a></span>
+            </dt>
+            <dd>Return the inverse transformation.</dd>
+            <dt id="a60fc07fc909f69ce33d38ec9a6f847fd">
+              <span class="m-doc-wrap-bumper">auto <a href="#a60fc07fc909f69ce33d38ec9a6f847fd" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">const <a href="struct_transform.html" class="m-doc">Transform</a>&amp; t) const -&gt; <a href="struct_transform.html" class="m-doc">Transform</a></span>
+            </dt>
+            <dd>Concatenate with another transform.</dd>
+            <dt id="ae81ceb9495ea088893b60b859c4c9789">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae81ceb9495ea088893b60b859c4c9789" class="m-doc-self">vector</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v) const -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd>Apply the homogeneous transformation to a 3D direction vector.</dd>
+            <dt id="aa2988222ddeba2aa497ab4a276147ddb">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa2988222ddeba2aa497ab4a276147ddb" class="m-doc-self">normal</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; n) const -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd>Apply the homogeneous transformation to a 3D normal.</dd>
+            <dt id="a53a00cf23226be064510921a927df11f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a53a00cf23226be064510921a927df11f" class="m-doc-self">point</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; p) const -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd><a href="struct_transform.html" class="m-doc">Transform</a> a point by an arbitrary matrix in homogeneous coordinates.</dd>
+            <dt id="a023e97a6e3e715146eef8181c6ae5d55">
+              <span class="m-doc-wrap-bumper">auto <a href="#a023e97a6e3e715146eef8181c6ae5d55" class="m-doc-self">ray</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; r) const -&gt; <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a></span>
+            </dt>
+            <dd>Apply the homogeneous transformation to a ray.</dd>
+          </dl>
+        </section>
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Surfaces module | CS
+  <title>Scene class | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -71,81 +71,94 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          Surfaces <span class="m-thin">module</span></h1>
-        <p>Geometric surfaces in the scene which can be intersected by rays.</p>
+          Scene <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="scene_8h.html">&lt;darts/scene.h&gt;</a></div>
+        </h1>
+        <p>Main scene data structure.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#files">Files</a></li>
-                <li><a href="#nested-classes">Classes</a></li>
-                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="files">
-          <h2><a href="#files">Files</a></h2>
+<p>This class aggregates all the surfaces and materials along with the camera. It provides convenience functions for querying materials by name.</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
-            <dt>file <a href="quad_8cpp.html" class="m-doc">quad.cpp</a></dt>
-            <dd>Class <a href="class_quad.html" class="m-doc">Quad</a>.</dd>
-            <dt>file <a href="sphere_8cpp.html" class="m-doc">sphere.cpp</a></dt>
-            <dd>Class <a href="class_sphere.html" class="m-doc">Sphere</a>.</dd>
-          </dl>
-        </section>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="class_sphere.html" class="m-doc">Sphere</a>
-            </dt>
-            <dd>A sphere centered at the origin with radius <a href="class_sphere.html#a1faee6c9b6e62abf0d35cc87a1894b61" class="m-doc">m_<wbr />radius</a>.</dd>
-            <dt>
-              struct <a href="struct_hit_info.html" class="m-doc">HitInfo</a>
-            </dt>
-            <dd>Contains information about a ray intersection hit point.</dd>
             <dt>
               class <a href="class_surface.html" class="m-doc">Surface</a>
             </dt>
             <dd>This is the abstract superclass for all surfaces.</dd>
-            <dt>
-              class <a href="class_xformed_surface_with_material.html" class="m-doc">XformedSurfaceWithMaterial</a>
-            </dt>
-            <dd>A convenience subclass of <a href="class_surface.html" class="m-doc">Surface</a> for simple surfaces with a <a href="struct_transform.html" class="m-doc">Transform</a> and a <a href="class_material.html" class="m-doc">Material</a>.</dd>
-            <dt>
-              class <a href="class_surface_group.html" class="m-doc">SurfaceGroup</a>
-            </dt>
-            <dd>A collection of Surfaces grouped together.</dd>
-            <dt>
-              class <a href="class_quad.html" class="m-doc">Quad</a>
-            </dt>
-            <dd>A quad spanning from -<a href="class_quad.html#a39460984f5caefcf1eb486755e3e17d4" class="m-doc">m_<wbr />size</a> / 2 to <a href="class_quad.html#a39460984f5caefcf1eb486755e3e17d4" class="m-doc">m_<wbr />size</a> / 2 in the (x,y)-plane at z=0.</dd>
           </dl>
         </section>
-        <section id="func-members">
-          <h2><a href="#func-members">Functions</a></h2>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
+            <dt id="a17681947e0f067a9f2a95588c9b38185">
+              <span class="m-doc-wrap-bumper"><a href="#a17681947e0f067a9f2a95588c9b38185" class="m-doc-self">Scene</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j)</span>
+            </dt>
+            <dd>Construct a new scene from a json object.</dd>
+            <dt id="a3b8cec2e32546713915f8c6303c951f1">
+              <span class="m-doc-wrap-bumper"><a href="#a3b8cec2e32546713915f8c6303c951f1" class="m-doc-self">~Scene</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Release all memory.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a3ee13f9b15a8a57ee5c3d1c3302289f2">
+              <span class="m-doc-wrap-bumper">void <a href="#a3ee13f9b15a8a57ee5c3d1c3302289f2" class="m-doc-self">parse</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j)</span>
+            </dt>
+            <dd>Parser a scene from a json object.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga5463bea8039cc6ad9c620bffcd11e78b" class="m-doc">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
+              <span class="m-doc-wrap-bumper">void <a href="#a18463479c4f8703a5316f34a81ed0f54" class="m-doc">add_child</a>(</span><span class="m-doc-wrap">shared_ptr&lt;<a href="class_surface.html" class="m-doc">Surface</a>&gt; surface) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Add a child surface.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2cd2e37d723c62979a75cf6b66a7c004" class="m-doc">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
               <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Ray-Surface intersection test.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga6a85fffa1199327aaf9ea52e5e09acaf" class="m-doc">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
-              <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a1e1f7560e35707025348f0c83a4ca0ea">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1e1f7560e35707025348f0c83a4ca0ea" class="m-doc-self">background</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray) const -&gt; <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a></span>
             </dt>
-            <dd>Ray-Surface intersection test.</dd>
+            <dd>Return the background color.</dd>
+            <dt id="a4693a32959536ad0988f6c6f9b263dd7">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4693a32959536ad0988f6c6f9b263dd7" class="m-doc-self">camera</a>(</span><span class="m-doc-wrap">) const -&gt; shared_ptr&lt;const <a href="class_camera.html" class="m-doc">Camera</a>&gt;</span>
+            </dt>
+            <dd>Return the camera.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afbeb3c29ff6b26764b704e1640a4465d" class="m-doc">recursive_color</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
+              int depth) const -&gt; <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a></span>
+            </dt>
+            <dd>Sample the color along a ray.</dd>
+            <dt id="a1986a3f024a1c22ce6c28c2e8004c657">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1986a3f024a1c22ce6c28c2e8004c657" class="m-doc-self">raytrace</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_image3f.html" class="m-doc">Image3f</a></span>
+            </dt>
+            <dd>Generate the entire image by ray tracing.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ga5463bea8039cc6ad9c620bffcd11e78b"><div>
+          <section class="m-doc-details" id="a18463479c4f8703a5316f34a81ed0f54"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga5463bea8039cc6ad9c620bffcd11e78b" class="m-doc-self">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
+              <span class="m-doc-wrap-bumper">void Scene::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a18463479c4f8703a5316f34a81ed0f54" class="m-doc-self">add_child</a>(</span><span class="m-doc-wrap">shared_ptr&lt;<a href="class_surface.html" class="m-doc">Surface</a>&gt; surface) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Add a child surface.</p>
+<p>This function will become useful once we create groups of objects. The base class implementation just throws an error.</p><p>This function should only be used before <a href="class_surface.html#a70ff2f6461b97dd80009ea1dd16fb61a" class="m-doc">build()</a> is called.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2cd2e37d723c62979a75cf6b66a7c004"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Scene::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2cd2e37d723c62979a75cf6b66a7c004" class="m-doc-self">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
               <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const <span class="m-label m-warning">override</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="quad_8cpp.html">&lt;src/surfaces/quad.cpp&gt;</a></div>
             </h3>
             <p>Ray-Surface intersection test.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -171,13 +184,12 @@
             </table>
 <p>Intersect a ray against this surface and return detailed intersection information.</p>
           </div></section>
-          <section class="m-doc-details" id="ga6a85fffa1199327aaf9ea52e5e09acaf"><div>
+          <section class="m-doc-details" id="afbeb3c29ff6b26764b704e1640a4465d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga6a85fffa1199327aaf9ea52e5e09acaf" class="m-doc-self">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
-              <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const <span class="m-label m-warning">override</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sphere_8h.html">&lt;darts/sphere.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a> Scene::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afbeb3c29ff6b26764b704e1640a4465d" class="m-doc-self">recursive_color</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
+              int depth) const</span></span>
             </h3>
-            <p>Ray-Surface intersection test.</p>
+            <p>Sample the color along a ray.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -185,21 +197,20 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">ray</td>
-                  <td>A 3-dimensional ray data structure with minimum/maximum extent information</td>
+                  <td>The ray in question</td>
                 </tr>
                 <tr>
-                  <td>hit</td>
-                  <td>A detailed intersection record, which will be filled by the intersection query</td>
+                  <td>depth</td>
+                  <td>The current recursion depth</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td><code>true</code> if an intersection was found</td>
+                  <td>An estimate of the color from this direction</td>
                 </tr>
               </tfoot>
             </table>
-<p>Intersect a ray against this surface and return detailed intersection information.</p>
           </div></section>
         </section>
       </div>

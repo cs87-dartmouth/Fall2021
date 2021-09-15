@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Surfaces module | CS
+  <title>Material class | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -71,83 +71,80 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          Surfaces <span class="m-thin">module</span></h1>
-        <p>Geometric surfaces in the scene which can be intersected by rays.</p>
+          Material <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="material_8h.html">&lt;darts/material.h&gt;</a></div>
+        </h1>
+        <p>A base class used to represent surface material properties.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#files">Files</a></li>
-                <li><a href="#nested-classes">Classes</a></li>
-                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="files">
-          <h2><a href="#files">Files</a></h2>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
-            <dt>file <a href="quad_8cpp.html" class="m-doc">quad.cpp</a></dt>
-            <dd>Class <a href="class_quad.html" class="m-doc">Quad</a>.</dd>
-            <dt>file <a href="sphere_8cpp.html" class="m-doc">sphere.cpp</a></dt>
-            <dd>Class <a href="class_sphere.html" class="m-doc">Sphere</a>.</dd>
+            <dt>
+              class <a href="class_dielectric.html" class="m-doc">Dielectric</a>
+            </dt>
+            <dd>A smooth dielectric surface that reflects and refracts light according to the specified index of refraction <a href="class_dielectric.html#a0c5b80618fc2bb48b2678ea077ffc6f9" class="m-doc">ior</a>.</dd>
+            <dt>
+              class <a href="class_lambertian.html" class="m-doc">Lambertian</a>
+            </dt>
+            <dd>A perfectly diffuse (<a href="class_lambertian.html" class="m-doc">Lambertian</a>) material.</dd>
+            <dt>
+              class <a href="class_metal.html" class="m-doc">Metal</a>
+            </dt>
+            <dd>A metallic material that reflects light into the (potentially rough) mirror reflection direction.</dd>
           </dl>
         </section>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt>
-              class <a href="class_sphere.html" class="m-doc">Sphere</a>
+            <dt id="a81e9dd50c3f0aa2971c5e51b1a4a268c">
+              <span class="m-doc-wrap-bumper"><a href="#a81e9dd50c3f0aa2971c5e51b1a4a268c" class="m-doc-self">Material</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j = json::object())</span>
             </dt>
-            <dd>A sphere centered at the origin with radius <a href="class_sphere.html#a1faee6c9b6e62abf0d35cc87a1894b61" class="m-doc">m_<wbr />radius</a>.</dd>
-            <dt>
-              struct <a href="struct_hit_info.html" class="m-doc">HitInfo</a>
+            <dd>Default constructor which accepts a <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a> object of named parameters.</dd>
+            <dt id="a255ba20d0325e6b78ff68ac739df40de">
+              <span class="m-doc-wrap-bumper"><a href="#a255ba20d0325e6b78ff68ac739df40de" class="m-doc-self">~Material</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Contains information about a ray intersection hit point.</dd>
-            <dt>
-              class <a href="class_surface.html" class="m-doc">Surface</a>
-            </dt>
-            <dd>This is the abstract superclass for all surfaces.</dd>
-            <dt>
-              class <a href="class_xformed_surface_with_material.html" class="m-doc">XformedSurfaceWithMaterial</a>
-            </dt>
-            <dd>A convenience subclass of <a href="class_surface.html" class="m-doc">Surface</a> for simple surfaces with a <a href="struct_transform.html" class="m-doc">Transform</a> and a <a href="class_material.html" class="m-doc">Material</a>.</dd>
-            <dt>
-              class <a href="class_surface_group.html" class="m-doc">SurfaceGroup</a>
-            </dt>
-            <dd>A collection of Surfaces grouped together.</dd>
-            <dt>
-              class <a href="class_quad.html" class="m-doc">Quad</a>
-            </dt>
-            <dd>A quad spanning from -<a href="class_quad.html#a39460984f5caefcf1eb486755e3e17d4" class="m-doc">m_<wbr />size</a> / 2 to <a href="class_quad.html#a39460984f5caefcf1eb486755e3e17d4" class="m-doc">m_<wbr />size</a> / 2 in the (x,y)-plane at z=0.</dd>
+            <dd>Free all memory.</dd>
           </dl>
         </section>
-        <section id="func-members">
-          <h2><a href="#func-members">Functions</a></h2>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga5463bea8039cc6ad9c620bffcd11e78b" class="m-doc">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
-              <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#affd54b2f5756ffefcfef7822a9ce5968" class="m-doc">scatter</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
+              const <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit,
+              <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a>&amp; attenuation,
+              <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; scattered) const -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Ray-Surface intersection test.</dd>
+            <dd>Compute the scattered direction scattered at a surface hitpoint.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga6a85fffa1199327aaf9ea52e5e09acaf" class="m-doc">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
-              <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a49092f7dfb330b816d87df01918444e6" class="m-doc">emitted</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
+              const <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const -&gt; <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Ray-Surface intersection test.</dd>
+            <dd>Compute the amount of emitted light at the surface hitpoint.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ga5463bea8039cc6ad9c620bffcd11e78b"><div>
+          <section class="m-doc-details" id="affd54b2f5756ffefcfef7822a9ce5968"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga5463bea8039cc6ad9c620bffcd11e78b" class="m-doc-self">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
-              <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const <span class="m-label m-warning">override</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="quad_8cpp.html">&lt;src/surfaces/quad.cpp&gt;</a></div>
+              <span class="m-doc-wrap-bumper">bool Material::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#affd54b2f5756ffefcfef7822a9ce5968" class="m-doc-self">scatter</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
+              const <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit,
+              <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a>&amp; attenuation,
+              <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; scattered) const <span class="m-label m-warning">virtual</span></span></span>
             </h3>
-            <p>Ray-Surface intersection test.</p>
+            <p>Compute the scattered direction scattered at a surface hitpoint.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -155,29 +152,36 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">ray</td>
-                  <td>A 3-dimensional ray data structure with minimum/maximum extent information</td>
+                  <td>incoming ray</td>
                 </tr>
                 <tr>
                   <td>hit</td>
-                  <td>A detailed intersection record, which will be filled by the intersection query</td>
+                  <td>the ray&#x27;s intersection with the surface</td>
+                </tr>
+                <tr>
+                  <td>attenuation</td>
+                  <td>how much the light should be attenuated</td>
+                </tr>
+                <tr>
+                  <td>scattered</td>
+                  <td>the direction light should be scattered</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td><code>true</code> if an intersection was found</td>
+                  <td>bool True if the surface scatters light</td>
                 </tr>
               </tfoot>
             </table>
-<p>Intersect a ray against this surface and return detailed intersection information.</p>
+<p>The base <a href="class_material.html" class="m-doc">Material</a> does not scatter any light, so it simply returns false.</p>
           </div></section>
-          <section class="m-doc-details" id="ga6a85fffa1199327aaf9ea52e5e09acaf"><div>
+          <section class="m-doc-details" id="a49092f7dfb330b816d87df01918444e6"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga6a85fffa1199327aaf9ea52e5e09acaf" class="m-doc-self">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
-              <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const <span class="m-label m-warning">override</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sphere_8h.html">&lt;darts/sphere.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a> Material::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a49092f7dfb330b816d87df01918444e6" class="m-doc-self">emitted</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
+              const <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const <span class="m-label m-warning">virtual</span></span></span>
             </h3>
-            <p>Ray-Surface intersection test.</p>
+            <p>Compute the amount of emitted light at the surface hitpoint.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -185,21 +189,21 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">ray</td>
-                  <td>A 3-dimensional ray data structure with minimum/maximum extent information</td>
+                  <td>the incoming ray</td>
                 </tr>
                 <tr>
                   <td>hit</td>
-                  <td>A detailed intersection record, which will be filled by the intersection query</td>
+                  <td>the ray&#x27;s intersection with the surface</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td><code>true</code> if an intersection was found</td>
+                  <td>the emitted color</td>
                 </tr>
               </tfoot>
             </table>
-<p>Intersect a ray against this surface and return detailed intersection information.</p>
+<p>The base <a href="class_material.html" class="m-doc">Material</a> class does not emit light, so it simply returns black.</p>
           </div></section>
         </section>
       </div>

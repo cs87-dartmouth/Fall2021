@@ -73,6 +73,58 @@
         <h1>
           Sampling <span class="m-thin">module</span></h1>
         <p>Random number generation, generation of points and directions, Monte Carlo utilities.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#func-members">Functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga4316695789dd880a5f5cd7af87c232b2" class="m-doc">randf</a>(</span><span class="m-doc-wrap">) -&gt; float</span>
+            </dt>
+            <dd>Global random number generator that produces floats between <code>[0,1)</code></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gaffe5329506c58f57c381a533ab3180a4" class="m-doc">random_in_unit_sphere</a>(</span><span class="m-doc-wrap">) -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd>Sample a random point uniformly within a unit sphere (uses the global <a href="group__group__sampling.html#ga4316695789dd880a5f5cd7af87c232b2" class="m-doc">randf()</a> RNG and rejection sampling)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga8622e32333eada2a6d236f96d2c097b7" class="m-doc">random_in_unit_disk</a>(</span><span class="m-doc-wrap">) -&gt; <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a></span>
+            </dt>
+            <dd>Sample a random point uniformly within a unit disk (uses the global <a href="group__group__sampling.html#ga4316695789dd880a5f5cd7af87c232b2" class="m-doc">randf()</a> RNG and rejection sampling)</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ga4316695789dd880a5f5cd7af87c232b2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga4316695789dd880a5f5cd7af87c232b2" class="m-doc-self">randf</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Global random number generator that produces floats between <code>[0,1)</code></p>
+          </div></section>
+          <section class="m-doc-details" id="gaffe5329506c58f57c381a533ab3180a4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaffe5329506c58f57c381a533ab3180a4" class="m-doc-self">random_in_unit_sphere</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Sample a random point uniformly within a unit sphere (uses the global <a href="group__group__sampling.html#ga4316695789dd880a5f5cd7af87c232b2" class="m-doc">randf()</a> RNG and rejection sampling)</p>
+          </div></section>
+          <section class="m-doc-details" id="ga8622e32333eada2a6d236f96d2c097b7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga8622e32333eada2a6d236f96d2c097b7" class="m-doc-self">random_in_unit_disk</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Sample a random point uniformly within a unit disk (uses the global <a href="group__group__sampling.html#ga4316695789dd880a5f5cd7af87c232b2" class="m-doc">randf()</a> RNG and rejection sampling)</p>
+          </div></section>
+        </section>
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Surfaces module | CS
+  <title>DartsFactory class | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -71,135 +71,138 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          Surfaces <span class="m-thin">module</span></h1>
-        <p>Geometric surfaces in the scene which can be intersected by rays.</p>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="factory_8h.html">&lt;darts/factory.h&gt;</a></div>
+          <div class="m-doc-template">template&lt;typename T&gt;</div>
+          DartsFactory <span class="m-thin">class</span>
+        </h1>
+        <p>A specialization of the <a href="class_factory.html" class="m-doc">Factory</a> for darts objects read from json.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">T</td>
+              <td>This factory will create objects of type shared_ptr&lt;T&gt;.</td>
+            </tr>
+          </tbody>
+        </table>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#files">Files</a></li>
-                <li><a href="#nested-classes">Classes</a></li>
-                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pro-static-methods">Protected static functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="files">
-          <h2><a href="#files">Files</a></h2>
+<p>Additionally, <a href="class_darts_factory.html" class="m-doc">DartsFactory</a> allows storing previously parsed/created instances into a registry with <a href="class_darts_factory.html#a5c1665251e313a388e98d12109efde5f" class="m-doc">register_<wbr />instance()</a> and retrieving them with their name using <a href="class_darts_factory.html#a33482ead986f91ba2d6b3c6858dc49d1" class="m-doc">find()</a>.</p><aside class="m-note m-danger"><h4>Warning</h4><p>If you want to use <a href="class_darts_factory.html#a33482ead986f91ba2d6b3c6858dc49d1" class="m-doc">DartsFactory&lt;T&gt;::<wbr />find()</a> with more types T, you need to specialize it</p></aside>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
-            <dt>file <a href="quad_8cpp.html" class="m-doc">quad.cpp</a></dt>
-            <dd>Class <a href="class_quad.html" class="m-doc">Quad</a>.</dd>
-            <dt>file <a href="sphere_8cpp.html" class="m-doc">sphere.cpp</a></dt>
-            <dd>Class <a href="class_sphere.html" class="m-doc">Sphere</a>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Object, typename... Args&gt;</div>
+              class <a href="class_factory.html" class="m-doc">Factory&lt;shared_ptr&lt;T&gt;, const nlohmann::json&amp;&gt;</a>
+            </dt>
+            <dd>Abstract factory used to construct objects by name.</dd>
           </dl>
         </section>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_sphere.html" class="m-doc">Sphere</a>
+              <span class="m-doc-wrap-bumper">static auto <a href="group__group__parser.html#ga0fd21d5be6421f511f4aafe52bef55a6" class="m-doc">create</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">nlohmann::<wbr />json</a>&amp; j) -&gt; <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a></span>
             </dt>
-            <dd>A sphere centered at the origin with radius <a href="class_sphere.html#a1faee6c9b6e62abf0d35cc87a1894b61" class="m-doc">m_<wbr />radius</a>.</dd>
+            <dd>Allows creating a shared_ptr to a darts object, deducing the type from a &quot;type&quot; field in <code>j</code>.</dd>
             <dt>
-              struct <a href="struct_hit_info.html" class="m-doc">HitInfo</a>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a33482ead986f91ba2d6b3c6858dc49d1" class="m-doc">find</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">nlohmann::<wbr />json</a>&amp; jp,
+              const std::string&amp; key) -&gt; <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a></span>
             </dt>
-            <dd>Contains information about a ray intersection hit point.</dd>
+            <dd>Find a previously parsed/created SharedT, or create a new one.</dd>
             <dt>
-              class <a href="class_surface.html" class="m-doc">Surface</a>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a0d9a333bef8080a35a43d25812b10cde" class="m-doc">find</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">nlohmann::<wbr />json</a>&amp; jp) -&gt; <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a></span>
             </dt>
-            <dd>This is the abstract superclass for all surfaces.</dd>
-            <dt>
-              class <a href="class_xformed_surface_with_material.html" class="m-doc">XformedSurfaceWithMaterial</a>
+            <dd>Find a previously parsed/created SharedT, or create a new one using the default key for this type of object.</dd>
+            <dt id="a5c1665251e313a388e98d12109efde5f">
+              <span class="m-doc-wrap-bumper">static void <a href="#a5c1665251e313a388e98d12109efde5f" class="m-doc-self">register_instance</a>(</span><span class="m-doc-wrap">const std::string&amp; name,
+              <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a> o)</span>
             </dt>
-            <dd>A convenience subclass of <a href="class_surface.html" class="m-doc">Surface</a> for simple surfaces with a <a href="struct_transform.html" class="m-doc">Transform</a> and a <a href="class_material.html" class="m-doc">Material</a>.</dd>
-            <dt>
-              class <a href="class_surface_group.html" class="m-doc">SurfaceGroup</a>
-            </dt>
-            <dd>A collection of Surfaces grouped together.</dd>
-            <dt>
-              class <a href="class_quad.html" class="m-doc">Quad</a>
-            </dt>
-            <dd>A quad spanning from -<a href="class_quad.html#a39460984f5caefcf1eb486755e3e17d4" class="m-doc">m_<wbr />size</a> / 2 to <a href="class_quad.html#a39460984f5caefcf1eb486755e3e17d4" class="m-doc">m_<wbr />size</a> / 2 in the (x,y)-plane at z=0.</dd>
+            <dd>Associate and store a shared_ptr to an object instance <code>o</code> with the name <code>name</code>.</dd>
           </dl>
         </section>
-        <section id="func-members">
-          <h2><a href="#func-members">Functions</a></h2>
+        <section id="pro-static-methods">
+          <h2><a href="#pro-static-methods">Protected static functions</a></h2>
           <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga5463bea8039cc6ad9c620bffcd11e78b" class="m-doc">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
-              <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a6ca1167cca8de08dede7cc755f684588">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a6ca1167cca8de08dede7cc755f684588" class="m-doc-self">instance_registry</a>(</span><span class="m-doc-wrap">) -&gt; std::map&lt;std::string, <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a>&gt;&amp;</span>
             </dt>
-            <dd>Ray-Surface intersection test.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga6a85fffa1199327aaf9ea52e5e09acaf" class="m-doc">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
-              <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
-            </dt>
-            <dd>Ray-Surface intersection test.</dd>
+            <dd>Global map of SharedT instances that have been create/parsed.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ga5463bea8039cc6ad9c620bffcd11e78b"><div>
+          <section class="m-doc-details" id="a33482ead986f91ba2d6b3c6858dc49d1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga5463bea8039cc6ad9c620bffcd11e78b" class="m-doc-self">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
-              <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const <span class="m-label m-warning">override</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="quad_8cpp.html">&lt;src/surfaces/quad.cpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a> DartsFactory&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a33482ead986f91ba2d6b3c6858dc49d1" class="m-doc-self">find</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">nlohmann::<wbr />json</a>&amp; jp,
+              const std::string&amp; key)</span></span>
             </h3>
-            <p>Ray-Surface intersection test.</p>
+            <p>Find a previously parsed/created SharedT, or create a new one.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">ray</td>
-                  <td>A 3-dimensional ray data structure with minimum/maximum extent information</td>
+                  <td style="width: 1%">jp</td>
+                  <td>The json object for the parent</td>
                 </tr>
                 <tr>
-                  <td>hit</td>
-                  <td>A detailed intersection record, which will be filled by the intersection query</td>
+                  <td>key</td>
+                  <td>Look for this json field in <code>jp</code></td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td><code>true</code> if an intersection was found</td>
+                  <td>SharedT The newly created or retrieved object instance.</td>
                 </tr>
               </tfoot>
             </table>
-<p>Intersect a ray against this surface and return detailed intersection information.</p>
+<p>Return a <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a> pointer by parsing a JSON specification. If <code>j</code> is a string <code>key:</code> &quot;name&quot;, then try to find a previously parsed SharedT with name &quot;name&quot;. If <code>j</code> is a <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a> object <code>key:</code> {}, then create a new SharedT with the specified parameters by calling <a href="group__group__parser.html#ga0fd21d5be6421f511f4aafe52bef55a6" class="m-doc">create()</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="ga6a85fffa1199327aaf9ea52e5e09acaf"><div>
+          <section class="m-doc-details" id="a0d9a333bef8080a35a43d25812b10cde"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga6a85fffa1199327aaf9ea52e5e09acaf" class="m-doc-self">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
-              <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const <span class="m-label m-warning">override</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sphere_8h.html">&lt;darts/sphere.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a> DartsFactory&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0d9a333bef8080a35a43d25812b10cde" class="m-doc-self">find</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">nlohmann::<wbr />json</a>&amp; jp)</span></span>
             </h3>
-            <p>Ray-Surface intersection test.</p>
+            <p>Find a previously parsed/created SharedT, or create a new one using the default key for this type of object.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">ray</td>
-                  <td>A 3-dimensional ray data structure with minimum/maximum extent information</td>
-                </tr>
-                <tr>
-                  <td>hit</td>
-                  <td>A detailed intersection record, which will be filled by the intersection query</td>
+                  <td style="width: 1%">jp</td>
+                  <td>The json object for the parent</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td><code>true</code> if an intersection was found</td>
+                  <td>SharedT The newly created or retrieved object instance.</td>
                 </tr>
               </tfoot>
             </table>
-<p>Intersect a ray against this surface and return detailed intersection information.</p>
+<aside class="m-note m-danger"><h4>Warning</h4><p>This function overload needs to be specialized for new types T.</p></aside><p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</p>
           </div></section>
         </section>
       </div>

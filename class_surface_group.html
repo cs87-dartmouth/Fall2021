@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Assignments &raquo; A0: Darts preliminaries | CS
+  <title>SurfaceGroup class | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
   <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="next" href="assignment1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#22272e" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><script src="jquery.event.move.js"></script><script src="jquery.twentytwenty.js"></script><link href="twentytwenty.css" rel="stylesheet" type="text/css" /><script>$(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5, move_slider_on_hover: true });});</script>
@@ -35,7 +34,7 @@
             <li>
               <a href="assignments.html">Assignments</a>
               <ol>
-                <li><a href="assignment0.html" id="m-navbar-current">A0: Darts preliminaries</a></li>
+                <li><a href="assignment0.html">A0: Darts preliminaries</a></li>
                 <li><a href="assignment1.html">A1: Ray tracing</a></li>
                 <li><a href="assignment2.html">A2: Ray tracing faster</a></li>
                 <li><a href="assignment3.html">A3: Textures</a></li>
@@ -72,27 +71,92 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="assignments.html">Assignments</a> &raquo;</span>
-          A0: Darts preliminaries
+          SurfaceGroup <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="surface__group_8h.html">&lt;darts/surface_group.h&gt;</a></div>
         </h1>
+        <p>A collection of Surfaces grouped together.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
-            <li><a href="#autotoc_md43">Getting started with the code</a></li>
             <li>
-              <a href="#autotoc_md44">Programming Assignment</a>
+              Reference
               <ul>
-                <li><a href="#autotoc_md45">Part 1: Vectors</a></li>
-                <li><a href="#autotoc_md46">Part 2: Colors and Images</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
               </ul>
             </li>
-            <li><a href="#autotoc_md47">What to submit</a></li>
           </ul>
         </div>
-<p>In this assignment, you will learn the basics of how to setup your programming environment, how to get the <a href="darts-overview.html" class="m-doc">darts</a> base code, and how to submit your solutions. This assignment is not difficult to do – and its only intention is to make sure you have a working development environment – but there is however quite a bit to read.</p><p>By the end of this assignment, you will have</p><ul><li>Cloned the base code git repository</li><li>Setup your programming environment and successfully compiled the basecode</li><li>Completed both parts of the programming assignment, explained below</li></ul><section id="autotoc_md43"><h2><a href="#autotoc_md43">Getting started with the code</a></h2><p>Please go read the <a href="darts-overview.html" class="m-doc">brief overview</a> of our darts codebase.</p><p>Then, walk through the <a href="getting-started.html" class="m-doc">getting-started guide</a>.</p><p>Once you&#x27;ve accepted the assignment, and added the base code repo, here&#x27;s the TLDR for how to compile the code:</p><ul><li><strong>Recommended</strong>: Get <a href="https://code.visualstudio.com/">VS Code</a>, install the C++ and CMake Tools extensions, then configure and build the project; or</li><li>In a terminal, configure and build as follows:</li></ul><pre class="m-code">cmake -B build
-cmake --build build --parallel</pre></section><section id="autotoc_md44"><h2><a href="#autotoc_md44">Programming Assignment</a></h2><p>For the programming part of this assignment, you will need to familiarize yourself with the basecode that we provide and implement a few tiny changes to make things work.</p><p>Go ahead and open up&nbsp;<code>src/darts_tutorial0.cpp</code>. This is the file you will be editing for this assignment.</p><p>Don&#x27;t be overwhelmed by the size of this file - the majority of it is comments and functionality provided by us to test your code.</p><section id="autotoc_md45"><h3><a href="#autotoc_md45">Part 1: Vectors</a></h3><p>For the first part of the programming assignment you need to learn how to use vectors and matrices in darts. Head over to <code>void test_vectors_and_matrices()</code> and read the comments to get started. Everything that you need to change has been marked with a&nbsp;<code>TODO</code> comment.</p></section><section id="autotoc_md46"><h3><a href="#autotoc_md46">Part 2: Colors and Images</a></h3><p>Head on over to <code>void test_color_and_image()</code> and read through the instructions. Everything that you need to change has been marked with a&nbsp;<em>TODO</em> comment.</p><div class="m-clearfix-s"></div><div class="m-clearfix-m"></div><div class="m-clearfix-l"></div><div class="m-col-t-8 m-col-s-5 m-col-m-4 m-right-s"><img class="m-image" src="gradient-ref.png" alt="Image" /></div><p>You will generate and write a&nbsp;<code>gradient.png</code> image, that should look like the one shown here.</p><p>To complete the last part of the function, you should load the image in <code>scenes/assignment0/cornellbox.png</code> that comes with the base code, convert it to grayscale (as described in the code) and save it under <code>scenes/assignment0/cornell_grayscale.png</code>. The input image is shown below on the left; the expected output is shown on the right.</p><div class="twentytwenty-container"><img class="m-image" src="cornellbox.png" alt="Original" />
- <img class="m-image" src="cornell_grayscale-ref.png" alt="Grayscale" /></div><p>This handy way of showing off the differences between images is also available for you to use in your assignment project reports.</p></section></section><section id="autotoc_md47"><h2><a href="#autotoc_md47">What to submit</a></h2><p>Submit according to the instructions in the <a href="getting-started.html#submitting-on-canvas" class="m-doc">Submitting on Canvas</a> section of <a href="getting-started.html" class="m-doc">Getting started</a> guide.</p></section>
-        <div class="m-note m-dim m-thin m-text-center"><a href="assignments.html" class="m-doc">Assignments</a> | <a href="assignment1.html" class="m-doc">A1: Ray tracing &raquo;</a></div>
+<p>Provides an interface for treating a collection of Surfaces as a single <a href="class_surface.html" class="m-doc">Surface</a>. This base class implements a naive linear-time intersection routine which simply intersects each ray with every child <a href="class_surface.html" class="m-doc">Surface</a>.</p><p>This class also serves as the superclass for acceleration structures (such as BVHs, KD-Trees) which are responsible for performing ray-surface intersection tests against a collection of Surfaces.</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_surface.html" class="m-doc">Surface</a>
+            </dt>
+            <dd>This is the abstract superclass for all surfaces.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="abd04fa4c85f53e4e0e075c6db3cf2848">
+              <span class="m-doc-wrap-bumper"><a href="#abd04fa4c85f53e4e0e075c6db3cf2848" class="m-doc-self">SurfaceGroup</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j = json::object())</span>
+            </dt>
+            <dd>Create a new and empty naive accelerator.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aece5e07027cf561216e04a7063fcdd33" class="m-doc">add_child</a>(</span><span class="m-doc-wrap">shared_ptr&lt;<a href="class_surface.html" class="m-doc">Surface</a>&gt; surface) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Add a child surface.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#adcbf64ace255ca5ea095fcba6e5ede28" class="m-doc">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
+              <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Intersect a ray against all surfaces registered with the Accelerator.</dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a220c39b564ab36e7214687f310e75a00">
+              vector&lt;shared_ptr&lt;<a href="class_surface.html" class="m-doc">Surface</a>&gt;&gt; <a href="#a220c39b564ab36e7214687f310e75a00" class="m-doc-self">m_surfaces</a>
+            </dt>
+            <dd>All children.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="aece5e07027cf561216e04a7063fcdd33"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void SurfaceGroup::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aece5e07027cf561216e04a7063fcdd33" class="m-doc-self">add_child</a>(</span><span class="m-doc-wrap">shared_ptr&lt;<a href="class_surface.html" class="m-doc">Surface</a>&gt; surface) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Add a child surface.</p>
+<p>This function will become useful once we create groups of objects. The base class implementation just throws an error.</p><p>This function should only be used before <a href="class_surface.html#a70ff2f6461b97dd80009ea1dd16fb61a" class="m-doc">build()</a> is called.</p>
+          </div></section>
+          <section class="m-doc-details" id="adcbf64ace255ca5ea095fcba6e5ede28"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool SurfaceGroup::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adcbf64ace255ca5ea095fcba6e5ede28" class="m-doc-self">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
+              <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Intersect a ray against all surfaces registered with the Accelerator.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>true If an intersection was found</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Detailed information about the intersection, if any, will be stored in the provided <code>hit</code> data record.</p>
+          </div></section>
+        </section>
       </div>
     </div>
   </div>
