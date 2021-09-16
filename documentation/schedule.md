@@ -28,41 +28,41 @@ The schedule below lists the reading material, due dates for assignments, and to
             Introduction; linear algebra review
         </td>
         <td>
-            &nbsp;
+            [Slides](https://www.dropbox.com/sh/nkyvlivxn3zdtan/AAC924grr2_n4MnqAxvbvncea?dl=0&preview=00-Intro.pdf)
         </td>
     </tr>
     <tr>
-        <td class="date">
+        <td>
             Sep 15
         </td>
         <td>
-            [RTIOW, all chapters](https://raytracing.github.io/books/RayTracingInOneWeekend.html)
+            &nbsp;
         </td>
         <td>
             [A0](assignment0.html)
-        </td>
-        <td>
-            %Ray tracing
-        </td>
-        <td>
-            &nbsp;
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Sep 16
-        </td>
-        <td>
-            &nbsp;
-        </td>
-        <td>
-            &nbsp;
         </td>
         <td>
             Darts base code introduction
         </td>
         <td>
             &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td class="date">
+            Sep 16
+        </td>
+        <td>
+            [RTIOW, all chapters](https://raytracing.github.io/books/RayTracingInOneWeekend.html)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            %Ray tracing
+        </td>
+        <td>
+            [Slides](https://www.dropbox.com/sh/nkyvlivxn3zdtan/AAC924grr2_n4MnqAxvbvncea?dl=0&preview=01-Raytracing+I.pdf)
         </td>
     </tr>
     <tr>
@@ -378,9 +378,6 @@ The schedule below lists the reading material, due dates for assignments, and to
         <th colspan="5">
             Week 6: Bidirectional Methods
         </th>
-        <td>
-            &nbsp;
-        </td>
     </tr>
     <tr>
         <td>
@@ -703,12 +700,6 @@ The schedule below lists the reading material, due dates for assignments, and to
         </td>
         <td>
             "Final Exam" (Rendering Competition)
-        </td>
-        <td>
-            &nbsp;
-        </td>
-        <td>
-            &nbsp;
         </td>
         <td>
             &nbsp;

@@ -28,6 +28,27 @@ add_library(
   src/common.cpp
   src/image.cpp
   src/progress.cpp
+  include/darts/camera.h
+  include/darts/material.h
+  include/darts/scene.h
+  include/darts/sphere.h
+  include/darts/surface.h
+  include/darts/surface_group.h
+  include/darts/sampling.h
+  include/darts/transform.h
+  include/darts/factory.h
+  include/darts/json.h
+  src/materials/dielectric.cpp
+  src/materials/lambertian.cpp
+  src/materials/material.cpp
+  src/materials/metal.cpp
+  src/surfaces/quad.cpp
+  src/surfaces/sphere.cpp
+  src/surfaces/surface.cpp
+  src/surfaces/surface_group.cpp
+  src/parser.cpp
+  src/scene.cpp
+  src/example_scenes.cpp
   # cmake-format: on
 )
 
@@ -59,6 +80,11 @@ target_include_directories(
 add_executable(darts_tutorial0 src/darts_tutorial0.cpp)
 target_link_libraries(darts_tutorial0 PRIVATE darts_lib)
 
+add_executable(darts_tutorial1 src/darts_tutorial1.cpp)
+target_link_libraries(darts_tutorial1 PRIVATE darts_lib)
+
+add_executable(darts src/darts.cpp)
+target_link_libraries(darts PRIVATE darts_lib)
 
 
 

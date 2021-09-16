@@ -14,7 +14,6 @@ This assignment consists of three parts. In the first, you will implement sampli
 
 Task 1: Sampling Geometry
 =========================
-@m_span{m-label m-primary m-flat} 3 pts @m_endspan
 
 In this part, you will implement (in `include/darts/sampling.h`) a few new functions for sampling basic geometry, which will make the later parts of the assignment easier. Similar to last time, you should write a standalone program to generate and save a few hundred points from your functions, and visualize them using your favorite plotting tool (we will show screenshots from [plot.ly](https://chart-studio.plot.ly/create/#/)). You can reuse the same program you used in the previous assignment.
 
@@ -55,7 +54,6 @@ Visualize your code for an angle of pi/4 (Hint: You pass the cosine of the angle
 
 Task 2: Making Lights Sampleable
 ================================
-@m_span{m-label m-primary m-flat} 5 pts @m_endspan
 
 In this task, you will extend the surface base class in darts with a new sampling interface. Open `surface.h`. You should see a new struct `EmitterRecord`, and three new methods: `Surface::sample()`, `Surface::pdf()`, and `Surface::is_emissive()`. Read their documentation.
 
@@ -155,7 +153,6 @@ for (auto surface : m_surfaces)
 
 Task 3: Integrating Lights
 ==========================
-@m_span{m-label m-primary m-flat} 7 pts @m_endspan
 
 In this task, we will implement better integrators for direct lighting. You'll use the sampling interfaces you implemented in the earlier task to explicitly guide rays towards light sources.
 

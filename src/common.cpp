@@ -8,6 +8,7 @@
 #include <darts/common.h>
 #include <filesystem/resolver.h>
 
+#include <darts/factory.h>
 
 #include <spdlog/sinks/stdout_color_sinks.h>
 
@@ -24,6 +25,8 @@ void darts_init(int verbosity)
     spdlog::set_pattern("%^%v%$");
     spdlog::set_level(spdlog::level::level_enum(verbosity));
 
+    spdlog::debug("Available materials: {}.", fmt::join(DartsFactory<Material>::registered_types(), ", "));
+    spdlog::debug("Available surfaces: {}.", fmt::join(DartsFactory<Surface>::registered_types(), ", "));
 }
 
 Vec3f spherical_coordinates_to_direction(const Vec2f &phi_theta)

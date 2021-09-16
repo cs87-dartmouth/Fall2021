@@ -289,11 +289,11 @@ For convenience, we ask you to submit a direct link to the state of your report 
 2. Navigate to your report: `reports` > `assignment<assignment number>` > `report.html`
 3. Press the `y` key on your keyboard. Note that the URL now has the form:  
 `https://github.com/cs87-dartmouth/cs87-fall-2021-<username>/blob/<the commit identifier>/reports/assignment<assignment-number>/report.html`
-1. Copy this URL and submit it on the Canvas assignment page.
+4. Copy this URL and submit it on the Canvas assignment page.
 
 See the animated screencap below:
 
-![Screencap of the submission link process](images/submit-assignment.gif)
+\image html images/submit-assignment.gif
 
 
 
@@ -314,3 +314,33 @@ See the animated screencap below:
 ---
 
 👏 You're all set! You should now be ready to work on [Assignment 0](@ref assignment0)!
+
+FAQ
+===
+
+1. "bad CMake executable" on macOS:
+    
+    please run 
+    
+        xcode-select --install
+    
+    then, update your CMake to the newest version and reinstall CMake tools for VSCode.
+
+2.  Error while building the code on non-English (meaning "Region->Administrative->language for non-Unicode programs" is set to some other language) 
+    Windows machines: 
+    
+    This could happen for a few files, for example, in `progress.cpp` near the line with `fractional_characters`, giving an
+    `Error: newline in constant` or `invalid literal suffix`.
+    
+    You can go to 
+    "Control Panel->Region->Administrative->language for non-Unicode programs is set to other languages"
+    and enable
+    "Beta: Use Unicode UTF-8 for worldwide language support".
+
+3.  Unknown CMake command "CPMAddPackage":
+    
+    Please check the content of `build/Debug/cmake/CPM_0.32.0.cmake` (or `build/Release...` if you are building in Release mode).  If it's blank, you can paste the content of [this file](https://github.com/cpm-cmake/CPM.cmake/blob/master/cmake/CPM.cmake) in it.
+
+4.  CPMAddPackage: file download error with the packages (for example, nlohmann_json):
+    
+    This could be caused by SSL handshake failure. Please check if your system time is correct and turn off proxies. Also, update your CMake to the newest version.

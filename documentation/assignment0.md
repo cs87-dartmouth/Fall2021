@@ -65,7 +65,7 @@ To complete the last part of the function, you should load the image in `scenes/
     <img src="cornell_grayscale-ref.png" alt="Grayscale">
 @m_enddiv
 
-This handy way of showing off the differences between images will also be available for you to use in your assignment project reports (which you'll write starting with the next assignment).
+This handy way of showing off the differences between images is also available for you to use in your assignment project reports.
 
 
 What to submit

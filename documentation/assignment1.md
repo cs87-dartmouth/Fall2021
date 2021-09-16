@@ -16,18 +16,16 @@ As always, all the places where you are expected to insert or edit code are mark
 
 Task 1: Generating rays and using JSON
 ======================================
-@m_span{m-label m-primary m-flat} 1 pt @m_endspan
 
 Open up `%src/darts_tutorial1.cpp`. In `%main()`, the code will call a series of functions. For now, all are commented out.
 
 Each one of those functions expects you to implement something and will then test that functionality, and they will output information when you run the program. We've commented them out for now so as not to spam your terminal with too much information.
 
-
 @m_div{m-col-s-4 m-right-s m-center-t}
 <a href="01_manual_ray_image-ref.png"><img src="01_manual_ray_image-ref.png"/></a>
 @m_enddiv
 
-Go ahead and uncomment `%test_manual_camera_image()`, and have a look at that function further up in the file. Follow the instructions in the code to generate rays over the image plane. The base code will convert your ray directions into pixel colors and write the image to  `scenes/assignment1/01_manual_ray_image.png`.
+Go ahead and uncomment `%test_manual_camera_image()`, and have a look at that function further down in the file. Follow the instructions in the code to generate rays over the image plane. The base code will convert your ray directions into pixel colors and write the image to  `scenes/assignment1/01_manual_ray_image.png`.
 
 @m_div{m-clearfix-s} @m_enddiv
 @m_div{m-clearfix-m} @m_enddiv
@@ -41,6 +39,8 @@ Uncomment `%test_JSON` and have a look at that function. This function teaches 
 
 Finally, uncomment `%test_camera_class_image()` and go to that function. This function also generates rays, but this time it does it by calling the `Camera::generate_ray()` method. Head over to `camera.h`. You will have to implement two things here: The camera constructor, which should read the `"vfov"` parameter from JSON to get the vertical field of view, and compute the size of the image plane and assign it to `m_size`; follow [Chapter 11](https://raytracing.github.io/books/RayTracingInOneWeekend.html#positionablecamera) in the Shirley book for this. Then you should implement `Camera::generate_ray()`. This function gets passed a pixel coordinate, and should output a ray, similar to what you did in `%test_manual_camera_image()` – except that now, the size of the image plane is given by `m_size`. After you complete this task, you will have an output image in `scenes/assignment1/01_camera_ray_image.png`.
 
+When you first implement `Camera::generate_ray()` you may set all rays to start at the origin, but before you render some of the scenes at the end of this assignment you should read [Chapter 12](https://raytracing.github.io/books/RayTracingInOneWeekend.html#defocusblur) and implement defocus blur by sampling the origin randomly from a disk.
+
 
 @m_div{m-clearfix-s} @m_enddiv
 @m_div{m-clearfix-m} @m_enddiv
@@ -48,7 +48,6 @@ Finally, uncomment `%test_camera_class_image()` and go to that function. This f
 
 Task 2: Transforms
 ==================
-@m_span{m-label m-primary m-flat} 1 pt @m_endspan
 
 In this task, you will learn how to use transforms.
 
@@ -69,7 +68,6 @@ If you did this correctly, `scenes/assignment1/01_xformed_camera_ray_image.png`
 
 Task 3: Spheres
 ===============
-@m_span{m-label m-primary m-flat} 2 pts @m_endspan
 
 With rays being generated correctly, you are now ready to intersect things!
 
@@ -86,7 +84,7 @@ The test code first checks your code for an untransformed sphere, and then for a
 <a href="01_xformed_camera_sphere_image-ref.png"><img src="01_xformed_camera_sphere_image-ref.png"/></a>
 @m_enddiv
 
-Uncomment `%test_sphere_image()` and take a look at that function. It will raytrace an image of a sphere and save it as `scenes/assignment1/01_xformed_camera_sphere_image.png`; comparing that image to the reference might help you debug your sphere implementation if something isn't working right:
+Uncomment `%test_sphere_image()` and take a look at that function. It will raytrace an image of a sphere and save it as `scenes/assignment1/01_xformed_camera_sphere_image.png`; comparing that image to the reference might help you debug your sphere implementation if something isn't working right.
 
 @m_div{m-clearfix-s} @m_enddiv
 @m_div{m-clearfix-m} @m_enddiv
@@ -94,19 +92,17 @@ Uncomment `%test_sphere_image()` and take a look at that function. It will rayt
 
 Task 4: Materials
 =================
-@m_span{m-label m-primary m-flat} 3 pts @m_endspan
 
 Uncomment `%test_materials()` and take a look at that function. It instantiates a `Lambertian` and a `Metal` material and generates a scattered ray from it.
 
 There are two functions you need to implement: `Lambertian::scatter()` and `Metal::scatter()` in `%src/materials/lambertian.cpp` and `%src/materials/metal.cpp`, respectively. Read the lecture slides and Chapters [8](https://raytracing.github.io/books/RayTracingInOneWeekend.html#diffusematerials) and [9](https://raytracing.github.io/books/RayTracingInOneWeekend.html#metal) of the Shirley book to get an idea for what you need to do. Please take a close look at the comments in the code - there is a small error in the text book, and we tell you how to avoid it.
 
-The function `%test_materials()` will generate a single scattered ray and check if the ray origin, direction and attenuation are correct. Because the scatter method is random, it is difficult to test, and there are multiple correct ways to implement this method. We provide test data using the "obvious" implementation, but maybe you did it differently - in that case you won't lose points if the next task still renders correctly. Take the results of the autotester with a grain of salt.
+The function `%test_materials()` will generate a single scattered ray and check if the ray origin, direction and attenuation are correct. Because the scatter method is random, it is difficult to test, and there are multiple correct ways to implement this method. We provide test data using the "obvious" implementation, but maybe you did it differently - in that case you won't lose points if the next task still renders correctly. Take the results of our rudimentary autotester with a grain of salt.
 
 You also need to implement `Dielectric::scatter()`. You can follow the Shirley book (Chapter 9) for your implementation. After you have completed the entire assignment, you can run your renderer on scenes with glass to test/debug your implementation.
 
 Task 5: Recursive Ray Tracing    {#recursiveraytracing}
 =============================
-@m_span{m-label m-primary m-flat} 3 pts @m_endspan
 
 If you've come this far, you have reached the home stretch of this assignment!
 
@@ -132,7 +128,6 @@ This task might be slow to run - if it takes too long, make sure you are compili
 
 Task 6: Scene Renderer
 ======================
-@m_span{m-label m-primary m-flat} 1 pt @m_endspan
 
 Finally, you can combine everything from the previous assignments by filling in the code in `%scene.cpp`. Go to `Scene::recursive_color()` and fill in the recursive ray tracing function.
 

@@ -21,7 +21,6 @@ In this assignment you will implement an acceleration structure called a _boundi
 
 Task 1: Ray-triangle intersection  {#ray-triangleintersection}
 =================================
-@m_span{m-label m-primary m-flat} 2 pts @m_endspan
 
 Triangles are the default modeling primitives in graphics and hence essential for rendering a variety of scenes. The darts basecode already provides the ability to load OBJ triangle meshes with potentially thousands or millions of triangles, so you can find nice models online and load them in your renderer. Currently, however, darts doesn't know how to intersect a ray with a single triangle. In this task, you will implement a ray-triangle intersection routine.
 
@@ -35,7 +34,7 @@ Once you've finished writing up the intersection code, you can go ahead and run 
 <a href="simple-geometry-ref.png"><img src="simple-geometry-ref.png"></a>
 @m_enddiv
 
-Once your tests pass, you can test it on a slightly more complex example: Run the `build/darts` application from the terminal on the `assignment2/simple-geometry-no-bvh.json` scene. This renders a scene with a few simple triangle meshes, which should look like the image shown (the amount of noise in the image will depend on the number of samples used, ours uses more than the default value in the scene).
+Once your tests pass, you can test it on a slightly more complex example: Run the `darts` application from the terminal on the `assignment2/simple-geometry-no-bvh.json` scene. This renders a scene with a few simple triangle meshes, which should look like the image shown (the amount of noise in the image will depend on the number of samples used, ours uses more than the default value in the scene).
 
 This render takes quite a while! It's about time that we fix this using a BBH.
 
@@ -56,8 +55,7 @@ We already provide you an implementation of an axis-aligned bounding `Box` class
     A neat feature of axis-aligned bounding boxes (and rays) is that the concept works in arbitrary dimensions. Our implementation is generic, providing a single `template` class that works for N-dimensional boxes. Take a look at how this is accomplished in `<darts/box.h>`. We also provide an implementation of a ray-box intersection routine, similar to the one described in [Section 3.5](https://raytracing.github.io/books/RayTracingTheNextWeek.html#boundingvolumehierarchies/anoptimizedaabbhitmethod). But again, our code works in arbitrary dimensions (even though we will only use the 3D version in this class).
 
 Task 3: Hierarchy construction and traversal
-==============================================================================
-@m_span{m-label m-primary m-flat} Undergrads: 3 pts, Grads: 2 pts @m_endspan
+============================================
 
 Read Sections [3.6](https://raytracing.github.io/books/RayTracingTheNextWeek.html#boundingvolumehierarchies/constructingboundingboxesforhittables)–[3.10](https://raytracing.github.io/books/RayTracingTheNextWeek.html#boundingvolumehierarchies/theboxcomparisonfunctions) of the book to understand how the internals of a bounding volume hierarchy work.
 
@@ -107,7 +105,6 @@ If your image is correct, you can go ahead and stress test your code on some mor
 
 Task 4: Extensions
 ==================
-@m_span{m-label m-primary m-flat} Undergrads: 3 pts, Grads: 2 pts @m_endspan
 
 The %BBH presented in the book is simple to implement, but has a lot of potential for improvement (i.e., it's a bit slow).
 
@@ -127,9 +124,8 @@ To help get you started, here is a list of potential ideas you could implement t
 
 These are just examples. If you can come up with your own ideas that are on a similar scope as the suggestions, feel free to implement those ideas instead.
 
-Task 5: Surface area heuristic
-==============================
-@m_span{m-label m-primary m-flat} Grad students only, 2 pts @m_endspan
+Task 5: Surface area heuristic (grad students only)
+===================================================
 
 On top of the improvements in the previous task, implement the surface area heuristic (SAH) in your %BBH construction.
 
@@ -137,7 +133,6 @@ You can check the [BVH section of the PBRT textbook](https://www.pbr-book.org/3e
 
 Task 6: Evaluation scene and leaderboard
 ========================================
-@m_span{m-label m-primary m-flat} 1 pt @m_endspan
 
 We've designed some scene for you to evaluate the performance of all your %BBH improvements. TBA <!-- **FIXME: complete this section** -->
 
@@ -146,7 +141,7 @@ What to submit
 
 In your report, make sure to include:
 
-- Images of all provided scenes as produced by your raytracer: run `build/darts` on all scenes in `scenes/assignment2`, and add the images to your report.
+- Images of all provided scenes as produced by your raytracer: run `darts` on all scenes in `scenes/assignment2`, and add the images to your report.
 - Paste the output of your `test_triangle_intersection` application.
 - The ray traversal stats (average ray-primitive intersection tests) of your %BBH on the different scenes provided (don't change the view location or other scene parameters).
 

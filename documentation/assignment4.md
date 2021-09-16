@@ -16,7 +16,6 @@ This assignment consists of three parts. In the first, you will implement sampli
 
 Task 1: Sampling distributions    {#sampling-distributions}
 ==============================
-@m_span{m-label m-primary m-flat} 3 pts @m_endspan
 
 In this task, you will start with the basics of generating points on the sphere that have specific distributions. We recommend you read [_%Ray Tracing: The Rest of Your Life_](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html), Chapters [1](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html#overview)-[7](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html#generatingrandomdirections), before you start.
 
@@ -171,7 +170,6 @@ Note how clustered the points are around the z-axis.
 
 Task 2: Sampling materials
 ==========================
-@m_span{m-label m-primary m-flat} 4 pts @m_endspan
 
 In this task, you will redesign your `Material` class to support three new queries. The first of these is `Material::eval()`: This method will evaluate how much light flows between a given incoming and outgoing ray direction. This method entirely determines what the material will look like.
 
@@ -394,7 +392,6 @@ You can test your implementation using the sample tester tool. You should get im
 
 Task 3: Samplers
 ================
-<!-- @m_span{m-label m-primary m-flat} 4 pts @m_endspan -->
 
 As mentioned previously, one of our goals is to move away from using the global random number generator in `randf()`, and instead create an explicit random number generator (it then becomes much easier to parallelize our code where each thread maintains its own random number generator). In rendering we typically call this abstraction a `Sampler` instead of a random number generator, partially because it produces _samples_ for the Monte Carlo algorithm, but also because we can create Samplers that don't actually produce pseudo-random numbers at all, but rather carefully crafted deterministic samples that can often compute lower noise images more quickly.
 
@@ -435,8 +432,7 @@ else
 This allows our code to be backwards compatible with our previous scene files which have no concept of a Sampler, while allowing you to explore different samplers in the future.
 
 Task 4: Integrators
-================================
-@m_span{m-label m-primary m-flat} 4 pts @m_endspan
+===================
 
 In this task, you will extend your renderer to support different _integrators._ In computer graphics, we say "integrator" to refer to an algorithm for rendering an image. So far, we have been using the algorithm outlined in Peter Shirley's books, but there are more powerful (and less noisy) integrators out there, and you will implement the ability to select different integrators in this task.
 

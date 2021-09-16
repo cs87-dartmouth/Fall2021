@@ -12,7 +12,6 @@ We will primarily be referring to chapters of [Ray Tracing - The Next Week](http
 
 Task 1: The Texture class
 =========================
-@m_span{m-label m-primary m-flat} 1 pt @m_endspan
 
 Read [Ray Tracing - The Next Week: Chapter 4](https://raytracing.github.io/books/RayTracingTheNextWeek.html#solidtextures), and create a `Texture` base class following this chapter (perhaps in a new `texture.h` file within your `include/darts` directory. Remember to add this file to the list of headers or source files in `CMakeLists.txt`. Instead of accepting `u`, `v`, and `p` parameters as done in the book, we suggest you have your `Texture::value()` function take a `const HitInfo &` as the parameter (you can then retrieve `u`, `v`, and `p` from within this `HitInfo`).
 
@@ -118,13 +117,11 @@ Once you have this implemented, you should be able to render all the scenes from
 
 Task 2: Solid textures
 ======================
-@m_span{m-label m-primary m-flat} 2.5 pts @m_endspan
 
 You now have the framework to easily add other types of textures, and these textures can be used any place you previously used a fixed `Color3f`! 
 
 Checkerboard
 ------------
-@m_span{m-label m-primary m-flat} 1 pt @m_endspan
 
 @m_div{m-col-s-6 m-col-m-4 m-right-s}
 <a href="checker-ref.png"><img src="checker-ref.png"/></a>
@@ -141,7 +138,6 @@ Once you have this implemented, you should be able to render the scene `scenes/a
  <!-- **FIXME: OPTIONAL?** -->
 Perlin noise
 ------------
-@m_span{m-label m-primary m-flat} 1.5 pts @m_endspan
 
 @m_div{m-col-s-6 m-col-m-4 m-right-s}
 <a href="marble-128spp.png"><img src="marble-128spp.png"/></a>
@@ -163,11 +159,9 @@ Particularly with procedural textures, you might find it useful to be able to sc
 
 Task 3: Image texture mapping
 =============================
-@m_span{m-label m-primary m-flat} 2.5 pts @m_endspan
 
 The ImageTexture class
 ----------------------
-@m_span{m-label m-primary m-flat} 1 pt @m_endspan
 
 Read [Chapter 6](https://raytracing.github.io/books/RayTracingTheNextWeek.html#imagetexturemapping) of the book and implement image texturing mapping. We already provide you with image loading support, which you should leverage using the `Image3f` class defined in `include/darts/image.h` and `src/image.cpp`. Your `ImageTexture` class should accept a `"filename"` string parameter from the `json` object. Once you read this string, use the global file resolver to resolve this filename into a path, like so:
 
@@ -180,7 +174,6 @@ string path = get_file_resolver().resolve(filename).str();
 
 Texture coordinates
 -------------------
-@m_span{m-label m-primary m-flat} 1.5 pts @m_endspan
 
 Extend your `Sphere::intersect()` function to output the UV coordinates as [described in the book](https://raytracing.github.io/books/RayTracingTheNextWeek.html#solidtextures/texturecoordinatesforspheres). Since there are many different conventions for spherical coordinates and uv coordinates, we already provide handy functions to consistently perform the Cartesian-to-spherical or spherical-to-Cartesian coordinate mappings for you. They are `direction_to_spherical_uv()` and `spherical_uv_to_direction()` in `include/darts/common.h`. You should now be able to render `scenes/assignment3/earth.json`.
 
@@ -210,7 +203,6 @@ If you render `scenes/02/triangles_textures/teapot.json` you should see a scene 
 
 Task 4: Fresnel blend material
 ==============================
-@m_span{m-label m-primary m-flat} 1 pt @m_endspan
 
 Many real-world materials have a more complex structure because the surface actually consist of multiple layers: e.g. a clear varnish on top of wood. There are many sophisticated techniques in graphics that try to model such multiple layers in a physically based way. We will instead take a physically inspired but simple approach to blend between a dielectric varnish and a substrate layer based on the index of refraction of the varnish.
 
@@ -232,7 +224,6 @@ Render `scenes/assignment3/fresnel_blend.json`.
 
 Task 5: Interesting scene
 =========================
-@m_span{m-label m-primary m-flat} 2 pts @m_endspan
 
 Now create an interesting scene (or scenes) showcasing all the features you've implemented. Be creative. Find some interesting meshes and textures online, or create some new procedural textures by combining your existing functionality. Consider applying textures to various parts of a material, like the blend factor, the roughness, and emission. [Sketchfab.com](https://sketchfab.com/feed) and [polyhaven.com](https://polyhaven.com/models) have thousands of high-quality textured meshes available for free. Here's a few that we created and provide the scene files for:
 

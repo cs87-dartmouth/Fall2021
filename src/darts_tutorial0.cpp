@@ -184,7 +184,7 @@ void test_color_and_image()
     // TODO: Print out the green channel of pinkish
     spdlog::info("Green channel of pinkish is: {}", 0.0f);
 
-    spdlog::info("Blue channel of still_red is: {}", still_red[1]);
+    spdlog::info("Blue channel of still_red is: {}", still_red[2]);
 
     pinkish[0] *= 2.f;
 
