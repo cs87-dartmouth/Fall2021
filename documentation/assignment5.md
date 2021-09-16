@@ -6,7 +6,7 @@
 @m_class{m-note m-danger}
 
 @par Note
-    Make sure to do a `git pull upstream remote` to retrieve any updates to the base code before you begin!
+    Make sure to do a `git pull upstream main` to retrieve any updates to the base code before you begin!
 
 In this final assignment, you will use the sampling and integrator interfaces from the previous assignment to build powerful new integrators that can handle lights with much less noise than you've seen so far.
 

@@ -6,7 +6,7 @@
 @m_class{m-note m-danger}
 
 @par Note
-    Make sure to do a `git pull upstream remote` to retrieve any updates to the base code before you begin!
+    Make sure to do a `git pull upstream main` to retrieve any updates to the base code before you begin!
 
 In this assignment, you will learn how to accelerate ray tracing with an acceleration data structure. We will primarily be referring to chapters of [Ray Tracing - The Next Week](https://raytracing.github.io/books/RayTracingTheNextWeek.html) in this assignment. Make sure to read through it.
 

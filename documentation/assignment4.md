@@ -6,7 +6,7 @@
 @m_class{m-note m-danger}
 
 @par Note
-    Make sure to do a `git pull upstream remote` to retrieve any updates to the base code before you begin!
+    Make sure to do a `git pull upstream main` to retrieve any updates to the base code before you begin!
 
 In this assignment, we will take a deep dive into implementing a Monte Carlo renderer. Monte Carlo is a powerful technique for approximating integrals, and it is the dominant technique for rendering images in the movie industry and, increasingly, video games.
 

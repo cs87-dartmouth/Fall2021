@@ -6,7 +6,7 @@
 @m_class{m-note m-danger}
 
 @par Note
-    Make sure to do a `git pull upstream remote` to retrieve any updates to the base code before you begin! If you haven't set a remote upstream, go back to the relevant instructions in the \ref getting-started guide.
+    Make sure to do a `git pull upstream main` to retrieve any updates to the base code before you begin! If you haven't set a remote upstream, go back to the relevant instructions in the \ref getting-started guide.
 
 In this assignment, you will implement the basics of a ray tracer and render your first images. This assignment assumes you've completed the previous one - do not start here before you've completed [Assignment 0](\ref assignment0)!
 
