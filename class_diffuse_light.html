@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CS
+  <title>DiffuseLight class | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -52,7 +52,7 @@
                 <li><a href="getting-started.html">Getting started</a></li>
                 <li><a href="https://github.com/cs87-dartmouth/Fall2021">GitHub</a></li>
                 <li><a href="modules.html">Modules</a></li>
-                <li><a href="annotated.html" id="m-navbar-current">Classes</a></li>
+                <li><a href="annotated.html">Classes</a></li>
                 <li><a href="files.html">Files</a></li>
               </ol>
             </li>
@@ -70,52 +70,51 @@
   <div class="m-container m-container-inflatable">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <h1>Classes</h1>
-        <ul class="m-doc">
-          <li>class <a href="class_array2d.html" class="m-doc">Array2d</a> <span class="m-doc">Generic, resizable, 2D array class.</span></li>
-          <li>class <a href="class_camera.html" class="m-doc">Camera</a> <span class="m-doc">A virtual (pinhole) camera.</span></li>
-          <li>class <a href="class_darts_exception.html" class="m-doc">DartsException</a> <span class="m-doc">Simple exception class, which stores a human-readable error description.</span></li>
-          <li>class <a href="class_darts_factory.html" class="m-doc">DartsFactory</a> <span class="m-doc">A specialization of the <a href="class_factory.html" class="m-doc">Factory</a> for darts objects read from json.</span></li>
-          <li>class <a href="class_dielectric.html" class="m-doc">Dielectric</a> <span class="m-doc">A smooth dielectric surface that reflects and refracts light according to the specified index of refraction <a href="class_dielectric.html#a0c5b80618fc2bb48b2678ea077ffc6f9" class="m-doc">ior</a>.</span></li>
-          <li>class <a href="class_diffuse_light.html" class="m-doc">DiffuseLight</a> <span class="m-doc">A material that emits light equally in all directions from the front side of a surface.</span></li>
-          <li>class <a href="class_factory.html" class="m-doc">Factory</a> <span class="m-doc">Abstract factory used to construct objects by name.</span></li>
-          <li>struct <a href="struct_hit_info.html" class="m-doc">HitInfo</a> <span class="m-doc">Contains information about a ray intersection hit point.</span></li>
-          <li>class <a href="class_image3f.html" class="m-doc">Image3f</a> <span class="m-doc">A floating-point RGB image.</span></li>
-          <li>class <a href="class_lambertian.html" class="m-doc">Lambertian</a> <span class="m-doc">A perfectly diffuse (<a href="class_lambertian.html" class="m-doc">Lambertian</a>) material.</span></li>
-          <li>class <a href="class_material.html" class="m-doc">Material</a> <span class="m-doc">A base class used to represent surface material properties.</span></li>
-          <li>class <a href="class_metal.html" class="m-doc">Metal</a> <span class="m-doc">A metallic material that reflects light into the (potentially rough) mirror reflection direction.</span></li>
-          <li>class <a href="class_progress.html" class="m-doc">Progress</a> <span class="m-doc">A thread-safe helper object to display and update a progress bar in the terminal.</span></li>
-          <li>class <a href="class_quad.html" class="m-doc">Quad</a> <span class="m-doc">A quad spanning from -<a href="class_quad.html#a39460984f5caefcf1eb486755e3e17d4" class="m-doc">m_<wbr />size</a> / 2 to <a href="class_quad.html#a39460984f5caefcf1eb486755e3e17d4" class="m-doc">m_<wbr />size</a> / 2 in the (x,y)-plane at z=0.</span></li>
-          <li class="m-doc-collapsible collapsed">
-            <a href="#" onclick="return toggle(this)">class</a> <a href="class_range.html" class="m-doc">Range</a> <span class="m-doc">Python-style range: iterates from min to max in range-based for loops.</span>
-            <ul class="m-doc">
-              <li>class <a href="class_range_1_1_iterator.html" class="m-doc">Iterator</a> <span class="m-doc">Standard iterator support for <a href="class_range.html" class="m-doc">Range</a>.</span></li>
-            </ul>
-          </li>
-          <li>struct <a href="struct_ray.html" class="m-doc">Ray</a> <span class="m-doc">Simple ray segment data structure.</span></li>
-          <li>class <a href="class_scene.html" class="m-doc">Scene</a> <span class="m-doc">Main scene data structure.</span></li>
-          <li>class <a href="class_sphere.html" class="m-doc">Sphere</a> <span class="m-doc">A sphere centered at the origin with radius <a href="class_sphere.html#a1faee6c9b6e62abf0d35cc87a1894b61" class="m-doc">m_<wbr />radius</a>.</span></li>
-          <li>class <a href="class_surface.html" class="m-doc">Surface</a> <span class="m-doc">This is the abstract superclass for all surfaces.</span></li>
-          <li>class <a href="class_surface_group.html" class="m-doc">SurfaceGroup</a> <span class="m-doc">A collection of Surfaces grouped together.</span></li>
-          <li>struct <a href="struct_transform.html" class="m-doc">Transform</a> <span class="m-doc">Homogeneous coordinate transformation.</span></li>
-          <li>class <a href="class_xformed_surface_with_material.html" class="m-doc">XformedSurfaceWithMaterial</a> <span class="m-doc">A convenience subclass of <a href="class_surface.html" class="m-doc">Surface</a> for simple surfaces with a <a href="struct_transform.html" class="m-doc">Transform</a> and a <a href="class_material.html" class="m-doc">Material</a>.</span></li>
-        </ul>
-        <script>
-        function toggle(e) {
-            e.parentElement.className = e.parentElement.className == 'm-doc-collapsible' ?
-                'm-doc-expansible' : 'm-doc-collapsible';
-            return false;
-        }
-        /* Collapse all nodes marked as such. Doing it via JS instead of
-           directly in markup so disabling it doesn't harm usability. The list
-           is somehow regenerated on every iteration and shrinks as I change
-           the classes. It's not documented anywhere and I'm not sure if this
-           is the same across browsers, so I am going backwards in that list to
-           be sure. */
-        var collapsed = document.getElementsByClassName("collapsed");
-        for(var i = collapsed.length - 1; i >= 0; --i)
-            collapsed[i].className = 'm-doc-expansible';
-        </script>
+        <h1>
+          DiffuseLight <span class="m-thin">class</span>
+        </h1>
+        <p>A material that emits light equally in all directions from the front side of a surface.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_material.html" class="m-doc">Material</a>
+            </dt>
+            <dd>A base class used to represent surface material properties.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="aba9aa5618852b627b5d42998f615991b">
+              <span class="m-doc-wrap-bumper">auto <a href="#aba9aa5618852b627b5d42998f615991b" class="m-doc-self">emitted</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
+              const <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const -&gt; <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Returns a constant Color3f if the ray hits the surface on the front side.</dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a0307040adbcbab928b46f42647336937">
+              <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a> <a href="#a0307040adbcbab928b46f42647336937" class="m-doc-self">emit</a>
+            </dt>
+            <dd>The emissive color of the light.</dd>
+          </dl>
+        </section>
       </div>
     </div>
   </div>
