@@ -28,6 +28,7 @@ add_library(
   src/common.cpp
   src/image.cpp
   src/progress.cpp
+  src/materials/diffuse_light.cpp
   include/darts/camera.h
   include/darts/material.h
   include/darts/scene.h
