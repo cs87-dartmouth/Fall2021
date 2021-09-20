@@ -19,9 +19,6 @@
     "background": [
         0, 0, 0
     ],
-    "accelerator": {
-        "type": "bbh"
-    },
     "materials": [
         {
             "type": "lambertian",

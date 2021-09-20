@@ -45,7 +45,7 @@ The schedule below lists the reading material, due dates for assignments, and to
             Darts base code introduction
         </td>
         <td>
-            &nbsp;
+            [Slides](https://drive.google.com/file/d/1lqXk48AI-IIS-GrLFIQnbk3FoCS3eskL/view?usp=sharing)
         </td>
     </tr>
     <tr>

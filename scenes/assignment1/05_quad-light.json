@@ -15,9 +15,6 @@
         "type": "independent",
         "samples": 256
     },
-    "accelerator": {
-        "type": "bbh"
-    },
     "background": [
         0, 0, 0
     ],

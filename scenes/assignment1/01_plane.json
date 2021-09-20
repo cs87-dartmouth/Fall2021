@@ -13,9 +13,6 @@
     "background": [
         1, 1, 1
     ],
-    "accelerator": {
-        "type": "bbh"
-    },
     "surfaces": [
         {
             "type": "sphere",
