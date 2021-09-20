@@ -50,7 +50,7 @@
             "material": "defaultMat"
         }, {
             "type": "mesh",
-            "filename": "../misc/loewenfeld-bust/models/smoothed.obj",
+            "filename": "../assets/loewenfeld/models/smoothed.obj",
             "transform": [
                 {
                     "translate": [0, 222.3563, 0]

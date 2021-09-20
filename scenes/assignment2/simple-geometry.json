@@ -158,7 +158,7 @@
                     "translate": [140, -177.5, 100]
                 }
             ],
-            "filename": "../meshes/cylinder.obj",
+            "filename": "../assets/cylinder.obj",
             "material": "white"
         }, {
             "type": "mesh",
@@ -169,7 +169,7 @@
                     "translate": [-140, -177.5, -100]
                 }
             ],
-            "filename": "../meshes/cone.obj",
+            "filename": "../assets/cone.obj",
             "material": "white"
         }
     ]

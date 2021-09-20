@@ -36,11 +36,11 @@
         {
             "type": "mesh",
             "name": "sponza",
-            "filename": "../meshes/sponza.obj",
+            "filename": "../assets/sponza.obj",
             "material": "white"
         }, {
             "type": "mesh",
-            "filename": "../meshes/buddha.obj",
+            "filename": "../assets/buddha.obj",
             "material": "green",
             "transform": [
                 {

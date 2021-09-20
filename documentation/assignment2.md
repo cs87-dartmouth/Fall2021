@@ -5,10 +5,15 @@
 
 @m_class{m-note m-danger}
 
-@par Note
+@par Get the latest base code updates!
     Make sure to do a `git pull upstream main` to retrieve any updates to the base code before you begin!
 
 In this assignment, you will learn how to accelerate ray tracing with an acceleration data structure. We will primarily be referring to chapters of [Ray Tracing - The Next Week](https://raytracing.github.io/books/RayTracingTheNextWeek.html) in this assignment. Make sure to read through it.
+
+@m_class{m-note m-danger}
+
+@par Download textures and meshes!
+    We will be dealing with large textures and meshes in this assignment (roughly 1GB). We won't add these to GitHub to avoid bloating your repository. Instead, you will need to download [this DropBox folder](https://www.dropbox.com/sh/e8svsmy22xoan8y/AACxsE8_LpUDohmDYx8flEIta?dl=0) as a zip file and extract into your `scenes/` directory (so that it creates a `scenes/assets` directory within your darts codebase). **DO NOT** commit these files to your GitHub repo (our `.gitignore` should prevent you from accidentally doing this unless you try to explicitly circumvent it).
 
 In the previous assignment, each time you traced a ray the code would perform an intersection test against every single primitive in your scene. This is a reasonable solution for scenes with a few primitives, but it quickly becomes impractical in scenes that contain meshes with thousands to billions of triangles. This is because with naive ray tracing the cost of tracing a ray grows linearly with the number of primitives. Acceleration structures allow us to keep this cost sub-linear, providing tremendous speed improvements for typical scenes.
 

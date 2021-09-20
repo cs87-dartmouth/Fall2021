@@ -14,7 +14,7 @@
     },
     "sampler": {
         "type": "independent",
-        "samples": 128
+        "samples": 1
     },
     "background": 0.3,
     "accelerator": {
@@ -144,7 +144,7 @@
         }, {
             "type": "mesh",
             "name": "ajax",
-            "filename": "../misc/loewenfeld-bust/models/smoothed.obj",
+            "filename": "../assets/loewenfeld/models/smoothed.obj",
             "transform": [
                 {
                     "translate": [0, 222.3563, 0]

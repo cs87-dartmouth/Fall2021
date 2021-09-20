@@ -13,3 +13,4 @@ __pycache__
 /scenes/**/*.mtl
 /scenes/misc
 /scenes/meshes
+/scenes/assets

@@ -52,7 +52,7 @@
         }, {
             "type": "mesh",
             "name": "ajax",
-            "filename": "../meshes/nefertiti/aem_aem21300_3dsl01_mo08-03_p.obj",
+            "filename": "../assets/nefertiti/aem_aem21300_3dsl01_mo08-03_p.obj",
             "transform": [
                 {
                     "axis": [

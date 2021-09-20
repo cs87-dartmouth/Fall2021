@@ -14,7 +14,7 @@
     },
     "sampler": {
         "type": "independent",
-        "samples": 100
+        "samples": 1
     },
     "background": [
         0, 0, 0
@@ -164,7 +164,7 @@
                     "translate": [140, -277.5, 100]
                 }
             ],
-            "filename": "../meshes/buddha.obj",
+            "filename": "../assets/buddha.obj",
             "material": "glass"
         }, {
             "type": "mesh",
@@ -180,7 +180,7 @@
                     "translate": [-140, -277.5, -100]
                 }
             ],
-            "filename": "../meshes/buddha.obj",
+            "filename": "../assets/buddha.obj",
             "material": "white"
         }
     ]
