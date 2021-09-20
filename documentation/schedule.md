@@ -28,7 +28,7 @@ The schedule below lists the reading material, due dates for assignments, and to
             Introduction; linear algebra review
         </td>
         <td>
-            [Slides](https://www.dropbox.com/sh/nkyvlivxn3zdtan/AAC924grr2_n4MnqAxvbvncea?dl=0&preview=00-Intro.pdf)
+            [Slides](https://www.dropbox.com/s/af1m0l9rgm0d23c/00-Intro.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -62,7 +62,7 @@ The schedule below lists the reading material, due dates for assignments, and to
             %Ray tracing
         </td>
         <td>
-            [Slides](https://www.dropbox.com/sh/nkyvlivxn3zdtan/AAC924grr2_n4MnqAxvbvncea?dl=0&preview=01-Raytracing+I.pdf)
+            [Slides](https://www.dropbox.com/s/x2l5hfnpcijvqqn/01-Raytracing%20I.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -79,7 +79,7 @@ The schedule below lists the reading material, due dates for assignments, and to
             %Ray tracing – Shading
         </td>
         <td>
-            &nbsp;
+            [Slides](https://www.dropbox.com/s/drhsry7pkzuggn0/02-Raytracing%20II%20-%20Shading.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -98,10 +98,10 @@ The schedule below lists the reading material, due dates for assignments, and to
             &nbsp;
         </td>
         <td>
-            Shapes, meshes & acceleration structures
+            Meshes & acceleration structures
         </td>
         <td>
-            &nbsp;
+            [Slides](https://www.dropbox.com/s/d0vmvn4p79cl6e9/03-Meshes%20%26%20Acceleration%20Structures.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -109,16 +109,16 @@ The schedule below lists the reading material, due dates for assignments, and to
             Sep 22
         </td>
         <td>
-            [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 4](https://raytracing.github.io/books/RayTracingTheNextWeek.html#solidtextures)–[8](https://raytracing.github.io/books/RayTracingTheNextWeek.html#instances)
-        </td>
-        <td>
-            [A1](assignment1.html)
-        </td>
-        <td>
-            Texturing
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 4](https://www.pbr-book.org/3ed-2018/Primitives_and_Intersection_Acceleration)
         </td>
         <td>
             &nbsp;
+        </td>
+        <td>
+            Meshes & acceleration structures
+        </td>
+        <td>
+            [Slides](https://www.dropbox.com/s/d0vmvn4p79cl6e9/03-Meshes%20%26%20Acceleration%20Structures.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -146,7 +146,7 @@ The schedule below lists the reading material, due dates for assignments, and to
             [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 4](https://raytracing.github.io/books/RayTracingTheNextWeek.html#solidtextures)–[8](https://raytracing.github.io/books/RayTracingTheNextWeek.html#instances)
         </td>
         <td>
-            &nbsp;
+            [A1](assignment1.html)
         </td>
         <td>
             Texturing
@@ -165,13 +165,13 @@ The schedule below lists the reading material, due dates for assignments, and to
             Sep 27
         </td>
         <td>
-            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 5](https://www.pbr-book.org/3ed-2018/Color_and_Radiometry)
+            [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 4](https://raytracing.github.io/books/RayTracingTheNextWeek.html#solidtextures)–[8](https://raytracing.github.io/books/RayTracingTheNextWeek.html#instances)
         </td>
         <td>
             &nbsp;
         </td>
         <td>
-            Radiometry
+            Texturing
         </td>
         <td>
             &nbsp;
@@ -182,13 +182,13 @@ The schedule below lists the reading material, due dates for assignments, and to
             Sep 29
         </td>
         <td>
-            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration)
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 5](https://www.pbr-book.org/3ed-2018/Color_and_Radiometry)
         </td>
         <td>
             &nbsp;
         </td>
         <td>
-            Reflection Equation; Monte Carlo I
+            Radiometry
         </td>
         <td>
             &nbsp;
@@ -219,10 +219,10 @@ The schedule below lists the reading material, due dates for assignments, and to
             [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration)
         </td>
         <td>
-            [A2](assignment2.html)
+            &nbsp;
         </td>
         <td>
-            Monte Carlo II
+            Reflection Equation; Monte Carlo I
         </td>
         <td>
             &nbsp;
@@ -238,13 +238,13 @@ The schedule below lists the reading material, due dates for assignments, and to
             Oct 4
         </td>
         <td>
-            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html)
+            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration)
         </td>
         <td>
-            &nbsp;
+            [A2](assignment2.html)
         </td>
         <td>
-            Monte Carlo III: Importance sampling
+            Monte Carlo II
         </td>
         <td>
             &nbsp;
@@ -255,13 +255,13 @@ The schedule below lists the reading material, due dates for assignments, and to
             Oct 6
         </td>
         <td>
-            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 8](https://www.pbr-book.org/3ed-2018/Reflection_Models)
+            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html)
         </td>
         <td>
             &nbsp;
         </td>
         <td>
-            Reflection Equation; Monte Carlo I
+            Monte Carlo III: Importance sampling
         </td>
         <td>
             &nbsp;
@@ -289,13 +289,13 @@ The schedule below lists the reading material, due dates for assignments, and to
             Oct 8
         </td>
         <td>
-            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration), [7.3](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Stratified_Sampling.html)–[7.7](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Sobol_Sampler)
+            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 8](https://www.pbr-book.org/3ed-2018/Reflection_Models)
         </td>
         <td>
             &nbsp;
         </td>
         <td>
-            Monte Carlo II
+            Reflection Equation; Monte Carlo I
         </td>
         <td>
             &nbsp;
@@ -311,13 +311,13 @@ The schedule below lists the reading material, due dates for assignments, and to
             Oct 11
         </td>
         <td>
-            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 14.4](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/The_Light_Transport_Equation.html)–[14.5](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/Path_Tracing.html)
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration), [7.3](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Stratified_Sampling.html)–[7.7](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Sobol_Sampler)
         </td>
         <td>
-            [A3](assignment3.html)
+            &nbsp;
         </td>
         <td>
-            The Rendering Equation & Path Tracing
+            Monte Carlo II
         </td>
         <td>
             &nbsp;
@@ -328,13 +328,13 @@ The schedule below lists the reading material, due dates for assignments, and to
             Oct 13
         </td>
         <td>
-            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 8.4](https://www.pbr-book.org/3ed-2018/Reflection_Models/Microfacet_Models.html), [Ch. 14.1](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/Sampling_Reflection_Functions.html)
+            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 14.4](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/The_Light_Transport_Equation.html)–[14.5](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/Path_Tracing.html)
         </td>
         <td>
-            &nbsp;
+            [A3](assignment3.html)
         </td>
         <td>
-            Microfacet Models
+            The Rendering Equation & Path Tracing
         </td>
         <td>
             &nbsp;
@@ -362,13 +362,13 @@ The schedule below lists the reading material, due dates for assignments, and to
             Oct 15
         </td>
         <td>
-            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration), [7.3](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Stratified_Sampling.html)–[7.7](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Sobol_Sampler)
+            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 8.4](https://www.pbr-book.org/3ed-2018/Reflection_Models/Microfacet_Models.html), [Ch. 14.1](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/Sampling_Reflection_Functions.html)
         </td>
         <td>
             &nbsp;
         </td>
         <td>
-            Quiz review
+            Microfacet Models
         </td>
         <td>
             &nbsp;
@@ -384,13 +384,13 @@ The schedule below lists the reading material, due dates for assignments, and to
             Oct 18
         </td>
         <td>
-            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 16](https://www.pbr-book.org/3ed-2018/Light_Transport_III_Bidirectional_Methods.html)
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration), [7.3](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Stratified_Sampling.html)–[7.7](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Sobol_Sampler)
         </td>
         <td>
             &nbsp;
         </td>
         <td>
-            Light Tracing & Bidirectional Path Tracing
+            Quiz review
         </td>
         <td>
             &nbsp;
@@ -404,10 +404,10 @@ The schedule below lists the reading material, due dates for assignments, and to
             [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 16](https://www.pbr-book.org/3ed-2018/Light_Transport_III_Bidirectional_Methods.html)
         </td>
         <td>
-            [A4](assignment4.html)
+            &nbsp;
         </td>
         <td>
-            Photon Mapping
+            Light Tracing & Bidirectional Path Tracing
         </td>
         <td>
             &nbsp;
@@ -438,7 +438,7 @@ The schedule below lists the reading material, due dates for assignments, and to
             [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 16](https://www.pbr-book.org/3ed-2018/Light_Transport_III_Bidirectional_Methods.html)
         </td>
         <td>
-            [Proposal](assignment6.html)
+            [A4](assignment4.html)
         </td>
         <td>
             Photon Mapping
@@ -460,7 +460,7 @@ The schedule below lists the reading material, due dates for assignments, and to
             [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 16](https://www.pbr-book.org/3ed-2018/Light_Transport_III_Bidirectional_Methods.html)
         </td>
         <td>
-            &nbsp;
+            [Proposal](assignment6.html)
         </td>
         <td>
             Photon Mapping
@@ -474,13 +474,13 @@ The schedule below lists the reading material, due dates for assignments, and to
             Oct 27
         </td>
         <td>
-            [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 9](https://raytracing.github.io/books/RayTracingTheNextWeek.html#volumes); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 15](https://www.pbr-book.org/3ed-2018/Light_Transport_II_Volume_Rendering.html)
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 16](https://www.pbr-book.org/3ed-2018/Light_Transport_III_Bidirectional_Methods.html)
         </td>
         <td>
             &nbsp;
         </td>
         <td>
-            Participating Media
+            Photon Mapping
         </td>
         <td>
             &nbsp;
@@ -511,7 +511,7 @@ The schedule below lists the reading material, due dates for assignments, and to
             [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 9](https://raytracing.github.io/books/RayTracingTheNextWeek.html#volumes); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 15](https://www.pbr-book.org/3ed-2018/Light_Transport_II_Volume_Rendering.html)
         </td>
         <td>
-            [A5](assignment5.html)
+            &nbsp;
         </td>
         <td>
             Participating Media
@@ -533,10 +533,10 @@ The schedule below lists the reading material, due dates for assignments, and to
             [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 9](https://raytracing.github.io/books/RayTracingTheNextWeek.html#volumes); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 15](https://www.pbr-book.org/3ed-2018/Light_Transport_II_Volume_Rendering.html)
         </td>
         <td>
-            &nbsp;
+            [A5](assignment5.html)
         </td>
         <td>
-            Photon Mapping
+            Participating Media
         </td>
         <td>
             &nbsp;
@@ -553,7 +553,7 @@ The schedule below lists the reading material, due dates for assignments, and to
             &nbsp;
         </td>
         <td>
-            Participating Media
+            Photon Mapping
         </td>
         <td>
             &nbsp;
@@ -587,7 +587,7 @@ The schedule below lists the reading material, due dates for assignments, and to
             &nbsp;
         </td>
         <td>
-            Photon Beams & Surfaces
+            Participating Media
         </td>
         <td>
             &nbsp;
@@ -603,13 +603,13 @@ The schedule below lists the reading material, due dates for assignments, and to
             Nov 8
         </td>
         <td>
-            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 7](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction.html)
+            [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 9](https://raytracing.github.io/books/RayTracingTheNextWeek.html#volumes); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 15](https://www.pbr-book.org/3ed-2018/Light_Transport_II_Volume_Rendering.html)
         </td>
         <td>
             &nbsp;
         </td>
         <td>
-            Photon Mapping
+            Photon Beams & Surfaces
         </td>
         <td>
             &nbsp;
@@ -620,13 +620,13 @@ The schedule below lists the reading material, due dates for assignments, and to
             Nov 10
         </td>
         <td>
-            &nbsp;
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 7](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction.html)
         </td>
         <td>
             &nbsp;
         </td>
         <td>
-            Misc
+            Photon Mapping
         </td>
         <td>
             &nbsp;
@@ -660,7 +660,7 @@ The schedule below lists the reading material, due dates for assignments, and to
             &nbsp;
         </td>
         <td>
-            Misc.
+            Misc
         </td>
         <td>
             &nbsp;
