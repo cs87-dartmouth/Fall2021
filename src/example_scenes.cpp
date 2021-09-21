@@ -111,6 +111,8 @@ json create_steinbach_scene()
 
 json create_shirley_scene()
 {
+    pcg32 rng = pcg32();
+
     json j;
 
     // Compose the camera
@@ -136,21 +138,33 @@ json create_shirley_scene()
     {
         for (int b = -11; b < 11; b++)
         {
-            float choose_mat = randf();
-            Vec3f center(a + 0.9f * randf(), 0.2f, b + 0.9f * randf());
+            float choose_mat = rng.nextFloat();
+            float r1 = rng.nextFloat();
+            float r2 = rng.nextFloat();
+            Vec3f center(a + 0.9f * r1, 0.2f, b + 0.9f * r2);
             if (length(center - Vec3f(4.0f, 0.2f, 0.0f)) > 0.9f)
             {
                 json sphere = {{"type", "sphere"}, {"radius", 0.2f}, {"transform", {{"translate", center}}}};
 
                 if (choose_mat < 0.8)
                 { // diffuse
-                    Color3f albedo(randf() * randf(), randf() * randf(), randf() * randf());
+                    float r1 = rng.nextFloat();
+                    float r2 = rng.nextFloat();
+                    float r3 = rng.nextFloat();
+                    float r4 = rng.nextFloat();
+                    float r5 = rng.nextFloat();
+                    float r6 = rng.nextFloat();
+                    Color3f albedo(r1*r2, r3*r4, r5*r6);
                     sphere["material"] = {{"type", "lambertian"}, {"albedo", albedo}};
                 }
                 else if (choose_mat < 0.95)
                 { // metal
-                    Color3f albedo(0.5f * (1 + randf()), 0.5f * (1.0f + randf()), 0.5f * (1.0f + randf()));
-                    float   rough      = 0.5f * randf();
+                    float r1 = rng.nextFloat();
+                    float r2 = rng.nextFloat();
+                    float r3 = rng.nextFloat();
+                    float r4 = rng.nextFloat();
+                    Color3f albedo(0.5f * (1 + r1), 0.5f * (1.0f + r2), 0.5f * (1.0f + r3));
+                    float   rough      = 0.5f * r4;
                     sphere["material"] = {{"type", "metal"}, {"albedo", albedo}, {"roughness", rough}};
                 }
                 else
