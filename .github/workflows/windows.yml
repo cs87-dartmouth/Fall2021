@@ -3,17 +3,17 @@ name: Windows
 on:
   workflow_dispatch:
   push:
-    branches:
-      - "*"
+#    branches:
+#      - "*"
     # Jobs are skipped when ONLY Markdown (*.md) files are changed
-    paths-ignore:
-      - "**.md"
+#    paths-ignore:
+#      - "**.md"
   pull_request:
-    branches:
-      - main
+#    branches:
+#      - main
     # Jobs are skipped when ONLY Markdown (*.md) files are changed
-    paths-ignore:
-      - "**.md"
+#    paths-ignore:
+#      - "**.md"
 
 env:
   CPM_SOURCE_CACHE: ${{ github.workspace }}/cpm_modules
