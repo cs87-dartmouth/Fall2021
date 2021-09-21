@@ -53,6 +53,50 @@ Vec3f spherical_uv_to_direction(const Vec2f &uv)
     return spherical_coordinates_to_direction(Vec2f{(uv.x - 0.5f) * 2.0f * M_PI, (1.f - uv.y) * M_PI});
 }
 
+/*
+    Taken from Nori, a simple educational ray tracer
+
+    Copyright (c) 2015 by Wenzel Jakob
+
+    Nori is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License Version 3
+    as published by the Free Software Foundation.
+
+    Nori is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+float fresnel(float cos_theta_i, float ext_ior, float int_ior)
+{
+    float etaI = ext_ior, etaT = int_ior;
+
+    if (ext_ior == int_ior)
+        return 0.0f;
+
+    // Swap the indices of refraction if the interaction starts at the inside of the object
+    if (cos_theta_i < 0.0f)
+    {
+        std::swap(etaI, etaT);
+        cos_theta_i = -cos_theta_i;
+    }
+
+    // Using Snell's law, calculate the squared sine of the angle between the normal and the transmitted ray
+    float eta = etaI / etaT, sinThetaTSqr = eta * eta * (1 - cos_theta_i * cos_theta_i);
+
+    if (sinThetaTSqr > 1.0f)
+        return 1.0f; // Total internal reflection!
+
+    float cosThetaT = std::sqrt(1.0f - sinThetaTSqr);
+
+    float Rs = (etaI * cos_theta_i - etaT * cosThetaT) / (etaI * cos_theta_i + etaT * cosThetaT);
+    float Rp = (etaT * cos_theta_i - etaI * cosThetaT) / (etaT * cos_theta_i + etaI * cosThetaT);
+
+    return (Rs * Rs + Rp * Rp) / 2.0f;
+}
 
 std::string time_string(double time, int precision)
 {

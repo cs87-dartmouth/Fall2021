@@ -235,6 +235,15 @@ Vec2f direction_to_spherical_uv(const Vec3f &p);
 /// Converts a spherical UV coordinate to a unit direction using #spherical_coordinates_to_direction
 Vec3f spherical_uv_to_direction(const Vec2f &uv);
 
+/*!
+    Calculates the unpolarized fresnel reflection coefficient for a dielectric material. Handles incidence from either
+    side (i.e. `cos_theta_i<0` is allowed).
+
+    \param cos_theta_i  Cosine of the angle between the normal and the incident ray
+    \param ext_ior      Refractive index of the side that contains the surface normal
+    \param int_ior      Refractive index of the interior
+*/
+float fresnel(float cos_theta_i, float ext_ior, float int_ior);
 
 /// Convert a time value in milliseconds into a human-readable string
 std::string time_string(double time, int precision = 2);
