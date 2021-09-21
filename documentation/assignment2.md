@@ -134,7 +134,7 @@ Task 5: Surface area heuristic (grad students only)
 
 On top of the improvements in the previous task, implement the surface area heuristic (SAH) in your %BBH construction.
 
-You can check the [BVH section of the PBRT textbook](https://www.pbr-book.org/3ed-2018/Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies#) for more information on how it works. The basic idea is to split the list of primitives not simply in the middle or at the median, but split it at a point that minimizes an approximate expression for the cost intersecting the tree.
+You can check the [BVH section of the PBRT textbook](https://www.pbr-book.org/3ed-2018/Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies#) for more information on how it works. The basic idea is to split the list of primitives not simply in the middle or at the median, but split it at a point that minimizes an approximate expression for the cost of intersecting the tree.
 
 Task 6: Evaluation scene and leaderboard
 ========================================

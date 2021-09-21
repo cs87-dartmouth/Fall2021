@@ -33,25 +33,34 @@ We will rely on calculus, linear algebra and use basic concepts of algorithms an
 Administrative details
 ======================
 
-Lecture location
-----------------
+**Lecture**
+: MWF 10:10am – 11:15am, Silsby 28 and over Zoom
 
-TBD
+**X-hour**
+: Thursday 12:15pm–1:10pm, over Zoom
 
-Class times
------------
+(We will sometimes use the X-hour slot for lecture)
 
-- Lecture: MWF 10:10am – 11:15am
-- X-hour: Thursday 12:15pm–1:10pm
+If you are enrolled, you can find the Zoom links, lecture recordings, and internal Slack discussion board on our [internal Canvas page](https://canvas.dartmouth.edu/courses/48965).
 
 Course staff
 ------------
 
 Professor
-: Wojciech Jarosz
+: [Wojciech Jarosz](https://cs.dartmouth.edu/~wjarosz/)
 
 TA
 : Shaojie Jiao
+
+Getting help
+============
+There are many ways for you to get help!
+
+Your first step should be to ask a question in lecture/x-hour or on Slack.
+
+You can visit the course staff during office hours. We each hold several office hours every week, with the hours and Zoom links posted on our Slack and the Canvas page.
+
+If for some reason none of the office hours work, you can make an appointment with me or the TA.
 
 Coursework
 ==========
