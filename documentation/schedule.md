@@ -2,6 +2,8 @@
 
 The schedule below lists the reading material, due dates for assignments, and topics covered. Due dates for assignment also appear on Canvas. All dates/times are in Eastern time (Hanover, NH).
 
+For convenience, you can also find/download all the slides linked from the schedule below in this [Dropbox folder](https://www.dropbox.com/sh/nkyvlivxn3zdtan/AAC924grr2_n4MnqAxvbvncea?dl=0).
+
 
 <table class="m-table">
     <tr class="header">
