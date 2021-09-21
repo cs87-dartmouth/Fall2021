@@ -112,7 +112,7 @@ The schedule below lists the reading material, due dates for assignments, and to
             [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 4](https://www.pbr-book.org/3ed-2018/Primitives_and_Intersection_Acceleration)
         </td>
         <td>
-            &nbsp;
+            [A1](assignment1.html)
         </td>
         <td>
             Meshes & acceleration structures
@@ -146,7 +146,7 @@ The schedule below lists the reading material, due dates for assignments, and to
             [RTTNW](https://raytracing.github.io/books/RayTracingTheNextWeek.html) [Ch. 4](https://raytracing.github.io/books/RayTracingTheNextWeek.html#solidtextures)–[8](https://raytracing.github.io/books/RayTracingTheNextWeek.html#instances)
         </td>
         <td>
-            [A1](assignment1.html)
+            &nbsp;
         </td>
         <td>
             Texturing
