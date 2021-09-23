@@ -87,10 +87,18 @@
             </li>
           </ul>
         </div>
-<p>Surfaces represent the geometry of the scene. A <a href="class_surface.html" class="m-doc">Surface</a> could be an individual primitive like a <a href="class_sphere.html" class="m-doc">Sphere</a>, or it could be composed of many smaller primitives, e.g. the triangles composing a #Mesh.</p>
+<p>Surfaces represent the geometry of the scene. A <a href="class_surface.html" class="m-doc">Surface</a> could be an individual primitive like a <a href="class_sphere.html" class="m-doc">Sphere</a>, or it could be composed of many smaller primitives, e.g. the triangles composing a <a href="struct_mesh.html" class="m-doc">Mesh</a>.</p>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
+            <dt>
+              struct <a href="struct_b_b_h_node.html" class="m-doc">BBHNode</a>
+            </dt>
+            <dd>A node of an axis-aligned bounding box hierarchy.</dd>
+            <dt>
+              struct <a href="struct_mesh.html" class="m-doc">Mesh</a>
+            </dt>
+            <dd>A triangle mesh.</dd>
             <dt>
               class <a href="class_scene.html" class="m-doc">Scene</a>
             </dt>
@@ -99,6 +107,10 @@
               class <a href="class_surface_group.html" class="m-doc">SurfaceGroup</a>
             </dt>
             <dd>A collection of Surfaces grouped together.</dd>
+            <dt>
+              class <a href="class_triangle.html" class="m-doc">Triangle</a>
+            </dt>
+            <dd>An instance of a triangle for a given face in a mesh.</dd>
             <dt>
               class <a href="class_xformed_surface_with_material.html" class="m-doc">XformedSurfaceWithMaterial</a>
             </dt>
@@ -127,6 +139,10 @@
               <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Ray-Surface intersection test.</dd>
+            <dt id="a4191651d85ed7e269a2cae1ad3ba7e08">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4191651d85ed7e269a2cae1ad3ba7e08" class="m-doc-self">bounds</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__group__math.html#ga8e01df1b4e6caa1021980a492111f198" class="m-doc">Box3f</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Return the surface&#x27;s world-space AABB.</dd>
           </dl>
         </section>
         <section>

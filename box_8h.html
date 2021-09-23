@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Transform struct | CS
+  <title>darts/box.h file | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -71,72 +71,109 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          Transform <span class="m-thin">struct</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="transform_8h.html">&lt;darts/transform.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="dir_f511f7995b9806edec8127aeb2c04489.html">darts</a>/</span>box.h <span class="m-thin">file</span>
         </h1>
-        <p>Homogeneous coordinate transformation.</p>
+        <p>Contains the implementation of a generic, N-dimensional axis-aligned <a href="struct_box.html" class="m-doc">Box</a> class.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>This class stores a general homogeneous coordinate transformation, such as rotation, translation, uniform or non-uniform scaling, and perspective transformations. The inverse of this transformation is also recorded here, since it is required when transforming normal vectors.</p>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
-            <dt id="aa08ca4266efabc768973cdeea51945ab">
-              <span class="m-doc-wrap-bumper"><a href="#aa08ca4266efabc768973cdeea51945ab" class="m-doc-self">Transform</a>(</span><span class="m-doc-wrap">)</span>
+            <dt>
+              <div class="m-doc-template">template&lt;int N, typename T&gt;</div>
+              struct <a href="struct_box.html" class="m-doc">Box</a>
             </dt>
-            <dd>Create the identity transform.</dd>
-            <dt id="a038ccbd3f9e3d24d9e18fc939bb181c4">
-              <span class="m-doc-wrap-bumper"><a href="#a038ccbd3f9e3d24d9e18fc939bb181c4" class="m-doc-self">Transform</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gad5a13c478c7dcf28d114edc5610a0599" class="m-doc">Mat44f</a>&amp; m)</span>
-            </dt>
-            <dd>Create a new transform instance for the given matrix.</dd>
-            <dt id="a3390643a41194859a7eb551a9c71d03a">
-              <span class="m-doc-wrap-bumper"><a href="#a3390643a41194859a7eb551a9c71d03a" class="m-doc-self">Transform</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gad5a13c478c7dcf28d114edc5610a0599" class="m-doc">Mat44f</a>&amp; trafo,
-              const <a href="group__group__math.html#gad5a13c478c7dcf28d114edc5610a0599" class="m-doc">Mat44f</a>&amp; inv)</span>
-            </dt>
-            <dd>Create a new transform instance for the given matrix and its inverse.</dd>
+            <dd>An N-D axis-aligned bounding box consisting of two N-D points min and max.</dd>
           </dl>
         </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
-            <dt id="ab910e8eeacb3e3cdb495c19e57823382">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab910e8eeacb3e3cdb495c19e57823382" class="m-doc-self">inverse</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_transform.html" class="m-doc">Transform</a></span>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a> = <a href="struct_box.html" class="m-doc">Box</a>&lt;2, T&gt;
             </dt>
-            <dd>Return the inverse transformation.</dd>
-            <dt id="a60fc07fc909f69ce33d38ec9a6f847fd">
-              <span class="m-doc-wrap-bumper">auto <a href="#a60fc07fc909f69ce33d38ec9a6f847fd" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">const <a href="struct_transform.html" class="m-doc">Transform</a>&amp; t) const -&gt; <a href="struct_transform.html" class="m-doc">Transform</a></span>
+            <dd>2D axis-aligned box</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a> = <a href="struct_box.html" class="m-doc">Box</a>&lt;3, T&gt;
             </dt>
-            <dd>Concatenate with another transform.</dd>
-            <dt id="ae81ceb9495ea088893b60b859c4c9789">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae81ceb9495ea088893b60b859c4c9789" class="m-doc-self">vector</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v) const -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            <dd>3D axis-aligned box</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a> = <a href="struct_box.html" class="m-doc">Box</a>&lt;4, T&gt;
             </dt>
-            <dd>Apply the homogeneous transformation to a 3D direction vector.</dd>
-            <dt id="aa2988222ddeba2aa497ab4a276147ddb">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa2988222ddeba2aa497ab4a276147ddb" class="m-doc-self">normal</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; n) const -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            <dd>4D axis-aligned box</dd>
+            <dt>
+              using <a href="group__group__math.html#gac8d61cc10feb1eefad6f4108df407854" class="m-doc">Box2f</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;float&gt;
             </dt>
-            <dd>Apply the homogeneous transformation to a 3D normal.</dd>
-            <dt id="a53a00cf23226be064510921a927df11f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a53a00cf23226be064510921a927df11f" class="m-doc-self">point</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; p) const -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            <dd>2D axis-aligned box (of floats)</dd>
+            <dt>
+              using <a href="group__group__math.html#ga8abf4450945ae0b8bd125f0d11529ff0" class="m-doc">Box2d</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;double&gt;
             </dt>
-            <dd><a href="struct_transform.html" class="m-doc">Transform</a> a point by an arbitrary matrix in homogeneous coordinates.</dd>
-            <dt id="a023e97a6e3e715146eef8181c6ae5d55">
-              <span class="m-doc-wrap-bumper">auto <a href="#a023e97a6e3e715146eef8181c6ae5d55" class="m-doc-self">ray</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; r) const -&gt; <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a></span>
+            <dd>2D axis-aligned box (of doubles)</dd>
+            <dt>
+              using <a href="group__group__math.html#gaf8f62d5531175aaa884cfee64a6b86c5" class="m-doc">Box2i</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;int32_t&gt;
             </dt>
-            <dd>Apply the homogeneous transformation to a ray.</dd>
-            <dt id="a55ba077bca15766724c4adf7e46afa26">
-              <span class="m-doc-wrap-bumper">auto <a href="#a55ba077bca15766724c4adf7e46afa26" class="m-doc-self">box</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga8e01df1b4e6caa1021980a492111f198" class="m-doc">Box3f</a>&amp; box) const -&gt; <a href="group__group__math.html#ga8e01df1b4e6caa1021980a492111f198" class="m-doc">Box3f</a></span>
+            <dd>2D axis-aligned box (of signed 32-bit integers)</dd>
+            <dt>
+              using <a href="group__group__math.html#gaa88a187f286ea05204ca7b4b240fb9e0" class="m-doc">Box2u</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;uint32_t&gt;
             </dt>
-            <dd><a href="struct_transform.html" class="m-doc">Transform</a> the axis-aligned <a href="struct_box.html" class="m-doc">Box</a> and return the bounding box of the result.</dd>
+            <dd>2D axis-aligned box (of unsigned 32-bit integers</dd>
+            <dt>
+              using <a href="group__group__math.html#ga2a1dfe6c4a7442aed9127fd9c6af627b" class="m-doc">Box2c</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;uint8_t&gt;
+            </dt>
+            <dd>2D axis-aligned box (of unsigned 8-bit integers</dd>
+            <dt>
+              using <a href="group__group__math.html#ga8e01df1b4e6caa1021980a492111f198" class="m-doc">Box3f</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;float&gt;
+            </dt>
+            <dd>3D axis-aligned box (of floats)</dd>
+            <dt>
+              using <a href="group__group__math.html#ga9b097b3bfee33e3c57b9d518ad4f2c43" class="m-doc">Box3d</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;double&gt;
+            </dt>
+            <dd>3D axis-aligned box (of doubles)</dd>
+            <dt>
+              using <a href="group__group__math.html#ga013922fc3b8d0b34009004fd48020359" class="m-doc">Box3i</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;int32_t&gt;
+            </dt>
+            <dd>3D axis-aligned box (of signed 32-bit integers)</dd>
+            <dt>
+              using <a href="group__group__math.html#gad81aee73003d05071f64e60fd6dfdf7a" class="m-doc">Box3u</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;uint32_t&gt;
+            </dt>
+            <dd>3D axis-aligned box (of unsigned 32-bit integers</dd>
+            <dt>
+              using <a href="group__group__math.html#ga6eb19e85787d044e1e013f3797e47636" class="m-doc">Box3c</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;uint8_t&gt;
+            </dt>
+            <dd>3D axis-aligned box (of unsigned 8-bit integers</dd>
+            <dt>
+              using <a href="group__group__math.html#gaf786a845e7a6d5fa890a1a2b71c8a201" class="m-doc">Box4f</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;float&gt;
+            </dt>
+            <dd>4D axis-aligned box (of floats)</dd>
+            <dt>
+              using <a href="group__group__math.html#ga88e830277c200bae88cada1195caa073" class="m-doc">Box4d</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;double&gt;
+            </dt>
+            <dd>4D axis-aligned box (of doubles)</dd>
+            <dt>
+              using <a href="group__group__math.html#gab3bf453bec1c650ac615808cf3ac81af" class="m-doc">Box4i</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;int32_t&gt;
+            </dt>
+            <dd>4D axis-aligned box (of signed 32-bit integers)</dd>
+            <dt>
+              using <a href="group__group__math.html#ga47a8b0086d4a120b497b02ac02efbaf2" class="m-doc">Box4u</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;uint32_t&gt;
+            </dt>
+            <dd>4D axis-aligned box (of unsigned 32-bit integers</dd>
+            <dt>
+              using <a href="group__group__math.html#ga3bb29dec9efe8f6c8987ee4eafc13973" class="m-doc">Box4c</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;uint8_t&gt;
+            </dt>
+            <dd>4D axis-aligned box (of unsigned 8-bit integers</dd>
           </dl>
         </section>
       </div>

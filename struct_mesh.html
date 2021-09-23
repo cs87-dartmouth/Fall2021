@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Scene class | CS
+  <title>Mesh struct | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -71,10 +71,10 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          Scene <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="scene_8h.html">&lt;darts/scene.h&gt;</a></div>
+          Mesh <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="mesh_8h.html">&lt;darts/mesh.h&gt;</a></div>
         </h1>
-        <p>Main scene data structure.</p>
+        <p>A triangle mesh.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -84,11 +84,12 @@
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>This class aggregates all the surfaces and materials along with the camera. It provides convenience functions for querying materials by name.</p>
+<p>This class stores a triangle mesh object and provides numerous functions for querying the individual triangles. Subclasses of <code><a href="struct_mesh.html" class="m-doc">Mesh</a></code> implement the specifics of how to create its contents (e.g. by loading from an external file)</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -101,120 +102,105 @@
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a17681947e0f067a9f2a95588c9b38185">
-              <span class="m-doc-wrap-bumper"><a href="#a17681947e0f067a9f2a95588c9b38185" class="m-doc-self">Scene</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j)</span>
+            <dt id="a2af137f1571af89172b9c102302c416b">
+              <span class="m-doc-wrap-bumper"><a href="#a2af137f1571af89172b9c102302c416b" class="m-doc-self">Mesh</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
-            <dd>Construct a new scene from a json object.</dd>
-            <dt id="a3b8cec2e32546713915f8c6303c951f1">
-              <span class="m-doc-wrap-bumper"><a href="#a3b8cec2e32546713915f8c6303c951f1" class="m-doc-self">~Scene</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dd>Create an empty mesh.</dd>
+            <dt id="ab4dedafa429ba9914484a5486e51eaec">
+              <span class="m-doc-wrap-bumper"><a href="#ab4dedafa429ba9914484a5486e51eaec" class="m-doc-self">Mesh</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j)</span>
             </dt>
-            <dd>Release all memory.</dd>
+            <dd>Try to load a mesh from an OBJ file.</dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a3ee13f9b15a8a57ee5c3d1c3302289f2">
-              <span class="m-doc-wrap-bumper">void <a href="#a3ee13f9b15a8a57ee5c3d1c3302289f2" class="m-doc-self">parse</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j)</span>
-            </dt>
-            <dd>Parser a scene from a json object.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a18463479c4f8703a5316f34a81ed0f54" class="m-doc">add_child</a>(</span><span class="m-doc-wrap">shared_ptr&lt;<a href="class_surface.html" class="m-doc">Surface</a>&gt; surface) <span class="m-label m-flat m-warning">override</span></span>
-            </dt>
-            <dd>Add a child surface.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2cd2e37d723c62979a75cf6b66a7c004" class="m-doc">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
-              <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
-            </dt>
-            <dd>Ray-Surface intersection test.</dd>
-            <dt id="ad6b4ede4dca6cdd80bbc2c30f80c5fb6">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad6b4ede4dca6cdd80bbc2c30f80c5fb6" class="m-doc-self">bounds</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__group__math.html#ga8e01df1b4e6caa1021980a492111f198" class="m-doc">Box3f</a> <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="ad2544fe150ed4198075005f53dc3d553">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad2544fe150ed4198075005f53dc3d553" class="m-doc-self">bounds</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__group__math.html#ga8e01df1b4e6caa1021980a492111f198" class="m-doc">Box3f</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Return the surface&#x27;s world-space AABB.</dd>
-            <dt id="a1e1f7560e35707025348f0c83a4ca0ea">
-              <span class="m-doc-wrap-bumper">auto <a href="#a1e1f7560e35707025348f0c83a4ca0ea" class="m-doc-self">background</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray) const -&gt; <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a></span>
-            </dt>
-            <dd>Return the background color.</dd>
-            <dt id="a4693a32959536ad0988f6c6f9b263dd7">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4693a32959536ad0988f6c6f9b263dd7" class="m-doc-self">camera</a>(</span><span class="m-doc-wrap">) const -&gt; shared_ptr&lt;const <a href="class_camera.html" class="m-doc">Camera</a>&gt;</span>
-            </dt>
-            <dd>Return the camera.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#afbeb3c29ff6b26764b704e1640a4465d" class="m-doc">recursive_color</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
-              int depth) const -&gt; <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a></span>
+              <span class="m-doc-wrap-bumper">void <a href="#abbe8b45d7b455c991d39ea621f8ff456" class="m-doc">add_to_parent</a>(</span><span class="m-doc-wrap"><a href="class_surface.html" class="m-doc">Surface</a>* parent,
+              shared_ptr&lt;<a href="class_surface.html" class="m-doc">Surface</a>&gt; self,
+              const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
-            <dd>Sample the color along a ray.</dd>
-            <dt id="a1986a3f024a1c22ce6c28c2e8004c657">
-              <span class="m-doc-wrap-bumper">auto <a href="#a1986a3f024a1c22ce6c28c2e8004c657" class="m-doc-self">raytrace</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_image3f.html" class="m-doc">Image3f</a></span>
+            <dd>Add this surface to the <code>parent</code> surface.</dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a5d297894d9c84a4ea46abc2240d1b38b">
+              vector&lt;<a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&gt; <a href="#a5d297894d9c84a4ea46abc2240d1b38b" class="m-doc-self">vs</a>
             </dt>
-            <dd>Generate the entire image by ray tracing.</dd>
+            <dd>Vertex positions.</dd>
+            <dt id="a19e140f6e037b3ea612d679e5c79feb1">
+              vector&lt;<a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&gt; <a href="#a19e140f6e037b3ea612d679e5c79feb1" class="m-doc-self">ns</a>
+            </dt>
+            <dd>Vertex normals.</dd>
+            <dt id="adbce8a8f0fc41a123aeabc63a2fd759c">
+              vector&lt;<a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&gt; <a href="#adbce8a8f0fc41a123aeabc63a2fd759c" class="m-doc-self">uvs</a>
+            </dt>
+            <dd>Vertex texture coordinates.</dd>
+            <dt id="a0ac0b0ab31194b83a4ddcbbe736f6d83">
+              vector&lt;<a href="group__group__math.html#gac62cf90e69881b42c116aa93a17dbd23" class="m-doc">Vec3i</a>&gt; <a href="#a0ac0b0ab31194b83a4ddcbbe736f6d83" class="m-doc-self">Fv</a>
+            </dt>
+            <dd>Vertex indices per face (triangle)</dd>
+            <dt id="aa16aacfb9e2330d76ca8adcffa6ecef0">
+              vector&lt;<a href="group__group__math.html#gac62cf90e69881b42c116aa93a17dbd23" class="m-doc">Vec3i</a>&gt; <a href="#aa16aacfb9e2330d76ca8adcffa6ecef0" class="m-doc-self">Fn</a>
+            </dt>
+            <dd>Normal indices per face (triangle)</dd>
+            <dt id="ae5984aa10a492cc6f336d4e8b1314dff">
+              vector&lt;<a href="group__group__math.html#gac62cf90e69881b42c116aa93a17dbd23" class="m-doc">Vec3i</a>&gt; <a href="#ae5984aa10a492cc6f336d4e8b1314dff" class="m-doc-self">Ft</a>
+            </dt>
+            <dd>Texture indices per face (triangle)</dd>
+            <dt id="a2be1f2e5fad9de65b8d882495a74f33a">
+              vector&lt;uint32_t&gt; <a href="#a2be1f2e5fad9de65b8d882495a74f33a" class="m-doc-self">Fm</a>
+            </dt>
+            <dd>One material index per face (triangle)</dd>
+            <dt id="a684bffa8b553d00fff1abb186873882d">
+              vector&lt;shared_ptr&lt;const <a href="class_material.html" class="m-doc">Material</a>&gt;&gt; <a href="#a684bffa8b553d00fff1abb186873882d" class="m-doc-self">materials</a>
+            </dt>
+            <dd>All materials in the mesh.</dd>
+            <dt id="a97ba1a532baa1c565cc5a516f5ac99f5">
+              <a href="struct_transform.html" class="m-doc">Transform</a> <a href="#a97ba1a532baa1c565cc5a516f5ac99f5" class="m-doc-self">xform</a>
+            </dt>
+            <dd>Transformation that the data has already been transformed by.</dd>
+            <dt id="a8aa428fbe1fa47915d155c1605c32740">
+              <a href="group__group__math.html#ga8e01df1b4e6caa1021980a492111f198" class="m-doc">Box3f</a> <a href="#a8aa428fbe1fa47915d155c1605c32740" class="m-doc-self">bbox</a>
+            </dt>
+            <dd>The bounds, after transformation.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a18463479c4f8703a5316f34a81ed0f54"><div>
+          <section class="m-doc-details" id="abbe8b45d7b455c991d39ea621f8ff456"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Scene::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a18463479c4f8703a5316f34a81ed0f54" class="m-doc-self">add_child</a>(</span><span class="m-doc-wrap">shared_ptr&lt;<a href="class_surface.html" class="m-doc">Surface</a>&gt; surface) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">void Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abbe8b45d7b455c991d39ea621f8ff456" class="m-doc-self">add_to_parent</a>(</span><span class="m-doc-wrap"><a href="class_surface.html" class="m-doc">Surface</a>* parent,
+              shared_ptr&lt;<a href="class_surface.html" class="m-doc">Surface</a>&gt; self,
+              const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j) <span class="m-label m-warning">override</span></span></span>
             </h3>
-            <p>Add a child surface.</p>
-<p>This function will become useful once we create groups of objects. The base class implementation just throws an error.</p><p>This function should only be used before <a href="class_surface.html#a70ff2f6461b97dd80009ea1dd16fb61a" class="m-doc">build()</a> is called.</p>
-          </div></section>
-          <section class="m-doc-details" id="a2cd2e37d723c62979a75cf6b66a7c004"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool Scene::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2cd2e37d723c62979a75cf6b66a7c004" class="m-doc-self">intersect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
-              <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const <span class="m-label m-warning">override</span></span></span>
-            </h3>
-            <p>Ray-Surface intersection test.</p>
+            <p>Add this surface to the <code>parent</code> surface.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">ray</td>
-                  <td>A 3-dimensional ray data structure with minimum/maximum extent information</td>
+                  <td style="width: 1%">parent</td>
+                  <td>The parent <a href="class_surface.html" class="m-doc">Surface</a> (typically the scene) to add to.</td>
                 </tr>
                 <tr>
-                  <td>hit</td>
-                  <td>A detailed intersection record, which will be filled by the intersection query</td>
+                  <td>self</td>
+                  <td>A shared_ptr version of this</td>
+                </tr>
+                <tr>
+                  <td>j</td>
+                  <td>The <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a> parameters used to create <code>self</code></td>
                 </tr>
               </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td><code>true</code> if an intersection was found</td>
-                </tr>
-              </tfoot>
             </table>
-<p>Intersect a ray against this surface and return detailed intersection information.</p>
-          </div></section>
-          <section class="m-doc-details" id="afbeb3c29ff6b26764b704e1640a4465d"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a> Scene::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afbeb3c29ff6b26764b704e1640a4465d" class="m-doc-self">recursive_color</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a>&amp; ray,
-              int depth) const</span></span>
-            </h3>
-            <p>Sample the color along a ray.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">ray</td>
-                  <td>The ray in question</td>
-                </tr>
-                <tr>
-                  <td>depth</td>
-                  <td>The current recursion depth</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>An estimate of the color from this direction</td>
-                </tr>
-              </tfoot>
-            </table>
+<p>By default this function just calls <a href="class_surface.html#a02cf585e475d816b1177d00ea3ecbd05" class="m-doc">add_<wbr />child()</a> on the parent.</p><p>This function is used by aggregate surfaces that shouldn&#x27;t themselves be added to the scene (like a mesh), but instead need to create other surfaces (individual triangles) that get added to the scene.</p>
           </div></section>
         </section>
       </div>

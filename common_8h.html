@@ -173,6 +173,12 @@
               <span class="m-doc-wrap-bumper">auto <a href="#acc3732f226e2125f7646cd849b7e37e5" class="m-doc-self">spherical_uv_to_direction</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; uv) -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
             </dt>
             <dd>Converts a spherical UV coordinate to a unit direction using <a href="common_8h.html#a1a0147a84431db9c3caf7e815108abd1" class="m-doc">spherical_<wbr />coordinates_<wbr />to_<wbr />direction</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a52a40f8bef9fefc0a3c09136e8511ee1" class="m-doc">fresnel</a>(</span><span class="m-doc-wrap">float cos_theta_i,
+              float ext_ior,
+              float int_ior) -&gt; float</span>
+            </dt>
+            <dd>Calculates the unpolarized fresnel reflection coefficient for a dielectric material.</dd>
             <dt id="aad479cbaf9edfe92bf62c390dd6047af">
               <span class="m-doc-wrap-bumper">auto <a href="#aad479cbaf9edfe92bf62c390dd6047af" class="m-doc-self">time_string</a>(</span><span class="m-doc-wrap">double time,
               int precision = 2) -&gt; std::string</span>
@@ -530,6 +536,34 @@ $\theta = 0 \mapsto (0,0,-1)$
                 </tr>
               </tfoot>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="a52a40f8bef9fefc0a3c09136e8511ee1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a52a40f8bef9fefc0a3c09136e8511ee1" class="m-doc-self">fresnel</a>(</span><span class="m-doc-wrap">float cos_theta_i,
+              float ext_ior,
+              float int_ior)</span></span>
+            </h3>
+            <p>Calculates the unpolarized fresnel reflection coefficient for a dielectric material.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">cos_theta_i</td>
+                  <td>Cosine of the angle between the normal and the incident ray</td>
+                </tr>
+                <tr>
+                  <td>ext_ior</td>
+                  <td>Refractive index of the side that contains the surface normal</td>
+                </tr>
+                <tr>
+                  <td>int_ior</td>
+                  <td>Refractive index of the interior</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Handles incidence from either side (i.e. <code>cos_theta_i&lt;0</code> is allowed).</p>
           </div></section>
           <section class="m-doc-details" id="a0395cc6b6ad5e785b9ffdbdeddac3d17"><div>
             <h3>
