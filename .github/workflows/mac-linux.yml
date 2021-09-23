@@ -61,7 +61,6 @@ jobs:
         run: |
           ./build/darts_tutorial0
           ./build/darts_tutorial1
-          ./build/test_tri_intersection
           ./build/point_gen
 
       - name: Comparing generated images against reference

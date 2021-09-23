@@ -42,6 +42,10 @@ public:
         return m_surfaces->intersect(ray, hit);
     }
 
+    Box3f bounds() const override
+    {
+        return m_surfaces->bounds();
+    }
 
     /// Return the background color
     Color3f background(const Ray3f &ray) const;

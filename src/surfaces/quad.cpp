@@ -16,6 +16,7 @@ public:
     Quad(const json &j = json::object());
 
     bool intersect(const Ray3f &ray, HitInfo &hit) const override;
+    Box3f local_bounds() const override;
 
 protected:
     Vec2f m_size = Vec2f(1.f); ///< The extent of the quad in the (x,y) plane
@@ -59,6 +60,10 @@ bool Quad::intersect(const Ray3f &ray, HitInfo &hit) const
     return true;
 }
 
+Box3f Quad::local_bounds() const
+{
+    return Box3f(-Vec3f(m_size.x, m_size.y, 0) - Vec3f(1e-4f), Vec3f(m_size.x, m_size.y, 0) + Vec3f(1e-4f));
+}
 
 
 DARTS_REGISTER_CLASS_IN_FACTORY(Surface, Quad, "quad")

@@ -33,7 +33,9 @@ Open up the `src/triangle.cpp` file and take a look at `single_triangle_inters
 
 There are many established ray-triangle intersection algorithms out there, and you are free to pick one you like. You can check the [PBRT book](https://www.pbr-book.org/3ed-2018/Shapes/Triangle_Meshes#TriangleIntersection) for inspiration (the Shirley mini-books don't cover this). Personally I recommend the Möller-Trumbore test, which is simple and widely used. A Google search should bring up a lot of resources for this algorithm.
 
-Once you've finished writing up the intersection code, you can go ahead and run the `build/test_tri_intersection` application from the terminal, which will test your intersection code.
+To help you test your implementation, we wrote a small testing feature into darts. When run with a test JSON file, instead of rendering a scene, darts will run a test to help you decide whether your implementation is correct or not. The implementation is available in `include/darts/test.h` and the file(s) in `src/tests/`. We've added these already to your `CMakeLists.txt` file. We've also made two small changes in `src/darts.cpp`, to actually run these tests.
+
+Once you get the new code compiled, run `darts scenes/assignment2/test_intersection.json` to test your intersection code.
 
 @m_div{m-col-s-6 m-col-m-5 m-col-l-5 m-right-s}
 <a href="simple-geometry-ref.png"><img src="simple-geometry-ref.png"></a>
@@ -147,7 +149,7 @@ What to submit
 In your report, make sure to include:
 
 - Images of all provided scenes as produced by your raytracer: run `darts` on all scenes in `scenes/assignment2`, and add the images to your report.
-- Paste the output of your `test_triangle_intersection` application.
+- Paste the output of running `intersection_test.json`.
 - The ray traversal stats (average ray-primitive intersection tests) of your %BBH on the different scenes provided (don't change the view location or other scene parameters).
 
 Then submit according to the instructions in the \ref submitting-on-canvas section of \ref getting-started guide.

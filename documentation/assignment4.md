@@ -260,9 +260,7 @@ The only remaining problem is to sample this PDF. However, you already implement
 Testing your code
 -----------------
 
-Testing sampling code can be notoriously difficult. To help you with this, we wrote a small sample testing feature into darts. When run in this mode, instead of rendering a scene, darts will run your sampling code and output statistics to help you decide whether your implementation is correct or not. The implementation is available in `include/darts/test.h` and the file(s) in `src/tests/`. Add these to your `CMakeLists.txt` file. This should compile the tests and make them available, but we still need to run them. In `src/darts.cpp`, add `#include <darts/test.h>` to the top and then call the function `run_tests()` right before the line containing `auto scene = make_shared<Scene>(j);`.
-
-Note that this code assumes you use the same sampling interface as we use – if you made changes, you might have to adapt the tool.
+Testing sampling code can be notoriously difficult. To help you with this, we added a new sampling test into darts in `src/tests/`. Note that this code assumes you use the same sampling interface as we use – if you made changes, you might have to adapt the tool.
 
 Once you get the new code compiled, run `darts scenes/assignment4/test_materials.json`.
 

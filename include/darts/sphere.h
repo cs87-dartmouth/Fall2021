@@ -19,6 +19,7 @@ public:
     Sphere(const json &j = json::object());
 
     bool intersect(const Ray3f &ray, HitInfo &hit) const override;
+    Box3f local_bounds() const override;
 
 protected:
     float m_radius = 1.0f;  ///< The radius of the sphere

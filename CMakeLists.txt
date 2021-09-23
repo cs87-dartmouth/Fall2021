@@ -28,6 +28,15 @@ add_library(
   src/common.cpp
   src/image.cpp
   src/progress.cpp
+  include/darts/test.h
+  include/darts/box.h
+  include/darts/mesh.h
+  include/darts/triangle.h
+  src/surfaces/mesh.cpp
+  src/surfaces/triangle.cpp
+  src/surfaces/bbh.cpp
+  src/tests/test.cpp
+  src/tests/intersection_test.cpp
   src/materials/diffuse_light.cpp
   include/darts/camera.h
   include/darts/material.h
@@ -87,6 +96,11 @@ target_link_libraries(darts_tutorial1 PRIVATE darts_lib)
 add_executable(darts src/darts.cpp)
 target_link_libraries(darts PRIVATE darts_lib)
 
+add_executable(img_compare src/img_compare.cpp)
+target_link_libraries(img_compare PRIVATE darts_lib)
+
+add_executable(img_avg src/img_avg.cpp)
+target_link_libraries(img_avg PRIVATE darts_lib)
 
 
 # ============================================================================

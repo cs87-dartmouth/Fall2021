@@ -13,3 +13,7 @@ XformedSurfaceWithMaterial::XformedSurfaceWithMaterial(const json &j)
     m_material = DartsFactory<Material>::find(j);
 }
 
+Box3f XformedSurfaceWithMaterial::bounds() const
+{
+    return m_xform.box(local_bounds());
+}

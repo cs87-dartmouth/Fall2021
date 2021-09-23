@@ -8,6 +8,7 @@
 #include <darts/scene.h>
 #include <filesystem/resolver.h>
 #include <fmt/chrono.h>
+#include <darts/test.h>
 
 // runs the raytrace over all tests and saves the corresponding images
 int main(int argc, char **argv)
@@ -76,6 +77,7 @@ The default is 2 (info).)")
             stream >> j;
         }
 
+        run_tests(j);
 
         auto scene = make_shared<Scene>(j);
 
