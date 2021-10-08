@@ -61,10 +61,10 @@ class DartsWriter:
         direction = cam.matrix_world.to_quaternion() @ Vector((0.0, 0.0, -1.0))
         loc = cam.location
 
-        up[1],up[2] = up[2],up[1]
-        direction[1],direction[2] = direction[2],direction[1]
-        loc[1],loc[2] = loc[2],loc[1]
-
+        up[0],up[1],up[2] = up[0],up[2],-up[1]
+        direction[0],direction[1],direction[2] = direction[0],direction[2],-direction[1]
+        loc[0],loc[1],loc[2] = loc[0],loc[2],-loc[1]
+        
         #set the values and return
         for i in range(0,3):
             cam_json["transform"]["from"][i] = loc[i]
