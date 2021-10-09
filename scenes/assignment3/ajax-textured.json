@@ -15,7 +15,7 @@
     },
     "sampler": {
         "type": "independent",
-        "samples": 256
+        "samples": 1
     },
     "background": 1,
     "accelerator": {
@@ -46,9 +46,9 @@
             "ior": 1.5,
             "refr": "stone",
             "refl": {
-                "type": "blinn_phong",
+                "type": "metal",
                 "albedo": 1.0,
-                "exponent": 100
+                "roughness": 0.1
             }
         }, {
             "type": "lambertian",
