@@ -8,10 +8,9 @@ For convenience, you can also find/download all the slides linked from the sched
 <table class="m-table">
     <tr class="header">
         <th>Date</th>
-        <th>Read</th>
+        <th>Reading</th>
         <th>Due</th>
         <th>Topic</th>
-        <th>Slides</th>
     </tr>
     <tr>
         <th colspan="5">
@@ -27,10 +26,7 @@ For convenience, you can also find/download all the slides linked from the sched
         </td>
         <td></td>
         <td>
-            Introduction; linear algebra review
-        </td>
-        <td>
-            [Slides](https://www.dropbox.com/s/af1m0l9rgm0d23c/00-Intro.pdf?dl=0)
+            [Introduction; linear algebra review](https://www.dropbox.com/s/af1m0l9rgm0d23c/00-Intro.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -44,10 +40,7 @@ For convenience, you can also find/download all the slides linked from the sched
             [A0](assignment0.html)
         </td>
         <td>
-            Darts base code introduction
-        </td>
-        <td>
-            [Slides](https://drive.google.com/file/d/1lqXk48AI-IIS-GrLFIQnbk3FoCS3eskL/view?usp=sharing)
+            [Darts base code introduction](https://www.dropbox.com/s/n2rgoyxhudl4jim/01-xhours.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -61,10 +54,7 @@ For convenience, you can also find/download all the slides linked from the sched
             &nbsp;
         </td>
         <td>
-            %Ray tracing
-        </td>
-        <td>
-            [Slides](https://www.dropbox.com/s/x2l5hfnpcijvqqn/01-Raytracing%20I.pdf?dl=0)
+            [%Ray tracing](https://www.dropbox.com/s/x2l5hfnpcijvqqn/01-Raytracing%20I.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -78,10 +68,7 @@ For convenience, you can also find/download all the slides linked from the sched
             &nbsp;
         </td>
         <td>
-            %Ray tracing – Shading
-        </td>
-        <td>
-            [Slides](https://www.dropbox.com/s/drhsry7pkzuggn0/02-Raytracing%20II%20-%20Shading.pdf?dl=0)
+            [%Ray tracing – Shading](https://www.dropbox.com/s/drhsry7pkzuggn0/02-Raytracing%20II%20-%20Shading.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -100,10 +87,7 @@ For convenience, you can also find/download all the slides linked from the sched
             &nbsp;
         </td>
         <td>
-            Meshes & acceleration structures
-        </td>
-        <td>
-            [Slides](https://www.dropbox.com/s/d0vmvn4p79cl6e9/03-Meshes%20%26%20Acceleration%20Structures.pdf?dl=0)
+            [Meshes & acceleration structures](https://www.dropbox.com/s/d0vmvn4p79cl6e9/03-Meshes%20%26%20Acceleration%20Structures.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -117,10 +101,7 @@ For convenience, you can also find/download all the slides linked from the sched
             [A1](assignment1.html)
         </td>
         <td>
-            Meshes & acceleration structures
-        </td>
-        <td>
-            [Slides](https://www.dropbox.com/s/d0vmvn4p79cl6e9/03-Meshes%20%26%20Acceleration%20Structures.pdf?dl=0)
+            [Meshes & acceleration structures](https://www.dropbox.com/s/d0vmvn4p79cl6e9/03-Meshes%20%26%20Acceleration%20Structures.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -136,9 +117,6 @@ For convenience, you can also find/download all the slides linked from the sched
         <td>
             X-hour
         </td>
-        <td>
-            &nbsp;
-        </td>
     </tr>
     <tr>
         <td>
@@ -151,10 +129,7 @@ For convenience, you can also find/download all the slides linked from the sched
             &nbsp;
         </td>
         <td>
-            Texturing
-        </td>
-        <td>
-            &nbsp;
+            [Texture mapping](https://www.dropbox.com/s/ad8nno34afxoq0x/04-Texture%20mapping.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -173,10 +148,7 @@ For convenience, you can also find/download all the slides linked from the sched
             &nbsp;
         </td>
         <td>
-            Texturing
-        </td>
-        <td>
-            &nbsp;
+            [Environment Mapping](https://www.dropbox.com/s/wygr8css5adwrkp/05-Texture%20mapping%20II.pdf?dl=0); [Procedural Texturing](https://www.dropbox.com/s/yon05fd35v2g1wy/06-Procedural%20textures.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -190,10 +162,7 @@ For convenience, you can also find/download all the slides linked from the sched
             &nbsp;
         </td>
         <td>
-            Radiometry
-        </td>
-        <td>
-            &nbsp;
+            [Radiometry](https://www.dropbox.com/s/eyz0zybxcle407v/07-Radiometry.pdf?dl=0); [Reflection Equation](https://www.dropbox.com/s/9y75xg4pvpkg9sk/08-Reflection%20Eqn.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -207,10 +176,7 @@ For convenience, you can also find/download all the slides linked from the sched
             &nbsp;
         </td>
         <td>
-            X-hour
-        </td>
-        <td>
-            &nbsp;
+            X-hour - Debugging
         </td>
     </tr>
     <tr>
@@ -221,13 +187,10 @@ For convenience, you can also find/download all the slides linked from the sched
             [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration)
         </td>
         <td>
-            &nbsp;
+            Quiz 1
         </td>
         <td>
-            Reflection Equation; Monte Carlo I
-        </td>
-        <td>
-            &nbsp;
+            [Monte Carlo I](https://www.dropbox.com/sh/nkyvlivxn3zdtan/AAC924grr2_n4MnqAxvbvncea?dl=0&preview=09-Monte+Carlo+I.pdf)
         </td>
     </tr>
     <tr>
@@ -246,10 +209,7 @@ For convenience, you can also find/download all the slides linked from the sched
             [A2](assignment2.html)
         </td>
         <td>
-            Monte Carlo II
-        </td>
-        <td>
-            &nbsp;
+            [Monte Carlo II](https://www.dropbox.com/sh/nkyvlivxn3zdtan/AAC924grr2_n4MnqAxvbvncea?dl=0&preview=10-Monte+Carlo+II.pdf)
         </td>
     </tr>
     <tr>
@@ -265,30 +225,10 @@ For convenience, you can also find/download all the slides linked from the sched
         <td>
             Monte Carlo III: Importance sampling
         </td>
-        <td>
-            &nbsp;
-        </td>
     </tr>
     <tr>
         <td>
             Oct 7
-        </td>
-        <td>
-            &nbsp;
-        </td>
-        <td>
-            &nbsp;
-        </td>
-        <td>
-            X-hour
-        </td>
-        <td>
-            &nbsp;
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Oct 8
         </td>
         <td>
             [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 8](https://www.pbr-book.org/3ed-2018/Reflection_Models)
@@ -297,10 +237,21 @@ For convenience, you can also find/download all the slides linked from the sched
             &nbsp;
         </td>
         <td>
-            Reflection Equation; Monte Carlo I
+            Lecture instead of X-hour:<br />Direct Illumination I
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 8
         </td>
         <td>
             &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            X-hour instead of lecture
         </td>
     </tr>
     <tr>
@@ -313,13 +264,24 @@ For convenience, you can also find/download all the slides linked from the sched
             Oct 11
         </td>
         <td>
-            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration), [7.3](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Stratified_Sampling.html)–[7.7](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Sobol_Sampler)
+            &nbsp;
         </td>
         <td>
             &nbsp;
         </td>
         <td>
-            Monte Carlo II
+            X-hour instead of lecture
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Oct 12
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            [A3](assignment3.html)
         </td>
         <td>
             &nbsp;
@@ -330,16 +292,13 @@ For convenience, you can also find/download all the slides linked from the sched
             Oct 13
         </td>
         <td>
-            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 14.4](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/The_Light_Transport_Equation.html)–[14.5](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/Path_Tracing.html)
-        </td>
-        <td>
-            [A3](assignment3.html)
-        </td>
-        <td>
-            The Rendering Equation & Path Tracing
+            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration), [7.3](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Stratified_Sampling.html)–[7.7](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Sobol_Sampler)
         </td>
         <td>
             &nbsp;
+        </td>
+        <td>
+            Direct Illumination II
         </td>
     </tr>
     <tr>
@@ -347,16 +306,13 @@ For convenience, you can also find/download all the slides linked from the sched
             Oct 14
         </td>
         <td>
-            &nbsp;
+            [RTTROYL](https://raytracing.github.io/books/RayTracingTheRestOfYourLife.html); [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 14.4](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/The_Light_Transport_Equation.html)–[14.5](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/Path_Tracing.html)
         </td>
         <td>
             &nbsp;
         </td>
         <td>
-            X-hour
-        </td>
-        <td>
-            &nbsp;
+            Lecture instead of X-hour:<br />Rendering Equation & Path Tracing
         </td>
     </tr>
     <tr>
@@ -372,9 +328,6 @@ For convenience, you can also find/download all the slides linked from the sched
         <td>
             Microfacet Models
         </td>
-        <td>
-            &nbsp;
-        </td>
     </tr>
     <tr>
         <th colspan="5">
@@ -386,16 +339,13 @@ For convenience, you can also find/download all the slides linked from the sched
             Oct 18
         </td>
         <td>
-            [PBR](https://www.pbr-book.org/3ed-2018/contents) [Ch. 13](https://www.pbr-book.org/3ed-2018/Monte_Carlo_Integration), [7.3](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Stratified_Sampling.html)–[7.7](https://www.pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Sobol_Sampler)
+            &nbsp;
         </td>
         <td>
             &nbsp;
         </td>
         <td>
             Quiz review
-        </td>
-        <td>
-            &nbsp;
         </td>
     </tr>
     <tr>
@@ -411,9 +361,6 @@ For convenience, you can also find/download all the slides linked from the sched
         <td>
             Light Tracing & Bidirectional Path Tracing
         </td>
-        <td>
-            &nbsp;
-        </td>
     </tr>
     <tr>
         <td>
@@ -427,9 +374,6 @@ For convenience, you can also find/download all the slides linked from the sched
         </td>
         <td>
             X-hour
-        </td>
-        <td>
-            &nbsp;
         </td>
     </tr>
     <tr>
@@ -445,13 +389,10 @@ For convenience, you can also find/download all the slides linked from the sched
         <td>
             Photon Mapping
         </td>
-        <td>
-            &nbsp;
-        </td>
     </tr>
     <tr>
         <th colspan="5">
-            Week 7: Participating Media
+            Week 7: Bidirectional Methods
         </th>
     </tr>
     <tr>
@@ -467,9 +408,6 @@ For convenience, you can also find/download all the slides linked from the sched
         <td>
             Photon Mapping
         </td>
-        <td>
-            &nbsp;
-        </td>
     </tr>
     <tr>
         <td>
@@ -483,9 +421,6 @@ For convenience, you can also find/download all the slides linked from the sched
         </td>
         <td>
             Photon Mapping
-        </td>
-        <td>
-            &nbsp;
         </td>
     </tr>
     <tr>
@@ -501,9 +436,6 @@ For convenience, you can also find/download all the slides linked from the sched
         <td>
             X-hour
         </td>
-        <td>
-            &nbsp;
-        </td>
     </tr>
     <tr>
         <td>
@@ -517,9 +449,6 @@ For convenience, you can also find/download all the slides linked from the sched
         </td>
         <td>
             Participating Media
-        </td>
-        <td>
-            &nbsp;
         </td>
     </tr>
     <tr>
@@ -540,9 +469,6 @@ For convenience, you can also find/download all the slides linked from the sched
         <td>
             Participating Media
         </td>
-        <td>
-            &nbsp;
-        </td>
     </tr>
     <tr>
         <td>
@@ -556,9 +482,6 @@ For convenience, you can also find/download all the slides linked from the sched
         </td>
         <td>
             Photon Mapping
-        </td>
-        <td>
-            &nbsp;
         </td>
     </tr>
     <tr>
@@ -574,9 +497,6 @@ For convenience, you can also find/download all the slides linked from the sched
         <td>
             X-hour
         </td>
-        <td>
-            &nbsp;
-        </td>
     </tr>
     <tr>
         <td>
@@ -590,9 +510,6 @@ For convenience, you can also find/download all the slides linked from the sched
         </td>
         <td>
             Participating Media
-        </td>
-        <td>
-            &nbsp;
         </td>
     </tr>
     <tr>
@@ -613,9 +530,6 @@ For convenience, you can also find/download all the slides linked from the sched
         <td>
             Photon Beams & Surfaces
         </td>
-        <td>
-            &nbsp;
-        </td>
     </tr>
     <tr>
         <td>
@@ -629,9 +543,6 @@ For convenience, you can also find/download all the slides linked from the sched
         </td>
         <td>
             Photon Mapping
-        </td>
-        <td>
-            &nbsp;
         </td>
     </tr>
     <tr>
@@ -647,9 +558,6 @@ For convenience, you can also find/download all the slides linked from the sched
         <td>
             X-hour
         </td>
-        <td>
-            &nbsp;
-        </td>
     </tr>
     <tr>
         <td>
@@ -663,9 +571,6 @@ For convenience, you can also find/download all the slides linked from the sched
         </td>
         <td>
             Misc
-        </td>
-        <td>
-            &nbsp;
         </td>
     </tr>
     <tr>
@@ -686,13 +591,10 @@ For convenience, you can also find/download all the slides linked from the sched
         <td>
             Misc.
         </td>
-        <td>
-            &nbsp;
-        </td>
     </tr>
     <tr>
         <td>
-            Nov XX
+            Nov 18
         </td>
         <td>
             &nbsp;
@@ -701,10 +603,21 @@ For convenience, you can also find/download all the slides linked from the sched
             [A6](assignment6.html)
         </td>
         <td>
-            "Final Exam" (Rendering Competition)
+            Final projects due
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Nov 19
         </td>
         <td>
             &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            "Final Exam" (Rendering Competition)
         </td>
     </tr>
 </table>

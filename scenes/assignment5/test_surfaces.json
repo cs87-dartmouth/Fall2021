@@ -107,7 +107,7 @@
                         }
                     }, {
                         "type": "mesh",
-                        "filename": "../meshes/cube.obj",
+                        "filename": "../assets/cube.obj",
                         "material": {
                             "type": "lambertian",
                             "albedo": 1.0

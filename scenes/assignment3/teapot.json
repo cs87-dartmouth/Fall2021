@@ -45,7 +45,7 @@
             "name": "teapot",
             "albedo": {
                 "type": "image",
-                "filename": "../meshes/grid.png"
+                "filename": "../assets/grid.png"
             }
         }
     ],
@@ -147,7 +147,7 @@
         }, {
             "type": "mesh",
             "name": "teapot",
-            "filename": "../meshes/teapot.obj",
+            "filename": "../assets/teapot.obj",
             "transform": [
                 {
                     "scale": 4

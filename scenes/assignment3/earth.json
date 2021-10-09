@@ -27,7 +27,7 @@
             "name": "earth",
             "albedo": {
                 "type": "image",
-                "filename": "../meshes/earth.jpg"
+                "filename": "../assets/earth.jpg"
             }
         }, {
             "type": "lambertian",

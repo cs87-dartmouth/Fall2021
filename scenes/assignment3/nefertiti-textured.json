@@ -27,7 +27,7 @@
             "name": "aem_aem21300_3dsl01_mo08-03_p_img ",
             "albedo": {
                 "type": "image",
-                "filename": "../meshes/nefertiti/aem_aem21300_3dsl01_mo08-03_p_img.png"
+                "filename": "../assets/nefertiti/albedo.png"
             }
         }, {
             "type": "lambertian",
@@ -78,7 +78,7 @@
         }, {
             "type": "mesh",
             "name": "ajax",
-            "filename": "../meshes/nefertiti/aem_aem21300_3dsl01_mo08-03_p.obj",
+            "filename": "../assets/nefertiti/aem_aem21300_3dsl01_mo08-03_p.obj",
             "transform": [
                 {
                     "axis": [

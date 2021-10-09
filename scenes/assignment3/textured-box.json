@@ -28,7 +28,7 @@
             "name": "walls",
             "albedo": {
                 "type": "image",
-                "filename": "../meshes/checker-map.png"
+                "filename": "../assets/checker-map.png"
             }
         }, {
             "type": "diffuse_light",

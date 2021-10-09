@@ -83,7 +83,7 @@
             ]
         }, {
             "type": "mesh",
-            "filename": "../meshes/plate1.obj",
+            "filename": "../assets/veach/plate1.obj",
             "material": {
                 "type": "phong",
                 "albedo": 0.35,
@@ -91,7 +91,7 @@
             }
         }, {
             "type": "mesh",
-            "filename": "../meshes/plate2.obj",
+            "filename": "../assets/veach/plate2.obj",
             "material": {
                 "type": "phong",
                 "albedo": 0.25,
@@ -99,7 +99,7 @@
             }
         }, {
             "type": "mesh",
-            "filename": "../meshes/plate3.obj",
+            "filename": "../assets/veach/plate3.obj",
             "material": {
                 "type": "phong",
                 "albedo": 0.2,
@@ -107,7 +107,7 @@
             }
         }, {
             "type": "mesh",
-            "filename": "../meshes/plate4.obj",
+            "filename": "../assets/veach/plate4.obj",
             "material": {
                 "type": "phong",
                 "albedo": 0.2,
@@ -115,7 +115,7 @@
             }
         }, {
             "type": "mesh",
-            "filename": "../meshes/floor.obj",
+            "filename": "../assets/veach/floor.obj",
             "material": {
                 "type": "lambertian",
                 "albedo": [0.2, 0.2, 0.2]
