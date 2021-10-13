@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CS
+  <title>Sampler class | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -52,7 +52,7 @@
                 <li><a href="getting-started.html">Getting started</a></li>
                 <li><a href="https://github.com/cs87-dartmouth/Fall2021">GitHub</a></li>
                 <li><a href="modules.html">Modules</a></li>
-                <li><a href="annotated.html" id="m-navbar-current">Classes</a></li>
+                <li><a href="annotated.html">Classes</a></li>
                 <li><a href="files.html">Files</a></li>
               </ol>
             </li>
@@ -70,21 +70,31 @@
   <div class="m-container m-container-inflatable">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <h1>Classes</h1>
-        <ul class="m-doc">
-          <li>class <a href="class_array2d.html" class="m-doc">Array2d</a> <span class="m-doc">Generic, resizable, 2D array class.</span></li>
-          <li>struct <a href="struct_b_b_h.html" class="m-doc">BBH</a> <span class="m-doc">An axis-aligned bounding box hierarchy acceleration structure.</span></li>
-          <li>struct <a href="struct_b_b_h_node.html" class="m-doc">BBHNode</a> <span class="m-doc">A node of an axis-aligned bounding box hierarchy.</span></li>
-          <li>struct <a href="struct_box.html" class="m-doc">Box</a> <span class="m-doc">An N-D axis-aligned bounding box consisting of two N-D points min and max.</span></li>
-          <li>class <a href="class_camera.html" class="m-doc">Camera</a> <span class="m-doc">A virtual (pinhole) camera.</span></li>
-          <li>class <a href="class_darts_exception.html" class="m-doc">DartsException</a> <span class="m-doc">Simple exception class, which stores a human-readable error description.</span></li>
-          <li>class <a href="class_darts_factory.html" class="m-doc">DartsFactory</a> <span class="m-doc">A specialization of the <a href="class_factory.html" class="m-doc">Factory</a> for darts objects read from json.</span></li>
-          <li>class <a href="class_dielectric.html" class="m-doc">Dielectric</a> <span class="m-doc">A smooth dielectric surface that reflects and refracts light according to the specified index of refraction <a href="class_dielectric.html#a0c5b80618fc2bb48b2678ea077ffc6f9" class="m-doc">ior</a>.</span></li>
-          <li>class <a href="class_diffuse_light.html" class="m-doc">DiffuseLight</a> <span class="m-doc">A material that emits light equally in all directions from the front side of a surface.</span></li>
-          <li>class <a href="class_factory.html" class="m-doc">Factory</a> <span class="m-doc">Abstract factory used to construct objects by name.</span></li>
-          <li>struct <a href="struct_hit_info.html" class="m-doc">HitInfo</a> <span class="m-doc">Contains information about a ray intersection hit point.</span></li>
-          <li>class <a href="class_image3f.html" class="m-doc">Image3f</a> <span class="m-doc">A floating-point RGB image.</span></li>
-          <li>class <a href="class_independent.html" class="m-doc">Independent</a> <span class="m-doc">Independent sampling - returns independent uniformly distributed random numbers on <svg class="m-math" style="width: 3.020em; height: 1.298em;" viewBox="0 -9.474739 28.988309 12.463531">
+        <h1>
+          Sampler <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampler_8h.html">&lt;darts/sampler.h&gt;</a></div>
+        </h1>
+        <p>Abstract sample generator.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>A sample generator is responsible for generating the random number stream that will be passed to an #Integrator implementation as it computes the radiance incident along a specified ray.</p>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_independent.html" class="m-doc">Independent</a>
+            </dt>
+            <dd>Independent sampling - returns independent uniformly distributed random numbers on <svg class="m-math" style="width: 3.020em; height: 1.298em;" viewBox="0 -9.474739 28.988309 12.463531">
 <title>
 $[0, 1)^2$
 </title>
@@ -104,47 +114,55 @@ $[0, 1)^2$
 <use x='20.201801' y='0' xlink:href='#eq1-g2-41'/>
 <use x='24.754126' y='-4.338437' xlink:href='#eq1-g1-50'/>
 </g>
-</svg>.</span></li>
-          <li>struct <a href="struct_intersection_test.html" class="m-doc">IntersectionTest</a> <span class="m-doc">A class to test the results of a ray-surface intersection.</span></li>
-          <li>class <a href="class_lambertian.html" class="m-doc">Lambertian</a> <span class="m-doc">A perfectly diffuse (<a href="class_lambertian.html" class="m-doc">Lambertian</a>) material.</span></li>
-          <li>class <a href="class_material.html" class="m-doc">Material</a> <span class="m-doc">A base class used to represent surface material properties.</span></li>
-          <li>struct <a href="struct_mesh.html" class="m-doc">Mesh</a> <span class="m-doc">A triangle mesh.</span></li>
-          <li>class <a href="class_metal.html" class="m-doc">Metal</a> <span class="m-doc">A metallic material that reflects light into the (potentially rough) mirror reflection direction.</span></li>
-          <li>class <a href="class_progress.html" class="m-doc">Progress</a> <span class="m-doc">A thread-safe helper object to display and update a progress bar in the terminal.</span></li>
-          <li>class <a href="class_quad.html" class="m-doc">Quad</a> <span class="m-doc">A quad spanning from -<a href="class_quad.html#a39460984f5caefcf1eb486755e3e17d4" class="m-doc">m_<wbr />size</a> / 2 to <a href="class_quad.html#a39460984f5caefcf1eb486755e3e17d4" class="m-doc">m_<wbr />size</a> / 2 in the (x,y)-plane at z=0.</span></li>
-          <li class="m-doc-collapsible collapsed">
-            <a href="#" onclick="return toggle(this)">class</a> <a href="class_range.html" class="m-doc">Range</a> <span class="m-doc">Python-style range: iterates from min to max in range-based for loops.</span>
-            <ul class="m-doc">
-              <li>class <a href="class_range_1_1_iterator.html" class="m-doc">Iterator</a> <span class="m-doc">Standard iterator support for <a href="class_range.html" class="m-doc">Range</a>.</span></li>
-            </ul>
-          </li>
-          <li>struct <a href="struct_ray.html" class="m-doc">Ray</a> <span class="m-doc">Simple ray segment data structure.</span></li>
-          <li>class <a href="class_sampler.html" class="m-doc">Sampler</a> <span class="m-doc">Abstract sample generator.</span></li>
-          <li>class <a href="class_scene.html" class="m-doc">Scene</a> <span class="m-doc">Main scene data structure.</span></li>
-          <li>class <a href="class_sphere.html" class="m-doc">Sphere</a> <span class="m-doc">A sphere centered at the origin with radius <a href="class_sphere.html#a1faee6c9b6e62abf0d35cc87a1894b61" class="m-doc">m_<wbr />radius</a>.</span></li>
-          <li>class <a href="class_surface.html" class="m-doc">Surface</a> <span class="m-doc">This is the abstract superclass for all surfaces.</span></li>
-          <li>class <a href="class_surface_group.html" class="m-doc">SurfaceGroup</a> <span class="m-doc">A collection of Surfaces grouped together.</span></li>
-          <li>struct <a href="struct_test.html" class="m-doc">Test</a> <span class="m-doc">Base class for unit tests in Darts.</span></li>
-          <li>struct <a href="struct_transform.html" class="m-doc">Transform</a> <span class="m-doc">Homogeneous coordinate transformation.</span></li>
-          <li>class <a href="class_triangle.html" class="m-doc">Triangle</a> <span class="m-doc">An instance of a triangle for a given face in a mesh.</span></li>
-          <li>class <a href="class_xformed_surface_with_material.html" class="m-doc">XformedSurfaceWithMaterial</a> <span class="m-doc">A convenience subclass of <a href="class_surface.html" class="m-doc">Surface</a> for simple surfaces with a <a href="struct_transform.html" class="m-doc">Transform</a> and a <a href="class_material.html" class="m-doc">Material</a>.</span></li>
-        </ul>
-        <script>
-        function toggle(e) {
-            e.parentElement.className = e.parentElement.className == 'm-doc-collapsible' ?
-                'm-doc-expansible' : 'm-doc-collapsible';
-            return false;
-        }
-        /* Collapse all nodes marked as such. Doing it via JS instead of
-           directly in markup so disabling it doesn't harm usability. The list
-           is somehow regenerated on every iteration and shrinks as I change
-           the classes. It's not documented anywhere and I'm not sure if this
-           is the same across browsers, so I am going backwards in that list to
-           be sure. */
-        var collapsed = document.getElementsByClassName("collapsed");
-        for(var i = collapsed.length - 1; i >= 0; --i)
-            collapsed[i].className = 'm-doc-expansible';
-        </script>
+</svg>.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a55861e53089180225b4d86ad527e7b0d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a55861e53089180225b4d86ad527e7b0d" class="m-doc-self">clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="class_sampler.html" class="m-doc">Sampler</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Create an exact copy of this <a href="class_sampler.html" class="m-doc">Sampler</a> instance.</dd>
+            <dt id="a637bfa6bab22bcae807ad47eb4a4b272">
+              <span class="m-doc-wrap-bumper">void <a href="#a637bfa6bab22bcae807ad47eb4a4b272" class="m-doc-self">seed</a>(</span><span class="m-doc-wrap">int seedx,
+              int seedy) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Deterministically seed the underlying RNG (to produce identical results between runs)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a9523cf991b63a8c6b8a9c9957c406591" class="m-doc">start_pixel</a>(</span><span class="m-doc-wrap">int x,
+              int y) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Prepare to generate samples for pixel (x,y).</dd>
+            <dt id="a6844219659e53045859b6a723015702c">
+              <span class="m-doc-wrap-bumper">void <a href="#a6844219659e53045859b6a723015702c" class="m-doc-self">advance</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Advance to the next sample.</dd>
+            <dt id="a96dd840751bb001bc21f70194ae51da0">
+              <span class="m-doc-wrap-bumper">auto <a href="#a96dd840751bb001bc21f70194ae51da0" class="m-doc-self">next1f</a>(</span><span class="m-doc-wrap">) -&gt; float <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Retrieve the next float value (dimension) from the current sample.</dd>
+            <dt id="abc63d7311bdc98937f6438513d747369">
+              <span class="m-doc-wrap-bumper">auto <a href="#abc63d7311bdc98937f6438513d747369" class="m-doc-self">next2f</a>(</span><span class="m-doc-wrap">) -&gt; <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Retrieve the next two float values (dimensions) from the current sample.</dd>
+            <dt id="a2701d80943196c55d18946051dfffdd6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2701d80943196c55d18946051dfffdd6" class="m-doc-self">sample_count</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Return the number of configured pixel samples.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a9523cf991b63a8c6b8a9c9957c406591"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Sampler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9523cf991b63a8c6b8a9c9957c406591" class="m-doc-self">start_pixel</a>(</span><span class="m-doc-wrap">int x,
+              int y) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Prepare to generate samples for pixel (x,y).</p>
+<p>This function is called every time the integrator starts rendering a new pixel.</p>
+          </div></section>
+        </section>
       </div>
     </div>
   </div>
