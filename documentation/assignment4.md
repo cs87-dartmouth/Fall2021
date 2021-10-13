@@ -68,17 +68,17 @@ This is only for inspiration: You don't have to do it this way, and are free to 
 Avoiding rejection sampling
 ---------------------------
 
-While rejection sampling technique will work, there are a couple issues with this design that will make it harder as we try to implement more sophisticated rendering technique. Firstly, rejection sampling is generally undesirable since it can require an unknown amount of random numbers. The more serious problem is that this rejection sampling relies on `randf()` which is a global random number generator. Using a single global random number generator is a _Very Bad Idea®_ if we have ambitions to ever introduce thread-level parallelism to our code (to render images more quickly by allowing the multiple cores on a single computer to trace the rays for different pixels simultaneously).
+While rejection sampling will work, there are a couple issues with this design that will make it harder as we try to implement more sophisticated rendering techniques. Firstly, rejection sampling is generally undesirable since it can require an unknown amount of random numbers. The more serious problem is that this rejection sampling relies on `randf()` which is a global random number generator. Using a single global random number generator is a _Very Bad Idea®_ if we have ambitions to ever introduce thread-level parallelism to our code (to render images more quickly by allowing the multiple cores on a single computer to trace the rays for different pixels simultaneously).
 
 For these reasons, typical Monte Carlo renderers operate by creating a different random number generator per thread to provide each with its own endless stream of uniform random numbers. We'll do this part later on in this assignment. First, however, we'll move away from rejection sampling and instead sample each spherical distribution we are interested in using just a fixed and small number of uniform random numbers (typically 2).
 
-We'll do this by implementing a number of functions of the form
+We'll do this by implementing various functions of the form
 
 @code{.cpp}
 Vec3f sample_<distribution>(const Vec2f & rv);
 @endcode
 
-Each of these functions is a warp that takes a random variable `rv` uniformly distributed in the unit square [0,1)<sup>2</sup> domain and warps it to the desired distribution.
+Each of these functions takes a random variable `rv` uniformly distributed in the unit square [0,1)<sup>2</sup> domain and warps it to the desired distribution.
 
 For each of these functions, we will also implement a corresponding
 
@@ -103,7 +103,7 @@ Uniform points on the sphere
 
 In `include/darts/sampling.h`, implement the function `sample_sphere()` that generates points _on_ the sphere instead of its interior. You can begin by simply calling `random_in_unit_sphere()` and normalizing the result: That will project all points to the surface of the sphere, and give you a result like the one shown in the image.
 
-While this gives you the distribution you want, we want to avoid rejection sampling and its use of `randf()`. [WolframAlpha](http://mathworld.wolfram.com/SpherePointPicking.html) shows several ways to do this. The easiest is the trigonometric way, for which we give pseudocode below:
+While this gives you the distribution you want, we want to avoid rejection sampling and its use of `randf()`. [WolframAlpha](http://mathworld.wolfram.com/SpherePointPicking.html) shows several ways to do this. The easiest is the trigonometric way we discussed in class, for which we give pseudocode below:
 
 ~~~{.cpp}
 phi = 2*pi*<uniform random number>;
@@ -160,9 +160,7 @@ Yet again, you can achieve this by modifying the way you compute `cos_theta` in 
 
 Try to insert `exponent=0` and `exponent=1` into the above equation. Does it do what we want it to do?
 
-Write out a point set for `exponent=20`. This should give you a distribution like this:
-
-Note how clustered the points are around the z-axis.
+Write out a point set for `exponent=20`. This should give you a distribution as shown here. Note how clustered the points are around the z-axis.
 
 @m_div{m-clearfix-s} @m_enddiv
 @m_div{m-clearfix-m} @m_enddiv
@@ -260,7 +258,7 @@ The only remaining problem is to sample this PDF. However, you already implement
 Testing your code
 -----------------
 
-Testing sampling code can be notoriously difficult. To help you with this, we added a new sampling test into darts in `src/tests/`. Note that this code assumes you use the same sampling interface as we use – if you made changes, you might have to adapt the tool.
+Testing sampling code can be notoriously difficult. To help you with this, we added a new sampling test into darts in `src/tests/material_sample_test.cpp`. Add this to the list of sources for `darts_lib` in the `CMakeLists.txt` file. Note that this code assumes you use the same sampling interface as we use – if you made changes, you might have to adapt the tool.
 
 Once you get the new code compiled, run `darts scenes/assignment4/test_materials.json`.
 

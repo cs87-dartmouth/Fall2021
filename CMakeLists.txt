@@ -28,6 +28,8 @@ add_library(
   src/common.cpp
   src/image.cpp
   src/progress.cpp
+  include/darts/sampler.h
+  src/samplers/independent.cpp
   include/darts/test.h
   include/darts/box.h
   include/darts/mesh.h
