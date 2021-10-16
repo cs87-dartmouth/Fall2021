@@ -88,9 +88,8 @@ void SampleTest::run()
     Array2d<float> pdf(image_width / histo_subsample, image_height / histo_subsample);
     Progress       progress1("Evaluating analytic PDF", pdf.height());
     for (int y = 0; y < pdf.height(); ++y, ++progress1)
-        parallel_for(0, pdf.width(),
-                     [&](int x)
-                     {
+        for(int x=0;x<pdf.width();x++)
+                    {
                          float accum = 0.f;
                          for (int sx = 0; sx < histo_subsample; ++sx)
                              for (int sy = 0; sy < histo_subsample; ++sy)
@@ -104,7 +103,7 @@ void SampleTest::run()
                                  integral += pixel_area * value;
                              }
                          pdf(x, y) = accum / (histo_subsample * histo_subsample);
-                     });
+                     }
     progress1.set_done();
 
     // Step 2: Generate histogram of samples
