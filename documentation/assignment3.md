@@ -135,7 +135,7 @@ Once you have this implemented, you should be able to render the scene `scenes/a
 @m_div{m-clearfix-m} @m_enddiv
 @m_div{m-clearfix-l} @m_enddiv
 
- <!-- **FIXME: OPTIONAL?** -->
+
 Perlin noise
 ------------
 

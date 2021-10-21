@@ -3,11 +3,34 @@
 @m_footernavigation
 @tableofcontents
 
-Project Theme: "TBD"
-=================================
+Project Theme: "It's what's inside that counts"
+===============================================
 
-Implementation
-==============
+Project proposal
+================
+@m_span{m-label m-primary m-flat} 1 pt @m_endspan
+
+In `reports/final_project_proposal/report.html` of your git repository, create a short project proposal according to the template there. This should include:
+
+* A proposed motivational image. This doesn't have to be a photo you took. It can be an image you find online, but make sure to properly credit the source. You could also include multiple images if that better conveys your vision for your final project.
+* A few sentences describing how the image conforms with this year's theme.
+* A list of features relevant to your image that you'd like to implement along with a tentative point breakdown which sums up to 16 points (see details of suggested point breakdowns below).
+* If there are some "nice to have" stretch goal features, include these as a separate list.
+* A short plan for how you will work together/divide the work.
+
+This should be a short proposal. Roughly 1 page.
+
+
+Submitting your proposal
+------------------------
+
+You are submitting with a partner. Use the People tab in Canvas to join a group with your partner. You will then submit a URL to one of your repo's commits just like in previous assignments (see the \ref submitting-on-canvas section of \ref getting-started guide). You are welcome to both duplicate the report in your own repos if you like, but you will submit the URL for just one of them as a team.
+
+
+Final project
+=============
+Features & point breakdown
+--------------------------
 @m_span{m-label m-primary m-flat} 16 pts @m_endspan
 
 In your renderer you are required to implement a minimum set of features that will be showcased in your report for grading. Features/Functionality are split into 3 categories: simple, moderate and advanced. Your task is to submit in your report any combination of the following types of features that sums up to 16 points. _The only restriction is that you must implement at least 1 advanced feature_.
@@ -25,41 +48,45 @@ The above point breakdowns are just a rough guide. Its possible to e.g. implemen
 
 We will not be giving out a list of approved features for each category, we leave this up to you. Graded features which you don't end up using in your final image must still include the above details for grading.
 
+
+@m_class{m-note m-danger}
+
+@par Warning
+    The details below of the format of the presentation, time limits, etc. will likely change as the plans for the rendering competition materialize. 
+
 Presentation & Report
-=====================
+---------------------
 @m_span{m-label m-primary m-flat} 3 pts @m_endspan
 
-The rendering competition will replace the final examination period on TBD.
+The rendering competition will replace the final examination period on November 19th from 8am-11am.
 
 We will quickly introduce the jury and then start with the presentations in random order. Each student will have up to (TBD) minutes of presentation followed by up to (TBD) minutes of questions by the jury. After the presentations the jury will deliberate and choose the winners. We will end the competition with the award ceremony!
 
 Neatness and completeness of your oral presentation and your report will be graded.
 
 Grading
-=======
+-------
 
-Only code that you implemented will be graded. Code that was graded in previous assignments will not be considered for grading in the final project. Code that was not written during the class or not by the student submitting the project will not be considered for grading and _must_ be properly documented/credited.
+Only code that you implemented will be graded. Code that was graded in previous assignments will not be considered for grading in the final project. Code that was not written during the class or not by the student(s) submitting the project will not be considered for grading and _must_ be properly documented/credited.
 
 What to submit
-==============
+--------------
 
-Your submission must contain:
+You will be submitting your report/presentation containing the info described above according to the instructions in the \ref submitting-on-canvas section of \ref getting-started guide.
 
-* The complete source code with all solution and source files, but NO binaries. Don't remove the dependencies, but remove the unnecessary scenes and mesh files. Your final scene files as well as your validation scenes and tests should be included.
-* An html file named report.html in the following format:
+Here are some tips for structuring your `report.html`:
 
-    Structure the document in sections where in each section you describe a graded feature of your renderer. In addition your document should start with a section showcasing your motivation image and end with a section showing your final submitted image. This document will be uploaded on the rendering competition website and will be publicly available.
+* Include your motivational image and discuss its relation to the theme. Point out the interesting phenomena in the image.
+
+* Structure the document in sections where in each section you describe a new feature of your renderer.
     
-    For every selected (graded) functonality/feature include a feature specific image(s) you generated (if applicable) in a format that is view-able within a web browser. The image(s) must convince us that the functionality is implemented correctly and completely. You can follow the validation paradigm we used in the homework. Also include descriptions of encountered problems, a list of external libraries that you used and other comments for each selected functionality. End with a summary section which briefly describes other functionality that was implemented but not submitted for grading.
-    
-* A Powerpoint, Keynote or PDF file named `presentation-firstname-lastname.extension` :
-    
-    This file will contain your presentation that will be presented in front of the judges during the rendering competition. The structure of your presentation should follow these guidelines:
-    
-    * An inspiring photograph and its relation to the theme. Point out the interesting phenomena in the image.
-    * Provide a brief overview of the functionality/features of your renderer.
-    * Point out technical details and challenges for a set of interesting features you have implemented.
-    * Presentation ends with your final image, your submission for the rendering competition.
+  * For every selected (graded) feature, include any feature-specific images you generated (if applicable). The image(s) must convince us that the functionality is implemented correctly and completely. You can follow the validation paradigm we used in the other assignments.
+
+  * Include descriptions of encountered problems, a list of external libraries that you used, and other comments for each feature.
+
+  * If you added any functionality that is not being submitted for grading, include a short section describing these.
+
+* End with a section showcasing your final submitted image.
 
 Past Year's Winning Entries
 ===========================

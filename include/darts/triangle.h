@@ -22,6 +22,11 @@ public:
     Box3f bounds() const override;
 
 
+    bool is_emissive() const override
+    {
+        return m_mesh && m_mesh->materials[m_mesh->Fm[m_face_idx]] &&
+               m_mesh->materials[m_mesh->Fm[m_face_idx]]->is_emissive();
+    }
 
 protected:
     // convenience function to access the i-th vertex (i must be 0, 1, or 2)

@@ -176,8 +176,7 @@ Creating a list of scene emitters
 
 Instead of asking the `Material` to generate ray directions for us, we could instead generate ray directions by sampling points on all surfaces in the scene using our new `Surface::sample()` function. As it is now, however, this would not be so useful, since most surfaces in the scene do not emit light. We'd like to sample rays towards surfaces that emit light. To do that we first need to add some plumbing to our code to allow a `Scene` to maintain a list of only the emissive surfaces.
 
-
-<!-- **FIXME add details here **-->
+First, add a `SurfaceGroup m_emitters;` data member to the `Scene` class. Then, take a look at `Scene::add_child()`. Currently it just calls `m_surfaces->add_child()`. After doing so, check whether the surface is emissive (call the `is_emissive()` method on `surface`) and if it is, also add `surface` to `m_emitters` by calling its `add_child` method.
 
 
 Next Event Integrator

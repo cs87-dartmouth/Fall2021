@@ -17,3 +17,8 @@ Box3f XformedSurfaceWithMaterial::bounds() const
 {
     return m_xform.box(local_bounds());
 }
+
+bool XformedSurfaceWithMaterial::is_emissive() const
+{
+    return m_material && m_material->is_emissive();
+}
