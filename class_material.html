@@ -137,6 +137,10 @@
               const <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const -&gt; <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Compute the amount of emitted light at the surface hitpoint.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a57db073950fb681b3f7dc67d91ab8c4a" class="m-doc">is_emissive</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Return whether or not this <a href="class_material.html" class="m-doc">Material</a> is emissive.</dd>
           </dl>
         </section>
         <section>
@@ -208,6 +212,13 @@
               </tfoot>
             </table>
 <p>The base <a href="class_material.html" class="m-doc">Material</a> class does not emit light, so it simply returns black.</p>
+          </div></section>
+          <section class="m-doc-details" id="a57db073950fb681b3f7dc67d91ab8c4a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Material::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a57db073950fb681b3f7dc67d91ab8c4a" class="m-doc-self">is_emissive</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Return whether or not this <a href="class_material.html" class="m-doc">Material</a> is emissive.</p>
+<p>This is primarily used to create a global list of emitters for sampling.</p>
           </div></section>
         </section>
       </div>

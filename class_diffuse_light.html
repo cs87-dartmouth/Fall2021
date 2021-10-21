@@ -104,6 +104,10 @@
               const <a href="struct_hit_info.html" class="m-doc">HitInfo</a>&amp; hit) const -&gt; <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns a constant Color3f if the ray hits the surface on the front side.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a08c996aa4975a15304fb78cbf98ba790" class="m-doc">is_emissive</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Return whether or not this <a href="class_material.html" class="m-doc">Material</a> is emissive.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -114,6 +118,16 @@
             </dt>
             <dd>The emissive color of the light.</dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a08c996aa4975a15304fb78cbf98ba790"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool DiffuseLight::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a08c996aa4975a15304fb78cbf98ba790" class="m-doc-self">is_emissive</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Return whether or not this <a href="class_material.html" class="m-doc">Material</a> is emissive.</p>
+<p>This is primarily used to create a global list of emitters for sampling.</p>
+          </div></section>
         </section>
       </div>
     </div>

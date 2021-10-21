@@ -142,6 +142,29 @@
               float cosine) -&gt; float</span>
             </dt>
             <dd>Probability density of <a href="group__group__sampling.html#ga7fb051034860c50372a13a91d1fed538" class="m-doc">sample_<wbr />hemisphere_<wbr />cosine_<wbr />power()</a></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__group__sampling.html#ga928616045091df19824fc1828f992043" class="m-doc">sample_sphere_cap</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv,
+              float cos_theta_max) -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd>Uniformly sample a vector on a spherical cap around (0, 0, 1)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__group__sampling.html#gac1db8d95b0988ec6a8805523db9384e2" class="m-doc">sample_sphere_cap_pdf</a>(</span><span class="m-doc-wrap">float cos_theta,
+              float cos_theta_max) -&gt; float</span>
+            </dt>
+            <dd>Probability density of <a href="group__group__sampling.html#ga928616045091df19824fc1828f992043" class="m-doc">sample_<wbr />sphere_<wbr />cap()</a></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__group__sampling.html#ga017cdd3070d5a23747f1a76cfd40389e" class="m-doc">sample_triangle</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v0,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v1,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v2,
+              const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv) -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd>Sample a point uniformly on a triangle with vertices <code>v0</code>, <code>v1</code>, <code>v2</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__group__sampling.html#gac2d5bdb0c1caa6584b976bcd22ec2881" class="m-doc">sample_triangle_pdf</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v0,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v1,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v2) -&gt; float</span>
+            </dt>
+            <dd>Sampling density of <a href="group__group__sampling.html#ga017cdd3070d5a23747f1a76cfd40389e" class="m-doc">sample_<wbr />triangle()</a></dd>
           </dl>
         </section>
       </div>

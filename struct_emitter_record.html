@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>darts/surface.h file | CS
+  <title>EmitterRecord struct | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -71,39 +71,54 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_f511f7995b9806edec8127aeb2c04489.html">darts</a>/</span>surface.h <span class="m-thin">file</span>
+          EmitterRecord <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="surface_8h.html">&lt;darts/surface.h&gt;</a></div>
         </h1>
-        <p>Class <a href="struct_hit_info.html" class="m-doc">HitInfo</a>, <a href="class_surface.html" class="m-doc">Surface</a>, and <a href="class_xformed_surface_with_material.html" class="m-doc">XformedSurfaceWithMaterial</a>.</p>
+        <p>Data record for conveniently querying and sampling emitters.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt>
-              struct <a href="struct_hit_info.html" class="m-doc">HitInfo</a>
+            <dt id="a1e9706e56e219e4cb591c5d2dfb8bd4a">
+              <span class="m-doc-wrap-bumper"><a href="#a1e9706e56e219e4cb591c5d2dfb8bd4a" class="m-doc-self">EmitterRecord</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span></span>
             </dt>
-            <dd>Contains information about a ray intersection hit point.</dd>
-            <dt>
-              struct <a href="struct_emitter_record.html" class="m-doc">EmitterRecord</a>
+            <dd>Default constructor that leaves all members uninitialized.</dd>
+            <dt id="a4c081106daf392e9d7d1860e29ff8d62">
+              <span class="m-doc-wrap-bumper"><a href="#a4c081106daf392e9d7d1860e29ff8d62" class="m-doc-self">EmitterRecord</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a> o)</span>
             </dt>
-            <dd>Data record for conveniently querying and sampling emitters.</dd>
-            <dt>
-              class <a href="class_surface.html" class="m-doc">Surface</a>
+            <dd>Initialize just the origin point.</dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a79ef83f93e8e476d5bf0ffd50f630a20">
+              <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a> <a href="#a79ef83f93e8e476d5bf0ffd50f630a20" class="m-doc-self">o</a>
             </dt>
-            <dd>This is the abstract superclass for all surfaces.</dd>
-            <dt>
-              class <a href="class_xformed_surface_with_material.html" class="m-doc">XformedSurfaceWithMaterial</a>
+            <dd>Origin point from which we sample the emitter.</dd>
+            <dt id="ade455c5eefd5effe7cf6459a47cc1883">
+              <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a> <a href="#ade455c5eefd5effe7cf6459a47cc1883" class="m-doc-self">wi</a>
             </dt>
-            <dd>A convenience subclass of <a href="class_surface.html" class="m-doc">Surface</a> for simple surfaces with a <a href="struct_transform.html" class="m-doc">Transform</a> and a <a href="class_material.html" class="m-doc">Material</a>.</dd>
+            <dd>Direction vector from &#x27;o&#x27; to &#x27;hit.p&#x27;.</dd>
+            <dt id="a51f54666560ba3ccade858c828e53159">
+              float <a href="#a51f54666560ba3ccade858c828e53159" class="m-doc-self">pdf</a>
+            </dt>
+            <dd>Solid angle density wrt. &#x27;o&#x27;.</dd>
+            <dt id="a76372e8a5bc54c143dfa9a4ce738bc96">
+              <a href="struct_hit_info.html" class="m-doc">HitInfo</a> <a href="#a76372e8a5bc54c143dfa9a4ce738bc96" class="m-doc-self">hit</a>
+            </dt>
+            <dd>Hit information at the sampled point.</dd>
           </dl>
         </section>
       </div>
