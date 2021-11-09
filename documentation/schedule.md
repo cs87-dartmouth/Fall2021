@@ -223,7 +223,7 @@ For convenience, you can also find/download all the slides linked from the sched
             &nbsp;
         </td>
         <td>
-            Monte Carlo III: Importance sampling
+            [Monte Carlo III: Importance sampling](https://www.dropbox.com/sh/nkyvlivxn3zdtan/AAA0V3tkwvmnzj6LEk8duHNJa/11-Monte%20Carlo%20III.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -237,7 +237,7 @@ For convenience, you can also find/download all the slides linked from the sched
             &nbsp;
         </td>
         <td>
-            Lecture instead of X-hour:<br />Direct Illumination I
+            Lecture instead of X-hour:<br />[Direct Illumination I](https://www.dropbox.com/sh/nkyvlivxn3zdtan/AACpUpFlrGKRWJiFPuYVTesja/12-Sampling%20direct%20lighting.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -298,7 +298,7 @@ For convenience, you can also find/download all the slides linked from the sched
             &nbsp;
         </td>
         <td>
-            Direct Illumination II
+            [Direct Illumination II](https://www.dropbox.com/sh/nkyvlivxn3zdtan/AACowD3QszJ9laisuSd_rugJa/13-Sampling%20direct%20lighting%20II.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -312,7 +312,7 @@ For convenience, you can also find/download all the slides linked from the sched
             &nbsp;
         </td>
         <td>
-            Lecture instead of X-hour:<br />Rendering Equation & Path Tracing
+            Lecture instead of X-hour:<br />[Rendering Equation & Path Tracing](https://www.dropbox.com/sh/nkyvlivxn3zdtan/AADgSpZcXWzaIyNumS7WlhDka/14-Rendering%20equation.pdf?dl=0)
         </td>
     </tr>
     <tr>
@@ -326,7 +326,7 @@ For convenience, you can also find/download all the slides linked from the sched
             &nbsp;
         </td>
         <td>
-            Microfacet Models
+            [Microfacet Models](https://www.dropbox.com/sh/nkyvlivxn3zdtan/AADmBo5A-k_w25oeoCZoSSrca/15-Microfacet%20BSDFs.pdf?dl=0)
         </td>
     </tr>
     <tr>
