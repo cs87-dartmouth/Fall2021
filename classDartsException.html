@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>darts/json.h file | CS
+  <title>DartsException class | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -71,67 +71,30 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_f511f7995b9806edec8127aeb2c04489.html">darts</a>/</span>json.h <span class="m-thin">file</span>
+          DartsException <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="common_8h.html">&lt;darts/common.h&gt;</a></div>
         </h1>
-        <p>Serialization and deserialization of various darts types to/from JSON.</p>
-        <div class="m-block m-default">
+        <p>Simple exception class, which stores a human-readable error description.</p>
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#typedef-members">Typedefs</a></li>
-                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
               </ul>
             </li>
           </ul>
-        </div>
-        <section id="typedef-members">
-          <h2><a href="#typedef-members">Typedefs</a></h2>
+        </nav>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt>
-              using <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a> = nlohmann::json
+            <dt id="ac5dad5d3b0e75407cee3ecb4b1f907a9">
+              <div class="m-doc-template">template&lt;typename... Args&gt;</div>
+              <span class="m-doc-wrap-bumper"><a href="#ac5dad5d3b0e75407cee3ecb4b1f907a9" class="m-doc-self">DartsException</a>(</span><span class="m-doc-wrap">const char* fmt,
+              const Args&amp;... args)</span>
             </dt>
-            <dd>Bring nlohmann::json into scope.</dd>
-          </dl>
-        </section>
-        <section id="func-members">
-          <h2><a href="#func-members">Functions</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <div class="m-doc-template">template&lt;class T&gt;</div>
-              <span class="m-doc-wrap-bumper">void <a href="namespacelinalg.html#a142e0d7bd0c668e1bf4c39d050460084" class="m-doc">from_json</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j,
-              mat&lt;T, 4, 4&gt;&amp; m)</span>
-            </dt>
-            <dd>parse a Mat44&lt;T&gt; from json</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;class T, int N&gt;</div>
-              <span class="m-doc-wrap-bumper">void <a href="namespacelinalg.html#a2c83b82ed3e031f523646fe7b0407978" class="m-doc">from_json</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j,
-              vec&lt;T, N&gt;&amp; v)</span>
-            </dt>
-            <dd>parse a Vec&lt;N,T&gt; from json</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;class T&gt;</div>
-              <span class="m-doc-wrap-bumper">void <a href="namespacelinalg.html#a1f3f717b428ef805ad4ec9302118e0bf" class="m-doc">to_json</a>(</span><span class="m-doc-wrap"><a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j,
-              const mat&lt;T, 4, 4&gt;&amp; v)</span>
-            </dt>
-            <dd>Serialize a Mat44&lt;T&gt; to json.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;class T, int N&gt;</div>
-              <span class="m-doc-wrap-bumper">void <a href="namespacelinalg.html#a182ebdf434dd502f079573352c0851b6" class="m-doc">to_json</a>(</span><span class="m-doc-wrap"><a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j,
-              const vec&lt;T, N&gt;&amp; v)</span>
-            </dt>
-            <dd>Serialize a Vec3&lt;N,T&gt; to json.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="group__group__parser.html#gad5987582dd6e3b2ea9b270fe3e27d33e" class="m-doc">from_json</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j,
-              <a href="struct_transform.html" class="m-doc">Transform</a>&amp; v)</span>
-            </dt>
-            <dd>Parse a <a href="struct_transform.html" class="m-doc">Transform</a> from json.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="group__group__parser.html#gab6aa40d9c7d032624b660ceddc3b2b99" class="m-doc">to_json</a>(</span><span class="m-doc-wrap"><a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j,
-              const <a href="struct_transform.html" class="m-doc">Transform</a>&amp; t)</span>
-            </dt>
-            <dd>Serialize a <a href="struct_transform.html" class="m-doc">Transform</a> to json.</dd>
+            <dd>Variadic template constructor to support fmt::format-style arguments.</dd>
           </dl>
         </section>
       </div>
@@ -172,13 +135,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
+        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
       </div>
     </div>
   </div>

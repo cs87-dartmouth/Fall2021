@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DartsFactory class | CS
+  <title>Image3f class | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -71,23 +71,11 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="factory_8h.html">&lt;darts/factory.h&gt;</a></div>
-          <div class="m-doc-template">template&lt;typename T&gt;</div>
-          DartsFactory <span class="m-thin">class</span>
+          Image3f <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="image_8h.html">&lt;darts/image.h&gt;</a></div>
         </h1>
-        <p>A specialization of the <a href="class_factory.html" class="m-doc">Factory</a> for darts objects read from json.</p>
-        <table class="m-table m-fullwidth m-flat">
-          <thead>
-            <tr><th colspan="2">Template parameters</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="width: 1%">T</td>
-              <td>This factory will create objects of type shared_ptr&lt;T&gt;.</td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="m-block m-default">
+        <p>A floating-point RGB image.</p>
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -95,114 +83,170 @@
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-static-methods">Public static functions</a></li>
-                <li><a href="#pro-static-methods">Protected static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
-        </div>
-<p>Additionally, <a href="class_darts_factory.html" class="m-doc">DartsFactory</a> allows storing previously parsed/created instances into a registry with <a href="class_darts_factory.html#a5c1665251e313a388e98d12109efde5f" class="m-doc">register_<wbr />instance()</a> and retrieving them with their name using <a href="class_darts_factory.html#a33482ead986f91ba2d6b3c6858dc49d1" class="m-doc">find()</a>.</p><aside class="m-note m-danger"><h4>Warning</h4><p>If you want to use <a href="class_darts_factory.html#a33482ead986f91ba2d6b3c6858dc49d1" class="m-doc">DartsFactory&lt;T&gt;::<wbr />find()</a> with more types T, you need to specialize it</p></aside>
+        </nav>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              <div class="m-doc-template">template&lt;typename Object, typename... Args&gt;</div>
-              class <a href="class_factory.html" class="m-doc">Factory&lt;shared_ptr&lt;T&gt;, const nlohmann::json&amp;&gt;</a>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              class <a href="classArray2d.html" class="m-doc">Array2d&lt;Color3f&gt;</a>
             </dt>
-            <dd>Abstract factory used to construct objects by name.</dd>
+            <dd>Generic, resizable, 2D array class.</dd>
           </dl>
         </section>
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="group__group__parser.html#ga0fd21d5be6421f511f4aafe52bef55a6" class="m-doc">create</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">nlohmann::<wbr />json</a>&amp; j) -&gt; <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a></span>
+            <dt id="a1af2475d44a5e0b0d2ce71d7f9bb2b0c">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a1af2475d44a5e0b0d2ce71d7f9bb2b0c" class="m-doc-self">loadable_formats</a>(</span><span class="m-doc-wrap">) -&gt; std::set&lt;std::string&gt;</span>
             </dt>
-            <dd>Allows creating a shared_ptr to a darts object, deducing the type from a &quot;type&quot; field in <code>j</code>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="#a33482ead986f91ba2d6b3c6858dc49d1" class="m-doc">find</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">nlohmann::<wbr />json</a>&amp; jp,
-              const std::string&amp; key) -&gt; <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a></span>
+            <dd>Set of supported formats for image loading.</dd>
+            <dt id="a67fce2d1e68077d1cbd2ade7f65d07d6">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a67fce2d1e68077d1cbd2ade7f65d07d6" class="m-doc-self">savable_formats</a>(</span><span class="m-doc-wrap">) -&gt; std::set&lt;std::string&gt;</span>
             </dt>
-            <dd>Find a previously parsed/created SharedT, or create a new one.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="#a0d9a333bef8080a35a43d25812b10cde" class="m-doc">find</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">nlohmann::<wbr />json</a>&amp; jp) -&gt; <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a></span>
-            </dt>
-            <dd>Find a previously parsed/created SharedT, or create a new one using the default key for this type of object.</dd>
-            <dt id="a5c1665251e313a388e98d12109efde5f">
-              <span class="m-doc-wrap-bumper">static void <a href="#a5c1665251e313a388e98d12109efde5f" class="m-doc-self">register_instance</a>(</span><span class="m-doc-wrap">const std::string&amp; name,
-              <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a> o)</span>
-            </dt>
-            <dd>Associate and store a shared_ptr to an object instance <code>o</code> with the name <code>name</code>.</dd>
+            <dd>Set of supported formats for image saving.</dd>
           </dl>
         </section>
-        <section id="pro-static-methods">
-          <h2><a href="#pro-static-methods">Protected static functions</a></h2>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a6ca1167cca8de08dede7cc755f684588">
-              <span class="m-doc-wrap-bumper">static auto <a href="#a6ca1167cca8de08dede7cc755f684588" class="m-doc-self">instance_registry</a>(</span><span class="m-doc-wrap">) -&gt; std::map&lt;std::string, <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a>&gt;&amp;</span>
+            <dt id="a98316372981e7f558b0d14267a73abef">
+              <span class="m-doc-wrap-bumper"><a href="#a98316372981e7f558b0d14267a73abef" class="m-doc-self">Image3f</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
-            <dd>Global map of SharedT instances that have been create/parsed.</dd>
+            <dd>Default constructor (empty image)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#abb3402016663166647a625bfbb8453c0" class="m-doc">Image3f</a>(</span><span class="m-doc-wrap">int w,
+              int h)</span>
+            </dt>
+            <dd>Size Constructor (sets width and height)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a2656ea6238eb82e00368b0c9eba1b277" class="m-doc">Image3f</a>(</span><span class="m-doc-wrap">int w,
+              int h,
+              const <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a>&amp; v)</span>
+            </dt>
+            <dd>Construct an image of a fixed size and initialize all pixels.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a53844b34bd96b340084d068039ebbfb5" class="m-doc">load</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) -&gt; bool</span>
+            </dt>
+            <dd>Load an image from file.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af24f3921e99b1f4dcb4f9dc5da7352b5" class="m-doc">save</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
+              float gain = 1.0f) -&gt; bool</span>
+            </dt>
+            <dd>Save an image to the specified filename.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a33482ead986f91ba2d6b3c6858dc49d1"><div>
+          <section class="m-doc-details" id="abb3402016663166647a625bfbb8453c0"><div>
             <h3>
-              <div class="m-doc-template">
-                template&lt;typename T&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">static <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a> DartsFactory&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a33482ead986f91ba2d6b3c6858dc49d1" class="m-doc-self">find</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">nlohmann::<wbr />json</a>&amp; jp,
-              const std::string&amp; key)</span></span>
+              <span class="m-doc-wrap-bumper"> Image3f::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abb3402016663166647a625bfbb8453c0" class="m-doc-self">Image3f</a>(</span><span class="m-doc-wrap">int w,
+              int h)</span></span>
             </h3>
-            <p>Find a previously parsed/created SharedT, or create a new one.</p>
+            <p>Size Constructor (sets width and height)</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">jp</td>
-                  <td>The json object for the parent</td>
+                  <td style="width: 1%">w</td>
+                  <td>The width of the image</td>
                 </tr>
                 <tr>
-                  <td>key</td>
-                  <td>Look for this json field in <code>jp</code></td>
+                  <td>h</td>
+                  <td>The height of the image</td>
                 </tr>
               </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>SharedT The newly created or retrieved object instance.</td>
-                </tr>
-              </tfoot>
             </table>
-<p>Return a <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a> pointer by parsing a JSON specification. If <code>j</code> is a string <code>key:</code> &quot;name&quot;, then try to find a previously parsed SharedT with name &quot;name&quot;. If <code>j</code> is a <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a> object <code>key:</code> {}, then create a new SharedT with the specified parameters by calling <a href="group__group__parser.html#ga0fd21d5be6421f511f4aafe52bef55a6" class="m-doc">create()</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a0d9a333bef8080a35a43d25812b10cde"><div>
+          <section class="m-doc-details" id="a2656ea6238eb82e00368b0c9eba1b277"><div>
             <h3>
-              <div class="m-doc-template">
-                template&lt;typename T&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">static <a href="class_darts_factory.html#a9fc2ecea7ed8eab5fb9fc71bff6d5c17" class="m-doc">SharedT</a> DartsFactory&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0d9a333bef8080a35a43d25812b10cde" class="m-doc-self">find</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">nlohmann::<wbr />json</a>&amp; jp)</span></span>
+              <span class="m-doc-wrap-bumper"> Image3f::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2656ea6238eb82e00368b0c9eba1b277" class="m-doc-self">Image3f</a>(</span><span class="m-doc-wrap">int w,
+              int h,
+              const <a href="group__group__math.html#gac142ddc4a553fd9e2cc58c50d71c9a02" class="m-doc">Color3f</a>&amp; v)</span></span>
             </h3>
-            <p>Find a previously parsed/created SharedT, or create a new one using the default key for this type of object.</p>
+            <p>Construct an image of a fixed size and initialize all pixels.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">jp</td>
-                  <td>The json object for the parent</td>
+                  <td style="width: 1%">w</td>
+                  <td>The width of the image</td>
+                </tr>
+                <tr>
+                  <td>h</td>
+                  <td>The height of the image</td>
+                </tr>
+                <tr>
+                  <td>v</td>
+                  <td>The Color to set all pixels</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a53844b34bd96b340084d068039ebbfb5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Image3f::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a53844b34bd96b340084d068039ebbfb5" class="m-doc-self">load</a>(</span><span class="m-doc-wrap">const std::string&amp; filename)</span></span>
+            </h3>
+            <p>Load an image from file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">filename</td>
+                  <td>The filename</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>SharedT The newly created or retrieved object instance.</td>
+                  <td>True if the file loaded successfully</td>
                 </tr>
               </tfoot>
             </table>
-<aside class="m-note m-danger"><h4>Warning</h4><p>This function overload needs to be specialized for new types T.</p></aside><p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</p>
+          </div></section>
+          <section class="m-doc-details" id="af24f3921e99b1f4dcb4f9dc5da7352b5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Image3f::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af24f3921e99b1f4dcb4f9dc5da7352b5" class="m-doc-self">save</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
+              float gain = 1.0f)</span></span>
+            </h3>
+            <p>Save an image to the specified filename.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">filename</td>
+                  <td>The filename to save to</td>
+                </tr>
+                <tr>
+                  <td>gain</td>
+                  <td>The multiplicative gain to apply to pixel values before saving</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the file saved successfully</td>
+                </tr>
+              </tfoot>
+            </table>
           </div></section>
         </section>
       </div>
@@ -243,13 +287,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
+        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
       </div>
     </div>
   </div>

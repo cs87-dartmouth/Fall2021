@@ -73,7 +73,7 @@
         <h1>
           Math <span class="m-thin">module</span></h1>
         <p>Fixed-size vectors/colors, matrices, transforms, rays, orthonormal bases.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -85,24 +85,15 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              <div class="m-doc-template">template&lt;int N, typename T&gt;</div>
-              struct <a href="struct_box.html" class="m-doc">Box</a>
-            </dt>
-            <dd>An N-D axis-aligned bounding box consisting of two N-D points min and max.</dd>
-            <dt>
               <div class="m-doc-template">template&lt;size_t N, typename T&gt;</div>
-              struct <a href="struct_ray.html" class="m-doc">Ray</a>
+              struct <a href="structRay.html" class="m-doc">Ray</a>
             </dt>
             <dd>Simple ray segment data structure.</dd>
-            <dt>
-              struct <a href="struct_transform.html" class="m-doc">Transform</a>
-            </dt>
-            <dd>Homogeneous coordinate transformation.</dd>
           </dl>
         </section>
         <section id="typedef-members">
@@ -110,87 +101,12 @@
           <dl class="m-doc">
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              using <a href="#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a> = <a href="struct_box.html" class="m-doc">Box</a>&lt;2, T&gt;
-            </dt>
-            <dd>2D axis-aligned box</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              using <a href="#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a> = <a href="struct_box.html" class="m-doc">Box</a>&lt;3, T&gt;
-            </dt>
-            <dd>3D axis-aligned box</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              using <a href="#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a> = <a href="struct_box.html" class="m-doc">Box</a>&lt;4, T&gt;
-            </dt>
-            <dd>4D axis-aligned box</dd>
-            <dt>
-              using <a href="#gac8d61cc10feb1eefad6f4108df407854" class="m-doc">Box2f</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;float&gt;
-            </dt>
-            <dd>2D axis-aligned box (of floats)</dd>
-            <dt>
-              using <a href="#ga8abf4450945ae0b8bd125f0d11529ff0" class="m-doc">Box2d</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;double&gt;
-            </dt>
-            <dd>2D axis-aligned box (of doubles)</dd>
-            <dt>
-              using <a href="#gaf8f62d5531175aaa884cfee64a6b86c5" class="m-doc">Box2i</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;int32_t&gt;
-            </dt>
-            <dd>2D axis-aligned box (of signed 32-bit integers)</dd>
-            <dt>
-              using <a href="#gaa88a187f286ea05204ca7b4b240fb9e0" class="m-doc">Box2u</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;uint32_t&gt;
-            </dt>
-            <dd>2D axis-aligned box (of unsigned 32-bit integers</dd>
-            <dt>
-              using <a href="#ga2a1dfe6c4a7442aed9127fd9c6af627b" class="m-doc">Box2c</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;uint8_t&gt;
-            </dt>
-            <dd>2D axis-aligned box (of unsigned 8-bit integers</dd>
-            <dt>
-              using <a href="#ga8e01df1b4e6caa1021980a492111f198" class="m-doc">Box3f</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;float&gt;
-            </dt>
-            <dd>3D axis-aligned box (of floats)</dd>
-            <dt>
-              using <a href="#ga9b097b3bfee33e3c57b9d518ad4f2c43" class="m-doc">Box3d</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;double&gt;
-            </dt>
-            <dd>3D axis-aligned box (of doubles)</dd>
-            <dt>
-              using <a href="#ga013922fc3b8d0b34009004fd48020359" class="m-doc">Box3i</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;int32_t&gt;
-            </dt>
-            <dd>3D axis-aligned box (of signed 32-bit integers)</dd>
-            <dt>
-              using <a href="#gad81aee73003d05071f64e60fd6dfdf7a" class="m-doc">Box3u</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;uint32_t&gt;
-            </dt>
-            <dd>3D axis-aligned box (of unsigned 32-bit integers</dd>
-            <dt>
-              using <a href="#ga6eb19e85787d044e1e013f3797e47636" class="m-doc">Box3c</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;uint8_t&gt;
-            </dt>
-            <dd>3D axis-aligned box (of unsigned 8-bit integers</dd>
-            <dt>
-              using <a href="#gaf786a845e7a6d5fa890a1a2b71c8a201" class="m-doc">Box4f</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;float&gt;
-            </dt>
-            <dd>4D axis-aligned box (of floats)</dd>
-            <dt>
-              using <a href="#ga88e830277c200bae88cada1195caa073" class="m-doc">Box4d</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;double&gt;
-            </dt>
-            <dd>4D axis-aligned box (of doubles)</dd>
-            <dt>
-              using <a href="#gab3bf453bec1c650ac615808cf3ac81af" class="m-doc">Box4i</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;int32_t&gt;
-            </dt>
-            <dd>4D axis-aligned box (of signed 32-bit integers)</dd>
-            <dt>
-              using <a href="#ga47a8b0086d4a120b497b02ac02efbaf2" class="m-doc">Box4u</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;uint32_t&gt;
-            </dt>
-            <dd>4D axis-aligned box (of unsigned 32-bit integers</dd>
-            <dt>
-              using <a href="#ga3bb29dec9efe8f6c8987ee4eafc13973" class="m-doc">Box4c</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;uint8_t&gt;
-            </dt>
-            <dd>4D axis-aligned box (of unsigned 8-bit integers</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              using <a href="#gad2529c5ccdccc09e978964d3ddd58e91" class="m-doc">Ray2</a> = <a href="struct_ray.html" class="m-doc">Ray</a>&lt;2, T&gt;
+              using <a href="#gad2529c5ccdccc09e978964d3ddd58e91" class="m-doc">Ray2</a> = <a href="structRay.html" class="m-doc">Ray</a>&lt;2, T&gt;
             </dt>
             <dd>2D ray</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              using <a href="#ga1ba884c9e8c53fe96c5ed6d4fc259756" class="m-doc">Ray3</a> = <a href="struct_ray.html" class="m-doc">Ray</a>&lt;3, T&gt;
+              using <a href="#ga1ba884c9e8c53fe96c5ed6d4fc259756" class="m-doc">Ray3</a> = <a href="structRay.html" class="m-doc">Ray</a>&lt;3, T&gt;
             </dt>
             <dd>3D ray</dd>
             <dt>
@@ -407,148 +323,13 @@
         </section>
         <section>
           <h2>Typedef documentation</h2>
-          <section class="m-doc-details" id="gae2243fc5f1e9c9fe42bd79ec19479676"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-              <div class="m-doc-template">
-                template&lt;typename T&gt;
-              </div>
-              using <a href="#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc-self">Box2</a> = <a href="struct_box.html" class="m-doc">Box</a>&lt;2, T&gt;
-            </h3>
-            <p>2D axis-aligned box</p>
-          </div></section>
-          <section class="m-doc-details" id="gaefecc578271099d9054c1ea1e803171a"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-              <div class="m-doc-template">
-                template&lt;typename T&gt;
-              </div>
-              using <a href="#gaefecc578271099d9054c1ea1e803171a" class="m-doc-self">Box3</a> = <a href="struct_box.html" class="m-doc">Box</a>&lt;3, T&gt;
-            </h3>
-            <p>3D axis-aligned box</p>
-          </div></section>
-          <section class="m-doc-details" id="gaded3f5fa79efa73e0dafed058a747c91"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-              <div class="m-doc-template">
-                template&lt;typename T&gt;
-              </div>
-              using <a href="#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc-self">Box4</a> = <a href="struct_box.html" class="m-doc">Box</a>&lt;4, T&gt;
-            </h3>
-            <p>4D axis-aligned box</p>
-          </div></section>
-          <section class="m-doc-details" id="gac8d61cc10feb1eefad6f4108df407854"><div>
-            <h3>
-              using <a href="#gac8d61cc10feb1eefad6f4108df407854" class="m-doc-self">Box2f</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;float&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>2D axis-aligned box (of floats)</p>
-          </div></section>
-          <section class="m-doc-details" id="ga8abf4450945ae0b8bd125f0d11529ff0"><div>
-            <h3>
-              using <a href="#ga8abf4450945ae0b8bd125f0d11529ff0" class="m-doc-self">Box2d</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;double&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>2D axis-aligned box (of doubles)</p>
-          </div></section>
-          <section class="m-doc-details" id="gaf8f62d5531175aaa884cfee64a6b86c5"><div>
-            <h3>
-              using <a href="#gaf8f62d5531175aaa884cfee64a6b86c5" class="m-doc-self">Box2i</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;int32_t&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>2D axis-aligned box (of signed 32-bit integers)</p>
-          </div></section>
-          <section class="m-doc-details" id="gaa88a187f286ea05204ca7b4b240fb9e0"><div>
-            <h3>
-              using <a href="#gaa88a187f286ea05204ca7b4b240fb9e0" class="m-doc-self">Box2u</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;uint32_t&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>2D axis-aligned box (of unsigned 32-bit integers</p>
-          </div></section>
-          <section class="m-doc-details" id="ga2a1dfe6c4a7442aed9127fd9c6af627b"><div>
-            <h3>
-              using <a href="#ga2a1dfe6c4a7442aed9127fd9c6af627b" class="m-doc-self">Box2c</a> = <a href="group__group__math.html#gae2243fc5f1e9c9fe42bd79ec19479676" class="m-doc">Box2</a>&lt;uint8_t&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>2D axis-aligned box (of unsigned 8-bit integers</p>
-          </div></section>
-          <section class="m-doc-details" id="ga8e01df1b4e6caa1021980a492111f198"><div>
-            <h3>
-              using <a href="#ga8e01df1b4e6caa1021980a492111f198" class="m-doc-self">Box3f</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;float&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>3D axis-aligned box (of floats)</p>
-          </div></section>
-          <section class="m-doc-details" id="ga9b097b3bfee33e3c57b9d518ad4f2c43"><div>
-            <h3>
-              using <a href="#ga9b097b3bfee33e3c57b9d518ad4f2c43" class="m-doc-self">Box3d</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;double&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>3D axis-aligned box (of doubles)</p>
-          </div></section>
-          <section class="m-doc-details" id="ga013922fc3b8d0b34009004fd48020359"><div>
-            <h3>
-              using <a href="#ga013922fc3b8d0b34009004fd48020359" class="m-doc-self">Box3i</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;int32_t&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>3D axis-aligned box (of signed 32-bit integers)</p>
-          </div></section>
-          <section class="m-doc-details" id="gad81aee73003d05071f64e60fd6dfdf7a"><div>
-            <h3>
-              using <a href="#gad81aee73003d05071f64e60fd6dfdf7a" class="m-doc-self">Box3u</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;uint32_t&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>3D axis-aligned box (of unsigned 32-bit integers</p>
-          </div></section>
-          <section class="m-doc-details" id="ga6eb19e85787d044e1e013f3797e47636"><div>
-            <h3>
-              using <a href="#ga6eb19e85787d044e1e013f3797e47636" class="m-doc-self">Box3c</a> = <a href="group__group__math.html#gaefecc578271099d9054c1ea1e803171a" class="m-doc">Box3</a>&lt;uint8_t&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>3D axis-aligned box (of unsigned 8-bit integers</p>
-          </div></section>
-          <section class="m-doc-details" id="gaf786a845e7a6d5fa890a1a2b71c8a201"><div>
-            <h3>
-              using <a href="#gaf786a845e7a6d5fa890a1a2b71c8a201" class="m-doc-self">Box4f</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;float&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>4D axis-aligned box (of floats)</p>
-          </div></section>
-          <section class="m-doc-details" id="ga88e830277c200bae88cada1195caa073"><div>
-            <h3>
-              using <a href="#ga88e830277c200bae88cada1195caa073" class="m-doc-self">Box4d</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;double&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>4D axis-aligned box (of doubles)</p>
-          </div></section>
-          <section class="m-doc-details" id="gab3bf453bec1c650ac615808cf3ac81af"><div>
-            <h3>
-              using <a href="#gab3bf453bec1c650ac615808cf3ac81af" class="m-doc-self">Box4i</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;int32_t&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>4D axis-aligned box (of signed 32-bit integers)</p>
-          </div></section>
-          <section class="m-doc-details" id="ga47a8b0086d4a120b497b02ac02efbaf2"><div>
-            <h3>
-              using <a href="#ga47a8b0086d4a120b497b02ac02efbaf2" class="m-doc-self">Box4u</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;uint32_t&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>4D axis-aligned box (of unsigned 32-bit integers</p>
-          </div></section>
-          <section class="m-doc-details" id="ga3bb29dec9efe8f6c8987ee4eafc13973"><div>
-            <h3>
-              using <a href="#ga3bb29dec9efe8f6c8987ee4eafc13973" class="m-doc-self">Box4c</a> = <a href="group__group__math.html#gaded3f5fa79efa73e0dafed058a747c91" class="m-doc">Box4</a>&lt;uint8_t&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="box_8h.html">&lt;darts/box.h&gt;</a></div>
-            </h3>
-            <p>4D axis-aligned box (of unsigned 8-bit integers</p>
-          </div></section>
           <section class="m-doc-details" id="gad2529c5ccdccc09e978964d3ddd58e91"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="ray_8h.html">&lt;darts/ray.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              using <a href="#gad2529c5ccdccc09e978964d3ddd58e91" class="m-doc-self">Ray2</a> = <a href="struct_ray.html" class="m-doc">Ray</a>&lt;2, T&gt;
+              using <a href="#gad2529c5ccdccc09e978964d3ddd58e91" class="m-doc-self">Ray2</a> = <a href="structRay.html" class="m-doc">Ray</a>&lt;2, T&gt;
             </h3>
             <p>2D ray</p>
           </div></section>
@@ -558,7 +339,7 @@
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              using <a href="#ga1ba884c9e8c53fe96c5ed6d4fc259756" class="m-doc-self">Ray3</a> = <a href="struct_ray.html" class="m-doc">Ray</a>&lt;3, T&gt;
+              using <a href="#ga1ba884c9e8c53fe96c5ed6d4fc259756" class="m-doc-self">Ray3</a> = <a href="structRay.html" class="m-doc">Ray</a>&lt;3, T&gt;
             </h3>
             <p>3D ray</p>
           </div></section>
@@ -994,13 +775,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
+        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Camera class | CS
+  <title>Progress class | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -71,11 +71,11 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          Camera <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="camera_8h.html">&lt;darts/camera.h&gt;</a></div>
+          Progress <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="progress_8h.html">&lt;darts/progress.h&gt;</a></div>
         </h1>
-        <p>A virtual (pinhole) camera.</p>
-        <div class="m-block m-default">
+        <p>A thread-safe helper object to display and update a progress bar in the terminal.</p>
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -86,67 +86,86 @@
               </ul>
             </li>
           </ul>
-        </div>
-<p>The camera is responsible for generating primary rays. It is positioned using a <a href="struct_transform.html" class="m-doc">Transform</a> and points along the -z axis of the local coordinate system. It has an image plane positioned a z = -dist with size (width, height).</p><p>We currently only support pinhole perspective cameras. This class could be made into a virtual base class to support other types of cameras (e.g. an orthographic camera, or omni-directional camera).</p><p>The camera setup looks something like this, where the up vector points out of the screen:</p><pre>        top view                         side view
-           ^                    up
-           |                     ^
-           |                     |             _,-&#x27;
-         width                   |         _,-&#x27;   |
-      +----|----+     +          |     _,-&#x27;       | h
-       \   |   /    d |        e | _,-&#x27;           | e
-        \  |  /     i |        y +&#x27;---------------+-i-----&gt;
-         \ | /      s |        e  &#x27;-,_   dist     | g
-          \|/       t |               &#x27;-,_        | h
-           +          +                   &#x27;-,_    | t
-          eye                                 &#x27;-,_|
-</pre>
+        </nav>
+<p>Example usage:</p><pre class="m-code"><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Progress</span><span class="w"> </span><span class="nf">p1</span><span class="p">(</span><span class="s">&quot;Solving&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="o">++</span><span class="n">p1</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// do something</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// end progress p1</span></pre>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a8435e5fab83af27d3f37d5ab93d1cbe7">
-              <span class="m-doc-wrap-bumper"><a href="#a8435e5fab83af27d3f37d5ab93d1cbe7" class="m-doc-self">Camera</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j = <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>())</span>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a08e4e5c6ab04aaac3505ee31010fd885" class="m-doc">Progress</a>(</span><span class="m-doc-wrap">const std::string&amp; title,
+              int64_t total_steps = 0)</span>
             </dt>
-            <dd>Construct a camera from json parameters.</dd>
+            <dd>Create a progress bar with a <code>title</code> and <code>total_steps</code> number of steps.</dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a5a6c92b6ec26c4c975aee1971b0fd8f6">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5a6c92b6ec26c4c975aee1971b0fd8f6" class="m-doc-self">resolution</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__group__math.html#ga8aaf4d6cd52607d9d6599fb37ed8fc59" class="m-doc">Vec2i</a></span>
-            </dt>
-            <dd>Return the camera&#x27;s image resolution.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a39f5f83d10c08fcc233c6fc137d3e3b9" class="m-doc">generate_ray</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; pixel) const -&gt; <a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a576f55b4b7f7173732da03a4b6eadd0a" class="m-doc">step</a>(</span><span class="m-doc-wrap">int64_t steps = 1)</span>
             </dt>
-            <dd>Generate a ray going through image-plane location <code>pixel</code>.</dd>
+            <dd>increment the progress by <code>steps</code>.</dd>
+            <dt id="acf626fe82bd2950743ab570b0a910862">
+              <span class="m-doc-wrap-bumper">void <a href="#acf626fe82bd2950743ab570b0a910862" class="m-doc-self">set_done</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>mark the progress as complete</dd>
+            <dt id="abad88961ef442a968cd2a6bb21f952a3">
+              <span class="m-doc-wrap-bumper">auto <a href="#abad88961ef442a968cd2a6bb21f952a3" class="m-doc-self">progress</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
+            </dt>
+            <dd>the current progress</dd>
+            <dt id="aab7dc402ac3419102af14437685f90ff">
+              <span class="m-doc-wrap-bumper">auto <a href="#aab7dc402ac3419102af14437685f90ff" class="m-doc-self">operator++</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classProgress.html" class="m-doc">Progress</a>&amp;</span>
+            </dt>
+            <dd>increment the progress by 1 step</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af5127beac6918e1e2d147c3cf6e19644" class="m-doc">operator+=</a>(</span><span class="m-doc-wrap">int64_t steps) -&gt; <a href="classProgress.html" class="m-doc">Progress</a>&amp;</span>
+            </dt>
+            <dd>increment the progress by <code>steps</code>.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a39f5f83d10c08fcc233c6fc137d3e3b9"><div>
+          <section class="m-doc-details" id="a08e4e5c6ab04aaac3505ee31010fd885"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#gaf690027ac9e847d77a4ec123404cf0b3" class="m-doc">Ray3f</a> Camera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a39f5f83d10c08fcc233c6fc137d3e3b9" class="m-doc-self">generate_ray</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; pixel) const</span></span>
+              <span class="m-doc-wrap-bumper"> Progress::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a08e4e5c6ab04aaac3505ee31010fd885" class="m-doc-self">Progress</a>(</span><span class="m-doc-wrap">const std::string&amp; title,
+              int64_t total_steps = 0)</span></span>
             </h3>
-            <p>Generate a ray going through image-plane location <code>pixel</code>.</p>
+            <p>Create a progress bar with a <code>title</code> and <code>total_steps</code> number of steps.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">pixel</td>
-                  <td>The pixel position within the image.</td>
+                  <td style="width: 1%">title</td>
+                  <td>A descriptive title for the task being performed.</td>
+                </tr>
+                <tr>
+                  <td>total_steps</td>
+                  <td>When this is positive, it indicates the number of steps for the calculation. When it is non-positive, an indeterminate progress bar is created instead (for a task with an unknown number of steps), and <code>total_steps</code> is used as the period, in milliseconds, of the progress bar&#x27;s spinning animation. If 0 is specified, a default number of milliseconds is used.</td>
                 </tr>
               </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The <a href="struct_ray.html" class="m-doc">Ray</a> data structure filled with the appropriate position and direction.</td>
-                </tr>
-              </tfoot>
             </table>
-<p><code>pixel</code> ranges from (0,0) to (m_resolution.x, m_resolution.y) along the x- and y-axis of the rendered image, respectively.</p>
+          </div></section>
+          <section class="m-doc-details" id="a576f55b4b7f7173732da03a4b6eadd0a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Progress::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a576f55b4b7f7173732da03a4b6eadd0a" class="m-doc-self">step</a>(</span><span class="m-doc-wrap">int64_t steps = 1)</span></span>
+            </h3>
+            <p>increment the progress by <code>steps</code>.</p>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="classProgress.html#af5127beac6918e1e2d147c3cf6e19644" class="m-doc">operator+=()</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="af5127beac6918e1e2d147c3cf6e19644"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classProgress.html" class="m-doc">Progress</a>&amp; Progress::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af5127beac6918e1e2d147c3cf6e19644" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap">int64_t steps)</span></span>
+            </h3>
+            <p>increment the progress by <code>steps</code>.</p>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="classProgress.html#a576f55b4b7f7173732da03a4b6eadd0a" class="m-doc">step()</a></p></aside>
           </div></section>
         </section>
       </div>
@@ -187,13 +206,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
+        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
       </div>
     </div>
   </div>

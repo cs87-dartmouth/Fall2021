@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>darts/surface.h file | CS
+  <title>Ray struct | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -71,39 +71,94 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_f511f7995b9806edec8127aeb2c04489.html">darts</a>/</span>surface.h <span class="m-thin">file</span>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="ray_8h.html">&lt;darts/ray.h&gt;</a></div>
+          <div class="m-doc-template">template&lt;size_t N, typename T&gt;</div>
+          Ray <span class="m-thin">struct</span>
         </h1>
-        <p>Class <a href="struct_hit_info.html" class="m-doc">HitInfo</a>, <a href="class_surface.html" class="m-doc">Surface</a>, and <a href="class_xformed_surface_with_material.html" class="m-doc">XformedSurfaceWithMaterial</a>.</p>
-        <div class="m-block m-default">
+        <p>Simple ray segment data structure.</p>
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
-        </div>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+        </nav>
+<p>Along with the ray origin and direction, this data structure additionally stores the segment interval [<a href="structRay.html#a07e31e74c81a3b2a285adf1c03a14fa7" class="m-doc">mint</a>, <a href="structRay.html#ad2ed75719e389307ec604027083574b9" class="m-doc">maxt</a>], which may include positive/negative infinity.</p>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt>
-              struct <a href="struct_hit_info.html" class="m-doc">HitInfo</a>
+            <dt id="a418a8c921967bc36ebef6a36104e94f7">
+              static float <a href="#a418a8c921967bc36ebef6a36104e94f7" class="m-doc-self">epsilon</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd>Contains information about a ray intersection hit point.</dd>
-            <dt>
-              struct <a href="struct_emitter_record.html" class="m-doc">EmitterRecord</a>
+            <dd>&quot;Ray epsilon&quot;: relative error threshold for ray intersection computations</dd>
+            <dt id="a61ac1f005437a928101b71d8e23bfea6">
+              static float <a href="#a61ac1f005437a928101b71d8e23bfea6" class="m-doc-self">infinity</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd>Data record for conveniently querying and sampling emitters.</dd>
-            <dt>
-              class <a href="class_surface.html" class="m-doc">Surface</a>
+            <dd>infinity for type</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a7557b74ad0c16944af3544db777127ac">
+              <span class="m-doc-wrap-bumper"><a href="#a7557b74ad0c16944af3544db777127ac" class="m-doc-self">Ray</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
-            <dd>This is the abstract superclass for all surfaces.</dd>
-            <dt>
-              class <a href="class_xformed_surface_with_material.html" class="m-doc">XformedSurfaceWithMaterial</a>
+            <dd>Construct a new ray.</dd>
+            <dt id="adbd4fb97cd14b2de6fadfbbe0dad2763">
+              <span class="m-doc-wrap-bumper"><a href="#adbd4fb97cd14b2de6fadfbbe0dad2763" class="m-doc-self">Ray</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;N, T&gt;&amp; o,
+              const <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;N, T&gt;&amp; d)</span>
             </dt>
-            <dd>A convenience subclass of <a href="class_surface.html" class="m-doc">Surface</a> for simple surfaces with a <a href="struct_transform.html" class="m-doc">Transform</a> and a <a href="class_material.html" class="m-doc">Material</a>.</dd>
+            <dd>Construct a new ray.</dd>
+            <dt id="a6ea0a51ffd5ec0b515b4474e15903ee0">
+              <span class="m-doc-wrap-bumper"><a href="#a6ea0a51ffd5ec0b515b4474e15903ee0" class="m-doc-self">Ray</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;N, T&gt;&amp; o,
+              const <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;N, T&gt;&amp; d,
+              T mint,
+              T maxt)</span>
+            </dt>
+            <dd>Construct a new ray.</dd>
+            <dt id="ab1e22eed4812dfb37262baf4a8c49f6a">
+              <span class="m-doc-wrap-bumper"><a href="#ab1e22eed4812dfb37262baf4a8c49f6a" class="m-doc-self">Ray</a>(</span><span class="m-doc-wrap">const <a href="structRay.html" class="m-doc">Ray</a>&amp; ray,
+              T mint,
+              T maxt)</span>
+            </dt>
+            <dd>Copy a ray, but change the covered segment of the copy.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a5efc2b86e657c9a45c821809906a0431">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5efc2b86e657c9a45c821809906a0431" class="m-doc-self">operator()</a>(</span><span class="m-doc-wrap">T t) const -&gt; <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;N, T&gt;</span>
+            </dt>
+            <dd>Return the position of a point along the ray.</dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="af6261ba97c69d7ec95870116f62a2577">
+              <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;N, T&gt; <a href="#af6261ba97c69d7ec95870116f62a2577" class="m-doc-self">o</a>
+            </dt>
+            <dd>The origin of the ray.</dd>
+            <dt id="a0615c7b628efd44e05a8c7514901e109">
+              <a href="group__group__math.html#ga35db21e7e34c8dac6a6b2a8ac2d75977" class="m-doc">Vec</a>&lt;N, T&gt; <a href="#a0615c7b628efd44e05a8c7514901e109" class="m-doc-self">d</a>
+            </dt>
+            <dd>The direction of the ray.</dd>
+            <dt id="a07e31e74c81a3b2a285adf1c03a14fa7">
+              T <a href="#a07e31e74c81a3b2a285adf1c03a14fa7" class="m-doc-self">mint</a>
+            </dt>
+            <dd>Minimum distance along the ray segment.</dd>
+            <dt id="ad2ed75719e389307ec604027083574b9">
+              T <a href="#ad2ed75719e389307ec604027083574b9" class="m-doc-self">maxt</a>
+            </dt>
+            <dd>Maximum distance along the ray segment.</dd>
           </dl>
         </section>
       </div>
@@ -144,13 +199,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
+        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
       </div>
     </div>
   </div>
