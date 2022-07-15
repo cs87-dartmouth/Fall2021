@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Progress class | CS
+  <title>Mesh struct | CS
 87/287 Rendering Algorithms</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
@@ -71,101 +71,136 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          Progress <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="progress_8h.html">&lt;darts/progress.h&gt;</a></div>
+          Mesh <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="mesh_8h.html">&lt;darts/mesh.h&gt;</a></div>
         </h1>
-        <p>A thread-safe helper object to display and update a progress bar in the terminal.</p>
+        <p>A triangle mesh.</p>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
+                <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-<p>Example usage:</p><pre class="m-code"><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">Progress</span><span class="w"> </span><span class="nf">p1</span><span class="p">(</span><span class="s">&quot;Solving&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="o">++</span><span class="n">p1</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// do something</span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// end progress p1</span></pre>
+<p>This class stores a triangle mesh object and provides numerous functions for querying the individual triangles. Subclasses of <code><a href="struct_mesh.html" class="m-doc">Mesh</a></code> implement the specifics of how to create its contents (e.g. by loading from an external file)</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_surface.html" class="m-doc">Surface</a>
+            </dt>
+            <dd>This is the abstract superclass for all surfaces.</dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a08e4e5c6ab04aaac3505ee31010fd885" class="m-doc">Progress</a>(</span><span class="m-doc-wrap">const std::string&amp; title,
-              int64_t total_steps = 0)</span>
+            <dt id="a2af137f1571af89172b9c102302c416b">
+              <span class="m-doc-wrap-bumper"><a href="#a2af137f1571af89172b9c102302c416b" class="m-doc-self">Mesh</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
-            <dd>Create a progress bar with a <code>title</code> and <code>total_steps</code> number of steps.</dd>
+            <dd>Create an empty mesh.</dd>
+            <dt id="ab4dedafa429ba9914484a5486e51eaec">
+              <span class="m-doc-wrap-bumper"><a href="#ab4dedafa429ba9914484a5486e51eaec" class="m-doc-self">Mesh</a>(</span><span class="m-doc-wrap">const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j)</span>
+            </dt>
+            <dd>Try to load a mesh from an OBJ file.</dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
+            <dt id="ad2544fe150ed4198075005f53dc3d553">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad2544fe150ed4198075005f53dc3d553" class="m-doc-self">bounds</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__group__math.html#ga8e01df1b4e6caa1021980a492111f198" class="m-doc">Box3f</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Return the surface&#x27;s world-space AABB.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a576f55b4b7f7173732da03a4b6eadd0a" class="m-doc">step</a>(</span><span class="m-doc-wrap">int64_t steps = 1)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#abbe8b45d7b455c991d39ea621f8ff456" class="m-doc">add_to_parent</a>(</span><span class="m-doc-wrap"><a href="class_surface.html" class="m-doc">Surface</a>* parent,
+              shared_ptr&lt;<a href="class_surface.html" class="m-doc">Surface</a>&gt; self,
+              const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
-            <dd>increment the progress by <code>steps</code>.</dd>
-            <dt id="acf626fe82bd2950743ab570b0a910862">
-              <span class="m-doc-wrap-bumper">void <a href="#acf626fe82bd2950743ab570b0a910862" class="m-doc-self">set_done</a>(</span><span class="m-doc-wrap">)</span>
+            <dd>Add this surface to the <code>parent</code> surface.</dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a5d297894d9c84a4ea46abc2240d1b38b">
+              vector&lt;<a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&gt; <a href="#a5d297894d9c84a4ea46abc2240d1b38b" class="m-doc-self">vs</a>
             </dt>
-            <dd>mark the progress as complete</dd>
-            <dt id="abad88961ef442a968cd2a6bb21f952a3">
-              <span class="m-doc-wrap-bumper">auto <a href="#abad88961ef442a968cd2a6bb21f952a3" class="m-doc-self">progress</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
+            <dd>Vertex positions.</dd>
+            <dt id="a19e140f6e037b3ea612d679e5c79feb1">
+              vector&lt;<a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&gt; <a href="#a19e140f6e037b3ea612d679e5c79feb1" class="m-doc-self">ns</a>
             </dt>
-            <dd>the current progress</dd>
-            <dt id="aab7dc402ac3419102af14437685f90ff">
-              <span class="m-doc-wrap-bumper">auto <a href="#aab7dc402ac3419102af14437685f90ff" class="m-doc-self">operator++</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classProgress.html" class="m-doc">Progress</a>&amp;</span>
+            <dd>Vertex normals.</dd>
+            <dt id="adbce8a8f0fc41a123aeabc63a2fd759c">
+              vector&lt;<a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&gt; <a href="#adbce8a8f0fc41a123aeabc63a2fd759c" class="m-doc-self">uvs</a>
             </dt>
-            <dd>increment the progress by 1 step</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af5127beac6918e1e2d147c3cf6e19644" class="m-doc">operator+=</a>(</span><span class="m-doc-wrap">int64_t steps) -&gt; <a href="classProgress.html" class="m-doc">Progress</a>&amp;</span>
+            <dd>Vertex texture coordinates.</dd>
+            <dt id="a0ac0b0ab31194b83a4ddcbbe736f6d83">
+              vector&lt;<a href="group__group__math.html#gac62cf90e69881b42c116aa93a17dbd23" class="m-doc">Vec3i</a>&gt; <a href="#a0ac0b0ab31194b83a4ddcbbe736f6d83" class="m-doc-self">Fv</a>
             </dt>
-            <dd>increment the progress by <code>steps</code>.</dd>
+            <dd>Vertex indices per face (triangle)</dd>
+            <dt id="aa16aacfb9e2330d76ca8adcffa6ecef0">
+              vector&lt;<a href="group__group__math.html#gac62cf90e69881b42c116aa93a17dbd23" class="m-doc">Vec3i</a>&gt; <a href="#aa16aacfb9e2330d76ca8adcffa6ecef0" class="m-doc-self">Fn</a>
+            </dt>
+            <dd>Normal indices per face (triangle)</dd>
+            <dt id="ae5984aa10a492cc6f336d4e8b1314dff">
+              vector&lt;<a href="group__group__math.html#gac62cf90e69881b42c116aa93a17dbd23" class="m-doc">Vec3i</a>&gt; <a href="#ae5984aa10a492cc6f336d4e8b1314dff" class="m-doc-self">Ft</a>
+            </dt>
+            <dd>Texture indices per face (triangle)</dd>
+            <dt id="a2be1f2e5fad9de65b8d882495a74f33a">
+              vector&lt;uint32_t&gt; <a href="#a2be1f2e5fad9de65b8d882495a74f33a" class="m-doc-self">Fm</a>
+            </dt>
+            <dd>One material index per face (triangle)</dd>
+            <dt id="a684bffa8b553d00fff1abb186873882d">
+              vector&lt;shared_ptr&lt;const <a href="class_material.html" class="m-doc">Material</a>&gt;&gt; <a href="#a684bffa8b553d00fff1abb186873882d" class="m-doc-self">materials</a>
+            </dt>
+            <dd>All materials in the mesh.</dd>
+            <dt id="a97ba1a532baa1c565cc5a516f5ac99f5">
+              <a href="struct_transform.html" class="m-doc">Transform</a> <a href="#a97ba1a532baa1c565cc5a516f5ac99f5" class="m-doc-self">xform</a>
+            </dt>
+            <dd>Transformation that the data has already been transformed by.</dd>
+            <dt id="a8aa428fbe1fa47915d155c1605c32740">
+              <a href="group__group__math.html#ga8e01df1b4e6caa1021980a492111f198" class="m-doc">Box3f</a> <a href="#a8aa428fbe1fa47915d155c1605c32740" class="m-doc-self">bbox</a>
+            </dt>
+            <dd>The bounds, after transformation.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a08e4e5c6ab04aaac3505ee31010fd885"><div>
+          <section class="m-doc-details" id="abbe8b45d7b455c991d39ea621f8ff456"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> Progress::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a08e4e5c6ab04aaac3505ee31010fd885" class="m-doc-self">Progress</a>(</span><span class="m-doc-wrap">const std::string&amp; title,
-              int64_t total_steps = 0)</span></span>
+              <span class="m-doc-wrap-bumper">void Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abbe8b45d7b455c991d39ea621f8ff456" class="m-doc-self">add_to_parent</a>(</span><span class="m-doc-wrap"><a href="class_surface.html" class="m-doc">Surface</a>* parent,
+              shared_ptr&lt;<a href="class_surface.html" class="m-doc">Surface</a>&gt; self,
+              const <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a>&amp; j) <span class="m-label m-warning">override</span></span></span>
             </h3>
-            <p>Create a progress bar with a <code>title</code> and <code>total_steps</code> number of steps.</p>
+            <p>Add this surface to the <code>parent</code> surface.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">title</td>
-                  <td>A descriptive title for the task being performed.</td>
+                  <td style="width: 1%">parent</td>
+                  <td>The parent <a href="class_surface.html" class="m-doc">Surface</a> (typically the scene) to add to.</td>
                 </tr>
                 <tr>
-                  <td>total_steps</td>
-                  <td>When this is positive, it indicates the number of steps for the calculation. When it is non-positive, an indeterminate progress bar is created instead (for a task with an unknown number of steps), and <code>total_steps</code> is used as the period, in milliseconds, of the progress bar&#x27;s spinning animation. If 0 is specified, a default number of milliseconds is used.</td>
+                  <td>self</td>
+                  <td>A shared_ptr version of this</td>
+                </tr>
+                <tr>
+                  <td>j</td>
+                  <td>The <a href="group__group__parser.html#gab701e3ac61a85b337ec5c1abaad6742d" class="m-doc">json</a> parameters used to create <code>self</code></td>
                 </tr>
               </tbody>
             </table>
-          </div></section>
-          <section class="m-doc-details" id="a576f55b4b7f7173732da03a4b6eadd0a"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void Progress::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a576f55b4b7f7173732da03a4b6eadd0a" class="m-doc-self">step</a>(</span><span class="m-doc-wrap">int64_t steps = 1)</span></span>
-            </h3>
-            <p>increment the progress by <code>steps</code>.</p>
-<aside class="m-note m-default"><h4>See also</h4><p><a href="classProgress.html#af5127beac6918e1e2d147c3cf6e19644" class="m-doc">operator+=()</a></p></aside>
-          </div></section>
-          <section class="m-doc-details" id="af5127beac6918e1e2d147c3cf6e19644"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classProgress.html" class="m-doc">Progress</a>&amp; Progress::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af5127beac6918e1e2d147c3cf6e19644" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap">int64_t steps)</span></span>
-            </h3>
-            <p>increment the progress by <code>steps</code>.</p>
-<aside class="m-note m-default"><h4>See also</h4><p><a href="classProgress.html#a576f55b4b7f7173732da03a4b6eadd0a" class="m-doc">step()</a></p></aside>
+<p>By default this function just calls <a href="class_surface.html#a02cf585e475d816b1177d00ea3ecbd05" class="m-doc">add_<wbr />child()</a> on the parent.</p><p>This function is used by aggregate surfaces that shouldn&#x27;t themselves be added to the scene (like a mesh), but instead need to create other surfaces (individual triangles) that get added to the scene.</p>
           </div></section>
         </section>
       </div>
@@ -212,7 +247,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
+        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.4 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
       </div>
     </div>
   </div>

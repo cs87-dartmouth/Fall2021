@@ -73,6 +73,254 @@
         <h1>
           Sampling <span class="m-thin">module</span></h1>
         <p>Random number generation, generation of points and directions, Monte Carlo utilities.</p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#func-members">Functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga4316695789dd880a5f5cd7af87c232b2" class="m-doc">randf</a>(</span><span class="m-doc-wrap">) -&gt; float</span>
+            </dt>
+            <dd>Global random number generator that produces floats between <code>[0,1)</code></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gaffe5329506c58f57c381a533ab3180a4" class="m-doc">random_in_unit_sphere</a>(</span><span class="m-doc-wrap">) -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd>Sample a random point uniformly within a unit sphere (uses the global <a href="group__group__sampling.html#ga4316695789dd880a5f5cd7af87c232b2" class="m-doc">randf()</a> RNG and rejection sampling)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga8622e32333eada2a6d236f96d2c097b7" class="m-doc">random_in_unit_disk</a>(</span><span class="m-doc-wrap">) -&gt; <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a></span>
+            </dt>
+            <dd>Sample a random point uniformly within a unit disk (uses the global <a href="group__group__sampling.html#ga4316695789dd880a5f5cd7af87c232b2" class="m-doc">randf()</a> RNG and rejection sampling)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gae24de273cfe5ade9aa5d7c368e6904e7" class="m-doc">sample_disk</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv) -&gt; <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a></span>
+            </dt>
+            <dd>Uniformly sample a vector on a 2D disk with radius 1, centered around the origin.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga722dc714360a32e86a3aa070bfb4846d" class="m-doc">sample_disk_pdf</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; p) -&gt; float</span>
+            </dt>
+            <dd>Probability density of <a href="group__group__sampling.html#gae24de273cfe5ade9aa5d7c368e6904e7" class="m-doc">sample_<wbr />disk()</a></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gacc9ca4ad734503e452fb5f386acdcb00" class="m-doc">sample_sphere</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv) -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd>Uniformly sample a vector on the unit sphere with respect to solid angles.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga105af7d0734cbfc2ed967d550d6ff0ef" class="m-doc">sample_sphere_pdf</a>(</span><span class="m-doc-wrap">) -&gt; float</span>
+            </dt>
+            <dd>Probability density of <a href="group__group__sampling.html#gacc9ca4ad734503e452fb5f386acdcb00" class="m-doc">sample_<wbr />sphere()</a></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gac70715584bd8e7b3923bd47d21aee7e3" class="m-doc">sample_hemisphere</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv) -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd>Uniformly sample a vector on the unit hemisphere around the pole (0,0,1) with respect to solid angles.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gaaa19fb597dc0a155c9800cbd4186032d" class="m-doc">sample_hemisphere_pdf</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v) -&gt; float</span>
+            </dt>
+            <dd>Probability density of <a href="group__group__sampling.html#gac70715584bd8e7b3923bd47d21aee7e3" class="m-doc">sample_<wbr />hemisphere()</a></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gabf523a134e89376b9ca86a0949a325e4" class="m-doc">sample_hemisphere_cosine</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv) -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd>Uniformly sample a vector on the unit hemisphere around the pole (0,0,1) with respect to projected solid angles.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga067be2b81d7063fb7bd6503cff544aec" class="m-doc">sample_hemisphere_cosine_pdf</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v) -&gt; float</span>
+            </dt>
+            <dd>Probability density of <a href="group__group__sampling.html#gabf523a134e89376b9ca86a0949a325e4" class="m-doc">sample_<wbr />hemisphere_<wbr />cosine()</a></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga7fb051034860c50372a13a91d1fed538" class="m-doc">sample_hemisphere_cosine_power</a>(</span><span class="m-doc-wrap">float exponent,
+              const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv) -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd>Sample a vector on the unit hemisphere with a cosine-power density about the pole (0,0,1)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga4bf2783633218b7f6d2e3a3377569e40" class="m-doc">sample_hemisphere_cosine_power_pdf</a>(</span><span class="m-doc-wrap">float exponent,
+              float cosine) -&gt; float</span>
+            </dt>
+            <dd>Probability density of <a href="group__group__sampling.html#ga7fb051034860c50372a13a91d1fed538" class="m-doc">sample_<wbr />hemisphere_<wbr />cosine_<wbr />power()</a></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga928616045091df19824fc1828f992043" class="m-doc">sample_sphere_cap</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv,
+              float cos_theta_max) -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd>Uniformly sample a vector on a spherical cap around (0, 0, 1)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gac1db8d95b0988ec6a8805523db9384e2" class="m-doc">sample_sphere_cap_pdf</a>(</span><span class="m-doc-wrap">float cos_theta,
+              float cos_theta_max) -&gt; float</span>
+            </dt>
+            <dd>Probability density of <a href="group__group__sampling.html#ga928616045091df19824fc1828f992043" class="m-doc">sample_<wbr />sphere_<wbr />cap()</a></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga017cdd3070d5a23747f1a76cfd40389e" class="m-doc">sample_triangle</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v0,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v1,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v2,
+              const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv) -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd>Sample a point uniformly on a triangle with vertices <code>v0</code>, <code>v1</code>, <code>v2</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gac2d5bdb0c1caa6584b976bcd22ec2881" class="m-doc">sample_triangle_pdf</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v0,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v1,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v2) -&gt; float</span>
+            </dt>
+            <dd>Sampling density of <a href="group__group__sampling.html#ga017cdd3070d5a23747f1a76cfd40389e" class="m-doc">sample_<wbr />triangle()</a></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ga4316695789dd880a5f5cd7af87c232b2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga4316695789dd880a5f5cd7af87c232b2" class="m-doc-self">randf</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Global random number generator that produces floats between <code>[0,1)</code></p>
+          </div></section>
+          <section class="m-doc-details" id="gaffe5329506c58f57c381a533ab3180a4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaffe5329506c58f57c381a533ab3180a4" class="m-doc-self">random_in_unit_sphere</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Sample a random point uniformly within a unit sphere (uses the global <a href="group__group__sampling.html#ga4316695789dd880a5f5cd7af87c232b2" class="m-doc">randf()</a> RNG and rejection sampling)</p>
+          </div></section>
+          <section class="m-doc-details" id="ga8622e32333eada2a6d236f96d2c097b7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga8622e32333eada2a6d236f96d2c097b7" class="m-doc-self">random_in_unit_disk</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Sample a random point uniformly within a unit disk (uses the global <a href="group__group__sampling.html#ga4316695789dd880a5f5cd7af87c232b2" class="m-doc">randf()</a> RNG and rejection sampling)</p>
+          </div></section>
+          <section class="m-doc-details" id="gae24de273cfe5ade9aa5d7c368e6904e7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gae24de273cfe5ade9aa5d7c368e6904e7" class="m-doc-self">sample_disk</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Uniformly sample a vector on a 2D disk with radius 1, centered around the origin.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga722dc714360a32e86a3aa070bfb4846d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga722dc714360a32e86a3aa070bfb4846d" class="m-doc-self">sample_disk_pdf</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; p)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Probability density of <a href="group__group__sampling.html#gae24de273cfe5ade9aa5d7c368e6904e7" class="m-doc">sample_<wbr />disk()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="gacc9ca4ad734503e452fb5f386acdcb00"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gacc9ca4ad734503e452fb5f386acdcb00" class="m-doc-self">sample_sphere</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Uniformly sample a vector on the unit sphere with respect to solid angles.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga105af7d0734cbfc2ed967d550d6ff0ef"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga105af7d0734cbfc2ed967d550d6ff0ef" class="m-doc-self">sample_sphere_pdf</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Probability density of <a href="group__group__sampling.html#gacc9ca4ad734503e452fb5f386acdcb00" class="m-doc">sample_<wbr />sphere()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="gac70715584bd8e7b3923bd47d21aee7e3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gac70715584bd8e7b3923bd47d21aee7e3" class="m-doc-self">sample_hemisphere</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Uniformly sample a vector on the unit hemisphere around the pole (0,0,1) with respect to solid angles.</p>
+          </div></section>
+          <section class="m-doc-details" id="gaaa19fb597dc0a155c9800cbd4186032d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaaa19fb597dc0a155c9800cbd4186032d" class="m-doc-self">sample_hemisphere_pdf</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Probability density of <a href="group__group__sampling.html#gac70715584bd8e7b3923bd47d21aee7e3" class="m-doc">sample_<wbr />hemisphere()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="gabf523a134e89376b9ca86a0949a325e4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gabf523a134e89376b9ca86a0949a325e4" class="m-doc-self">sample_hemisphere_cosine</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Uniformly sample a vector on the unit hemisphere around the pole (0,0,1) with respect to projected solid angles.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga067be2b81d7063fb7bd6503cff544aec"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga067be2b81d7063fb7bd6503cff544aec" class="m-doc-self">sample_hemisphere_cosine_pdf</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Probability density of <a href="group__group__sampling.html#gabf523a134e89376b9ca86a0949a325e4" class="m-doc">sample_<wbr />hemisphere_<wbr />cosine()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="ga7fb051034860c50372a13a91d1fed538"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga7fb051034860c50372a13a91d1fed538" class="m-doc-self">sample_hemisphere_cosine_power</a>(</span><span class="m-doc-wrap">float exponent,
+              const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Sample a vector on the unit hemisphere with a cosine-power density about the pole (0,0,1)</p>
+          </div></section>
+          <section class="m-doc-details" id="ga4bf2783633218b7f6d2e3a3377569e40"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga4bf2783633218b7f6d2e3a3377569e40" class="m-doc-self">sample_hemisphere_cosine_power_pdf</a>(</span><span class="m-doc-wrap">float exponent,
+              float cosine)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Probability density of <a href="group__group__sampling.html#ga7fb051034860c50372a13a91d1fed538" class="m-doc">sample_<wbr />hemisphere_<wbr />cosine_<wbr />power()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="ga928616045091df19824fc1828f992043"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga928616045091df19824fc1828f992043" class="m-doc-self">sample_sphere_cap</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv,
+              float cos_theta_max)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Uniformly sample a vector on a spherical cap around (0, 0, 1)</p>
+<p>A spherical cap is the subset of a unit sphere whose directions make an angle of less than &#x27;theta&#x27; with the north pole. This function expects the cosine of &#x27;theta&#x27; as a parameter.</p>
+          </div></section>
+          <section class="m-doc-details" id="gac1db8d95b0988ec6a8805523db9384e2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gac1db8d95b0988ec6a8805523db9384e2" class="m-doc-self">sample_sphere_cap_pdf</a>(</span><span class="m-doc-wrap">float cos_theta,
+              float cos_theta_max)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Probability density of <a href="group__group__sampling.html#ga928616045091df19824fc1828f992043" class="m-doc">sample_<wbr />sphere_<wbr />cap()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="ga017cdd3070d5a23747f1a76cfd40389e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga017cdd3070d5a23747f1a76cfd40389e" class="m-doc-self">sample_triangle</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v0,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v1,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v2,
+              const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; rv)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Sample a point uniformly on a triangle with vertices <code>v0</code>, <code>v1</code>, <code>v2</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">v0</td>
+                  <td>The vertices of the triangle to sample</td>
+                </tr>
+                <tr>
+                  <td>v1</td>
+                  <td>The vertices of the triangle to sample</td>
+                </tr>
+                <tr>
+                  <td>v2</td>
+                  <td>The vertices of the triangle to sample</td>
+                </tr>
+                <tr>
+                  <td>rv</td>
+                  <td>Two random variables uniformly distributed in [0,1)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="gac2d5bdb0c1caa6584b976bcd22ec2881"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gac2d5bdb0c1caa6584b976bcd22ec2881" class="m-doc-self">sample_triangle_pdf</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v0,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v1,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v2)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampling_8h.html">&lt;darts/sampling.h&gt;</a></div>
+            </h3>
+            <p>Sampling density of <a href="group__group__sampling.html#ga017cdd3070d5a23747f1a76cfd40389e" class="m-doc">sample_<wbr />triangle()</a></p>
+          </div></section>
+        </section>
       </div>
     </div>
   </div>
@@ -117,7 +365,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
+        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.4 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
       </div>
     </div>
   </div>

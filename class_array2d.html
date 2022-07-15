@@ -86,6 +86,7 @@
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pro-attribs">Protected variables</a></li>
                 <li><a href="#element-access">Element access</a></li>
+                <li><a href="#dimension-sizes">Dimension sizes</a></li>
               </ul>
             </li>
           </ul>
@@ -104,7 +105,7 @@
             </dt>
             <dd>sizeX by sizeY elements</dd>
             <dt id="ab3dc4c99f97e74843638136e3011e45d">
-              <span class="m-doc-wrap-bumper"><a href="#ab3dc4c99f97e74843638136e3011e45d" class="m-doc-self">Array2d</a>(</span><span class="m-doc-wrap">const <a href="classArray2d.html" class="m-doc">Array2d</a>&amp;)</span>
+              <span class="m-doc-wrap-bumper"><a href="#ab3dc4c99f97e74843638136e3011e45d" class="m-doc-self">Array2d</a>(</span><span class="m-doc-wrap">const <a href="class_array2d.html" class="m-doc">Array2d</a>&amp;)</span>
             </dt>
             <dd>copy constructor</dd>
             <dt id="a29e4e64835a401288c802cef093f8617">
@@ -117,7 +118,7 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt id="a95c96d76c816667eaa8c048cf7830d46">
-              <span class="m-doc-wrap-bumper">auto <a href="#a95c96d76c816667eaa8c048cf7830d46" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classArray2d.html" class="m-doc">Array2d</a>&amp;) -&gt; <a href="classArray2d.html" class="m-doc">Array2d</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a95c96d76c816667eaa8c048cf7830d46" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="class_array2d.html" class="m-doc">Array2d</a>&amp;) -&gt; <a href="class_array2d.html" class="m-doc">Array2d</a>&amp;</span>
             </dt>
             <dd>assignment operator</dd>
             <dt id="a2bd56da581ee4eca1d6c1ede2629b2c5">
@@ -125,8 +126,8 @@
               int y) const -&gt; int</span>
             </dt>
             <dd>Convert the 2d index into a linear index.</dd>
-            <dt id="ab4e2153b687872c4dddc027bfa166f7e">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab4e2153b687872c4dddc027bfa166f7e" class="m-doc-self">index_2d</a>(</span><span class="m-doc-wrap">int i) const -&gt; std::pair&lt;int, int&gt;</span>
+            <dt id="a5a6300623d27e5458efd82e22e175b48">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5a6300623d27e5458efd82e22e175b48" class="m-doc-self">index_2d</a>(</span><span class="m-doc-wrap">int i) const -&gt; std::pair&lt;int, int&gt;</span>
             </dt>
             <dd>Convert the 1d index into a 2d index.</dd>
             <dt id="a92782b393256d4658fa5e14561bdd37e">
@@ -206,6 +207,31 @@
             <dd>pointer to <code>y</code>-th row</dd>
           </dl>
         </section>
+        <section id="dimension-sizes">
+          <h2><a href="#dimension-sizes">Dimension sizes</a></h2>
+          <dl class="m-doc">
+            <dt id="ad6c7e33ebf564fab0cbedafedf9d4079">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad6c7e33ebf564fab0cbedafedf9d4079" class="m-doc-self">width</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
+            </dt>
+            <dd>size of first dimension</dd>
+            <dt id="a018a2ef68750e1672c3787fc04cb7b7a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a018a2ef68750e1672c3787fc04cb7b7a" class="m-doc-self">height</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
+            </dt>
+            <dd>size of second dimension</dd>
+            <dt id="a160c7d060d15675a457e7b0c50a037e3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a160c7d060d15675a457e7b0c50a037e3" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
+            </dt>
+            <dd>total number of elements</dd>
+            <dt id="a296af8dd5dcaf0ea296072f8e447405f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a296af8dd5dcaf0ea296072f8e447405f" class="m-doc-self">sizeX</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
+            </dt>
+            <dd>size of first dimension</dd>
+            <dt id="ad56d440155710072c6636170dc743a4c">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad56d440155710072c6636170dc743a4c" class="m-doc-self">sizeY</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
+            </dt>
+            <dd>size of first dimension</dd>
+          </dl>
+        </section>
       </div>
     </div>
   </div>
@@ -250,7 +276,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
+        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.4 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
       </div>
     </div>
   </div>

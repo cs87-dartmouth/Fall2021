@@ -93,15 +93,15 @@
           <dl class="m-doc">
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              class <a href="classRange.html" class="m-doc">Range</a>
+              class <a href="class_range.html" class="m-doc">Range</a>
             </dt>
             <dd>Python-style range: iterates from min to max in range-based for loops.</dd>
             <dt>
-              class <a href="classRange_1_1Iterator.html" class="m-doc">Range::Iterator</a>
+              class <a href="class_range_1_1_iterator.html" class="m-doc">Range::Iterator</a>
             </dt>
-            <dd>Standard iterator support for <a href="classRange.html" class="m-doc">Range</a>.</dd>
+            <dd>Standard iterator support for <a href="class_range.html" class="m-doc">Range</a>.</dd>
             <dt>
-              class <a href="classDartsException.html" class="m-doc">DartsException</a>
+              class <a href="class_darts_exception.html" class="m-doc">DartsException</a>
             </dt>
             <dd>Simple exception class, which stores a human-readable error description.</dd>
           </dl>
@@ -119,16 +119,16 @@
               const Args&amp;... args)</span>
             </dt>
             <dd>Prints a success message (fmt::print style) and flushes the output.</dd>
-            <dt id="a2ec2a05214df346b952121a7ef298033">
+            <dt id="a05b1241997e8a75bbb2315bf40e3084e">
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2ec2a05214df346b952121a7ef298033" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">T end) -&gt; <a href="classRange.html" class="m-doc">Range</a>&lt;T&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a05b1241997e8a75bbb2315bf40e3084e" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">T end) -&gt; <a href="class_range.html" class="m-doc">Range</a>&lt;T&gt;</span>
             </dt>
             <dd>Construct a Python-style range from a single parameter <code>end</code>.</dd>
-            <dt id="ac4e2c6ed64372799da38bf9bfb937a0d">
+            <dt id="aecf287cfb268089a46ddf3a98294ea81">
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac4e2c6ed64372799da38bf9bfb937a0d" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">T start,
+              <span class="m-doc-wrap-bumper">auto <a href="#aecf287cfb268089a46ddf3a98294ea81" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">T start,
               T end,
-              T step = T(1)) -&gt; <a href="classRange.html" class="m-doc">Range</a>&lt;T&gt;</span>
+              T step = T(1)) -&gt; <a href="class_range.html" class="m-doc">Range</a>&lt;T&gt;</span>
             </dt>
             <dd>Construct a Python-style range from <code>start</code>, up to but excluding <code>end</code>, in incremenents of <code>step</code>.</dd>
             <dt>
@@ -154,7 +154,7 @@
             <dd>Convert degrees to radians.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a162ba89fd7601db25038c49cdf41ed93" class="m-doc">sincos</a>(</span><span class="m-doc-wrap">T arg) -&gt; std::pair&lt;T, T&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab7923737cd1207714fc9fb1c88cfd637" class="m-doc">sincos</a>(</span><span class="m-doc-wrap">T arg) -&gt; std::pair&lt;T, T&gt;</span>
             </dt>
             <dd>Return the sine and cosine in a single function call.</dd>
             <dt>
@@ -173,6 +173,24 @@
               <span class="m-doc-wrap-bumper">auto <a href="#acc3732f226e2125f7646cd849b7e37e5" class="m-doc-self">spherical_uv_to_direction</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga0a204091a6626c84fd980a6c492469f6" class="m-doc">Vec2f</a>&amp; uv) -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
             </dt>
             <dd>Converts a spherical UV coordinate to a unit direction using <a href="common_8h.html#a1a0147a84431db9c3caf7e815108abd1" class="m-doc">spherical_<wbr />coordinates_<wbr />to_<wbr />direction</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a52a40f8bef9fefc0a3c09136e8511ee1" class="m-doc">fresnel</a>(</span><span class="m-doc-wrap">float cos_theta_i,
+              float ext_ior,
+              float int_ior) -&gt; float</span>
+            </dt>
+            <dd>Calculates the unpolarized fresnel reflection coefficient for a dielectric material.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#abcb4501416d3046725491fff9802b798" class="m-doc">refract</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; n,
+              float iorIOverT,
+              <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; refracted) -&gt; bool</span>
+            </dt>
+            <dd>Generates a refracted direction, assuming refraction is possible based on the incident direction and refractive indices.</dd>
+            <dt id="a7608cc160a3d2dd4040c16c47d7cc4f6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7608cc160a3d2dd4040c16c47d7cc4f6" class="m-doc-self">reflect</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; n) -&gt; <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a></span>
+            </dt>
+            <dd>Reflects a vector, v, over another vector, n.</dd>
             <dt id="aad479cbaf9edfe92bf62c390dd6047af">
               <span class="m-doc-wrap-bumper">auto <a href="#aad479cbaf9edfe92bf62c390dd6047af" class="m-doc-self">time_string</a>(</span><span class="m-doc-wrap">double time,
               int precision = 2) -&gt; std::string</span>
@@ -184,7 +202,7 @@
             </dt>
             <dd>Indent a string by the specified number of spaces.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0395cc6b6ad5e785b9ffdbdeddac3d17" class="m-doc">get_file_resolver</a>(</span><span class="m-doc-wrap">) -&gt; filesystem::resolver&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a951cd95fc9093df701b7c36a70fcdd91" class="m-doc">get_file_resolver</a>(</span><span class="m-doc-wrap">) -&gt; filesystem::resolver&amp;</span>
             </dt>
             <dd>Return the global file resolver instance.</dd>
           </dl>
@@ -263,12 +281,12 @@
             </table>
 <p>Linearly interpolates between <em>a</em> and <em>b</em>, using parameter <em>t</em>.</p>
           </div></section>
-          <section class="m-doc-details" id="a162ba89fd7601db25038c49cdf41ed93"><div>
+          <section class="m-doc-details" id="ab7923737cd1207714fc9fb1c88cfd637"><div>
             <h3>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">std::pair&lt;T, T&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a162ba89fd7601db25038c49cdf41ed93" class="m-doc-self">sincos</a>(</span><span class="m-doc-wrap">T arg)</span></span>
+              <span class="m-doc-wrap-bumper">std::pair&lt;T, T&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab7923737cd1207714fc9fb1c88cfd637" class="m-doc-self">sincos</a>(</span><span class="m-doc-wrap">T arg)</span></span>
             </h3>
             <p>Return the sine and cosine in a single function call.</p>
 <p>In C++17 you can unpack the result using <code>auto [s,c] = sincos(theta)</code>.</p>
@@ -285,7 +303,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">phi_theta</td>
-                  <td>The spherical angles with <svg class="m-math" style="width: 5.559em; height: 1.245em; vertical-align: -0.312em;" viewBox="0 -8.966376 53.363296 11.955168">
+                  <td>The spherical angles with <svg class="m-math" style="width: 5.559em; height: 1.245em;" viewBox="0 -8.966376 53.363296 11.955168">
 <title>
 $\phi \in [0,2\pi)$
 </title>
@@ -309,7 +327,7 @@ $\phi \in [0,2\pi)$
 <use x='41.7417' y='0' xlink:href='#eq1-g1-25'/>
 <use x='48.81097' y='0' xlink:href='#eq1-g2-41'/>
 </g>
-</svg> and <svg class="m-math" style="width: 4.694em; height: 1.245em; vertical-align: -0.312em;" viewBox="0 -8.966376 45.06188 11.955168">
+</svg> and <svg class="m-math" style="width: 4.694em; height: 1.245em;" viewBox="0 -8.966376 45.06188 11.955168">
 <title>
 $\theta \in [0, \pi]$
 </title>
@@ -331,7 +349,7 @@ $\theta \in [0, \pi]$
 <use x='34.740949' y='0' xlink:href='#eq2-g1-25'/>
 <use x='41.810218' y='0' xlink:href='#eq2-g2-93'/>
 </g>
-</svg>. <svg class="m-math" style="width: 8.659em; height: 1.245em; vertical-align: -0.312em;" viewBox="0 -8.966376 83.128442 11.955168">
+</svg>. <svg class="m-math" style="width: 8.659em; height: 1.245em;" viewBox="0 -8.966376 83.128442 11.955168">
 <title>
 $\theta = 0 \mapsto (0,0,1)$
 </title>
@@ -360,19 +378,19 @@ $\theta = 0 \mapsto (0,0,1)$
 <use x='72.723126' y='0' xlink:href='#eq3-g2-49'/>
 <use x='78.576117' y='0' xlink:href='#eq3-g2-41'/>
 </g>
-</svg> and <svg class="m-math" style="width: 9.628em; height: 1.245em; vertical-align: -0.312em;" viewBox="0 -8.966376 92.426939 11.955168">
+</svg> and <svg class="m-math" style="width: 9.628em; height: 1.245em;" viewBox="0 -8.966376 92.426939 11.955168">
 <title>
 $\theta = 0 \mapsto (0,0,-1)$
 </title>
 <defs>
-<path id='eq4-g0-0' d='M7.878456-2.749689C8.081694-2.749689 8.296887-2.749689 8.296887-2.988792S8.081694-3.227895 7.878456-3.227895H1.41071C1.207472-3.227895 .992279-3.227895 .992279-2.988792S1.207472-2.749689 1.41071-2.749689H7.878456Z'/>
-<path id='eq4-g0-33' d='M9.97061-2.749689C9.313076-2.247572 8.990286-1.75741 8.894645-1.601993C8.356663-.777086 8.261021-.02391 8.261021-.011955C8.261021 .131507 8.404483 .131507 8.500125 .131507C8.703362 .131507 8.715318 .107597 8.763138-.107597C9.038107-1.279203 9.743462-2.283437 11.094396-2.833375C11.237858-2.881196 11.273724-2.905106 11.273724-2.988792S11.201993-3.108344 11.178082-3.120299C10.652055-3.323537 9.205479-3.921295 8.751183-5.929763C8.715318-6.073225 8.703362-6.109091 8.500125-6.109091C8.404483-6.109091 8.261021-6.109091 8.261021-5.965629C8.261021-5.941719 8.368618-5.188543 8.870735-4.387547C9.109838-4.028892 9.456538-3.610461 9.97061-3.227895H1.08792C.872727-3.227895 .657534-3.227895 .657534-2.988792S.872727-2.749689 1.08792-2.749689H9.97061Z'/>
-<path id='eq4-g0-55' d='M1.135741-2.749689C1.207472-2.749689 1.470486-2.749689 1.470486-2.988792S1.207472-3.227895 1.135741-3.227895V-4.794022C1.135741-4.985305 1.135741-5.212453 .896638-5.212453S.657534-4.985305 .657534-4.794022V-1.183562C.657534-.992279 .657534-.765131 .896638-.765131S1.135741-.992279 1.135741-1.183562V-2.749689Z'/>
 <path id='eq4-g2-40' d='M3.88543 2.905106C3.88543 2.86924 3.88543 2.84533 3.682192 2.642092C2.486675 1.43462 1.817186-.537983 1.817186-2.976837C1.817186-5.296139 2.379078-7.292653 3.765878-8.703362C3.88543-8.810959 3.88543-8.834869 3.88543-8.870735C3.88543-8.942466 3.825654-8.966376 3.777833-8.966376C3.622416-8.966376 2.642092-8.105604 2.056289-6.933998C1.446575-5.726526 1.171606-4.447323 1.171606-2.976837C1.171606-1.912827 1.338979-.490162 1.960648 .789041C2.666002 2.223661 3.646326 3.000747 3.777833 3.000747C3.825654 3.000747 3.88543 2.976837 3.88543 2.905106Z'/>
 <path id='eq4-g2-41' d='M3.371357-2.976837C3.371357-3.88543 3.251806-5.36787 2.582316-6.75467C1.876961-8.18929 .896638-8.966376 .765131-8.966376C.71731-8.966376 .657534-8.942466 .657534-8.870735C.657534-8.834869 .657534-8.810959 .860772-8.607721C2.056289-7.400249 2.725778-5.427646 2.725778-2.988792C2.725778-.669489 2.163885 1.327024 .777086 2.737733C.657534 2.84533 .657534 2.86924 .657534 2.905106C.657534 2.976837 .71731 3.000747 .765131 3.000747C.920548 3.000747 1.900872 2.139975 2.486675 .968369C3.096389-.251059 3.371357-1.542217 3.371357-2.976837Z'/>
 <path id='eq4-g2-48' d='M5.355915-3.825654C5.355915-4.817933 5.296139-5.786301 4.865753-6.694894C4.375592-7.687173 3.514819-7.950187 2.929016-7.950187C2.235616-7.950187 1.3868-7.603487 .944458-6.611208C.609714-5.858032 .490162-5.116812 .490162-3.825654C.490162-2.666002 .573848-1.793275 1.004234-.944458C1.470486-.035866 2.295392 .251059 2.917061 .251059C3.957161 .251059 4.554919-.37061 4.901619-1.06401C5.332005-1.960648 5.355915-3.132254 5.355915-3.825654ZM2.917061 .011955C2.534496 .011955 1.75741-.203238 1.530262-1.506351C1.398755-2.223661 1.398755-3.132254 1.398755-3.969116C1.398755-4.94944 1.398755-5.834122 1.590037-6.539477C1.793275-7.340473 2.402989-7.711083 2.917061-7.711083C3.371357-7.711083 4.064757-7.436115 4.291905-6.40797C4.447323-5.726526 4.447323-4.782067 4.447323-3.969116C4.447323-3.16812 4.447323-2.259527 4.315816-1.530262C4.088667-.215193 3.335492 .011955 2.917061 .011955Z'/>
 <path id='eq4-g2-49' d='M3.443088-7.663263C3.443088-7.938232 3.443088-7.950187 3.203985-7.950187C2.917061-7.627397 2.319303-7.185056 1.08792-7.185056V-6.838356C1.362889-6.838356 1.960648-6.838356 2.618182-7.149191V-.920548C2.618182-.490162 2.582316-.3467 1.530262-.3467H1.159651V0C1.482441-.02391 2.642092-.02391 3.036613-.02391S4.578829-.02391 4.901619 0V-.3467H4.531009C3.478954-.3467 3.443088-.490162 3.443088-.920548V-7.663263Z'/>
 <path id='eq4-g2-61' d='M8.069738-3.873474C8.237111-3.873474 8.452304-3.873474 8.452304-4.088667C8.452304-4.315816 8.249066-4.315816 8.069738-4.315816H1.028144C.860772-4.315816 .645579-4.315816 .645579-4.100623C.645579-3.873474 .848817-3.873474 1.028144-3.873474H8.069738ZM8.069738-1.649813C8.237111-1.649813 8.452304-1.649813 8.452304-1.865006C8.452304-2.092154 8.249066-2.092154 8.069738-2.092154H1.028144C.860772-2.092154 .645579-2.092154 .645579-1.876961C.645579-1.649813 .848817-1.649813 1.028144-1.649813H8.069738Z'/>
+<path id='eq4-g0-0' d='M7.878456-2.749689C8.081694-2.749689 8.296887-2.749689 8.296887-2.988792S8.081694-3.227895 7.878456-3.227895H1.41071C1.207472-3.227895 .992279-3.227895 .992279-2.988792S1.207472-2.749689 1.41071-2.749689H7.878456Z'/>
+<path id='eq4-g0-33' d='M9.97061-2.749689C9.313076-2.247572 8.990286-1.75741 8.894645-1.601993C8.356663-.777086 8.261021-.02391 8.261021-.011955C8.261021 .131507 8.404483 .131507 8.500125 .131507C8.703362 .131507 8.715318 .107597 8.763138-.107597C9.038107-1.279203 9.743462-2.283437 11.094396-2.833375C11.237858-2.881196 11.273724-2.905106 11.273724-2.988792S11.201993-3.108344 11.178082-3.120299C10.652055-3.323537 9.205479-3.921295 8.751183-5.929763C8.715318-6.073225 8.703362-6.109091 8.500125-6.109091C8.404483-6.109091 8.261021-6.109091 8.261021-5.965629C8.261021-5.941719 8.368618-5.188543 8.870735-4.387547C9.109838-4.028892 9.456538-3.610461 9.97061-3.227895H1.08792C.872727-3.227895 .657534-3.227895 .657534-2.988792S.872727-2.749689 1.08792-2.749689H9.97061Z'/>
+<path id='eq4-g0-55' d='M1.135741-2.749689C1.207472-2.749689 1.470486-2.749689 1.470486-2.988792S1.207472-3.227895 1.135741-3.227895V-4.794022C1.135741-4.985305 1.135741-5.212453 .896638-5.212453S.657534-4.985305 .657534-4.794022V-1.183562C.657534-.992279 .657534-.765131 .896638-.765131S1.135741-.992279 1.135741-1.183562V-2.749689Z'/>
 <path id='eq4-g1-18' d='M5.296139-6.01345C5.296139-7.232877 4.913574-8.416438 3.93325-8.416438C2.259527-8.416438 .478207-4.913574 .478207-2.283437C.478207-1.733499 .597758 .119552 1.853051 .119552C3.478954 .119552 5.296139-3.299626 5.296139-6.01345ZM1.673724-4.327771C1.853051-5.033126 2.10411-6.03736 2.582316-6.886177C2.976837-7.603487 3.395268-8.177335 3.921295-8.177335C4.315816-8.177335 4.578829-7.84259 4.578829-6.694894C4.578829-6.264508 4.542964-5.66675 4.196264-4.327771H1.673724ZM4.112578-3.969116C3.813699-2.797509 3.56264-2.044334 3.132254-1.291158C2.785554-.681445 2.367123-.119552 1.865006-.119552C1.494396-.119552 1.195517-.406476 1.195517-1.590037C1.195517-2.367123 1.3868-3.180075 1.578082-3.969116H4.112578Z'/>
 <path id='eq4-g1-59' d='M2.331258 .047821C2.331258-.645579 2.10411-1.159651 1.613948-1.159651C1.231382-1.159651 1.0401-.848817 1.0401-.585803S1.219427 0 1.625903 0C1.78132 0 1.912827-.047821 2.020423-.155417C2.044334-.179328 2.056289-.179328 2.068244-.179328C2.092154-.179328 2.092154-.011955 2.092154 .047821C2.092154 .442341 2.020423 1.219427 1.327024 1.996513C1.195517 2.139975 1.195517 2.163885 1.195517 2.187796C1.195517 2.247572 1.255293 2.307347 1.315068 2.307347C1.41071 2.307347 2.331258 1.422665 2.331258 .047821Z'/>
 </defs>
@@ -420,7 +438,7 @@ $\theta = 0 \mapsto (0,0,-1)$
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>The spherical angles with <svg class="m-math" style="width: 5.559em; height: 1.245em; vertical-align: -0.312em;" viewBox="0 -8.966376 53.363296 11.955168">
+                  <td>The spherical angles with <svg class="m-math" style="width: 5.559em; height: 1.245em;" viewBox="0 -8.966376 53.363296 11.955168">
 <title>
 $\phi \in [0,2\pi)$
 </title>
@@ -444,7 +462,7 @@ $\phi \in [0,2\pi)$
 <use x='41.7417' y='0' xlink:href='#eq5-g1-25'/>
 <use x='48.81097' y='0' xlink:href='#eq5-g2-41'/>
 </g>
-</svg> and <svg class="m-math" style="width: 4.694em; height: 1.245em; vertical-align: -0.312em;" viewBox="0 -8.966376 45.06188 11.955168">
+</svg> and <svg class="m-math" style="width: 4.694em; height: 1.245em;" viewBox="0 -8.966376 45.06188 11.955168">
 <title>
 $\theta \in [0, \pi]$
 </title>
@@ -466,7 +484,7 @@ $\theta \in [0, \pi]$
 <use x='34.740949' y='0' xlink:href='#eq6-g1-25'/>
 <use x='41.810218' y='0' xlink:href='#eq6-g2-93'/>
 </g>
-</svg>. <svg class="m-math" style="width: 8.659em; height: 1.245em; vertical-align: -0.312em;" viewBox="0 -8.966376 83.128442 11.955168">
+</svg>. <svg class="m-math" style="width: 8.659em; height: 1.245em;" viewBox="0 -8.966376 83.128442 11.955168">
 <title>
 $\theta = 0 \mapsto (0,0,1)$
 </title>
@@ -495,19 +513,19 @@ $\theta = 0 \mapsto (0,0,1)$
 <use x='72.723126' y='0' xlink:href='#eq7-g2-49'/>
 <use x='78.576117' y='0' xlink:href='#eq7-g2-41'/>
 </g>
-</svg> and <svg class="m-math" style="width: 9.628em; height: 1.245em; vertical-align: -0.312em;" viewBox="0 -8.966376 92.426939 11.955168">
+</svg> and <svg class="m-math" style="width: 9.628em; height: 1.245em;" viewBox="0 -8.966376 92.426939 11.955168">
 <title>
 $\theta = 0 \mapsto (0,0,-1)$
 </title>
 <defs>
-<path id='eq8-g0-0' d='M7.878456-2.749689C8.081694-2.749689 8.296887-2.749689 8.296887-2.988792S8.081694-3.227895 7.878456-3.227895H1.41071C1.207472-3.227895 .992279-3.227895 .992279-2.988792S1.207472-2.749689 1.41071-2.749689H7.878456Z'/>
-<path id='eq8-g0-33' d='M9.97061-2.749689C9.313076-2.247572 8.990286-1.75741 8.894645-1.601993C8.356663-.777086 8.261021-.02391 8.261021-.011955C8.261021 .131507 8.404483 .131507 8.500125 .131507C8.703362 .131507 8.715318 .107597 8.763138-.107597C9.038107-1.279203 9.743462-2.283437 11.094396-2.833375C11.237858-2.881196 11.273724-2.905106 11.273724-2.988792S11.201993-3.108344 11.178082-3.120299C10.652055-3.323537 9.205479-3.921295 8.751183-5.929763C8.715318-6.073225 8.703362-6.109091 8.500125-6.109091C8.404483-6.109091 8.261021-6.109091 8.261021-5.965629C8.261021-5.941719 8.368618-5.188543 8.870735-4.387547C9.109838-4.028892 9.456538-3.610461 9.97061-3.227895H1.08792C.872727-3.227895 .657534-3.227895 .657534-2.988792S.872727-2.749689 1.08792-2.749689H9.97061Z'/>
-<path id='eq8-g0-55' d='M1.135741-2.749689C1.207472-2.749689 1.470486-2.749689 1.470486-2.988792S1.207472-3.227895 1.135741-3.227895V-4.794022C1.135741-4.985305 1.135741-5.212453 .896638-5.212453S.657534-4.985305 .657534-4.794022V-1.183562C.657534-.992279 .657534-.765131 .896638-.765131S1.135741-.992279 1.135741-1.183562V-2.749689Z'/>
 <path id='eq8-g2-40' d='M3.88543 2.905106C3.88543 2.86924 3.88543 2.84533 3.682192 2.642092C2.486675 1.43462 1.817186-.537983 1.817186-2.976837C1.817186-5.296139 2.379078-7.292653 3.765878-8.703362C3.88543-8.810959 3.88543-8.834869 3.88543-8.870735C3.88543-8.942466 3.825654-8.966376 3.777833-8.966376C3.622416-8.966376 2.642092-8.105604 2.056289-6.933998C1.446575-5.726526 1.171606-4.447323 1.171606-2.976837C1.171606-1.912827 1.338979-.490162 1.960648 .789041C2.666002 2.223661 3.646326 3.000747 3.777833 3.000747C3.825654 3.000747 3.88543 2.976837 3.88543 2.905106Z'/>
 <path id='eq8-g2-41' d='M3.371357-2.976837C3.371357-3.88543 3.251806-5.36787 2.582316-6.75467C1.876961-8.18929 .896638-8.966376 .765131-8.966376C.71731-8.966376 .657534-8.942466 .657534-8.870735C.657534-8.834869 .657534-8.810959 .860772-8.607721C2.056289-7.400249 2.725778-5.427646 2.725778-2.988792C2.725778-.669489 2.163885 1.327024 .777086 2.737733C.657534 2.84533 .657534 2.86924 .657534 2.905106C.657534 2.976837 .71731 3.000747 .765131 3.000747C.920548 3.000747 1.900872 2.139975 2.486675 .968369C3.096389-.251059 3.371357-1.542217 3.371357-2.976837Z'/>
 <path id='eq8-g2-48' d='M5.355915-3.825654C5.355915-4.817933 5.296139-5.786301 4.865753-6.694894C4.375592-7.687173 3.514819-7.950187 2.929016-7.950187C2.235616-7.950187 1.3868-7.603487 .944458-6.611208C.609714-5.858032 .490162-5.116812 .490162-3.825654C.490162-2.666002 .573848-1.793275 1.004234-.944458C1.470486-.035866 2.295392 .251059 2.917061 .251059C3.957161 .251059 4.554919-.37061 4.901619-1.06401C5.332005-1.960648 5.355915-3.132254 5.355915-3.825654ZM2.917061 .011955C2.534496 .011955 1.75741-.203238 1.530262-1.506351C1.398755-2.223661 1.398755-3.132254 1.398755-3.969116C1.398755-4.94944 1.398755-5.834122 1.590037-6.539477C1.793275-7.340473 2.402989-7.711083 2.917061-7.711083C3.371357-7.711083 4.064757-7.436115 4.291905-6.40797C4.447323-5.726526 4.447323-4.782067 4.447323-3.969116C4.447323-3.16812 4.447323-2.259527 4.315816-1.530262C4.088667-.215193 3.335492 .011955 2.917061 .011955Z'/>
 <path id='eq8-g2-49' d='M3.443088-7.663263C3.443088-7.938232 3.443088-7.950187 3.203985-7.950187C2.917061-7.627397 2.319303-7.185056 1.08792-7.185056V-6.838356C1.362889-6.838356 1.960648-6.838356 2.618182-7.149191V-.920548C2.618182-.490162 2.582316-.3467 1.530262-.3467H1.159651V0C1.482441-.02391 2.642092-.02391 3.036613-.02391S4.578829-.02391 4.901619 0V-.3467H4.531009C3.478954-.3467 3.443088-.490162 3.443088-.920548V-7.663263Z'/>
 <path id='eq8-g2-61' d='M8.069738-3.873474C8.237111-3.873474 8.452304-3.873474 8.452304-4.088667C8.452304-4.315816 8.249066-4.315816 8.069738-4.315816H1.028144C.860772-4.315816 .645579-4.315816 .645579-4.100623C.645579-3.873474 .848817-3.873474 1.028144-3.873474H8.069738ZM8.069738-1.649813C8.237111-1.649813 8.452304-1.649813 8.452304-1.865006C8.452304-2.092154 8.249066-2.092154 8.069738-2.092154H1.028144C.860772-2.092154 .645579-2.092154 .645579-1.876961C.645579-1.649813 .848817-1.649813 1.028144-1.649813H8.069738Z'/>
+<path id='eq8-g0-0' d='M7.878456-2.749689C8.081694-2.749689 8.296887-2.749689 8.296887-2.988792S8.081694-3.227895 7.878456-3.227895H1.41071C1.207472-3.227895 .992279-3.227895 .992279-2.988792S1.207472-2.749689 1.41071-2.749689H7.878456Z'/>
+<path id='eq8-g0-33' d='M9.97061-2.749689C9.313076-2.247572 8.990286-1.75741 8.894645-1.601993C8.356663-.777086 8.261021-.02391 8.261021-.011955C8.261021 .131507 8.404483 .131507 8.500125 .131507C8.703362 .131507 8.715318 .107597 8.763138-.107597C9.038107-1.279203 9.743462-2.283437 11.094396-2.833375C11.237858-2.881196 11.273724-2.905106 11.273724-2.988792S11.201993-3.108344 11.178082-3.120299C10.652055-3.323537 9.205479-3.921295 8.751183-5.929763C8.715318-6.073225 8.703362-6.109091 8.500125-6.109091C8.404483-6.109091 8.261021-6.109091 8.261021-5.965629C8.261021-5.941719 8.368618-5.188543 8.870735-4.387547C9.109838-4.028892 9.456538-3.610461 9.97061-3.227895H1.08792C.872727-3.227895 .657534-3.227895 .657534-2.988792S.872727-2.749689 1.08792-2.749689H9.97061Z'/>
+<path id='eq8-g0-55' d='M1.135741-2.749689C1.207472-2.749689 1.470486-2.749689 1.470486-2.988792S1.207472-3.227895 1.135741-3.227895V-4.794022C1.135741-4.985305 1.135741-5.212453 .896638-5.212453S.657534-4.985305 .657534-4.794022V-1.183562C.657534-.992279 .657534-.765131 .896638-.765131S1.135741-.992279 1.135741-1.183562V-2.749689Z'/>
 <path id='eq8-g1-18' d='M5.296139-6.01345C5.296139-7.232877 4.913574-8.416438 3.93325-8.416438C2.259527-8.416438 .478207-4.913574 .478207-2.283437C.478207-1.733499 .597758 .119552 1.853051 .119552C3.478954 .119552 5.296139-3.299626 5.296139-6.01345ZM1.673724-4.327771C1.853051-5.033126 2.10411-6.03736 2.582316-6.886177C2.976837-7.603487 3.395268-8.177335 3.921295-8.177335C4.315816-8.177335 4.578829-7.84259 4.578829-6.694894C4.578829-6.264508 4.542964-5.66675 4.196264-4.327771H1.673724ZM4.112578-3.969116C3.813699-2.797509 3.56264-2.044334 3.132254-1.291158C2.785554-.681445 2.367123-.119552 1.865006-.119552C1.494396-.119552 1.195517-.406476 1.195517-1.590037C1.195517-2.367123 1.3868-3.180075 1.578082-3.969116H4.112578Z'/>
 <path id='eq8-g1-59' d='M2.331258 .047821C2.331258-.645579 2.10411-1.159651 1.613948-1.159651C1.231382-1.159651 1.0401-.848817 1.0401-.585803S1.219427 0 1.625903 0C1.78132 0 1.912827-.047821 2.020423-.155417C2.044334-.179328 2.056289-.179328 2.068244-.179328C2.092154-.179328 2.092154-.011955 2.092154 .047821C2.092154 .442341 2.020423 1.219427 1.327024 1.996513C1.195517 2.139975 1.195517 2.163885 1.195517 2.187796C1.195517 2.247572 1.255293 2.307347 1.315068 2.307347C1.41071 2.307347 2.331258 1.422665 2.331258 .047821Z'/>
 </defs>
@@ -531,9 +549,75 @@ $\theta = 0 \mapsto (0,0,-1)$
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a0395cc6b6ad5e785b9ffdbdeddac3d17"><div>
+          <section class="m-doc-details" id="a52a40f8bef9fefc0a3c09136e8511ee1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">filesystem::resolver&amp; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0395cc6b6ad5e785b9ffdbdeddac3d17" class="m-doc-self">get_file_resolver</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">float </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a52a40f8bef9fefc0a3c09136e8511ee1" class="m-doc-self">fresnel</a>(</span><span class="m-doc-wrap">float cos_theta_i,
+              float ext_ior,
+              float int_ior)</span></span>
+            </h3>
+            <p>Calculates the unpolarized fresnel reflection coefficient for a dielectric material.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">cos_theta_i</td>
+                  <td>Cosine of the angle between the normal and the incident ray</td>
+                </tr>
+                <tr>
+                  <td>ext_ior</td>
+                  <td>Refractive index of the side that contains the surface normal</td>
+                </tr>
+                <tr>
+                  <td>int_ior</td>
+                  <td>Refractive index of the interior</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Handles incidence from either side (i.e. <code>cos_theta_i&lt;0</code> is allowed).</p>
+          </div></section>
+          <section class="m-doc-details" id="abcb4501416d3046725491fff9802b798"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abcb4501416d3046725491fff9802b798" class="m-doc-self">refract</a>(</span><span class="m-doc-wrap">const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; v,
+              const <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; n,
+              float iorIOverT,
+              <a href="group__group__math.html#ga40b8356e33151c22cb4d1adaf2b762a8" class="m-doc">Vec3f</a>&amp; refracted)</span></span>
+            </h3>
+            <p>Generates a refracted direction, assuming refraction is possible based on the incident direction and refractive indices.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">v</td>
+                  <td>The incident ray&#x27;s direction</td>
+                </tr>
+                <tr>
+                  <td>n</td>
+                  <td>The surface normal of the incident ray</td>
+                </tr>
+                <tr>
+                  <td>iorIOverT</td>
+                  <td>The ratio of the index of refraction on the incident side to the index of refraction on the transmitted side</td>
+                </tr>
+                <tr>
+                  <td>refracted</td>
+                  <td>The returned, un-normalized, refracted direction</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if refraction is possible, False if there is total internal reflection</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a951cd95fc9093df701b7c36a70fcdd91"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">filesystem::resolver&amp; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a951cd95fc9093df701b7c36a70fcdd91" class="m-doc-self">get_file_resolver</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Return the global file resolver instance.</p>
 <p>This class is used to locate resource files (e.g. mesh or texture files) referenced by a scene being loaded.</p>
@@ -583,7 +667,7 @@ $\theta = 0 \mapsto (0,0,-1)$
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
+        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.4 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
       </div>
     </div>
   </div>
