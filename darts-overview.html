@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Code | CS
+87/287 Rendering Algorithms</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><script src="jquery.event.move.js"></script><script src="jquery.twentytwenty.js"></script><link href="twentytwenty.css" rel="stylesheet" type="text/css" /><script>$(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5, move_slider_on_hover: true });});</script>
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="https://cs87-dartmouth.github.io/Fall2021"><img src="darts-logo.svg" alt="" />CS
+87/287</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Rendering Algorithms</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="schedule.html">Schedule</a></li>
+            <li>
+              <a href="assignments.html">Assignments</a>
+              <ol>
+                <li><a href="assignment0.html">A0: Darts preliminaries</a></li>
+                <li><a href="assignment1.html">A1: Ray tracing</a></li>
+                <li><a href="assignment2.html">A2: Ray tracing faster</a></li>
+                <li><a href="assignment3.html">A3: Textures</a></li>
+                <li><a href="assignment4.html">A4: Sampling materials</a></li>
+                <li><a href="assignment5.html">A5: Sampling lights</a></li>
+                <li><a href="assignment6.html">A6: Final project</a></li>
+              </ol>
+            </li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li>
+              <a href="darts-overview.html" id="m-navbar-current">Code</a>
+              <ol>
+                <li><a href="darts-overview.html">Darts</a></li>
+                <li><a href="getting-started.html">Getting started</a></li>
+                <li><a href="https://github.com/cs87-dartmouth/Fall2021">GitHub</a></li>
+                <li><a href="modules.html">Modules</a></li>
+                <li><a href="annotated.html">Classes</a></li>
+                <li><a href="files.html">Files</a></li>
+              </ol>
+            </li>
+            <li><a href="credits.html">Credits</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Code
+        </h1>
+<p><a name="md_documentation_darts_overview"></a></p><img class="m-image" src="darts-wordmark.svg" alt="Image" /><p><strong>darts</strong> is a minimalistic skeleton for a Monte Carlo ray tracer, written in C++17. The name is an acronym for <em>The Dartmouth Academic Ray Tracer Skeleton</em> while also being a nod to the random dart-throwing-like process involved in Monte Carlo ray tracing. It runs on recent versions of Windows, Linux, and macOS and provides the foundation for the programming assignments we&#x27;ll be doing in this class.</p><section id="autotoc_md22"><h2><a href="#autotoc_md22">Design philosophy</a></h2><p>The primary goal of darts is educational. As such, its design aims to balance several educational objectives</p><ul><li>minimize &quot;time to first pixel&quot; &ndash; allowing you to start producing images quickly</li><li>don&#x27;t provide many rendering features &quot;out of the box&quot;, instead allow you to learn by implementing these yourself while steering you towards a modern full-featured ray tracer design</li><li>keep the core rendering-related code base small but extensible, while relying on a few, self-contained libraries for supporting code</li><li>keep the build system simple and reliable across major platforms</li></ul><p>You can think of darts, and the accompanying assignments, as filling the gap between the simplicity of Peter Shirley&#x27;s <a href="https://raytracing.github.io"><em>Ray Tracing in One Weekend</em></a> series of books, and the complexity and completeness of more sophisticated research-oriented renderers like <a href="https://www.pbr-book.org">PBRT</a> or Mitsuba.</p><p>The assignments are designed to help you explore and extend the darts code, while simultaneously progressing through the Shirley books and towards the PBR book. In the first few assignments, you will fill in empty methods left in the starter code, and test them using the tools provided with each assignment. In latter assignments, you will need to figure out what functions and classes you will need to add to the code to accomplish the tasks.</p><p>While darts cannot (yet) produce images, after stepping through the assignments you will steadily add features that allow you to render images like the ones below, with the photorealistic lighting characteristic of ray tracing:</p><div class="m-row m-container-inflate"><div class="m-col-s-6"><a href="classroom.png"><img class="m-image" src="classroom.png" alt="Image" /></a></div><div class="m-col-s-6"><a href="shoe.png"><img class="m-image" src="shoe.png" alt="Image" /></a></div><div class="m-col-s-6"><a href="ajax-ao-ref.png"><img class="m-image" src="ajax-ao-ref.png" alt="Image" /></a></div><div class="m-col-s-3 m-col-t-6"><a href="nefertiti.png"><img class="m-image" src="nefertiti.png" alt="Image" /></a></div><div class="m-col-s-3 m-col-t-6"><a href="loewenfeld.png"><img class="m-image" src="loewenfeld.png" alt="Image" /></a></div><div class="m-col-s-6"><a href="jensen_box.png"><img class="m-image" src="jensen_box.png" alt="Image" /></a></div></div></section><section id="autotoc_md23"><h2><a href="#autotoc_md23">Features</a></h2><p>Darts provides many features that are tedious to implement from scratch, including:</p><ul><li>A JSON-based scene file loader</li><li>A nice command-line interface with option parsing, and a text-based progress bar for long operations</li><li>Basic color/vector/matrix/ray/bounding box classes</li><li>A high-quality pseudorandom number generator</li><li>Support for loading and saving images in a variety of formats (.png, .jpg, .exr, .hdr, etc.)</li><li>Support for loading Wavefront OBJ files</li></ul><p>The codebase has the following high-level structure:</p><table class="m-table"><thead><tr><th>Directory</th><th>Description</th></tr></thead><tbody><tr><td><code>include/darts</code></td><td>Contains the header files for the core classes, algorithms and data structures of darts</td></tr><tr><td><code>src/</code></td><td>The core C++ source files, as well as most added files will go here</td></tr><tr><td><code>scenes/</code></td><td>Example scenes and test datasets to validate your implementation</td></tr><tr><td><code>reports/</code></td><td>The skeletons for webpage reports for each of the assignments</td></tr><tr><td><code>documentation/</code></td><td>The source and configuration files for this course website, and the Doxygen documentation</td></tr><tr><td><code>CMakeLists.txt</code></td><td>The main CMake build file which specifies how to compile and link the code</td></tr><tr><td><code>cmake/</code></td><td>Additional CMake files (you likely won&#x27;t have to look at this)</td></tr></tbody></table><p>Darts uses modern CMake, and the <a href="https://github.com/cpm-cmake/CPM.cmake">CPM.cmake package manager</a> for a particularly clean and simple build set up. At configuration time, the CMake build system automatically downloads (from other GitHub repositories) several open source libraries, including:</p><table class="m-table"><thead><tr><th>Dependency</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://github.com/CLIUtils/CLI11"><code>cli11</code></a></td><td>Command line parser for C++11</td></tr><tr><td><a href="https://github.com/wjakob/filesystem"><code>filesystem</code></a></td><td>A tiny self-contained library for manipulating paths on various platforms</td></tr><tr><td><a href="https://github.com/NVlabs/flip"><code>flip</code></a></td><td>A tool for visualizing and communicating errors in rendered images</td></tr><tr><td><a href="https://github.com/fmtlib/fmt"><code>fmt</code></a></td><td>A modern formatting library/replacement for C&#x27;s printf and C++ streams</td></tr><tr><td><a href="https://github.com/sgorsten/linalg"><code>linalg</code></a></td><td>Single header C++11 vector math library inspired by the syntax of shading languages</td></tr><tr><td><a href="https://github.com/nlohmann/json"><code>nlohmann-json</code></a></td><td>A JSON parsing library for modern C++</td></tr><tr><td><a href="https://github.com/wjakob/pcg32"><code>pcg32</code></a></td><td>A tiny self-contained pseudorandom number generator</td></tr><tr><td><a href="https://github.com/gabime/spdlog"><code>spdlog</code></a></td><td>Fast C++ logging library</td></tr><tr><td><a href="https://github.com/nothings/stb"><code>stb_image</code></a></td><td>Header-only public domain library for image loading and saving.</td></tr><tr><td><a href="https://github.com/syoyo/tinyexr"><code>tinyexr</code></a></td><td>Tiny OpenEXR image loader/saver library</td></tr><tr><td><a href="https://github.com/tinyobjloader/tinyobjloader"><code>tinyobjloader</code></a></td><td>Tiny but powerful single file wavefront obj loader</td></tr></tbody></table><p>The code is also integrated into GitHub&#x27;s actions for automated continuous integration/build testing.</p></section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>CS 87/287 Rendering Algorithms. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.4 and <a href="https://mcss.mosra.cz/">m.css</a>.<br />See <a href="credits.html">credits page</a> for additional acknowledgements.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
