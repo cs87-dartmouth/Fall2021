@@ -1,0 +1,83 @@
+name: MacOS and Ubuntu
+
+on:
+  workflow_dispatch:
+  push:
+#    branches:
+#      - "*"
+    # Jobs are skipped when ONLY Markdown (*.md) files are changed
+#    paths-ignore:
+#      - "**.md"
+  pull_request:
+#    branches:
+#      - main
+    # Jobs are skipped when ONLY Markdown (*.md) files are changed
+#    paths-ignore:
+#      - "**.md"
+
+env:
+  CPM_SOURCE_CACHE: ${{ github.workspace }}/cpm_modules
+
+jobs:
+  build:
+    name: Build
+    runs-on: ${{matrix.os}}
+
+    strategy:
+      matrix:
+        # Run several build types
+        # buildtype: ["Release", "Debug", "RelWithDebInfo"]
+        buildtype: ["Release"]
+        os: [macos-latest, ubuntu-latest, ubuntu-18.04]
+        # os: [macos-latest]
+      fail-fast: true
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v2
+        with:
+          path: "**/cpm_modules"
+          key: ${{ github.workflow }}-cpm-modules-${{ hashFiles('**/CMakeLists.txt', '**/*.cmake') }}
+
+      - name: ccache
+        uses: hendrikmuhs/ccache-action@v1
+        with:
+          key: ${{ matrix.os }}-${{ matrix.buildtype }}
+
+      - name: configure
+        run: cmake -B ${{github.workspace}}/build -DUSE_FLIP:BOOL=TRUE -DCMAKE_BUILD_TYPE=${{matrix.buildtype}} -D CMAKE_C_COMPILER_LAUNCHER=ccache -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
+
+      - name: build
+        run: cmake --build ${{github.workspace}}/build --parallel --config ${{matrix.buildtype}}
+
+      - name: Checking that darts runs
+        working-directory: ${{github.workspace}}
+        run: |
+          ./build/darts --help
+
+      - name: Running tests
+        working-directory: ${{github.workspace}}
+        run: |
+          ./build/darts_tutorial0
+          ./build/darts_tutorial1
+          ./build/point_gen
+
+      - name: Comparing generated images against reference
+        working-directory: ${{github.workspace}}
+        run: |
+          mkdir build/differences
+          cd build/differences
+          ../_deps/flip-build/flip -et -c diff.csv -t ${{github.workspace}}/scenes/assignment0/gradient.png -r ${{github.workspace}}/scenes/assignment0/gradient-ref.png
+          ../_deps/flip-build/flip -et -c diff.csv -t ${{github.workspace}}/scenes/assignment0/cornell_grayscale.png -r ${{github.workspace}}/scenes/assignment0/cornell_grayscale-ref.png
+          ../_deps/flip-build/flip -et -c diff.csv -t ${{github.workspace}}/scenes/assignment1/01_xformed_camera_sphere_image.png -r ${{github.workspace}}/scenes/assignment1/01_xformed_camera_sphere_image-ref.png
+          ../_deps/flip-build/flip -et -c diff.csv -t ${{github.workspace}}/scenes/assignment1/01_xformed_camera_ray_image.png -r ${{github.workspace}}/scenes/assignment1/01_xformed_camera_ray_image-ref.png
+          ../_deps/flip-build/flip -et -c diff.csv -t ${{github.workspace}}/scenes/assignment1/01_manual_ray_image.png -r ${{github.workspace}}/scenes/assignment1/01_manual_ray_image-ref.png
+          ../_deps/flip-build/flip -et -c diff.csv -t ${{github.workspace}}/scenes/assignment1/01_recursive_raytracing.png -r ${{github.workspace}}/scenes/assignment1/01_recursive_raytracing-ref.png
+
+      - name: Archive test artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: differences-${{ matrix.os }}-${{ matrix.buildtype }}
+          path: |
+            ${{github.workspace}}/build/differences/

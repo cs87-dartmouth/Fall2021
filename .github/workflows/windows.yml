@@ -1,0 +1,79 @@
+name: Windows
+
+on:
+  workflow_dispatch:
+  push:
+#    branches:
+#      - "*"
+    # Jobs are skipped when ONLY Markdown (*.md) files are changed
+#    paths-ignore:
+#      - "**.md"
+  pull_request:
+#    branches:
+#      - main
+    # Jobs are skipped when ONLY Markdown (*.md) files are changed
+#    paths-ignore:
+#      - "**.md"
+
+env:
+  CPM_SOURCE_CACHE: ${{ github.workspace }}/cpm_modules
+
+jobs:
+  build:
+    name: Build
+    runs-on: ${{matrix.os}}
+
+    strategy:
+      matrix:
+        # Run several build types
+        # buildtype: ["Release", "Debug", "RelWithDebInfo"]
+        buildtype: ["Release"]
+        os: [windows-latest, windows-2016]
+      fail-fast: true
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v2
+        with:
+          path: "**/cpm_modules"
+          key: ${{ github.workflow }}-cpm-modules-${{ hashFiles('**/CMakeLists.txt', '**/*.cmake') }}
+
+      - name: configure
+        run: |
+          cmake -B ${{github.workspace}}/build -DUSE_FLIP:BOOL=TRUE -DCMAKE_BUILD_TYPE=${{matrix.buildtype}}
+
+      - name: build
+        run: cmake --build ${{github.workspace}}/build --parallel --config ${{matrix.buildtype}}
+
+      - name: Checking that darts runs
+        working-directory: ${{github.workspace}}
+        run: |
+          ./build/${{matrix.buildtype}}/darts.exe --help
+
+      - name: Running tests
+        working-directory: ${{github.workspace}}
+        run: |
+          ./build/${{matrix.buildtype}}/darts_tutorial0.exe
+          ./build/${{matrix.buildtype}}/darts_tutorial1.exe
+          ./build/${{matrix.buildtype}}/point_gen.exe
+
+      - name: Comparing generated images against reference
+        working-directory: ${{github.workspace}}
+        run: |
+          mkdir build/${{matrix.buildtype}}/differences
+          cd build/${{matrix.buildtype}}/differences
+          ${{github.workspace}}/build/_deps/flip-build/${{matrix.buildtype}}/flip.exe -c diff.csv -t ${{github.workspace}}/scenes/assignment0/gradient.png -r ${{github.workspace}}/scenes/assignment0/gradient-ref.png
+          ${{github.workspace}}/build/_deps/flip-build/${{matrix.buildtype}}/flip.exe -c diff.csv -t ${{github.workspace}}/scenes/assignment0/cornell_grayscale.png -r ${{github.workspace}}/scenes/assignment0/cornell_grayscale-ref.png
+          ${{github.workspace}}/build/_deps/flip-build/${{matrix.buildtype}}/flip.exe -c diff.csv -t ${{github.workspace}}/scenes/assignment1/01_xformed_camera_sphere_image.png -r ${{github.workspace}}/scenes/assignment1/01_xformed_camera_sphere_image-ref.png
+          ${{github.workspace}}/build/_deps/flip-build/${{matrix.buildtype}}/flip.exe -c diff.csv -t ${{github.workspace}}/scenes/assignment1/01_xformed_camera_ray_image.png -r ${{github.workspace}}/scenes/assignment1/01_xformed_camera_ray_image-ref.png
+          ${{github.workspace}}/build/_deps/flip-build/${{matrix.buildtype}}/flip.exe -c diff.csv -t ${{github.workspace}}/scenes/assignment1/01_camera_ray_image.png -r ${{github.workspace}}/scenes/assignment1/01_camera_ray_image-ref.png
+          ${{github.workspace}}/build/_deps/flip-build/${{matrix.buildtype}}/flip.exe -c diff.csv -t ${{github.workspace}}/scenes/assignment1/01_manual_ray_image.png -r ${{github.workspace}}/scenes/assignment1/01_manual_ray_image-ref.png
+          ${{github.workspace}}/build/_deps/flip-build/${{matrix.buildtype}}/flip.exe -c diff.csv -t ${{github.workspace}}/scenes/assignment1/01_recursive_raytracing.png -r ${{github.workspace}}/scenes/assignment1/01_recursive_raytracing-ref.png
+
+      - name: Archive test artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: differences-${{ matrix.os }}-${{ matrix.buildtype }}
+          path: |
+            ${{github.workspace}}/build/${{matrix.buildtype}}/differences/
